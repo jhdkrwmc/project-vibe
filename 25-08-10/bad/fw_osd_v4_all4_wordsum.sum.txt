@@ -1,0 +1,6 @@
+file: fw_osd_v4_all4_wordsum.bin
+size: 131072
+sha256: 94f7c355c4d8300964beb517e3f3cce518dfada9cb0998d3ee399d7a6888a244
+wordsum16_le(0..1FFE) = 0x1648
+bytesum8(0..1FFE)     = 0xA1
+wordsum16_le footer written at 0x1FFE (LE): 0xE9B8

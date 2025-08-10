@@ -1,0 +1,5 @@
+file: fw_osd_v3_all4_noftr.bin
+size: 131072
+sha256: 893111d481a289b5d9baa22ea9dfce99a4a66184cda260150b6fd41befbf02ce
+wordsum16_le(0..1FFE) = 0x1648
+bytesum8(0..1FFE)     = 0xA1

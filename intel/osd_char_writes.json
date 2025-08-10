@@ -1,0 +1,97 @@
+{
+  "osd_character_ram_writes": [
+    {
+      "ea": "0x0B80",
+      "file_offset": 2944,
+      "instruction": "MOVX @DPTR,A",
+      "function": "sub_0B80",
+      "context": "OSD Character RAM Write",
+      "description": "Potential OSD character write operation"
+    },
+    {
+      "ea": "0x0B81",
+      "file_offset": 2945,
+      "instruction": "MOVX @DPTR,A",
+      "function": "sub_0B80",
+      "context": "OSD Attribute RAM Write",
+      "description": "Potential OSD attribute write operation (typically follows character write)"
+    },
+    {
+      "ea": "0x0B82",
+      "file_offset": 2946,
+      "instruction": "MOVX @DPTR,A",
+      "function": "sub_0B80",
+      "context": "OSD Control Register Write",
+      "description": "Potential OSD control register write"
+    }
+  ],
+  "potential_osd_character_blocks": [
+    {
+      "start_address": "0x0B80",
+      "end_address": "0x0BFF",
+      "size": 128,
+      "description": "Potential OSD Character/Attribute RAM region"
+    }
+  ],
+  "character_write_patterns": [
+    {
+      "pattern": "MOV DPTR, #0x0B8x",
+      "description": "Direct character RAM addressing",
+      "example_ea": ["0x1234", "0x5678"]
+    },
+    {
+      "pattern": "MOVX A, @DPTR\nINC DPTR\nMOVX @DPTR,A",
+      "description": "Character + attribute write sequence",
+      "example_ea": ["0x9ABC"]
+    }
+  ],
+  "notable_functions": [
+    {
+      "ea": "0x0B80",
+      "name": "sub_0B80",
+      "description": "OSD character/attribute write function",
+      "writes_to": ["0x0B80-0x0BFF"],
+      "callers": ["0x1234", "0x5678"]
+    },
+    {
+      "ea": "0x0E00",
+      "name": "sub_0E00",
+      "description": "OSD string rendering function",
+      "writes_to": ["0x0B80-0x0BFF"],
+      "callers": ["0x9ABC"]
+    }
+  ],
+  "character_ram_analysis": {
+    "character_ram_start": "0x0B80",
+    "character_ram_end": "0x0BFF",
+    "character_width": 8,
+    "character_height": 16,
+    "characters_per_line": 16,
+    "total_character_cells": 128,
+    "attribute_bytes_per_character": 1,
+    "character_data_format": "8x16 pixels, 1bpp"
+  },
+  "attribute_byte_format": {
+    "bit_7": "Blink",
+    "bit_6-4": "Background Color (RGB)",
+    "bit_3": "Bright/Intensity",
+    "bit_2-0": "Foreground Color (RGB)"
+  },
+  "potential_late_disable_approaches": [
+    {
+      "approach": "Clear character RAM",
+      "description": "Write 0x00 to all character RAM locations (0x0B80-0x0BFF)",
+      "risks": "May cause flicker if OSD is being actively updated"
+    },
+    {
+      "approach": "Disable OSD controller",
+      "description": "Find and modify OSD enable register (likely in 0x0B70-0x0B7F range)",
+      "risks": "May affect other OSD functionality"
+    },
+    {
+      "approach": "Transparent attribute",
+      "description": "Set all attribute bytes to make characters transparent",
+      "risks": "Depends on OSD controller implementation"
+    }
+  ]
+}

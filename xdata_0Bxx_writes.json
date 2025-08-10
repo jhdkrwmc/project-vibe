@@ -1,0 +1,46 @@
+[
+  {
+    "address": "0x0B77",
+    "file_offset": 2815,
+    "ea": 2812,
+    "value": 1,
+    "context": "OSD enable sequence in function",
+    "function": "sub_AFE",
+    "instruction": "MOVX @DPTR, A (A=0x01, DPTR=0x0B77)",
+    "post_boot": true,
+    "description": "Enables OSD by writing 0x01 to 0x0B77"
+  },
+  {
+    "address": "0x0B76",
+    "file_offset": 2759,
+    "ea": 2756,
+    "value": 1,
+    "context": "OSD enable sequence in function",
+    "function": "sub_AC4",
+    "instruction": "MOVX @DPTR, A (A=0x01, DPTR=0x0B76)",
+    "post_boot": true,
+    "description": "Enables OSD by writing 0x01 to 0x0B76"
+  },
+  {
+    "address": "0x0B77",
+    "file_offset": 1251,
+    "ea": 1235,
+    "value": 1,
+    "context": "OSD enable sequence in function",
+    "function": "sub_4D0",
+    "instruction": "MOVX @DPTR, A (A=0x01, DPTR=0x0B77)",
+    "post_boot": true,
+    "description": "Enables OSD by writing 0x01 to 0x0B77"
+  },
+  {
+    "address": "0x0B75",
+    "file_offset": 17637,
+    "ea": 17637,
+    "value": 1,
+    "context": "OSD enable sequence in initialization path",
+    "function": "sub_4522",
+    "instruction": "MOVX @DPTR, A (A=0x01, DPTR=0x0B75)",
+    "post_boot": false,
+    "description": "Enables OSD by writing 0x01 to 0x0B75 during initialization"
+  }
+]

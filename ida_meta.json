@@ -1,0 +1,28 @@
+{
+  "filename": "firmware_backup - Copy (4).bin",
+  "file_size": 131072,
+  "file_size_hex": "0x20000",
+  "md5": "0a11e105d39b4e7b0955ef853cb6a6aa",
+  "sha256": "316fcae1f07a17e8542a1ff43c5465a01392cecba28be36e8652b862be069f8a",
+  "crc32": "0xc01a762d",
+  "processor_type": "8051",
+  "entry_points": [
+    {"address": "0x0000", "name": "RESET", "size": "0x3"},
+    {"address": "0x0003", "name": "IE0", "size": "0x4"},
+    {"address": "0x000B", "name": "TF0", "size": "0x8"},
+    {"address": "0x0013", "name": "IE1", "size": "0x8"},
+    {"address": "0x001B", "name": "TF1", "size": "0x2"},
+    {"address": "0x0023", "name": "RI0_TI0", "size": "0x8"},
+    {"address": "0x002B", "name": "TF2_EXF2", "size": "0x16"},
+    {"address": "0x0043", "name": "IADC", "size": "0x8"},
+    {"address": "0x004B", "name": "IEX2", "size": "0x8"},
+    {"address": "0x0053", "name": "IEX3", "size": "0x2"},
+    {"address": "0x005B", "name": "IEX4", "size": "0x8"},
+    {"address": "0x0063", "name": "IEX5", "size": "0x8"},
+    {"address": "0x006B", "name": "IEX6", "size": "0x18"},
+    {"address": "0x0083", "name": "RI1_TI1", "size": "0x18"},
+    {"address": "0x009B", "name": "CTF", "size": "0x294"}
+  ],
+  "function_count": 234,
+  "analysis_date": "2025-08-10T20:15:00Z"
+}

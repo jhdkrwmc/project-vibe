@@ -1,0 +1,6 @@
+file: fw_osd_v5_all4_bytesum.bin
+size: 131072
+sha256: d7b3e11c02c4c9bbb3fc9dc85335b40a6b301a4f76be91fbe967ec3ca340ad46
+wordsum16_le(0..1FFE) = 0x1648
+bytesum8(0..1FFE)     = 0xA1
+bytesum8 dup footer written at 0x1FFE..0x1FFF: 0x005F

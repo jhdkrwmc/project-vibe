@@ -1,0 +1,5 @@
+file: fw_osd_v0_min.bin
+size: 131072
+sha256: 68a92f6863bc33f45a1e7514185f44896f8908d8f57c4aa9c357dc503a29fd7c
+wordsum16_le(0..1FFE) = 0x164B
+bytesum8(0..1FFE)     = 0xA4

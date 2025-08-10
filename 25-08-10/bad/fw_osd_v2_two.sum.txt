@@ -1,0 +1,5 @@
+file: fw_osd_v2_two.bin
+size: 131072
+sha256: b80ddf95d2e282bbe3720f75ebea01903bd58b73c629ef97a161bd40a0bdd95b
+wordsum16_le(0..1FFE) = 0x164A
+bytesum8(0..1FFE)     = 0xA3

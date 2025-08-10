@@ -1,0 +1,173 @@
+{
+  "osd_control_registers": [
+    {
+      "address": "0x0B75",
+      "ea": "0x04525",
+      "file_offset": 17637,
+      "value": 1,
+      "instruction": "MOVX @DPTR,A (A=0x01, DPTR=0x0B75)",
+      "function": "sub_4522",
+      "context": "OSD Enable (Main)",
+      "post_boot": false
+    },
+    {
+      "address": "0x0B76",
+      "ea": "0x00AC7",
+      "file_offset": 2759,
+      "value": 1,
+      "instruction": "MOVX @DPTR,A (A=0x01, DPTR=0x0B76)",
+      "function": "sub_AC4",
+      "context": "OSD Control",
+      "post_boot": true
+    },
+    {
+      "address": "0x0B77",
+      "ea": "0x00B01",
+      "file_offset": 2817,
+      "value": 1,
+      "instruction": "MOVX @DPTR,A (A=0x01, DPTR=0x0B77)",
+      "function": "sub_AFE",
+      "context": "OSD Control",
+      "post_boot": true
+    },
+    {
+      "address": "0x0B77",
+      "ea": "0x004D3",
+      "file_offset": 1235,
+      "value": 1,
+      "instruction": "MOVX @DPTR,A (A=0x01, DPTR=0x0B77)",
+      "function": "sub_4D0",
+      "context": "OSD Enable",
+      "post_boot": true
+    }
+  ],
+  "reset_block_writes": [
+    {
+      "address": "0x0BC3",
+      "ea": "0x038F0",
+      "file_offset": 14576,
+      "value": 1,
+      "instruction": "MOVX @DPTR,A (A=0x01, DPTR=0x0BC3)",
+      "function": "Reset_Handler",
+      "context": "Reset Init"
+    },
+    {
+      "address": "0x0BC5",
+      "ea": "0x03907",
+      "file_offset": 14599,
+      "value": "A+1",
+      "instruction": "MOVX @DPTR,A (Increment)",
+      "function": "Reset_Handler",
+      "context": "Reset Counter (MSB)"
+    },
+    {
+      "address": "0x0BC6",
+      "ea": "0x038FF",
+      "file_offset": 14591,
+      "value": "A+1",
+      "instruction": "MOVX @DPTR,A (Increment)",
+      "function": "Reset_Handler",
+      "context": "Reset Counter (LSB)"
+    }
+  ],
+  "other_notable_writes": [
+    {
+      "address": "0x0BA5",
+      "ea": "0x00B1E",
+      "file_offset": 2846,
+      "value": 1,
+      "instruction": "MOVX @DPTR,A (A=0x01, DPTR=0x0BA5)",
+      "function": "sub_AFE",
+      "context": "Unknown"
+    },
+    {
+      "address": "0x0BA6",
+      "ea": "0x00B25",
+      "file_offset": 2853,
+      "value": 1,
+      "instruction": "MOVX @DPTR,A (A=0x01, DPTR=0x0BA6)",
+      "function": "sub_AFE",
+      "context": "Unknown"
+    },
+    {
+      "address": "0x0BA7",
+      "ea": "0x00B2C",
+      "file_offset": 2860,
+      "value": 1,
+      "instruction": "MOVX @DPTR,A (A=0x01, DPTR=0x0BA7)",
+      "function": "sub_AFE",
+      "context": "Unknown"
+    }
+  ],
+  "reset_counter_behavior": {
+    "msb_address": "0x0BC5",
+    "lsb_address": "0x0BC6",
+    "increment_pattern": {
+      "lsb_increment": "On each reset, 0x0BC6 is incremented",
+      "msb_increment": "If 0x0BC6 overflows (0xFF -> 0x00), 0x0BC5 is incremented"
+    },
+    "initialization_asm": [
+      "90 0B C6    MOV DPTR, #0x0BC6",
+      "E0          MOVX A, @DPTR",
+      "04          INC A",
+      "F0          MOVX @DPTR, A    ; Increment LSB",
+      "70 06       JNZ  skip_msb_inc",
+      "90 0B C5    MOV DPTR, #0x0BC5",
+      "E0          MOVX A, @DPTR",
+      "04          INC A",
+      "F0          MOVX @DPTR, A    ; Increment MSB if LSB overflowed"
+    ]
+  },
+  "osd_enable_sequences": {
+    "main_enable": {
+      "ea": "0x04522",
+      "file_offset": 17634,
+      "asm": [
+        "90 0B 75    MOV DPTR, #0x0B75    ; OSD Control Register",
+        "74 01       MOV A, #0x01",
+        "F0          MOVX @DPTR, A         ; Enable OSD"
+      ],
+      "context": "Main OSD enable during initialization"
+    },
+    "secondary_enables": [
+      {
+        "address": "0x0B76",
+        "ea": "0x00AC7",
+        "file_offset": 2759,
+        "function": "sub_AC4"
+      },
+      {
+        "address": "0x0B77",
+        "ea": "0x00B01",
+        "file_offset": 2817,
+        "function": "sub_AFE"
+      },
+      {
+        "address": "0x0B77",
+        "ea": "0x004D3",
+        "file_offset": 1235,
+        "function": "sub_4D0"
+      }
+    ]
+  },
+  "potential_late_disable_targets": [
+    {
+      "address": "0x0B75",
+      "description": "Main OSD Enable",
+      "write_locations": ["0x4522"],
+      "suggested_patch": "Change 0x01 to 0x00 at 0x4525"
+    },
+    {
+      "address": "0x0B76",
+      "description": "Secondary OSD Control",
+      "write_locations": ["0x0AC7"],
+      "suggested_patch": "NOP the MOVX instruction at 0x0AC7"
+    },
+    {
+      "address": "0x0B77",
+      "description": "Tertiary OSD Control",
+      "write_locations": ["0x0B01", "0x04D3"],
+      "suggested_patch": "NOP both MOVX instructions at 0x0B01 and 0x04D3"
+    }
+  ]
+}

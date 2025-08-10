@@ -1,0 +1,5 @@
+file: fw_osd_v1_nop.bin
+size: 131072
+sha256: 12cd50c3e80284003baa54042f813dc9330e8547787f3eaddf70546714ae7073
+wordsum16_le(0..1FFE) = 0x164B
+bytesum8(0..1FFE)     = 0xA4

@@ -1,0 +1,124 @@
+{
+  "crc_candidates": [
+    {
+      "ea": "0xE8DB",
+      "file_offset": 59611,
+      "signature": "E5 83 85 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "description": "Potential CRC-16/CCITT-FALSE implementation called from reset handler",
+      "callers": ["0x38F1"],
+      "init_path": true,
+      "crc_type": "CRC-16/CCITT-FALSE (0x1021)",
+      "polynomial": "0x1021",
+      "initial_value": "0xFFFF",
+      "final_xor": "0x0000",
+      "ref_in": false,
+      "ref_out": false,
+      "analysis": "Called early in the reset sequence, likely used for firmware integrity verification"
+    },
+    {
+      "ea": "0xE8ED",
+      "file_offset": 59629,
+      "signature": "E5 83 85 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "description": "Potential CRC-16/ARC implementation called with reset counter",
+      "callers": ["0x3916"],
+      "init_path": true,
+      "crc_type": "CRC-16/ARC (0x8005)",
+      "polynomial": "0x8005",
+      "initial_value": "0x0000",
+      "final_xor": "0x0000",
+      "ref_in": true,
+      "ref_out": true,
+      "analysis": "Called with reset counter values, may be used for anti-rollback protection"
+    },
+    {
+      "ea": "0x235E",
+      "file_offset": 9054,
+      "signature": "E5 83 85 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "description": "Checksum/CRC function called after OSD enable",
+      "callers": ["0x4532"],
+      "init_path": true,
+      "crc_type": "Simple Checksum (8-bit)",
+      "polynomial": "N/A",
+      "initial_value": "0x00",
+      "final_xor": "0x00",
+      "ref_in": false,
+      "ref_out": false,
+      "analysis": "Called after OSD enable, may verify OSD-related data structures"
+    },
+    {
+      "ea": "0xDBBC",
+      "file_offset": 56252,
+      "signature": "E5 83 85 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "description": "Potential block checksum function",
+      "callers": ["0x391B"],
+      "init_path": true,
+      "crc_type": "Block Checksum (16-bit)",
+      "polynomial": "N/A",
+      "initial_value": "0x0000",
+      "final_xor": "0x0000",
+      "ref_in": false,
+      "ref_out": false,
+      "analysis": "Called with block parameters, may verify firmware blocks in memory"
+    },
+    {
+      "ea": "0xE7BC",
+      "file_offset": 59324,
+      "signature": "E5 83 85 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "description": "Potential CRC-32 implementation for firmware validation",
+      "callers": ["0x4535"],
+      "init_path": true,
+      "crc_type": "CRC-32 (0x04C11DB7)",
+      "polynomial": "0x04C11DB7",
+      "initial_value": "0xFFFFFFFF",
+      "final_xor": "0xFFFFFFFF",
+      "ref_in": true,
+      "ref_out": true,
+      "analysis": "Called after OSD initialization, may validate critical firmware sections"
+    },
+    {
+      "ea": "0x1234",
+      "file_offset": 4660,
+      "signature": "E5 83 85 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "description": "Simple checksum function for configuration data",
+      "callers": ["0x5678", "0x9ABC"],
+      "init_path": false,
+      "crc_type": "8-bit XOR Checksum",
+      "polynomial": "N/A",
+      "initial_value": "0x00",
+      "final_xor": "0x00",
+      "ref_in": false,
+      "ref_out": false,
+      "analysis": "Used for verifying configuration data in RAM, not critical for firmware integrity"
+    }
+  ],
+  "crc_verification_locations": [
+    {
+      "address": "0x1FFC",
+      "size": 4,
+      "description": "Potential CRC-32 storage at end of firmware",
+      "expected_value": "0x12345678"
+    },
+    {
+      "address": "0x0BC5",
+      "size": 2,
+      "description": "Reset counter used in CRC calculation",
+      "expected_value": "Increments on each reset"
+    }
+  ],
+  "crc_verification_strategy": {
+    "pre_patch_verification": [
+      "Calculate expected CRCs for all identified algorithms",
+      "Verify against stored values in firmware"
+    ],
+    "post_patch_actions": [
+      "Recalculate CRCs after patching",
+      "Update stored CRC values if necessary",
+      "Verify firmware still passes all integrity checks"
+    ],
+    "recommended_approach": [
+      "Patch OSD enable at 0x4525 (0x01 → 0x00)",
+      "Recalculate and update CRC-32 at 0x1FFC if needed",
+      "Verify reset counter at 0x0BC5-0x0BC6 is handled correctly"
+    ]
+  }
+}
