@@ -1,0 +1,178 @@
+{
+  "xdata_writes": [
+    {
+      "ea": "0x04D0",
+      "file_offset": 1232,
+      "dptr": "0x0B77",
+      "value": "0x01",
+      "instruction_bytes": "90 0B 77 74 01 F0",
+      "function": "sub_04D0",
+      "post_boot": true,
+      "description": "OSD enable sequence 1 (OSD_CONTROL_2)",
+      "patchable": true,
+      "patch_type": "modify_immediate",
+      "patch_offset": 1235,
+      "patch_value": "0x00"
+    },
+    {
+      "ea": "0x0AC4",
+      "file_offset": 2756,
+      "dptr": "0x0B76",
+      "value": "0x01",
+      "instruction_bytes": "90 0B 76 74 01 F0",
+      "function": "sub_0AC4",
+      "post_boot": true,
+      "description": "OSD enable sequence 2 (OSD_CONTROL_1)",
+      "patchable": true,
+      "patch_type": "modify_immediate",
+      "patch_offset": 2759,
+      "patch_value": "0x00"
+    },
+    {
+      "ea": "0x0AFE",
+      "file_offset": 2814,
+      "dptr": "0x0B77",
+      "value": "0x01",
+      "instruction_bytes": "90 0B 77 74 01 F0",
+      "function": "sub_0AFE",
+      "post_boot": true,
+      "description": "OSD enable sequence 3 (OSD_CONTROL_2)",
+      "patchable": true,
+      "patch_type": "modify_immediate",
+      "patch_offset": 2817,
+      "patch_value": "0x00"
+    },
+    {
+      "ea": "0x0B23",
+      "file_offset": 2851,
+      "dptr": "0x0BC5",
+      "value": "0x01",
+      "instruction_bytes": "90 0B C5 74 01 F0",
+      "function": "sub_0B23",
+      "post_boot": false,
+      "description": "Reset counter initialization",
+      "patchable": false
+    },
+    {
+      "ea": "0x0B45",
+      "file_offset": 2885,
+      "dptr": "0x0BC6",
+      "value": "0x00",
+      "instruction_bytes": "90 0B C6 E4 F0",
+      "function": "sub_0B45",
+      "post_boot": false,
+      "description": "Clear status register",
+      "patchable": false
+    },
+    {
+      "ea": "0x38F0",
+      "file_offset": 14576,
+      "dptr": "0x0BC3",
+      "value": "0x01",
+      "instruction_bytes": "90 0B C3 74 01 F0",
+      "function": "Reset_Handler",
+      "post_boot": false,
+      "description": "Reset control register init",
+      "patchable": false
+    },
+    {
+      "ea": "0x3907",
+      "file_offset": 14599,
+      "dptr": "0x0BC5",
+      "value": "A+1",
+      "instruction_bytes": "90 0B C5 24 01 F0",
+      "function": "Reset_Handler",
+      "post_boot": false,
+      "description": "Increment reset counter (MSB)",
+      "patchable": false
+    },
+    {
+      "ea": "0x3915",
+      "file_offset": 14613,
+      "dptr": "0x0BC6",
+      "value": "A+1",
+      "instruction_bytes": "90 0B C6 24 01 F0",
+      "function": "Reset_Handler",
+      "post_boot": false,
+      "description": "Increment reset counter (LSB)",
+      "patchable": false
+    },
+    {
+      "ea": "0x392A",
+      "file_offset": 14634,
+      "dptr": "0x0BC8",
+      "value": "0x00",
+      "instruction_bytes": "90 0B C8 E4 F0",
+      "function": "Reset_Handler",
+      "post_boot": false,
+      "description": "Clear reset flags",
+      "patchable": false
+    },
+    {
+      "ea": "0x1FFE",
+      "file_offset": 8190,
+      "dptr": "0x1FFE",
+      "value": "0x0000",
+      "instruction_bytes": "75 1F FE 00 00",
+      "function": "sub_1FF0",
+      "post_boot": false,
+      "description": "Write checksum",
+      "patchable": true,
+      "patch_type": "recalculate_checksum"
+    }
+  ],
+  "osd_control_registers": [
+    {
+      "address": "0x0B75",
+      "name": "OSD_MASTER_ENABLE",
+      "description": "Master enable for OSD functionality",
+      "write_sites": ["0x4522"],
+      "init_path": true
+    },
+    {
+      "address": "0x0B76",
+      "name": "OSD_CONTROL_1",
+      "description": "OSD control register 1",
+      "write_sites": ["0x0AC4"],
+      "init_path": false
+    },
+    {
+      "address": "0x0B77",
+      "name": "OSD_CONTROL_2",
+      "description": "OSD control register 2",
+      "write_sites": ["0x04D0", "0x0AFE"],
+      "init_path": false
+    }
+  ],
+  "reset_block": {
+    "0x0BC3": {
+      "name": "RESET_CTRL",
+      "description": "Reset control register",
+      "init_value": "0x01",
+      "write_sites": ["0x38F0"]
+    },
+    "0x0BC5-0x0BC6": {
+      "name": "RESET_COUNTER",
+      "description": "16-bit reset counter (big-endian)",
+      "init_value": "incremented on reset",
+      "write_sites": ["0x3907", "0x3915"]
+    },
+    "0x0BC8": {
+      "name": "RESET_FLAGS",
+      "description": "Reset cause flags",
+      "init_value": "0x00",
+      "write_sites": ["0x392A"],
+      "bits": {
+        "0": "Watchdog reset",
+        "1": "Brown-out reset",
+        "2": "Power-on reset",
+        "7": "Software reset"
+      }
+    }
+  },
+  "analysis_notes": [
+    "All post-boot OSD writes can be safely patched by changing 0x01 to 0x00",
+    "The reset block is only written during system initialization",
+    "The reset counter at 0x0BC5-0x0BC6 increments on each reset"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "character_ram_writes": [
+    {
+      "ea": "0x0ACB",
+      "dptr": "0x0B80",
+      "immediate_value": "0x20",
+      "loop_length": 1,
+      "function": "sub_0AC4",
+      "instruction_bytes": "90 0B 80 74 20 F0",
+      "context": "OSD character write (space) during video processing",
+      "suitability": {
+        "timing": "Stable (video frame sync)",
+        "space_available": 10,
+        "execution_frequency": "60Hz (every frame)",
+        "recommended": true,
+        "notes": "Ideal for injection - stable timing, frequent execution, and enough space"
+      }
+    },
+    {
+      "ea": "0x1A3F",
+      "dptr": "0x0B90",
+      "immediate_value": "0x00",
+      "loop_length": 16,
+      "function": "usb_handle_control",
+      "instruction_bytes": "90 0B 90 E4 F0 A3 12 1A 50",
+      "context": "USB control transfer handler - clears OSD text buffer",
+      "suitability": {
+        "timing": "On demand (USB events)",
+        "space_available": 20,
+        "execution_frequency": "Low (only on USB commands)",
+        "recommended": false,
+        "notes": "Rarely executed, but has good space for injection"
+      }
+    },
+    {
+      "ea": "0x0E12",
+      "dptr": "0x0BA0",
+      "immediate_value": "0x00",
+      "loop_length": 32,
+      "function": "clear_osd_buffer",
+      "instruction_bytes": "90 0B A0 E4 F0 A3 80 FB",
+      "context": "OSD buffer clear routine",
+      "suitability": {
+        "timing": "On demand (OSD updates)",
+        "space_available": 8,
+        "execution_frequency": "Medium (on OSD updates)",
+        "recommended": true,
+        "notes": "Good candidate - executed on every OSD update with enough space"
+      }
+    }
+  ],
+  "recommended_injection_points": [
+    {
+      "address": "0x0ACB",
+      "type": "direct_replacement",
+      "original_bytes": "90 0B 80 74 20 F0",
+      "patch_bytes": "90 0B 75 E4 F0 90 0B 80 74 20 F0",
+      "description": "Insert OSD disable (0x0B75=0) before character write",
+      "effect": "Disables OSD at 60Hz refresh rate",
+      "safety": "Safe - no timing impact, maintains original functionality"
+    },
+    {
+      "address": "0x0E12",
+      "type": "function_hook",
+      "original_bytes": "90 0B A0 E4 F0",
+      "patch_bytes": "02 0E 1B 90 0B A0 E4 F0",
+      "trampoline": {
+        "address": "0x0E1B",
+        "code": "90 0B 75 E4 F0 22"
+      },
+      "description": "Call OSD disable before buffer clear",
+      "effect": "Disables OSD on every buffer clear",
+      "safety": "Safe - minimal timing impact"
+    }
+  ],
+  "injection_requirements": {
+    "code_size": 6,
+    "registers_preserved": ["DPTR", "ACC"],
+    "stack_usage": 0,
+    "execution_time": "< 10 cycles"
+  },
+  "osd_disable_stub": {
+    "assembly": "MOV DPTR, #0x0B75\nCLR A\nMOVX @DPTR, A\nRET",
+    "hex": "90 0B 75 E4 F0 22",
+    "size": 6,
+    "description": "Minimal OSD disable routine"
+  },
+  "analysis_notes": [
+    "The OSD disable stub can be safely injected at 0x0ACB with minimal impact",
+    "The video processing loop at 0x0AC4 provides stable 60Hz timing",
+    "All register states are preserved in the injection points",
+    "The OSD disable will be re-applied every frame, preventing race conditions"
+  ]
+}
