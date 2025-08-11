@@ -1,0 +1,4 @@
+file: fw_osd_v12_nop_0ac4.bin
+size: 131072
+sha256: bd691d73acf2848edc88cfa827d9793c68c9366c6cc2d1bc00e7b420b5e200a2
+[OK] 000AC9: F0->00 (NOP MOVX)

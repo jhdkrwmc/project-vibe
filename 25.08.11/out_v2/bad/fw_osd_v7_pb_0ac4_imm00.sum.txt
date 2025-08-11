@@ -1,0 +1,4 @@
+file: fw_osd_v7_pb_0ac4_imm00.bin
+size: 131072
+sha256: 57c3693ffc249dd2e93eb3452b2366be2475ccca89cfd847ed6f4b520b65130a
+[OK] 000AC8: 01->00

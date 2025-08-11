@@ -1,0 +1,4 @@
+file: fw_osd_v6_pb_04d0_imm00.bin
+size: 131072
+sha256: 3fbc27bb0dd08d4c142a7f2fcc1b9493d86c4f1b07711d646f92542674f6f1ad
+[OK] 0004D4: 01->00

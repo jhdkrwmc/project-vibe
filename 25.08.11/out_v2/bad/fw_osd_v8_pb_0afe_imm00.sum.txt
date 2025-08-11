@@ -1,0 +1,4 @@
+file: fw_osd_v8_pb_0afe_imm00.bin
+size: 131072
+sha256: 986d29e33e7d8c2a5a07ba9407a63684eab2e59ef5ba063c8d42879f02f54ce1
+[OK] 000B02: 01->00

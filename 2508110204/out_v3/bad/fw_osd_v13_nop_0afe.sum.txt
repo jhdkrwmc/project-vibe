@@ -1,0 +1,4 @@
+file: fw_osd_v13_nop_0afe.bin
+size: 131072
+sha256: a00a2d73f08d249fee994fcae451f99e002f18c26855f7214360d149ce0b2070
+[OK] 000B03: F0->00 (NOP MOVX)

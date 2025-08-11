@@ -1,0 +1,4 @@
+file: fw_osd_v11_nop_04d0.bin
+size: 131072
+sha256: b892ff2c0b91a3326dc41cfa15a788b1837895ef1c0b355e1387881acb55dcbc
+[OK] 0004D5: F0->00 (NOP MOVX)

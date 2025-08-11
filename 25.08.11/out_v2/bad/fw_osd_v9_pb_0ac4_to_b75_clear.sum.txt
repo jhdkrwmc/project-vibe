@@ -1,0 +1,4 @@
+file: fw_osd_v9_pb_0ac4_to_b75_clear.bin
+size: 131072
+sha256: 2cc27665f38854f36eea7ac888709867cfe4ac4218125135dfb560448c7581b9
+[OK] 000AC4: dptr 76->75; 000AC8: 01->00

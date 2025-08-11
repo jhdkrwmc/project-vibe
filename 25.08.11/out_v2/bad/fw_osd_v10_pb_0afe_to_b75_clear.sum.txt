@@ -1,0 +1,4 @@
+file: fw_osd_v10_pb_0afe_to_b75_clear.bin
+size: 131072
+sha256: e2d4af0a8221268132c79bb57d50465d5a2910dc61ef15fab5688f5e9298a797
+[OK] 000AFE: dptr 77->75; 000B02: 01->00
