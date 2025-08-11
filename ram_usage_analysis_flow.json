@@ -1,0 +1,81 @@
+{
+  "ranges": [
+    {
+      "start": "0x0B00",
+      "end": "0x0BFF"
+    }
+  ],
+  "items": [
+    {
+      "func_ea": "0x9B",
+      "func_name": "CTF",
+      "dptr_set_ea": "0x1CC",
+      "movx_ea": "0x1CF",
+      "target": "0x0BA5",
+      "access": "read",
+      "imm_val": null,
+      "context32": "90 0B A5 E0 70 03 02 A4 BD 90 0B 77 E0 14 60 3C 24 F0 70 03 02 A3 2F 24 FE 70 03 02 A3 E0 24 FA",
+      "bytes_movx": "09 90 0B A5 E0 70 03 02"
+    },
+    {
+      "func_ea": "0x9B",
+      "func_name": "CTF",
+      "dptr_set_ea": "0x1D5",
+      "movx_ea": "0x1D8",
+      "target": "0x0B77",
+      "access": "read",
+      "imm_val": null,
+      "context32": "90 0B 77 E0 14 60 3C 24 F0 70 03 02 A3 2F 24 FE 70 03 02 A3 E0 24 FA 70 03 02 A4 21 14 70 03 02",
+      "bytes_movx": "BD 90 0B 77 E0 14 60 3C"
+    },
+    {
+      "func_ea": "0x9B",
+      "func_name": "CTF",
+      "dptr_set_ea": "0x23E",
+      "movx_ea": "0x241",
+      "target": "0x0B76",
+      "access": "read",
+      "imm_val": null,
+      "context32": "90 0B 76 E0 FF B4 01 08 90 11 55 E0 54 CF 80 17 EF B4 81 08 12 AA 04 44 02 F0 80 26 90 0B 76 E0",
+      "bytes_movx": "6A 90 0B 76 E0 FF B4 01"
+    },
+    {
+      "func_ea": "0x9B",
+      "func_name": "CTF",
+      "dptr_set_ea": "0x25A",
+      "movx_ea": "0x25D",
+      "target": "0x0B76",
+      "access": "read",
+      "imm_val": null,
+      "context32": "90 0B 76 E0 FF B4 84 06 12 AB 29 F0 80 14 EF 64 85 70 13 12 AB 1D 30 E0 05 12 AB 68 80 04 E0 54",
+      "bytes_movx": "26 90 0B 76 E0 FF B4 84"
+    },
+    {
+      "func_ea": "0x9B",
+      "func_name": "CTF",
+      "dptr_set_ea": "0x283",
+      "movx_ea": "0x286",
+      "target": "0x0B76",
+      "access": "read",
+      "imm_val": null,
+      "context32": "90 0B 76 E0 64 84 60 03 12 AA 9B 90 10 0E E0 54 F7 F0 90 08 66 E0 FF A3 E0 90 0A 9A CF F0 A3 EF",
+      "bytes_movx": "8A 90 0B 76 E0 64 84 60"
+    },
+    {
+      "func_ea": "0x9B",
+      "func_name": "CTF",
+      "dptr_set_ea": "0x326",
+      "movx_ea": "0x32B",
+      "target": "0x0B77",
+      "access": "write",
+      "imm_val": "0x86",
+      "context32": "90 0B 77 74 86 F0 02 A4 A0 12 AB 05 60 1B 90 10 0E E0 44 08 F0 90 0B AC 12 14 D9 00 00 00 00 12",
+      "bytes_movx": "0B 77 74 86 F0 02 A4 A0"
+    }
+  ],
+  "counts": {
+    "total": 6,
+    "writes": 1,
+    "reads": 5
+  }
+}

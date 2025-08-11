@@ -1,0 +1,654 @@
+{
+  "ram_23": {
+    "address": "0x23",
+    "total_references": 1,
+    "references_by_function": {
+      "IEX6": [
+        {
+          "ea": "0x6D",
+          "disasm": "add     A, RAM_23",
+          "op_type": "direct"
+        }
+      ]
+    }
+  },
+  "ram_24": {
+    "address": "0x24",
+    "total_references": 67,
+    "bit_usage": {
+      "3": [
+        {
+          "ea": "0x19",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x23",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x25",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x27",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x29",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x2B",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x2D",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x2F",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x31",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x33",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x35",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x37",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x39",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x3B",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x3D",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x43",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x45",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x47",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x49",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x4B",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x5B",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x5D",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x5F",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x63",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x65",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x67",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x6F",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x71",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x79",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x7F",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x81",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x83",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x85",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x87",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x89",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x8B",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x8D",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x8F",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x91",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x93",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x95",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x97",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x99",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x9B",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x9D",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x9F",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xA1",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xA3",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xA5",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xA7",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC01D",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC021",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC023",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC025",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC027",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC029",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC02B",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC02D",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC02F",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC031",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC033",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC035",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC037",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC039",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC03B",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xC03D",
+          "disasm": "cpl     RAM_24.3"
+        }
+      ],
+      "4": [
+        {
+          "ea": "0xC3AD",
+          "disasm": "setb    RAM_24.4"
+        }
+      ]
+    },
+    "references_by_function": {
+      "IE1": [
+        {
+          "ea": "0x19",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        }
+      ],
+      "RI0_TI0": [
+        {
+          "ea": "0x23",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x25",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x27",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x29",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        }
+      ],
+      "TF2_EXF2": [
+        {
+          "ea": "0x2B",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x2D",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x2F",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x31",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x33",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x35",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x37",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x39",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x3B",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x3D",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        }
+      ],
+      "IADC": [
+        {
+          "ea": "0x43",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x45",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x47",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x49",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        }
+      ],
+      "IEX2": [
+        {
+          "ea": "0x4B",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        }
+      ],
+      "IEX4": [
+        {
+          "ea": "0x5B",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x5D",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x5F",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        }
+      ],
+      "IEX5": [
+        {
+          "ea": "0x63",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x65",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x67",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        }
+      ],
+      "IEX6": [
+        {
+          "ea": "0x6F",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x71",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x79",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x7F",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x81",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        }
+      ],
+      "RI1_TI1": [
+        {
+          "ea": "0x83",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x85",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x87",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x89",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x8B",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x8D",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x8F",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x91",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x93",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x95",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x97",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x99",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        }
+      ],
+      "CTF": [
+        {
+          "ea": "0x9B",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x9D",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0x9F",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xA1",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xA3",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xA5",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xA7",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        }
+      ],
+      "code_C01C": [
+        {
+          "ea": "0xC01D",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC021",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC023",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC025",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC027",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC029",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC02B",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC02D",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC02F",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC031",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC033",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC035",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC037",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC039",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC03B",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        },
+        {
+          "ea": "0xC03D",
+          "disasm": "cpl     RAM_24.3",
+          "op_type": "bit"
+        }
+      ],
+      "crc32_combine64_0": [
+        {
+          "ea": "0xC3AD",
+          "disasm": "setb    RAM_24.4",
+          "op_type": "bit"
+        }
+      ]
+    }
+  }
+}

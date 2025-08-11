@@ -1,0 +1,77 @@
+{
+  "start_ea": "0x6B",
+  "end_ea": "0x83",
+  "size": 24,
+  "name": "IEX6",
+  "interrupt_info": "IEX6",
+  "calls": [],
+  "basic_blocks": [
+    {
+      "start_ea": "0x6B",
+      "end_ea": "0x83",
+      "instructions": [
+        {
+          "ea": "0x6B",
+          "disasm": "xch     A, R6"
+        },
+        {
+          "ea": "0x6C",
+          "disasm": "movx    @R0, A"
+        },
+        {
+          "ea": "0x6D",
+          "disasm": "add     A, RAM_23"
+        },
+        {
+          "ea": "0x6F",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x71",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x73",
+          "disasm": "cpl     B.2; B-Register"
+        },
+        {
+          "ea": "0x75",
+          "disasm": "mov     RESERVED0085, CML6; RESERVED"
+        },
+        {
+          "ea": "0x78",
+          "disasm": "rl      A"
+        },
+        {
+          "ea": "0x79",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x7B",
+          "disasm": "cpl     P5.5; Port 5"
+        },
+        {
+          "ea": "0x7D",
+          "disasm": "addc    A, R6"
+        },
+        {
+          "ea": "0x7E",
+          "disasm": "rl      A"
+        },
+        {
+          "ea": "0x7F",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x81",
+          "disasm": "cpl     RAM_24.3"
+        }
+      ]
+    },
+    {
+      "start_ea": "0x83",
+      "end_ea": "0x83",
+      "instructions": []
+    }
+  ]
+}

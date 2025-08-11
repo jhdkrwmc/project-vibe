@@ -1,0 +1,5131 @@
+=== Integrity Check Analysis ===
+
+Total candidates analyzed: 908
+Interesting candidates found: 466
+
+
+--- Candidate 1: CTF @ 0x1C4 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  01C4: movx    @DPTR, A
+  01C5: mov     DPTR, #0xF09
+  01C8: movx    A, @DPTR
+  01C9: mov     R7, A
+  01CA: jnz     code_1D5
+
+--- Candidate 2: CTF @ 0x1C8 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  01C8: movx    A, @DPTR
+  01C9: mov     R7, A
+  01CA: jnz     code_1D5
+  01CC: mov     DPTR, #0xBA5
+  01CF: movx    A, @DPTR
+
+--- Candidate 3: CTF @ 0x1CF ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  01CF: movx    A, @DPTR
+  01D0: jnz     code_1D5
+  01D2: ljmp    code_A4BC+1
+  01D5: mov     DPTR, #0xB77
+  01D8: movx    A, @DPTR
+
+--- Candidate 4: code_D83 @ 0xDF8 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  0DF8: movx    A, @DPTR
+  0DF9: subb    A, R6
+  0DFA: jnc     code_E04
+  0DFC: mov     DPTR, #0xD26
+  0DFF: movx    A, @DPTR
+
+--- Candidate 5: code_D83 @ 0xE0E ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  0E0E: movx    A, @DPTR
+  0E0F: subb    A, #0
+  0E11: jc      code_E44
+  0E13: mov     DPTR, #0xD26
+  0E16: movx    A, @DPTR
+
+--- Candidate 6: code_D83 @ 0xE25 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  0E25: movx    A, @DPTR
+  0E26: subb    A, #0
+  0E28: mov     DPTR, #0xD26
+  0E2B: movx    A, @DPTR
+  0E2C: jnc     code_E3A
+
+--- Candidate 7: code_D83 @ 0xE28 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  0E28: mov     DPTR, #0xD26
+  0E2B: movx    A, @DPTR
+  0E2C: jnc     code_E3A
+  0E2E: add     A, #0x80
+  0E30: movx    @DPTR, A
+
+--- Candidate 8: code_D83 @ 0xE2B ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  0E2B: movx    A, @DPTR
+  0E2C: jnc     code_E3A
+  0E2E: add     A, #0x80
+  0E30: movx    @DPTR, A
+  0E31: mov     DPTR, #0xD25
+
+--- Candidate 9: code_D83 @ 0xE2C ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  0E2C: jnc     code_E3A
+  0E2E: add     A, #0x80
+  0E30: movx    @DPTR, A
+  0E31: mov     DPTR, #0xD25
+  0E34: movx    A, @DPTR
+
+--- Candidate 10: sub_FA7 @ 0xFA7 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  0FA7: movx    @DPTR, A
+  0FA8: ret
+  100A: lcall   code_B0CB
+  100D: jnc     code_103F
+  100F: movx    @DPTR, A
+
+--- Candidate 11: code_100A @ 0x100D ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  100D: jnc     code_103F
+  100F: movx    @DPTR, A
+  1010: inc     DPTR
+  1011: mov     A, #0xCD
+  1013: movx    @DPTR, A
+
+--- Candidate 12: code_11B7 @ 0x122E ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  122E: movx    A, @DPTR
+  122F: orl     A, #1
+  1231: movx    @DPTR, A
+  1232: ret
+  14A8: jnz     code_14CB
+
+--- Candidate 13: code_14D9 @ 0x1510 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  1510: jc      code_151A
+  1512: mov     DPTR, #0x1154
+  1515: movx    A, @DPTR
+  1516: orl     A, #2
+  1518: movx    @DPTR, A
+
+--- Candidate 14: CTF @ 0xA4D1 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  A4D1: mov     DPTR, #0xF11
+  A4D4: movx    A, @DPTR
+  A4D5: jc      code_A4DF
+  A4D7: lcall   code_B3CA
+  A4DA: movx    A, @DPTR
+
+--- Candidate 15: CTF @ 0xA4D4 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  A4D4: movx    A, @DPTR
+  A4D5: jc      code_A4DF
+  A4D7: lcall   code_B3CA
+  A4DA: movx    A, @DPTR
+  A4DB: inc     A
+
+--- Candidate 16: CTF @ 0xA4D5 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  A4D5: jc      code_A4DF
+  A4D7: lcall   code_B3CA
+  A4DA: movx    A, @DPTR
+  A4DB: inc     A
+  A4DC: movx    @DPTR, A
+
+--- Candidate 17: code_A4FA @ 0xA7D2 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  A7D2: jc      code_A801
+  A7D4: inc     DPTR
+  A7D5: movx    A, @DPTR
+  A7D6: dec     A
+  A7D7: movx    @DPTR, A
+
+--- Candidate 18: code_A4FA @ 0xA84E ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  A84E: lcall   code_B3A6
+  A851: movx    A, @DPTR
+  A852: jnz     code_A8A3
+  A854: mov     DPTR, #0xF11
+  A857: movx    A, @DPTR
+
+--- Candidate 19: code_A4FA @ 0xA851 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  A851: movx    A, @DPTR
+  A852: jnz     code_A8A3
+  A854: mov     DPTR, #0xF11
+  A857: movx    A, @DPTR
+  A858: mov     R7, A
+
+--- Candidate 20: code_A4FA @ 0xA87E ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  A87E: movx    A, @DPTR
+  A87F: mov     R7, A
+  A880: lcall   code_B4D0
+  A883: movx    A, @DPTR
+  A884: jnz     code_A88C
+
+--- Candidate 21: code_A4FA @ 0xAA03 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AA03: movx    A, @DPTR
+  AA04: xrl     A, #1
+  AA06: jnz     code_AA4E
+  AA08: mov     DPTR, #0xF11
+  AA0B: movx    A, @DPTR
+
+--- Candidate 22: code_A4FA @ 0xAA06 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AA06: jnz     code_AA4E
+  AA08: mov     DPTR, #0xF11
+  AA0B: movx    A, @DPTR
+  AA0C: lcall   code_B3A4
+  AA0F: movx    A, @DPTR
+
+--- Candidate 23: code_A4FA @ 0xAA08 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AA08: mov     DPTR, #0xF11
+  AA0B: movx    A, @DPTR
+  AA0C: lcall   code_B3A4
+  AA0F: movx    A, @DPTR
+  AA10: jnz     code_AA4E
+
+--- Candidate 24: code_A4FA @ 0xAA0B ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AA0B: movx    A, @DPTR
+  AA0C: lcall   code_B3A4
+  AA0F: movx    A, @DPTR
+  AA10: jnz     code_AA4E
+  AA12: mov     A, #0x65 ; 'e'
+
+--- Candidate 25: code_AA2B @ 0xAA35 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AA35: jnc     code_AA44
+  AA37: mov     DPTR, #0x52F
+  AA3A: movx    A, @DPTR
+  AA3B: add     A, #0xFD
+  AA3D: movx    @DPTR, A
+
+--- Candidate 26: code_AA7E @ 0xAAE9 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AAE9: jnc     code_AB00
+  AAEB: mov     DPTR, #0xF11
+  AAEE: movx    A, @DPTR
+  AAEF: lcall   code_B321
+  AAF2: movx    A, @DPTR
+
+--- Candidate 27: code_AB13 @ 0xAB16 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AB16: jnc     code_AB72
+  AB18: mov     DPTR, #0xF11
+  AB1B: movx    A, @DPTR
+  AB1C: lcall   code_B321
+  AB1F: movx    A, @DPTR
+
+--- Candidate 28: code_AB13 @ 0xAB1B ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AB1B: movx    A, @DPTR
+  AB1C: lcall   code_B321
+  AB1F: movx    A, @DPTR
+  AB20: xrl     A, #1
+  AB22: jnz     code_AB72
+
+--- Candidate 29: code_AB13 @ 0xAB1F ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AB1F: movx    A, @DPTR
+  AB20: xrl     A, #1
+  AB22: jnz     code_AB72
+  AB24: mov     DPTR, #0x52F
+  AB27: movx    A, @DPTR
+
+--- Candidate 30: code_AB13 @ 0xAB22 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AB22: jnz     code_AB72
+  AB24: mov     DPTR, #0x52F
+  AB27: movx    A, @DPTR
+  AB28: inc     A
+  AB29: movx    @DPTR, A
+
+--- Candidate 31: code_AB5A @ 0xAB5D ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AB5D: mov     DPTR, #0x52F
+  AB60: movx    A, @DPTR
+  AB61: jnc     code_AB67
+  AB63: inc     A
+  AB64: movx    @DPTR, A
+
+--- Candidate 32: code_AB5A @ 0xAB60 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AB60: movx    A, @DPTR
+  AB61: jnc     code_AB67
+  AB63: inc     A
+  AB64: movx    @DPTR, A
+  AB65: sjmp    code_AB6A
+
+--- Candidate 33: code_AB5A @ 0xAB75 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AB75: movx    A, @DPTR
+  AB76: mov     R7, A
+  AB77: lcall   code_B321
+  AB7A: movx    A, @DPTR
+  AB7B: jnz     code_ABA7
+
+--- Candidate 34: code_AB5A @ 0xAB77 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AB77: lcall   code_B321
+  AB7A: movx    A, @DPTR
+  AB7B: jnz     code_ABA7
+  AB7D: mov     DPTR, #0xF11
+  AB80: movx    A, @DPTR
+
+--- Candidate 35: code_AB5A @ 0xAB7A ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AB7A: movx    A, @DPTR
+  AB7B: jnz     code_ABA7
+  AB7D: mov     DPTR, #0xF11
+  AB80: movx    A, @DPTR
+  AB81: mov     R6, A
+
+--- Candidate 36: code_AB91 @ 0xAC33 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AC33: jnc     code_AC39
+  AC35: inc     DPTR
+  AC36: movx    A, @DPTR
+  AC37: inc     A
+  AC38: movx    @DPTR, A
+
+--- Candidate 37: code_AB91 @ 0xAC4E ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AC4E: jnc     code_AC53
+  AC50: mov     A, #0xA
+  AC52: movx    @DPTR, A
+  AC53: mov     DPTR, #0xF11
+  AC56: movx    A, @DPTR
+
+--- Candidate 38: code_AB91 @ 0xAC53 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AC53: mov     DPTR, #0xF11
+  AC56: movx    A, @DPTR
+  AC57: lcall   code_B365
+  AC5A: movx    A, @DPTR
+  AC5B: jnz     code_AC7A
+
+--- Candidate 39: code_AB91 @ 0xAC56 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AC56: movx    A, @DPTR
+  AC57: lcall   code_B365
+  AC5A: movx    A, @DPTR
+  AC5B: jnz     code_AC7A
+  AC5D: mov     DPTR, #0xF11
+
+--- Candidate 40: code_AB91 @ 0xAC57 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AC57: lcall   code_B365
+  AC5A: movx    A, @DPTR
+  AC5B: jnz     code_AC7A
+  AC5D: mov     DPTR, #0xF11
+  AC60: movx    A, @DPTR
+
+--- Candidate 41: code_AB91 @ 0xAC5A ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AC5A: movx    A, @DPTR
+  AC5B: jnz     code_AC7A
+  AC5D: mov     DPTR, #0xF11
+  AC60: movx    A, @DPTR
+  AC61: mov     R7, A
+
+--- Candidate 42: code_AB91 @ 0xACBB ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  ACBB: jc      code_ACC4
+  ACBD: mov     DPTR, #0x5C9
+  ACC0: movx    A, @DPTR
+  ACC1: orl     A, #0x10
+  ACC3: movx    @DPTR, A
+
+--- Candidate 43: code_AB91 @ 0xACC0 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  ACC0: movx    A, @DPTR
+  ACC1: orl     A, #0x10
+  ACC3: movx    @DPTR, A
+  ACC4: ret
+  AD42: jc      code_AD50
+
+--- Candidate 44: code_C84 @ 0xAD9B ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AD9B: jc      code_ADA8
+  AD9D: movx    @DPTR, A
+  AD9E: inc     DPTR
+  AD9F: mov     A, #0xD0
+  ADA1: movx    @DPTR, A
+
+--- Candidate 45: code_AF1B @ 0xAF1E ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AF1E: movx    A, @DPTR
+  AF1F: subb    A, #5
+  AF21: mov     DPTR, #0x1494
+  AF24: movx    A, @DPTR
+  AF25: jc      code_AF36
+
+--- Candidate 46: code_AF1B @ 0xAF24 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AF24: movx    A, @DPTR
+  AF25: jc      code_AF36
+  AF27: lcall   code_BBC5
+  AF2A: orl     A, #8
+  AF2C: movx    @DPTR, A
+
+--- Candidate 47: code_AF1B @ 0xAF25 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  AF25: jc      code_AF36
+  AF27: lcall   code_BBC5
+  AF2A: orl     A, #8
+  AF2C: movx    @DPTR, A
+  AF2D: movx    A, @DPTR
+
+--- Candidate 48: code_B027 @ 0xB050 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  B050: movx    A, @DPTR
+  B051: lcall   code_BBA2
+  B054: jnz     code_B07D
+  B056: mov     DPTR, #0xB08
+  B059: movx    A, @DPTR
+
+--- Candidate 49: code_B0CB @ 0xB0CE ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  B0CE: mov     DPTR, #0xB08
+  B0D1: movx    A, @DPTR
+  B0D2: jnz     code_B0EE
+  B0D4: mov     DPTR, #0xAF9
+  B0D7: movx    A, @DPTR
+
+--- Candidate 50: code_B0CB @ 0xB0D1 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  B0D1: movx    A, @DPTR
+  B0D2: jnz     code_B0EE
+  B0D4: mov     DPTR, #0xAF9
+  B0D7: movx    A, @DPTR
+  B0D8: mov     R7, A
+
+--- Candidate 51: code_B932 @ 0xB9BA ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  B9BA: movx    A, @DPTR
+  B9BB: cpl     A
+  B9BC: jnz     code_B9C1
+  B9BE: inc     DPTR
+  B9BF: movx    A, @DPTR
+
+--- Candidate 52: code_B932 @ 0xBA5A ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  BA5A: movx    @DPTR, A
+  BA5B: ljmp    code_B9CB
+  BA5E: mov     DPTR, #0x54F
+  BA61: movx    A, @DPTR
+  BA62: jnz     code_BA79
+
+--- Candidate 53: code_B932 @ 0xBA61 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  BA61: movx    A, @DPTR
+  BA62: jnz     code_BA79
+  BA64: clr     C
+  BA65: mov     DPTR, #0x529
+  BA68: movx    A, @DPTR
+
+--- Candidate 54: code_BD78 @ 0xBDD4 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  BDD4: jz      code_BDDA
+  BDD6: inc     DPTR
+  BDD7: movx    A, @DPTR
+  BDD8: inc     A
+  BDD9: movx    @DPTR, A
+
+--- Candidate 55: code_BE61 @ 0xBE69 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  BE69: movx    @DPTR, A
+  BE6A: sjmp    code_BE8D
+  BE6C: mov     DPTR, #0xF15
+  BE6F: movx    A, @DPTR
+  BE70: jnz     code_BE8D
+
+--- Candidate 56: code_BF63 @ 0xBF64 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  BF64: anl     A, #0xF
+  BF66: mov     DPTR, #0xB08
+  BF69: movx    @DPTR, A
+  BF6A: jz      code_BF7E
+  BF6C: movx    A, @DPTR
+
+--- Candidate 57: code_BF63 @ 0xBF66 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  BF66: mov     DPTR, #0xB08
+  BF69: movx    @DPTR, A
+  BF6A: jz      code_BF7E
+  BF6C: movx    A, @DPTR
+  BF6D: mov     R5, A
+
+--- Candidate 58: code_BF63 @ 0xBF69 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  BF69: movx    @DPTR, A
+  BF6A: jz      code_BF7E
+  BF6C: movx    A, @DPTR
+  BF6D: mov     R5, A
+  BF6E: clr     C
+
+--- Candidate 59: code_C655 @ 0xC69C ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  C69C: mov     DPTR, #0xBD6
+  C69F: movx    @DPTR, A
+  C6A0: mov     DPTR, #0xBFC
+  C6A3: movx    A, @DPTR
+  C6A4: jz      code_C6D6
+
+--- Candidate 60: code_C655 @ 0xC69F ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  C69F: movx    @DPTR, A
+  C6A0: mov     DPTR, #0xBFC
+  C6A3: movx    A, @DPTR
+  C6A4: jz      code_C6D6
+  C6A6: clr     A
+
+--- Candidate 61: code_C655 @ 0xC6A3 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  C6A3: movx    A, @DPTR
+  C6A4: jz      code_C6D6
+  C6A6: clr     A
+  C6A7: mov     DPTR, #0xBF3
+  C6AA: movx    @DPTR, A
+
+--- Candidate 62: code_C655 @ 0xC6B8 ---
+Memory operations: 2
+Conditional branches: 2
+
+Disassembly:
+  C6B8: movx    A, @DPTR
+  C6B9: jnz     code_C6D1
+  C6BB: lcall   code_B319
+  C6BE: jz      code_C6CE
+  C6C0: movx    A, @DPTR
+
+--- Candidate 63: code_C655 @ 0xC6BE ---
+Memory operations: 2
+Conditional branches: 2
+
+Disassembly:
+  C6BE: jz      code_C6CE
+  C6C0: movx    A, @DPTR
+  C6C1: xrl     A, #0x83
+  C6C3: jz      code_C6CE
+  C6C5: movx    A, @DPTR
+
+--- Candidate 64: code_C655 @ 0xC6C0 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  C6C0: movx    A, @DPTR
+  C6C1: xrl     A, #0x83
+  C6C3: jz      code_C6CE
+  C6C5: movx    A, @DPTR
+  C6C6: xrl     A, #0x82
+
+--- Candidate 65: code_C655 @ 0xC6C3 ---
+Memory operations: 2
+Conditional branches: 2
+
+Disassembly:
+  C6C3: jz      code_C6CE
+  C6C5: movx    A, @DPTR
+  C6C6: xrl     A, #0x82
+  C6C8: jz      code_C6CE
+  C6CA: movx    A, @DPTR
+
+--- Candidate 66: code_C655 @ 0xC6C5 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  C6C5: movx    A, @DPTR
+  C6C6: xrl     A, #0x82
+  C6C8: jz      code_C6CE
+  C6CA: movx    A, @DPTR
+  C6CB: cjne    A, #0x84, code_C6D1
+
+--- Candidate 67: code_E122 @ 0xE32D ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  E32D: movx    @DPTR, A
+  E32E: mov     DPTR, #0x9CC
+  E331: movx    A, @DPTR
+  E332: xrl     A, #1
+  E334: jnz     code_E39B
+
+--- Candidate 68: code_E122 @ 0xE370 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  E370: jc      code_E37A
+  E372: mov     DPTR, #0x998
+  E375: movx    A, @DPTR
+  E376: inc     A
+  E377: movx    @DPTR, A
+
+--- Candidate 69: code_E122 @ 0xE3D8 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  E3D8: jnc     code_E3E2
+  E3DA: mov     DPTR, #0x999
+  E3DD: movx    A, @DPTR
+  E3DE: inc     A
+  E3DF: movx    @DPTR, A
+
+--- Candidate 70: code_E122 @ 0xE48F ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  E48F: mov     A, R7
+  E490: movx    @DPTR, A
+  E491: mov     DPTR, #0x99B
+  E494: movx    A, @DPTR
+  E495: jz      code_E4C6
+
+--- Candidate 71: code_E122 @ 0xE490 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  E490: movx    @DPTR, A
+  E491: mov     DPTR, #0x99B
+  E494: movx    A, @DPTR
+  E495: jz      code_E4C6
+  E497: mov     DPTR, #0x9B1
+
+--- Candidate 72: code_E122 @ 0xE491 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  E491: mov     DPTR, #0x99B
+  E494: movx    A, @DPTR
+  E495: jz      code_E4C6
+  E497: mov     DPTR, #0x9B1
+  E49A: movx    A, @DPTR
+
+--- Candidate 73: code_E122 @ 0xE494 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  E494: movx    A, @DPTR
+  E495: jz      code_E4C6
+  E497: mov     DPTR, #0x9B1
+  E49A: movx    A, @DPTR
+  E49B: mov     R7, A
+
+--- Candidate 74: code_F7CA @ 0xF7D2 ---
+Memory operations: 2
+Conditional branches: 1
+
+Disassembly:
+  F7D2: movx    @DPTR, A
+  F7D3: mov     DPTR, #0xF0B
+  F7D6: movx    A, @DPTR
+  F7D7: mov     R6, A
+  F7D8: jnz     code_F7E0
+
+--- Candidate 75: CTF @ 0x1C5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  01C5: mov     DPTR, #0xF09
+  01C8: movx    A, @DPTR
+  01C9: mov     R7, A
+  01CA: jnz     code_1D5
+  01CC: mov     DPTR, #0xBA5
+
+--- Candidate 76: CTF @ 0x1C9 ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  01C9: mov     R7, A
+  01CA: jnz     code_1D5
+  01CC: mov     DPTR, #0xBA5
+  01CF: movx    A, @DPTR
+  01D0: jnz     code_1D5
+
+--- Candidate 77: CTF @ 0x1CA ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  01CA: jnz     code_1D5
+  01CC: mov     DPTR, #0xBA5
+  01CF: movx    A, @DPTR
+  01D0: jnz     code_1D5
+  01D2: ljmp    code_A4BC+1
+
+--- Candidate 78: CTF @ 0x1CC ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  01CC: mov     DPTR, #0xBA5
+  01CF: movx    A, @DPTR
+  01D0: jnz     code_1D5
+  01D2: ljmp    code_A4BC+1
+  01D5: mov     DPTR, #0xB77
+
+--- Candidate 79: CTF @ 0x1D0 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  01D0: jnz     code_1D5
+  01D2: ljmp    code_A4BC+1
+  01D5: mov     DPTR, #0xB77
+  01D8: movx    A, @DPTR
+  01D9: dec     A
+
+--- Candidate 80: CTF @ 0x1D2 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  01D2: ljmp    code_A4BC+1
+  01D5: mov     DPTR, #0xB77
+  01D8: movx    A, @DPTR
+  01D9: dec     A
+  01DA: jz      code_218
+
+--- Candidate 81: CTF @ 0x1D5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  01D5: mov     DPTR, #0xB77
+  01D8: movx    A, @DPTR
+  01D9: dec     A
+  01DA: jz      code_218
+  01DC: add     A, #0xF0
+
+--- Candidate 82: CTF @ 0x1D8 ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  01D8: movx    A, @DPTR
+  01D9: dec     A
+  01DA: jz      code_218
+  01DC: add     A, #0xF0
+  01DE: jnz     code_1E3
+
+--- Candidate 83: CTF @ 0x215 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0215: ljmp    code_A4A0
+  0218: mov     DPTR, #0xF09
+  021B: movx    A, @DPTR
+  021C: mov     R7, A
+  021D: jnz     code_222
+
+--- Candidate 84: CTF @ 0x218 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0218: mov     DPTR, #0xF09
+  021B: movx    A, @DPTR
+  021C: mov     R7, A
+  021D: jnz     code_222
+  021F: ljmp    code_A32C
+
+--- Candidate 85: CTF @ 0x21B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  021B: movx    A, @DPTR
+  021C: mov     R7, A
+  021D: jnz     code_222
+  021F: ljmp    code_A32C
+  0222: mov     A, R7
+
+--- Candidate 86: CTF @ 0x22C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  022C: ljmp    code_A32C
+  022F: mov     DPTR, #0xF09
+  0232: movx    A, @DPTR
+  0233: xrl     A, #9
+  0235: jz      code_23A
+
+--- Candidate 87: CTF @ 0x22F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  022F: mov     DPTR, #0xF09
+  0232: movx    A, @DPTR
+  0233: xrl     A, #9
+  0235: jz      code_23A
+  0237: ljmp    code_A32C
+
+--- Candidate 88: CTF @ 0x232 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0232: movx    A, @DPTR
+  0233: xrl     A, #9
+  0235: jz      code_23A
+  0237: ljmp    code_A32C
+  023A: mov     R7, A
+
+--- Candidate 89: CTF @ 0x265 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0265: movx    @DPTR, A
+  0266: sjmp    code_27C
+  0268: mov     A, R7
+  0269: xrl     A, #0x85
+  026B: jnz     code_280
+
+--- Candidate 90: CTF @ 0x280 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0280: lcall   code_B889+1
+  0283: mov     DPTR, #0xB76
+  0286: movx    A, @DPTR
+  0287: xrl     A, #0x84
+  0289: jz      code_28E
+
+--- Candidate 91: CTF @ 0x283 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0283: mov     DPTR, #0xB76
+  0286: movx    A, @DPTR
+  0287: xrl     A, #0x84
+  0289: jz      code_28E
+  028B: lcall   code_AA9B
+
+--- Candidate 92: CTF @ 0x286 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0286: movx    A, @DPTR
+  0287: xrl     A, #0x84
+  0289: jz      code_28E
+  028B: lcall   code_AA9B
+  028E: mov     DPTR, #0x100E
+
+--- Candidate 93: CTF @ 0x287 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0287: xrl     A, #0x84
+  0289: jz      code_28E
+  028B: lcall   code_AA9B
+  028E: mov     DPTR, #0x100E
+  0291: movx    A, @DPTR
+
+--- Candidate 94: CTF @ 0x289 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0289: jz      code_28E
+  028B: lcall   code_AA9B
+  028E: mov     DPTR, #0x100E
+  0291: movx    A, @DPTR
+  0292: anl     A, #0xF7
+
+--- Candidate 95: code_D71 @ 0xD78 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0D78: mov     A, R7
+  0D79: orl     A, R6
+  0D7A: jnz     code_D86
+  0D7C: mov     DPTR, #0xD21
+  0D7F: movx    @DPTR, A
+
+--- Candidate 96: code_D71 @ 0xD79 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0D79: orl     A, R6
+  0D7A: jnz     code_D86
+  0D7C: mov     DPTR, #0xD21
+  0D7F: movx    @DPTR, A
+  0D80: inc     DPTR
+
+--- Candidate 97: code_D71 @ 0xD7A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0D7A: jnz     code_D86
+  0D7C: mov     DPTR, #0xD21
+  0D7F: movx    @DPTR, A
+  0D80: inc     DPTR
+  0D81: mov     A, #0x28 ; '('
+
+--- Candidate 98: code_D83 @ 0xD84 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0D84: sjmp    code_DB5
+  0D86: mov     DPTR, #0xD2E
+  0D89: movx    A, @DPTR
+  0D8A: cpl     A
+  0D8B: jz      code_D90
+
+--- Candidate 99: code_D83 @ 0xD86 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0D86: mov     DPTR, #0xD2E
+  0D89: movx    A, @DPTR
+  0D8A: cpl     A
+  0D8B: jz      code_D90
+  0D8D: ljmp    code_AEA0+2
+
+--- Candidate 100: code_D83 @ 0xD89 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0D89: movx    A, @DPTR
+  0D8A: cpl     A
+  0D8B: jz      code_D90
+  0D8D: ljmp    code_AEA0+2
+  0D90: mov     DPTR, #0xD1E
+
+--- Candidate 101: code_D83 @ 0xD8A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0D8A: cpl     A
+  0D8B: jz      code_D90
+  0D8D: ljmp    code_AEA0+2
+  0D90: mov     DPTR, #0xD1E
+  0D93: movx    A, @DPTR
+
+--- Candidate 102: code_D83 @ 0xD8B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0D8B: jz      code_D90
+  0D8D: ljmp    code_AEA0+2
+  0D90: mov     DPTR, #0xD1E
+  0D93: movx    A, @DPTR
+  0D94: swap    A
+
+--- Candidate 103: code_D83 @ 0xDE3 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0DE3: mov     A, R7
+  0DE4: anl     A, R5
+  0DE5: jz      code_E1B
+  0DE7: mov     DPTR, #0xD1F
+  0DEA: movx    A, @DPTR
+
+--- Candidate 104: code_D83 @ 0xDE4 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0DE4: anl     A, R5
+  0DE5: jz      code_E1B
+  0DE7: mov     DPTR, #0xD1F
+  0DEA: movx    A, @DPTR
+  0DEB: mov     R6, A
+
+--- Candidate 105: code_D83 @ 0xDE5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0DE5: jz      code_E1B
+  0DE7: mov     DPTR, #0xD1F
+  0DEA: movx    A, @DPTR
+  0DEB: mov     R6, A
+  0DEC: inc     DPTR
+
+--- Candidate 106: code_D83 @ 0xDF4 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0DF4: subb    A, R7
+  0DF5: mov     DPTR, #0xD1D
+  0DF8: movx    A, @DPTR
+  0DF9: subb    A, R6
+  0DFA: jnc     code_E04
+
+--- Candidate 107: code_D83 @ 0xDF5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0DF5: mov     DPTR, #0xD1D
+  0DF8: movx    A, @DPTR
+  0DF9: subb    A, R6
+  0DFA: jnc     code_E04
+  0DFC: mov     DPTR, #0xD26
+
+--- Candidate 108: code_D83 @ 0xDF9 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0DF9: subb    A, R6
+  0DFA: jnc     code_E04
+  0DFC: mov     DPTR, #0xD26
+  0DFF: movx    A, @DPTR
+  0E00: add     A, #0x10
+
+--- Candidate 109: code_D83 @ 0xDFA ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0DFA: jnc     code_E04
+  0DFC: mov     DPTR, #0xD26
+  0DFF: movx    A, @DPTR
+  0E00: add     A, #0x10
+  0E02: sjmp    code_E30
+
+--- Candidate 110: code_D83 @ 0xE09 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E09: subb    A, #0x10
+  0E0B: mov     DPTR, #0xD21
+  0E0E: movx    A, @DPTR
+  0E0F: subb    A, #0
+  0E11: jc      code_E44
+
+--- Candidate 111: code_D83 @ 0xE0B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E0B: mov     DPTR, #0xD21
+  0E0E: movx    A, @DPTR
+  0E0F: subb    A, #0
+  0E11: jc      code_E44
+  0E13: mov     DPTR, #0xD26
+
+--- Candidate 112: code_D83 @ 0xE0F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E0F: subb    A, #0
+  0E11: jc      code_E44
+  0E13: mov     DPTR, #0xD26
+  0E16: movx    A, @DPTR
+  0E17: add     A, #0xF0
+
+--- Candidate 113: code_D83 @ 0xE11 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E11: jc      code_E44
+  0E13: mov     DPTR, #0xD26
+  0E16: movx    A, @DPTR
+  0E17: add     A, #0xF0
+  0E19: sjmp    code_E3C
+
+--- Candidate 114: code_D83 @ 0xE26 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E26: subb    A, #0
+  0E28: mov     DPTR, #0xD26
+  0E2B: movx    A, @DPTR
+  0E2C: jnc     code_E3A
+  0E2E: add     A, #0x80
+
+--- Candidate 115: code_D83 @ 0xE50 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E50: subb    A, #0xF
+  0E52: jc      code_E60
+  0E54: mov     DPTR, #0xD25
+  0E57: mov     A, #0xF
+  0E59: movx    @DPTR, A
+
+--- Candidate 116: code_D83 @ 0xE52 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E52: jc      code_E60
+  0E54: mov     DPTR, #0xD25
+  0E57: mov     A, #0xF
+  0E59: movx    @DPTR, A
+  0E5A: inc     DPTR
+
+--- Candidate 117: code_D83 @ 0xE65 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E65: subb    A, #0
+  0E67: jnc     code_E72
+  0E69: mov     DPTR, #0xD25
+  0E6C: clr     A
+  0E6D: movx    @DPTR, A
+
+--- Candidate 118: code_D83 @ 0xE67 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E67: jnc     code_E72
+  0E69: mov     DPTR, #0xD25
+  0E6C: clr     A
+  0E6D: movx    @DPTR, A
+  0E6E: inc     DPTR
+
+--- Candidate 119: code_D83 @ 0xE7D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E7D: inc     DPTR
+  0E7E: movx    A, @DPTR
+  0E7F: mov     R5, A
+  0E80: xrl     A, R7
+  0E81: jnz     code_E85
+
+--- Candidate 120: code_D83 @ 0xE7E ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E7E: movx    A, @DPTR
+  0E7F: mov     R5, A
+  0E80: xrl     A, R7
+  0E81: jnz     code_E85
+  0E83: mov     A, R4
+
+--- Candidate 121: code_D83 @ 0xE84 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E84: xrl     A, R6
+  0E85: jz      code_EA2
+  0E87: mov     DPTR, #0xD23
+  0E8A: mov     A, R4
+  0E8B: movx    @DPTR, A
+
+--- Candidate 122: code_D83 @ 0xE85 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0E85: jz      code_EA2
+  0E87: mov     DPTR, #0xD23
+  0E8A: mov     A, R4
+  0E8B: movx    @DPTR, A
+  0E8C: inc     DPTR
+
+--- Candidate 123: sub_FA5 @ 0xFA5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0FA5: orl     A, #8
+  0FA7: movx    @DPTR, A
+  0FA8: ret
+  100A: lcall   code_B0CB
+  100D: jnc     code_103F
+
+--- Candidate 124: sub_FA8 @ 0xFA8 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  0FA8: ret
+  100A: lcall   code_B0CB
+  100D: jnc     code_103F
+  100F: movx    @DPTR, A
+  1010: inc     DPTR
+
+--- Candidate 125: code_100A @ 0x100A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  100A: lcall   code_B0CB
+  100D: jnc     code_103F
+  100F: movx    @DPTR, A
+  1010: inc     DPTR
+  1011: mov     A, #0xCD
+
+--- Candidate 126: code_11B7 @ 0x122F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  122F: orl     A, #1
+  1231: movx    @DPTR, A
+  1232: ret
+  14A8: jnz     code_14CB
+  14AA: mov     DPTR, #0x856
+
+--- Candidate 127: code_11B7 @ 0x1231 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  1231: movx    @DPTR, A
+  1232: ret
+  14A8: jnz     code_14CB
+  14AA: mov     DPTR, #0x856
+  14AD: sjmp    code_14B2
+
+--- Candidate 128: code_14A8 @ 0x14D6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  14D6: mov     DPTR, #0x852
+  14D9: movx    A, @DPTR
+  14DA: setb    C
+  14DB: subb    A, #0
+  14DD: jc      code_14F4
+
+--- Candidate 129: code_14D9 @ 0x14D9 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  14D9: movx    A, @DPTR
+  14DA: setb    C
+  14DB: subb    A, #0
+  14DD: jc      code_14F4
+  14DF: mov     DPTR, #0x855
+
+--- Candidate 130: code_14D9 @ 0x14DF ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  14DF: mov     DPTR, #0x855
+  14E2: lcall   code_AB87
+  14E5: jnc     code_1512
+  14E7: mov     DPTR, #0x857
+  14EA: movx    A, @DPTR
+
+--- Candidate 131: code_14D9 @ 0x14E2 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  14E2: lcall   code_AB87
+  14E5: jnc     code_1512
+  14E7: mov     DPTR, #0x857
+  14EA: movx    A, @DPTR
+  14EB: anl     A, #7
+
+--- Candidate 132: code_14D9 @ 0x14E5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  14E5: jnc     code_1512
+  14E7: mov     DPTR, #0x857
+  14EA: movx    A, @DPTR
+  14EB: anl     A, #7
+  14ED: subb    A, #0
+
+--- Candidate 133: code_14D9 @ 0x14EF ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  14EF: clr     A
+  14F0: subb    A, #0
+  14F2: jnc     code_1512
+  14F4: mov     DPTR, #0x864
+  14F7: movx    A, @DPTR
+
+--- Candidate 134: code_14D9 @ 0x14F0 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  14F0: subb    A, #0
+  14F2: jnc     code_1512
+  14F4: mov     DPTR, #0x864
+  14F7: movx    A, @DPTR
+  14F8: setb    C
+
+--- Candidate 135: code_14D9 @ 0x14F2 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  14F2: jnc     code_1512
+  14F4: mov     DPTR, #0x864
+  14F7: movx    A, @DPTR
+  14F8: setb    C
+  14F9: subb    A, #0
+
+--- Candidate 136: code_14D9 @ 0x14F4 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  14F4: mov     DPTR, #0x864
+  14F7: movx    A, @DPTR
+  14F8: setb    C
+  14F9: subb    A, #0
+  14FB: jc      code_151A
+
+--- Candidate 137: code_14D9 @ 0x14F7 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  14F7: movx    A, @DPTR
+  14F8: setb    C
+  14F9: subb    A, #0
+  14FB: jc      code_151A
+  14FD: mov     DPTR, #0x867
+
+--- Candidate 138: code_14D9 @ 0x14FD ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  14FD: mov     DPTR, #0x867
+  1500: lcall   code_AB87
+  1503: jnc     code_1512
+  1505: mov     DPTR, #0x869
+  1508: movx    A, @DPTR
+
+--- Candidate 139: code_14D9 @ 0x1500 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  1500: lcall   code_AB87
+  1503: jnc     code_1512
+  1505: mov     DPTR, #0x869
+  1508: movx    A, @DPTR
+  1509: anl     A, #7
+
+--- Candidate 140: code_14D9 @ 0x1503 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  1503: jnc     code_1512
+  1505: mov     DPTR, #0x869
+  1508: movx    A, @DPTR
+  1509: anl     A, #7
+  150B: subb    A, #0
+
+--- Candidate 141: code_14D9 @ 0x150D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  150D: clr     A
+  150E: subb    A, #0
+  1510: jc      code_151A
+  1512: mov     DPTR, #0x1154
+  1515: movx    A, @DPTR
+
+--- Candidate 142: code_14D9 @ 0x150E ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  150E: subb    A, #0
+  1510: jc      code_151A
+  1512: mov     DPTR, #0x1154
+  1515: movx    A, @DPTR
+  1516: orl     A, #2
+
+--- Candidate 143: crc32_combine64_0 @ 0x226C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  226C: mov     A, R7
+  226D: lcall   code_D563
+  2270: movx    A, @DPTR
+  2271: xrl     A, #0xA5
+  2273: jz      code_2278
+
+--- Candidate 144: crc32_combine64_0 @ 0x226D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  226D: lcall   code_D563
+  2270: movx    A, @DPTR
+  2271: xrl     A, #0xA5
+  2273: jz      code_2278
+  2275: ljmp    code_C367
+
+--- Candidate 145: crc32_combine64_0 @ 0x2270 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  2270: movx    A, @DPTR
+  2271: xrl     A, #0xA5
+  2273: jz      code_2278
+  2275: ljmp    code_C367
+  2278: lcall   code_D55E
+
+--- Candidate 146: crc32_combine64_0 @ 0x2273 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  2273: jz      code_2278
+  2275: ljmp    code_C367
+  2278: lcall   code_D55E
+  227B: clr     A
+  227C: movx    @DPTR, A
+
+--- Candidate 147: code_236D @ 0x2387 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  2387: movx    A, @DPTR
+  2388: mov     R4, A
+  2389: mov     A, R5
+  238A: xrl     A, R4
+  238B: jnz     code_23C1
+
+--- Candidate 148: code_236D @ 0x239D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  239D: movx    A, @DPTR
+  239E: mov     R4, A
+  239F: mov     A, R5
+  23A0: xrl     A, R4
+  23A1: jz      code_23A7
+
+--- Candidate 149: code_236D @ 0x23B7 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  23B7: movx    A, @DPTR
+  23B8: mov     R4, A
+  23B9: mov     A, R5
+  23BA: xrl     A, R4
+  23BB: jz      code_23C4
+
+--- Candidate 150: code_A1C0 @ 0xA21B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A21B: mov     A, R6
+  A21C: subb    A, #0
+  A21E: jnc     code_A239
+  A220: mov     DPTR, #0x52E
+  A223: movx    A, @DPTR
+
+--- Candidate 151: code_A1C0 @ 0xA21C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A21C: subb    A, #0
+  A21E: jnc     code_A239
+  A220: mov     DPTR, #0x52E
+  A223: movx    A, @DPTR
+  A224: mov     R7, A
+
+--- Candidate 152: code_A1C0 @ 0xA21E ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A21E: jnc     code_A239
+  A220: mov     DPTR, #0x52E
+  A223: movx    A, @DPTR
+  A224: mov     R7, A
+  A225: mov     DPTR, #0xF11
+
+--- Candidate 153: code_A1C0 @ 0xA273 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A273: xrl     A, #1
+  A275: orl     A, R4
+  A276: jnz     code_A285
+  A278: mov     DPTR, #0x52E
+  A27B: movx    A, @DPTR
+
+--- Candidate 154: code_A1C0 @ 0xA275 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A275: orl     A, R4
+  A276: jnz     code_A285
+  A278: mov     DPTR, #0x52E
+  A27B: movx    A, @DPTR
+  A27C: mov     R6, A
+
+--- Candidate 155: code_A1C0 @ 0xA276 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A276: jnz     code_A285
+  A278: mov     DPTR, #0x52E
+  A27B: movx    A, @DPTR
+  A27C: mov     R6, A
+  A27D: mov     A, #0x62 ; 'b'
+
+--- Candidate 156: code_A1C0 @ 0xA2C5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A2C5: clr     C
+  A2C6: lcall   code_117F
+  A2C9: mov     DPTR, #0xF11
+  A2CC: movx    A, @DPTR
+  A2CD: jnc     code_A335
+
+--- Candidate 157: code_A1C0 @ 0xA2C6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A2C6: lcall   code_117F
+  A2C9: mov     DPTR, #0xF11
+  A2CC: movx    A, @DPTR
+  A2CD: jnc     code_A335
+  A2CF: lcall   code_B227
+
+--- Candidate 158: code_A1C0 @ 0xA2C9 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A2C9: mov     DPTR, #0xF11
+  A2CC: movx    A, @DPTR
+  A2CD: jnc     code_A335
+  A2CF: lcall   code_B227
+  A2D2: mov     DPH, A; Data Pointer, High Byte
+
+--- Candidate 159: code_A1C0 @ 0xA2CC ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A2CC: movx    A, @DPTR
+  A2CD: jnc     code_A335
+  A2CF: lcall   code_B227
+  A2D2: mov     DPH, A; Data Pointer, High Byte
+  A2D4: push    DPH; Data Pointer, High Byte
+
+--- Candidate 160: CTF @ 0xA3A5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A3A5: lcall   code_14A8
+  A3A8: lcall   code_B39F
+  A3AB: movx    A, @DPTR
+  A3AC: xrl     A, #1
+  A3AE: jnz     code_A3E7
+
+--- Candidate 161: CTF @ 0xA3A8 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A3A8: lcall   code_B39F
+  A3AB: movx    A, @DPTR
+  A3AC: xrl     A, #1
+  A3AE: jnz     code_A3E7
+  A3B0: lcall   code_B27E
+
+--- Candidate 162: CTF @ 0xA3AB ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A3AB: movx    A, @DPTR
+  A3AC: xrl     A, #1
+  A3AE: jnz     code_A3E7
+  A3B0: lcall   code_B27E
+  A3B3: lcall   code_B1C8
+
+--- Candidate 163: code_E122 @ 0xA42F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A42F: orl     A, R4
+  A430: jz      code_A435
+  A432: ljmp    code_A762
+  A435: mov     DPTR, #0xF11
+  A438: movx    A, @DPTR
+
+--- Candidate 164: code_E122 @ 0xA430 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A430: jz      code_A435
+  A432: ljmp    code_A762
+  A435: mov     DPTR, #0xF11
+  A438: movx    A, @DPTR
+  A439: mov     R3, A
+
+--- Candidate 165: code_A1C0 @ 0xA46A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A46A: movx    A, @DPTR
+  A46B: mov     R0, A
+  A46C: mov     A, R0
+  A46D: rlc     A
+  A46E: jnc     code_A4BC
+
+--- Candidate 166: CTF @ 0xA4CD ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A4CD: setb    C
+  A4CE: lcall   code_1169
+  A4D1: mov     DPTR, #0xF11
+  A4D4: movx    A, @DPTR
+  A4D5: jc      code_A4DF
+
+--- Candidate 167: CTF @ 0xA4CE ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A4CE: lcall   code_1169
+  A4D1: mov     DPTR, #0xF11
+  A4D4: movx    A, @DPTR
+  A4D5: jc      code_A4DF
+  A4D7: lcall   code_B3CA
+
+--- Candidate 168: code_A4FA @ 0xA70D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A70D: xrl     A, #2
+  A70F: orl     A, R6
+  A710: mov     DPTR, #0xF11
+  A713: jnz     code_A724
+  A715: movx    A, @DPTR
+
+--- Candidate 169: code_A4FA @ 0xA70F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A70F: orl     A, R6
+  A710: mov     DPTR, #0xF11
+  A713: jnz     code_A724
+  A715: movx    A, @DPTR
+  A716: add     A, #0x98
+
+--- Candidate 170: code_A4FA @ 0xA710 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A710: mov     DPTR, #0xF11
+  A713: jnz     code_A724
+  A715: movx    A, @DPTR
+  A716: add     A, #0x98
+  A718: mov     DPL, A; Data Pointer, Low Byte
+
+--- Candidate 171: code_A4FA @ 0xA713 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A713: jnz     code_A724
+  A715: movx    A, @DPTR
+  A716: add     A, #0x98
+  A718: mov     DPL, A; Data Pointer, Low Byte
+  A71A: clr     A
+
+--- Candidate 172: code_A4FA @ 0xA793 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A793: lcall   code_B21A
+  A796: xrl     A, #0xA
+  A798: jnz     code_A7DA
+  A79A: mov     DPTR, #0x52E
+  A79D: movx    A, @DPTR
+
+--- Candidate 173: code_A4FA @ 0xA796 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A796: xrl     A, #0xA
+  A798: jnz     code_A7DA
+  A79A: mov     DPTR, #0x52E
+  A79D: movx    A, @DPTR
+  A79E: mov     B, #3; B-Register
+
+--- Candidate 174: code_A4FA @ 0xA798 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A798: jnz     code_A7DA
+  A79A: mov     DPTR, #0x52E
+  A79D: movx    A, @DPTR
+  A79E: mov     B, #3; B-Register
+  A7A1: mul     AB
+
+--- Candidate 175: code_A4FA @ 0xA7CF ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A7CF: setb    C
+  A7D0: subb    A, #5
+  A7D2: jc      code_A801
+  A7D4: inc     DPTR
+  A7D5: movx    A, @DPTR
+
+--- Candidate 176: code_A4FA @ 0xA7D0 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A7D0: subb    A, #5
+  A7D2: jc      code_A801
+  A7D4: inc     DPTR
+  A7D5: movx    A, @DPTR
+  A7D6: dec     A
+
+--- Candidate 177: code_A4FA @ 0xA7FD ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A7FD: mov     DPTR, #0x52F
+  A800: movx    @DPTR, A
+  A801: lcall   code_B1FD
+  A804: xrl     A, R5
+  A805: jnz     code_A808
+
+--- Candidate 178: code_A4FA @ 0xA800 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A800: movx    @DPTR, A
+  A801: lcall   code_B1FD
+  A804: xrl     A, R5
+  A805: jnz     code_A808
+  A807: mov     A, R4
+
+--- Candidate 179: code_A4FA @ 0xA810 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A810: lcall   code_B42B
+  A813: jc      code_A818
+  A815: ljmp    code_A8D5
+  A818: mov     DPTR, #0xF11
+  A81B: movx    A, @DPTR
+
+--- Candidate 180: code_A4FA @ 0xA813 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A813: jc      code_A818
+  A815: ljmp    code_A8D5
+  A818: mov     DPTR, #0xF11
+  A81B: movx    A, @DPTR
+  A81C: mov     R3, A
+
+--- Candidate 181: code_A4FA @ 0xA823 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A823: subb    A, #0x1E
+  A825: jc      code_A82A
+  A827: ljmp    code_A8CB
+  A82A: mov     DPTR, #0xF11
+  A82D: movx    A, @DPTR
+
+--- Candidate 182: code_A4FA @ 0xA825 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A825: jc      code_A82A
+  A827: ljmp    code_A8CB
+  A82A: mov     DPTR, #0xF11
+  A82D: movx    A, @DPTR
+  A82E: mov     R5, A
+
+--- Candidate 183: code_A4FA @ 0xA849 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A849: jnz     code_A8AF
+  A84B: mov     A, #0x92
+  A84D: add     A, R3
+  A84E: lcall   code_B3A6
+  A851: movx    A, @DPTR
+
+--- Candidate 184: code_A4FA @ 0xA84B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A84B: mov     A, #0x92
+  A84D: add     A, R3
+  A84E: lcall   code_B3A6
+  A851: movx    A, @DPTR
+  A852: jnz     code_A8A3
+
+--- Candidate 185: code_A4FA @ 0xA84D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A84D: add     A, R3
+  A84E: lcall   code_B3A6
+  A851: movx    A, @DPTR
+  A852: jnz     code_A8A3
+  A854: mov     DPTR, #0xF11
+
+--- Candidate 186: code_A4FA @ 0xA852 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A852: jnz     code_A8A3
+  A854: mov     DPTR, #0xF11
+  A857: movx    A, @DPTR
+  A858: mov     R7, A
+  A859: lcall   code_B2C9
+
+--- Candidate 187: code_A4FA @ 0xA85E ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A85E: mov     DPTR, #0x561
+  A861: movx    A, @DPTR
+  A862: clr     C
+  A863: subb    A, R6
+  A864: jnc     code_A88C
+
+--- Candidate 188: code_A4FA @ 0xA861 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A861: movx    A, @DPTR
+  A862: clr     C
+  A863: subb    A, R6
+  A864: jnc     code_A88C
+  A866: mov     A, #0x62 ; 'b'
+
+--- Candidate 189: code_A4FA @ 0xA864 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A864: jnc     code_A88C
+  A866: mov     A, #0x62 ; 'b'
+  A868: add     A, R7
+  A869: lcall   code_B2CB
+  A86C: movx    A, @DPTR
+
+--- Candidate 190: code_A4FA @ 0xA876 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A876: clr     C
+  A877: subb    A, #5
+  A879: jnc     code_A88C
+  A87B: mov     DPTR, #0xF11
+  A87E: movx    A, @DPTR
+
+--- Candidate 191: code_A4FA @ 0xA877 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A877: subb    A, #5
+  A879: jnc     code_A88C
+  A87B: mov     DPTR, #0xF11
+  A87E: movx    A, @DPTR
+  A87F: mov     R7, A
+
+--- Candidate 192: code_A4FA @ 0xA879 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A879: jnc     code_A88C
+  A87B: mov     DPTR, #0xF11
+  A87E: movx    A, @DPTR
+  A87F: mov     R7, A
+  A880: lcall   code_B4D0
+
+--- Candidate 193: code_A4FA @ 0xA87F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A87F: mov     R7, A
+  A880: lcall   code_B4D0
+  A883: movx    A, @DPTR
+  A884: jnz     code_A88C
+  A886: mov     A, #0x62 ; 'b'
+
+--- Candidate 194: code_A4FA @ 0xA880 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A880: lcall   code_B4D0
+  A883: movx    A, @DPTR
+  A884: jnz     code_A88C
+  A886: mov     A, #0x62 ; 'b'
+  A888: add     A, R7
+
+--- Candidate 195: code_A4FA @ 0xA883 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A883: movx    A, @DPTR
+  A884: jnz     code_A88C
+  A886: mov     A, #0x62 ; 'b'
+  A888: add     A, R7
+  A889: ljmp    code_A8DB
+
+--- Candidate 196: code_A4FA @ 0xA8AA ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A8AA: lcall   code_B3E0
+  A8AD: sjmp    code_A8DF
+  A8AF: lcall   code_B39F
+  A8B2: movx    A, @DPTR
+  A8B3: jnz     code_A8BE
+
+--- Candidate 197: code_A4FA @ 0xA8AD ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A8AD: sjmp    code_A8DF
+  A8AF: lcall   code_B39F
+  A8B2: movx    A, @DPTR
+  A8B3: jnz     code_A8BE
+  A8B5: mov     A, #0x62 ; 'b'
+
+--- Candidate 198: code_A4FA @ 0xA8AF ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A8AF: lcall   code_B39F
+  A8B2: movx    A, @DPTR
+  A8B3: jnz     code_A8BE
+  A8B5: mov     A, #0x62 ; 'b'
+  A8B7: add     A, R7
+
+--- Candidate 199: code_A4FA @ 0xA8B2 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A8B2: movx    A, @DPTR
+  A8B3: jnz     code_A8BE
+  A8B5: mov     A, #0x62 ; 'b'
+  A8B7: add     A, R7
+  A8B8: lcall   code_B2CB
+
+--- Candidate 200: code_A4FA @ 0xA8B3 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A8B3: jnz     code_A8BE
+  A8B5: mov     A, #0x62 ; 'b'
+  A8B7: add     A, R7
+  A8B8: lcall   code_B2CB
+  A8BB: movx    A, @DPTR
+
+--- Candidate 201: code_A4FA @ 0xA946 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A946: lcall   code_1169
+  A949: mov     DPTR, #0xF11
+  A94C: movx    A, @DPTR
+  A94D: mov     R7, A
+  A94E: jnc     code_A974
+
+--- Candidate 202: code_A4FA @ 0xA949 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A949: mov     DPTR, #0xF11
+  A94C: movx    A, @DPTR
+  A94D: mov     R7, A
+  A94E: jnc     code_A974
+  A950: add     A, #0x65 ; 'e'
+
+--- Candidate 203: code_A4FA @ 0xA94C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A94C: movx    A, @DPTR
+  A94D: mov     R7, A
+  A94E: jnc     code_A974
+  A950: add     A, #0x65 ; 'e'
+  A952: lcall   code_B21A
+
+--- Candidate 204: code_A4FA @ 0xA9EB ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A9EB: inc     DPTR
+  A9EC: movx    A, @DPTR
+  A9ED: setb    C
+  A9EE: lcall   code_1169
+  A9F1: jc      code_AA54
+
+--- Candidate 205: code_A4FA @ 0xA9EC ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A9EC: movx    A, @DPTR
+  A9ED: setb    C
+  A9EE: lcall   code_1169
+  A9F1: jc      code_AA54
+  A9F3: lcall   code_B360
+
+--- Candidate 206: code_A4FA @ 0xA9ED ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A9ED: setb    C
+  A9EE: lcall   code_1169
+  A9F1: jc      code_AA54
+  A9F3: lcall   code_B360
+  A9F6: movx    A, @DPTR
+
+--- Candidate 207: code_A4FA @ 0xA9EE ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  A9EE: lcall   code_1169
+  A9F1: jc      code_AA54
+  A9F3: lcall   code_B360
+  A9F6: movx    A, @DPTR
+  A9F7: jz      code_AA54
+
+--- Candidate 208: code_A4FA @ 0xA9F1 ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  A9F1: jc      code_AA54
+  A9F3: lcall   code_B360
+  A9F6: movx    A, @DPTR
+  A9F7: jz      code_AA54
+  A9F9: mov     A, #0x95
+
+--- Candidate 209: code_A4FA @ 0xA9F3 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A9F3: lcall   code_B360
+  A9F6: movx    A, @DPTR
+  A9F7: jz      code_AA54
+  A9F9: mov     A, #0x95
+  A9FB: add     A, R7
+
+--- Candidate 210: code_A4FA @ 0xA9F6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A9F6: movx    A, @DPTR
+  A9F7: jz      code_AA54
+  A9F9: mov     A, #0x95
+  A9FB: add     A, R7
+  A9FC: mov     DPL, A; Data Pointer, Low Byte
+
+--- Candidate 211: code_A4FA @ 0xA9FF ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  A9FF: addc    A, #5
+  AA01: mov     DPH, A; Data Pointer, High Byte
+  AA03: movx    A, @DPTR
+  AA04: xrl     A, #1
+  AA06: jnz     code_AA4E
+
+--- Candidate 212: code_A4FA @ 0xAA01 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AA01: mov     DPH, A; Data Pointer, High Byte
+  AA03: movx    A, @DPTR
+  AA04: xrl     A, #1
+  AA06: jnz     code_AA4E
+  AA08: mov     DPTR, #0xF11
+
+--- Candidate 213: code_A4FA @ 0xAA04 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AA04: xrl     A, #1
+  AA06: jnz     code_AA4E
+  AA08: mov     DPTR, #0xF11
+  AA0B: movx    A, @DPTR
+  AA0C: lcall   code_B3A4
+
+--- Candidate 214: code_A4FA @ 0xAA0C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AA0C: lcall   code_B3A4
+  AA0F: movx    A, @DPTR
+  AA10: jnz     code_AA4E
+  AA12: mov     A, #0x65 ; 'e'
+  AA14: add     A, R7
+
+--- Candidate 215: code_A4FA @ 0xAA0F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AA0F: movx    A, @DPTR
+  AA10: jnz     code_AA4E
+  AA12: mov     A, #0x65 ; 'e'
+  AA14: add     A, R7
+  AA15: lcall   code_B1B2
+
+--- Candidate 216: code_A4FA @ 0xAA23 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AA23: mov     A, R4
+  AA24: jz      code_AA4E
+  AA26: lcall   code_B45A
+  AA29: mov     DPH, A; Data Pointer, High Byte
+  AA2B: movx    A, @DPTR
+
+--- Candidate 217: code_A4FA @ 0xAA24 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AA24: jz      code_AA4E
+  AA26: lcall   code_B45A
+  AA29: mov     DPH, A; Data Pointer, High Byte
+  AA2B: movx    A, @DPTR
+  AA2C: cjne    A, #1, code_AA44
+
+--- Candidate 218: code_AA2B @ 0xAA32 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AA32: clr     C
+  AA33: subb    A, #0xF
+  AA35: jnc     code_AA44
+  AA37: mov     DPTR, #0x52F
+  AA3A: movx    A, @DPTR
+
+--- Candidate 219: code_AA2B @ 0xAA33 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AA33: subb    A, #0xF
+  AA35: jnc     code_AA44
+  AA37: mov     DPTR, #0x52F
+  AA3A: movx    A, @DPTR
+  AA3B: add     A, #0xFD
+
+--- Candidate 220: code_AA73 @ 0xAA7D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AA7D: setb    C
+  AA7E: lcall   code_1169
+  AA81: jc      code_AAD3
+  AA83: lcall   code_B360
+  AA86: movx    A, @DPTR
+
+--- Candidate 221: code_AA7E @ 0xAA7E ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  AA7E: lcall   code_1169
+  AA81: jc      code_AAD3
+  AA83: lcall   code_B360
+  AA86: movx    A, @DPTR
+  AA87: jz      code_AAD3
+
+--- Candidate 222: code_AA7E @ 0xAA81 ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  AA81: jc      code_AAD3
+  AA83: lcall   code_B360
+  AA86: movx    A, @DPTR
+  AA87: jz      code_AAD3
+  AA89: lcall   code_B4E7
+
+--- Candidate 223: code_AA7E @ 0xAA83 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AA83: lcall   code_B360
+  AA86: movx    A, @DPTR
+  AA87: jz      code_AAD3
+  AA89: lcall   code_B4E7
+  AA8C: lcall   code_B217
+
+--- Candidate 224: code_AA7E @ 0xAA86 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AA86: movx    A, @DPTR
+  AA87: jz      code_AAD3
+  AA89: lcall   code_B4E7
+  AA8C: lcall   code_B217
+  AA8F: setb    C
+
+--- Candidate 225: code_AA7E @ 0xAAE5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AAE5: clr     C
+  AAE6: lcall   code_1169
+  AAE9: jnc     code_AB00
+  AAEB: mov     DPTR, #0xF11
+  AAEE: movx    A, @DPTR
+
+--- Candidate 226: code_AA7E @ 0xAAE6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AAE6: lcall   code_1169
+  AAE9: jnc     code_AB00
+  AAEB: mov     DPTR, #0xF11
+  AAEE: movx    A, @DPTR
+  AAEF: lcall   code_B321
+
+--- Candidate 227: code_AB0C @ 0xAB12 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB12: clr     C
+  AB13: lcall   code_1169
+  AB16: jnc     code_AB72
+  AB18: mov     DPTR, #0xF11
+  AB1B: movx    A, @DPTR
+
+--- Candidate 228: code_AB13 @ 0xAB13 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB13: lcall   code_1169
+  AB16: jnc     code_AB72
+  AB18: mov     DPTR, #0xF11
+  AB1B: movx    A, @DPTR
+  AB1C: lcall   code_B321
+
+--- Candidate 229: code_AB13 @ 0xAB1C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB1C: lcall   code_B321
+  AB1F: movx    A, @DPTR
+  AB20: xrl     A, #1
+  AB22: jnz     code_AB72
+  AB24: mov     DPTR, #0x52F
+
+--- Candidate 230: code_AB13 @ 0xAB20 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB20: xrl     A, #1
+  AB22: jnz     code_AB72
+  AB24: mov     DPTR, #0x52F
+  AB27: movx    A, @DPTR
+  AB28: inc     A
+
+--- Candidate 231: code_A4FA @ 0xAB30 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB30: mov     R1, A
+  AB31: lcall   code_B321
+  AB34: movx    A, @DPTR
+  AB35: xrl     A, #1
+  AB37: jnz     code_AB72
+
+--- Candidate 232: code_A4FA @ 0xAB31 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB31: lcall   code_B321
+  AB34: movx    A, @DPTR
+  AB35: xrl     A, #1
+  AB37: jnz     code_AB72
+  AB39: mov     A, #0x65 ; 'e'
+
+--- Candidate 233: code_A4FA @ 0xAB34 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB34: movx    A, @DPTR
+  AB35: xrl     A, #1
+  AB37: jnz     code_AB72
+  AB39: mov     A, #0x65 ; 'e'
+  AB3B: add     A, R1
+
+--- Candidate 234: code_AB5A @ 0xAB5B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB5B: mov     A, R4
+  AB5C: subb    A, R2
+  AB5D: mov     DPTR, #0x52F
+  AB60: movx    A, @DPTR
+  AB61: jnc     code_AB67
+
+--- Candidate 235: code_AB5A @ 0xAB5C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB5C: subb    A, R2
+  AB5D: mov     DPTR, #0x52F
+  AB60: movx    A, @DPTR
+  AB61: jnc     code_AB67
+  AB63: inc     A
+
+--- Candidate 236: code_AB5A @ 0xAB61 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB61: jnc     code_AB67
+  AB63: inc     A
+  AB64: movx    @DPTR, A
+  AB65: sjmp    code_AB6A
+  AB67: add     A, #2
+
+--- Candidate 237: code_AB5A @ 0xAB76 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB76: mov     R7, A
+  AB77: lcall   code_B321
+  AB7A: movx    A, @DPTR
+  AB7B: jnz     code_ABA7
+  AB7D: mov     DPTR, #0xF11
+
+--- Candidate 238: code_AB5A @ 0xAB7B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB7B: jnz     code_ABA7
+  AB7D: mov     DPTR, #0xF11
+  AB80: movx    A, @DPTR
+  AB81: mov     R6, A
+  AB82: add     A, #0x58 ; 'X'
+
+--- Candidate 239: code_AB87 @ 0xAB8A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB8A: mov     A, #0x58 ; 'X'
+  AB8C: add     A, R6
+  AB8D: lcall   code_B469
+  AB90: movx    A, @DPTR
+  AB91: jz      code_AB96
+
+--- Candidate 240: code_AB87 @ 0xAB8C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB8C: add     A, R6
+  AB8D: lcall   code_B469
+  AB90: movx    A, @DPTR
+  AB91: jz      code_AB96
+  AB93: ljmp    code_AC39
+
+--- Candidate 241: code_AB87 @ 0xAB8D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB8D: lcall   code_B469
+  AB90: movx    A, @DPTR
+  AB91: jz      code_AB96
+  AB93: ljmp    code_AC39
+  AB96: lcall   code_B31C
+
+--- Candidate 242: code_AB87 @ 0xAB90 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB90: movx    A, @DPTR
+  AB91: jz      code_AB96
+  AB93: ljmp    code_AC39
+  AB96: lcall   code_B31C
+  AB99: mov     A, #1
+
+--- Candidate 243: code_AB91 @ 0xAB91 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AB91: jz      code_AB96
+  AB93: ljmp    code_AC39
+  AB96: lcall   code_B31C
+  AB99: mov     A, #1
+  AB9B: movx    @DPTR, A
+
+--- Candidate 244: code_AB91 @ 0xABAC ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ABAC: inc     DPTR
+  ABAD: movx    A, @DPTR
+  ABAE: setb    C
+  ABAF: subb    A, R6
+  ABB0: jc      code_ABF4
+
+--- Candidate 245: code_AB91 @ 0xABAD ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ABAD: movx    A, @DPTR
+  ABAE: setb    C
+  ABAF: subb    A, R6
+  ABB0: jc      code_ABF4
+  ABB2: mov     DPTR, #0x52E
+
+--- Candidate 246: code_AB91 @ 0xABAF ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ABAF: subb    A, R6
+  ABB0: jc      code_ABF4
+  ABB2: mov     DPTR, #0x52E
+  ABB5: inc     DPTR
+  ABB6: movx    A, @DPTR
+
+--- Candidate 247: code_AB91 @ 0xABB0 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ABB0: jc      code_ABF4
+  ABB2: mov     DPTR, #0x52E
+  ABB5: inc     DPTR
+  ABB6: movx    A, @DPTR
+  ABB7: subb    A, R6
+
+--- Candidate 248: code_AB91 @ 0xABD3 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ABD3: lcall   code_B47D
+  ABD6: movx    A, @DPTR
+  ABD7: clr     C
+  ABD8: subb    A, R6
+  ABD9: jc      code_AC39
+
+--- Candidate 249: code_AB91 @ 0xABD6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ABD6: movx    A, @DPTR
+  ABD7: clr     C
+  ABD8: subb    A, R6
+  ABD9: jc      code_AC39
+  ABDB: lcall   code_B31C
+
+--- Candidate 250: code_AB91 @ 0xABD8 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ABD8: subb    A, R6
+  ABD9: jc      code_AC39
+  ABDB: lcall   code_B31C
+  ABDE: clr     A
+  ABDF: movx    @DPTR, A
+
+--- Candidate 251: code_AB91 @ 0xABD9 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ABD9: jc      code_AC39
+  ABDB: lcall   code_B31C
+  ABDE: clr     A
+  ABDF: movx    @DPTR, A
+  ABE0: mov     A, #0xC2
+
+--- Candidate 252: code_AB91 @ 0xAC06 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC06: movx    @DPTR, A
+  AC07: ljmp    code_AC39
+  AC0A: lcall   code_B1FD
+  AC0D: xrl     A, R5
+  AC0E: jnz     code_AC11
+
+--- Candidate 253: code_AB91 @ 0xAC10 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC10: mov     A, R4
+  AC11: jz      code_AC39
+  AC13: lcall   code_B2E2
+  AC16: mov     DPTR, #0x52E
+  AC19: movx    A, @DPTR
+
+--- Candidate 254: code_AB91 @ 0xAC11 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC11: jz      code_AC39
+  AC13: lcall   code_B2E2
+  AC16: mov     DPTR, #0x52E
+  AC19: movx    A, @DPTR
+  AC1A: setb    C
+
+--- Candidate 255: code_AB91 @ 0xAC16 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC16: mov     DPTR, #0x52E
+  AC19: movx    A, @DPTR
+  AC1A: setb    C
+  AC1B: subb    A, #0x28 ; '('
+  AC1D: jc      code_AC2C
+
+--- Candidate 256: code_AB91 @ 0xAC19 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC19: movx    A, @DPTR
+  AC1A: setb    C
+  AC1B: subb    A, #0x28 ; '('
+  AC1D: jc      code_AC2C
+  AC1F: mov     DPTR, #0x561
+
+--- Candidate 257: code_AB91 @ 0xAC1A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC1A: setb    C
+  AC1B: subb    A, #0x28 ; '('
+  AC1D: jc      code_AC2C
+  AC1F: mov     DPTR, #0x561
+  AC22: movx    A, @DPTR
+
+--- Candidate 258: code_AB91 @ 0xAC1B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC1B: subb    A, #0x28 ; '('
+  AC1D: jc      code_AC2C
+  AC1F: mov     DPTR, #0x561
+  AC22: movx    A, @DPTR
+  AC23: subb    A, #0x28 ; '('
+
+--- Candidate 259: code_AB91 @ 0xAC1D ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  AC1D: jc      code_AC2C
+  AC1F: mov     DPTR, #0x561
+  AC22: movx    A, @DPTR
+  AC23: subb    A, #0x28 ; '('
+  AC25: jnc     code_AC2C
+
+--- Candidate 260: code_AB91 @ 0xAC1F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC1F: mov     DPTR, #0x561
+  AC22: movx    A, @DPTR
+  AC23: subb    A, #0x28 ; '('
+  AC25: jnc     code_AC2C
+  AC27: lcall   code_B4E7
+
+--- Candidate 261: code_AB91 @ 0xAC22 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC22: movx    A, @DPTR
+  AC23: subb    A, #0x28 ; '('
+  AC25: jnc     code_AC2C
+  AC27: lcall   code_B4E7
+  AC2A: sjmp    code_AC39
+
+--- Candidate 262: code_AB91 @ 0xAC25 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC25: jnc     code_AC2C
+  AC27: lcall   code_B4E7
+  AC2A: sjmp    code_AC39
+  AC2C: mov     DPTR, #0x52E
+  AC2F: movx    A, @DPTR
+
+--- Candidate 263: code_AB91 @ 0xAC2C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC2C: mov     DPTR, #0x52E
+  AC2F: movx    A, @DPTR
+  AC30: clr     C
+  AC31: subb    A, #0x23 ; '#'
+  AC33: jnc     code_AC39
+
+--- Candidate 264: code_AB91 @ 0xAC2F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC2F: movx    A, @DPTR
+  AC30: clr     C
+  AC31: subb    A, #0x23 ; '#'
+  AC33: jnc     code_AC39
+  AC35: inc     DPTR
+
+--- Candidate 265: code_AB91 @ 0xAC30 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC30: clr     C
+  AC31: subb    A, #0x23 ; '#'
+  AC33: jnc     code_AC39
+  AC35: inc     DPTR
+  AC36: movx    A, @DPTR
+
+--- Candidate 266: code_AB91 @ 0xAC31 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC31: subb    A, #0x23 ; '#'
+  AC33: jnc     code_AC39
+  AC35: inc     DPTR
+  AC36: movx    A, @DPTR
+  AC37: inc     A
+
+--- Candidate 267: code_AB91 @ 0xAC39 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC39: mov     DPTR, #0x52F
+  AC3C: movx    A, @DPTR
+  AC3D: setb    C
+  AC3E: subb    A, #0x33 ; '3'
+  AC40: jc      code_AC47
+
+--- Candidate 268: code_AB91 @ 0xAC3C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC3C: movx    A, @DPTR
+  AC3D: setb    C
+  AC3E: subb    A, #0x33 ; '3'
+  AC40: jc      code_AC47
+  AC42: mov     A, #0x33 ; '3'
+
+--- Candidate 269: code_AB91 @ 0xAC3D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC3D: setb    C
+  AC3E: subb    A, #0x33 ; '3'
+  AC40: jc      code_AC47
+  AC42: mov     A, #0x33 ; '3'
+  AC44: movx    @DPTR, A
+
+--- Candidate 270: code_AB91 @ 0xAC3E ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC3E: subb    A, #0x33 ; '3'
+  AC40: jc      code_AC47
+  AC42: mov     A, #0x33 ; '3'
+  AC44: movx    @DPTR, A
+  AC45: sjmp    code_AC53
+
+--- Candidate 271: code_AB91 @ 0xAC40 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC40: jc      code_AC47
+  AC42: mov     A, #0x33 ; '3'
+  AC44: movx    @DPTR, A
+  AC45: sjmp    code_AC53
+  AC47: mov     DPTR, #0x52F
+
+--- Candidate 272: code_AB91 @ 0xAC47 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC47: mov     DPTR, #0x52F
+  AC4A: movx    A, @DPTR
+  AC4B: clr     C
+  AC4C: subb    A, #0xA
+  AC4E: jnc     code_AC53
+
+--- Candidate 273: code_AB91 @ 0xAC4A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC4A: movx    A, @DPTR
+  AC4B: clr     C
+  AC4C: subb    A, #0xA
+  AC4E: jnc     code_AC53
+  AC50: mov     A, #0xA
+
+--- Candidate 274: code_AB91 @ 0xAC4B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC4B: clr     C
+  AC4C: subb    A, #0xA
+  AC4E: jnc     code_AC53
+  AC50: mov     A, #0xA
+  AC52: movx    @DPTR, A
+
+--- Candidate 275: code_AB91 @ 0xAC4C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC4C: subb    A, #0xA
+  AC4E: jnc     code_AC53
+  AC50: mov     A, #0xA
+  AC52: movx    @DPTR, A
+  AC53: mov     DPTR, #0xF11
+
+--- Candidate 276: code_AB91 @ 0xAC5B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AC5B: jnz     code_AC7A
+  AC5D: mov     DPTR, #0xF11
+  AC60: movx    A, @DPTR
+  AC61: mov     R7, A
+  AC62: add     A, #0x5E ; '^'
+
+--- Candidate 277: code_AB91 @ 0xACB5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ACB5: mov     DPTR, #0xF11
+  ACB8: movx    A, @DPTR
+  ACB9: clr     C
+  ACBA: subb    A, R7
+  ACBB: jc      code_ACC4
+
+--- Candidate 278: code_AB91 @ 0xACB8 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ACB8: movx    A, @DPTR
+  ACB9: clr     C
+  ACBA: subb    A, R7
+  ACBB: jc      code_ACC4
+  ACBD: mov     DPTR, #0x5C9
+
+--- Candidate 279: code_AB91 @ 0xACB9 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ACB9: clr     C
+  ACBA: subb    A, R7
+  ACBB: jc      code_ACC4
+  ACBD: mov     DPTR, #0x5C9
+  ACC0: movx    A, @DPTR
+
+--- Candidate 280: code_AB91 @ 0xACBA ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ACBA: subb    A, R7
+  ACBB: jc      code_ACC4
+  ACBD: mov     DPTR, #0x5C9
+  ACC0: movx    A, @DPTR
+  ACC1: orl     A, #0x10
+
+--- Candidate 281: code_AB91 @ 0xACC1 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ACC1: orl     A, #0x10
+  ACC3: movx    @DPTR, A
+  ACC4: ret
+  AD42: jc      code_AD50
+  AD44: lcall   code_BB6B
+
+--- Candidate 282: code_AB91 @ 0xACC3 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ACC3: movx    @DPTR, A
+  ACC4: ret
+  AD42: jc      code_AD50
+  AD44: lcall   code_BB6B
+  AD47: mov     A, #0xD0
+
+--- Candidate 283: code_AB91 @ 0xACC4 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ACC4: ret
+  AD42: jc      code_AD50
+  AD44: lcall   code_BB6B
+  AD47: mov     A, #0xD0
+  AD49: movx    @DPTR, A
+
+--- Candidate 284: code_C84 @ 0xAD42 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AD42: jc      code_AD50
+  AD44: lcall   code_BB6B
+  AD47: mov     A, #0xD0
+  AD49: movx    @DPTR, A
+  AD4A: inc     DPTR
+
+--- Candidate 285: code_C84 @ 0xAD55 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AD55: subb    A, #1
+  AD57: jc      code_AD65
+  AD59: lcall   code_BB6B
+  AD5C: mov     A, #0xD0
+  AD5E: movx    @DPTR, A
+
+--- Candidate 286: code_C84 @ 0xAD57 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AD57: jc      code_AD65
+  AD59: lcall   code_BB6B
+  AD5C: mov     A, #0xD0
+  AD5E: movx    @DPTR, A
+  AD5F: inc     DPTR
+
+--- Candidate 287: code_C84 @ 0xAD6A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AD6A: subb    A, #0
+  AD6C: jc      code_AD7A
+  AD6E: lcall   code_BB6B
+  AD71: mov     A, #0xD0
+  AD73: movx    @DPTR, A
+
+--- Candidate 288: code_C84 @ 0xAD6C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AD6C: jc      code_AD7A
+  AD6E: lcall   code_BB6B
+  AD71: mov     A, #0xD0
+  AD73: movx    @DPTR, A
+  AD74: inc     DPTR
+
+--- Candidate 289: code_C84 @ 0xAD7F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AD7F: subb    A, #0
+  AD81: jc      code_AD8F
+  AD83: lcall   code_BB6B
+  AD86: mov     A, #0xD0
+  AD88: movx    @DPTR, A
+
+--- Candidate 290: code_C84 @ 0xAD81 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AD81: jc      code_AD8F
+  AD83: lcall   code_BB6B
+  AD86: mov     A, #0xD0
+  AD88: movx    @DPTR, A
+  AD89: inc     DPTR
+
+--- Candidate 291: code_C84 @ 0xAD94 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AD94: subb    A, #0
+  AD96: mov     DPTR, #0xE21
+  AD99: mov     A, #0xFF
+  AD9B: jc      code_ADA8
+  AD9D: movx    @DPTR, A
+
+--- Candidate 292: code_C84 @ 0xAD96 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AD96: mov     DPTR, #0xE21
+  AD99: mov     A, #0xFF
+  AD9B: jc      code_ADA8
+  AD9D: movx    @DPTR, A
+  AD9E: inc     DPTR
+
+--- Candidate 293: code_C84 @ 0xAD99 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AD99: mov     A, #0xFF
+  AD9B: jc      code_ADA8
+  AD9D: movx    @DPTR, A
+  AD9E: inc     DPTR
+  AD9F: mov     A, #0xD0
+
+--- Candidate 294: code_C84 @ 0xADB1 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ADB1: mov     DPTR, #0xAF9
+  ADB4: movx    A, @DPTR
+  ADB5: mov     R7, A
+  ADB6: xrl     A, #1
+  ADB8: jz      code_ADBE
+
+--- Candidate 295: code_C84 @ 0xADB4 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  ADB4: movx    A, @DPTR
+  ADB5: mov     R7, A
+  ADB6: xrl     A, #1
+  ADB8: jz      code_ADBE
+  ADBA: mov     A, R7
+
+--- Candidate 296: code_C84 @ 0xAE7B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AE7B: orl     A, R3
+  AE7C: jnz     code_AE86
+  AE7E: lcall   code_BBF2
+  AE81: orl     A, #4
+  AE83: movx    @DPTR, A
+
+--- Candidate 297: code_C84 @ 0xAE7C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AE7C: jnz     code_AE86
+  AE7E: lcall   code_BBF2
+  AE81: orl     A, #4
+  AE83: movx    @DPTR, A
+  AE84: sjmp    code_AE8C
+
+--- Candidate 298: code_AF1B @ 0xAF1F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AF1F: subb    A, #5
+  AF21: mov     DPTR, #0x1494
+  AF24: movx    A, @DPTR
+  AF25: jc      code_AF36
+  AF27: lcall   code_BBC5
+
+--- Candidate 299: code_AF1B @ 0xAF21 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AF21: mov     DPTR, #0x1494
+  AF24: movx    A, @DPTR
+  AF25: jc      code_AF36
+  AF27: lcall   code_BBC5
+  AF2A: orl     A, #8
+
+--- Candidate 300: code_B027 @ 0xAFE2 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AFE2: inc     DPTR
+  AFE3: movx    A, @DPTR
+  AFE4: clr     C
+  AFE5: subb    A, R7
+  AFE6: jc      code_AFEB
+
+--- Candidate 301: code_B027 @ 0xAFE3 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AFE3: movx    A, @DPTR
+  AFE4: clr     C
+  AFE5: subb    A, R7
+  AFE6: jc      code_AFEB
+  AFE8: ljmp    code_B0BB
+
+--- Candidate 302: code_B027 @ 0xAFE6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AFE6: jc      code_AFEB
+  AFE8: ljmp    code_B0BB
+  AFEB: clr     A
+  AFEC: inc     DPTR
+  AFED: movx    @DPTR, A
+
+--- Candidate 303: code_B027 @ 0xAFEC ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AFEC: inc     DPTR
+  AFED: movx    @DPTR, A
+  AFEE: lcall   code_BBF9
+  AFF1: subb    A, #0x25 ; '%'
+  AFF3: jc      code_AFF8
+
+--- Candidate 304: code_B027 @ 0xAFED ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  AFED: movx    @DPTR, A
+  AFEE: lcall   code_BBF9
+  AFF1: subb    A, #0x25 ; '%'
+  AFF3: jc      code_AFF8
+  AFF5: ljmp    code_B0B5
+
+--- Candidate 305: code_B027 @ 0xB00C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B00C: clr     C
+  B00D: subb    A, #0xA
+  B00F: jnc     code_B030
+  B011: mov     DPTR, #0xB08
+  B014: movx    A, @DPTR
+
+--- Candidate 306: code_B027 @ 0xB00D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B00D: subb    A, #0xA
+  B00F: jnc     code_B030
+  B011: mov     DPTR, #0xB08
+  B014: movx    A, @DPTR
+  B015: mov     B, #0xA; B-Register
+
+--- Candidate 307: code_B027 @ 0xB00F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B00F: jnc     code_B030
+  B011: mov     DPTR, #0xB08
+  B014: movx    A, @DPTR
+  B015: mov     B, #0xA; B-Register
+  B018: mul     AB
+
+--- Candidate 308: code_B027 @ 0xB046 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B046: lcall   code_BBB0
+  B049: xrl     A, #1
+  B04B: jnz     code_B07D
+  B04D: mov     DPTR, #0xB09
+  B050: movx    A, @DPTR
+
+--- Candidate 309: code_B027 @ 0xB049 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B049: xrl     A, #1
+  B04B: jnz     code_B07D
+  B04D: mov     DPTR, #0xB09
+  B050: movx    A, @DPTR
+  B051: lcall   code_BBA2
+
+--- Candidate 310: code_B027 @ 0xB04B ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  B04B: jnz     code_B07D
+  B04D: mov     DPTR, #0xB09
+  B050: movx    A, @DPTR
+  B051: lcall   code_BBA2
+  B054: jnz     code_B07D
+
+--- Candidate 311: code_B027 @ 0xB04D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B04D: mov     DPTR, #0xB09
+  B050: movx    A, @DPTR
+  B051: lcall   code_BBA2
+  B054: jnz     code_B07D
+  B056: mov     DPTR, #0xB08
+
+--- Candidate 312: code_B027 @ 0xB051 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B051: lcall   code_BBA2
+  B054: jnz     code_B07D
+  B056: mov     DPTR, #0xB08
+  B059: movx    A, @DPTR
+  B05A: mov     R6, A
+
+--- Candidate 313: code_B027 @ 0xB054 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B054: jnz     code_B07D
+  B056: mov     DPTR, #0xB08
+  B059: movx    A, @DPTR
+  B05A: mov     R6, A
+  B05B: lcall   code_BB56
+
+--- Candidate 314: code_B0BB @ 0xB0C5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B0C5: movx    A, @DPTR
+  B0C6: mov     R7, A
+  B0C7: clr     C
+  B0C8: subb    A, R6
+  B0C9: jnc     code_B0F3
+
+--- Candidate 315: code_B0BB @ 0xB0C8 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B0C8: subb    A, R6
+  B0C9: jnc     code_B0F3
+  B0CB: lcall   code_C655
+  B0CE: mov     DPTR, #0xB08
+  B0D1: movx    A, @DPTR
+
+--- Candidate 316: code_B0BB @ 0xB0C9 ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  B0C9: jnc     code_B0F3
+  B0CB: lcall   code_C655
+  B0CE: mov     DPTR, #0xB08
+  B0D1: movx    A, @DPTR
+  B0D2: jnz     code_B0EE
+
+--- Candidate 317: code_B0CB @ 0xB0CB ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B0CB: lcall   code_C655
+  B0CE: mov     DPTR, #0xB08
+  B0D1: movx    A, @DPTR
+  B0D2: jnz     code_B0EE
+  B0D4: mov     DPTR, #0xAF9
+
+--- Candidate 318: code_B0CB @ 0xB0D2 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B0D2: jnz     code_B0EE
+  B0D4: mov     DPTR, #0xAF9
+  B0D7: movx    A, @DPTR
+  B0D8: mov     R7, A
+  B0D9: xrl     A, #0x81
+
+--- Candidate 319: code_B0CB @ 0xB0D4 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B0D4: mov     DPTR, #0xAF9
+  B0D7: movx    A, @DPTR
+  B0D8: mov     R7, A
+  B0D9: xrl     A, #0x81
+  B0DB: jz      code_B0EB
+
+--- Candidate 320: code_B0D7 @ 0xB0D7 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B0D7: movx    A, @DPTR
+  B0D8: mov     R7, A
+  B0D9: xrl     A, #0x81
+  B0DB: jz      code_B0EB
+  B0DD: mov     A, R7
+
+--- Candidate 321: code_B7AE @ 0xB7C7 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B7C7: subb    A, #5
+  B7C9: jc      code_B7DF
+  B7CB: mov     DPTR, #0xDBF
+  B7CE: mov     A, #2
+  B7D0: movx    @DPTR, A
+
+--- Candidate 322: code_B7AE @ 0xB7C9 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B7C9: jc      code_B7DF
+  B7CB: mov     DPTR, #0xDBF
+  B7CE: mov     A, #2
+  B7D0: movx    @DPTR, A
+  B7D1: inc     DPTR
+
+--- Candidate 323: code_B7AE @ 0xB7FE ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B7FE: subb    A, #1
+  B800: mov     DPTR, #0xDBF
+  B803: jc      code_B816
+  B805: mov     A, #3
+  B807: movx    @DPTR, A
+
+--- Candidate 324: code_B7AE @ 0xB800 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B800: mov     DPTR, #0xDBF
+  B803: jc      code_B816
+  B805: mov     A, #3
+  B807: movx    @DPTR, A
+  B808: inc     DPTR
+
+--- Candidate 325: code_B7AE @ 0xB803 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B803: jc      code_B816
+  B805: mov     A, #3
+  B807: movx    @DPTR, A
+  B808: inc     DPTR
+  B809: mov     A, #7
+
+--- Candidate 326: code_B7AE @ 0xB81D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B81D: movx    @DPTR, A
+  B81E: clr     C
+  B81F: mov     A, R6
+  B820: subb    A, #5
+  B822: jc      code_B851
+
+--- Candidate 327: code_B7AE @ 0xB83D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B83D: lcall   code_B4B9
+  B840: mov     DPTR, #0x52E
+  B843: jnc     code_B84B
+  B845: mov     A, #0x1C
+  B847: movx    @DPTR, A
+
+--- Candidate 328: code_B7AE @ 0xB840 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B840: mov     DPTR, #0x52E
+  B843: jnc     code_B84B
+  B845: mov     A, #0x1C
+  B847: movx    @DPTR, A
+  B848: ljmp    code_B91B
+
+--- Candidate 329: code_B7AE @ 0xB843 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B843: jnc     code_B84B
+  B845: mov     A, #0x1C
+  B847: movx    @DPTR, A
+  B848: ljmp    code_B91B
+  B84B: mov     A, #0x18
+
+--- Candidate 330: code_B7AE @ 0xB856 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B856: subb    A, #0x80
+  B858: mov     DPTR, #0xDBA
+  B85B: movx    A, @DPTR
+  B85C: subb    A, #2
+  B85E: jc      code_B8A8
+
+--- Candidate 331: code_B7AE @ 0xB858 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B858: mov     DPTR, #0xDBA
+  B85B: movx    A, @DPTR
+  B85C: subb    A, #2
+  B85E: jc      code_B8A8
+  B860: lcall   code_B343
+
+--- Candidate 332: code_B7AE @ 0xB85B ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  B85B: movx    A, @DPTR
+  B85C: subb    A, #2
+  B85E: jc      code_B8A8
+  B860: lcall   code_B343
+  B863: jnc     code_B867
+
+--- Candidate 333: code_B7AE @ 0xB867 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B867: lcall   code_B4B0
+  B86A: jnc     code_B875
+  B86C: mov     DPTR, #0x52E
+  B86F: mov     A, #0x28 ; '('
+  B871: movx    @DPTR, A
+
+--- Candidate 334: code_B7AE @ 0xB86A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B86A: jnc     code_B875
+  B86C: mov     DPTR, #0x52E
+  B86F: mov     A, #0x28 ; '('
+  B871: movx    @DPTR, A
+  B872: ljmp    code_B91B
+
+--- Candidate 335: code_B7AE @ 0xB871 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B871: movx    @DPTR, A
+  B872: ljmp    code_B91B
+  B875: mov     DPTR, #0xDC1
+  B878: lcall   code_B346
+  B87B: jnc     code_B886
+
+--- Candidate 336: code_B7AE @ 0xB878 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B878: lcall   code_B346
+  B87B: jnc     code_B886
+  B87D: mov     DPTR, #0x52E
+  B880: mov     A, #0x22 ; '"'
+  B882: movx    @DPTR, A
+
+--- Candidate 337: code_B7AE @ 0xB87B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B87B: jnc     code_B886
+  B87D: mov     DPTR, #0x52E
+  B880: mov     A, #0x22 ; '"'
+  B882: movx    @DPTR, A
+  B883: ljmp    code_B91B
+
+--- Candidate 338: code_B7AE @ 0xB880 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B880: mov     A, #0x22 ; '"'
+  B882: movx    @DPTR, A
+  B883: ljmp    code_B91B
+  B886: lcall   code_B4B9
+  B889: jnc     code_B890
+
+--- Candidate 339: code_B7AE @ 0xB882 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B882: movx    @DPTR, A
+  B883: ljmp    code_B91B
+  B886: lcall   code_B4B9
+  B889: jnc     code_B890
+  B88B: mov     DPTR, #0x52E
+
+--- Candidate 340: code_B7AE @ 0xB889 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B889: jnc     code_B890
+  B88B: mov     DPTR, #0x52E
+  B88E: sjmp    code_B8DB
+  B890: mov     DPTR, #0xDC3
+  B893: movx    A, @DPTR
+
+--- Candidate 341: code_B7AE @ 0xB898 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B898: movx    A, @DPTR
+  B899: setb    C
+  B89A: subb    A, R7
+  B89B: mov     DPTR, #0x52E
+  B89E: jnc     code_B8A2
+
+--- Candidate 342: code_B89A @ 0xB89B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B89B: mov     DPTR, #0x52E
+  B89E: jnc     code_B8A2
+  B8A0: sjmp    code_B8E0
+  B8A2: mov     A, #0xE
+  B8A4: movx    @DPTR, A
+
+--- Candidate 343: code_B89A @ 0xB89E ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B89E: jnc     code_B8A2
+  B8A0: sjmp    code_B8E0
+  B8A2: mov     A, #0xE
+  B8A4: movx    @DPTR, A
+  B8A5: ljmp    code_B91B
+
+--- Candidate 344: code_B89A @ 0xB8A2 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8A2: mov     A, #0xE
+  B8A4: movx    @DPTR, A
+  B8A5: ljmp    code_B91B
+  B8A8: lcall   code_B343
+  B8AB: jnc     code_B8B6
+
+--- Candidate 345: code_B89A @ 0xB8A4 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8A4: movx    @DPTR, A
+  B8A5: ljmp    code_B91B
+  B8A8: lcall   code_B343
+  B8AB: jnc     code_B8B6
+  B8AD: mov     DPTR, #0x52E
+
+--- Candidate 346: code_B89A @ 0xB8A8 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8A8: lcall   code_B343
+  B8AB: jnc     code_B8B6
+  B8AD: mov     DPTR, #0x52E
+  B8B0: mov     A, #0x2C ; ','
+  B8B2: movx    @DPTR, A
+
+--- Candidate 347: code_B89A @ 0xB8AB ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8AB: jnc     code_B8B6
+  B8AD: mov     DPTR, #0x52E
+  B8B0: mov     A, #0x2C ; ','
+  B8B2: movx    @DPTR, A
+  B8B3: ljmp    code_B91B
+
+--- Candidate 348: code_B89A @ 0xB8B0 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8B0: mov     A, #0x2C ; ','
+  B8B2: movx    @DPTR, A
+  B8B3: ljmp    code_B91B
+  B8B6: lcall   code_B4B0
+  B8B9: jnc     code_B8C3
+
+--- Candidate 349: code_B89A @ 0xB8B2 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8B2: movx    @DPTR, A
+  B8B3: ljmp    code_B91B
+  B8B6: lcall   code_B4B0
+  B8B9: jnc     code_B8C3
+  B8BB: mov     DPTR, #0x52E
+
+--- Candidate 350: code_B89A @ 0xB8B6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8B6: lcall   code_B4B0
+  B8B9: jnc     code_B8C3
+  B8BB: mov     DPTR, #0x52E
+  B8BE: mov     A, #0x27 ; '''
+  B8C0: movx    @DPTR, A
+
+--- Candidate 351: code_B89A @ 0xB8B9 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8B9: jnc     code_B8C3
+  B8BB: mov     DPTR, #0x52E
+  B8BE: mov     A, #0x27 ; '''
+  B8C0: movx    @DPTR, A
+  B8C1: sjmp    code_B91B
+
+--- Candidate 352: code_B89A @ 0xB8C0 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8C0: movx    @DPTR, A
+  B8C1: sjmp    code_B91B
+  B8C3: mov     DPTR, #0xDC1
+  B8C6: lcall   code_B346
+  B8C9: jnc     code_B8D3
+
+--- Candidate 353: code_B89A @ 0xB8C6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8C6: lcall   code_B346
+  B8C9: jnc     code_B8D3
+  B8CB: mov     DPTR, #0x52E
+  B8CE: mov     A, #0x21 ; '!'
+  B8D0: movx    @DPTR, A
+
+--- Candidate 354: code_B89A @ 0xB8C9 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8C9: jnc     code_B8D3
+  B8CB: mov     DPTR, #0x52E
+  B8CE: mov     A, #0x21 ; '!'
+  B8D0: movx    @DPTR, A
+  B8D1: sjmp    code_B91B
+
+--- Candidate 355: code_B89A @ 0xB8D0 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8D0: movx    @DPTR, A
+  B8D1: sjmp    code_B91B
+  B8D3: lcall   code_B4B9
+  B8D6: mov     DPTR, #0x52E
+  B8D9: jnc     code_B8E0
+
+--- Candidate 356: code_B89A @ 0xB8D3 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8D3: lcall   code_B4B9
+  B8D6: mov     DPTR, #0x52E
+  B8D9: jnc     code_B8E0
+  B8DB: mov     A, #0x1A
+  B8DD: movx    @DPTR, A
+
+--- Candidate 357: code_B89A @ 0xB8D6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8D6: mov     DPTR, #0x52E
+  B8D9: jnc     code_B8E0
+  B8DB: mov     A, #0x1A
+  B8DD: movx    @DPTR, A
+  B8DE: sjmp    code_B91B
+
+--- Candidate 358: code_B89A @ 0xB8D9 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8D9: jnc     code_B8E0
+  B8DB: mov     A, #0x1A
+  B8DD: movx    @DPTR, A
+  B8DE: sjmp    code_B91B
+  B8E0: mov     A, #0x14
+
+--- Candidate 359: code_B75B @ 0xB8E8 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8E8: lcall   code_B3E9
+  B8EB: movx    A, @DPTR
+  B8EC: clr     C
+  B8ED: subb    A, #0xA
+  B8EF: jnc     code_B90F
+
+--- Candidate 360: code_B75B @ 0xB8EB ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8EB: movx    A, @DPTR
+  B8EC: clr     C
+  B8ED: subb    A, #0xA
+  B8EF: jnc     code_B90F
+  B8F1: mov     A, R7
+
+--- Candidate 361: code_B75B @ 0xB8F6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8F6: inc     A
+  B8F7: jnz     code_B909
+  B8F9: mov     DPTR, #0x5CE
+  B8FC: mov     A, #0x23 ; '#'
+  B8FE: movx    @DPTR, A
+
+--- Candidate 362: code_B75B @ 0xB8F7 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B8F7: jnz     code_B909
+  B8F9: mov     DPTR, #0x5CE
+  B8FC: mov     A, #0x23 ; '#'
+  B8FE: movx    @DPTR, A
+  B8FF: sjmp    code_B90F
+
+--- Candidate 363: code_B932 @ 0xB9B4 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B9B4: lcall   code_14A8
+  B9B7: mov     DPTR, #0x528
+  B9BA: movx    A, @DPTR
+  B9BB: cpl     A
+  B9BC: jnz     code_B9C1
+
+--- Candidate 364: code_B932 @ 0xB9B7 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B9B7: mov     DPTR, #0x528
+  B9BA: movx    A, @DPTR
+  B9BB: cpl     A
+  B9BC: jnz     code_B9C1
+  B9BE: inc     DPTR
+
+--- Candidate 365: code_B932 @ 0xB9BB ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B9BB: cpl     A
+  B9BC: jnz     code_B9C1
+  B9BE: inc     DPTR
+  B9BF: movx    A, @DPTR
+  B9C0: cpl     A
+
+--- Candidate 366: code_B932 @ 0xB9BC ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  B9BC: jnz     code_B9C1
+  B9BE: inc     DPTR
+  B9BF: movx    A, @DPTR
+  B9C0: cpl     A
+  B9C1: jnz     code_B9C6
+
+--- Candidate 367: code_B932 @ 0xB9BE ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B9BE: inc     DPTR
+  B9BF: movx    A, @DPTR
+  B9C0: cpl     A
+  B9C1: jnz     code_B9C6
+  B9C3: ljmp    code_BA79
+
+--- Candidate 368: code_B932 @ 0xB9BF ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B9BF: movx    A, @DPTR
+  B9C0: cpl     A
+  B9C1: jnz     code_B9C6
+  B9C3: ljmp    code_BA79
+  B9C6: clr     A
+
+--- Candidate 369: code_B932 @ 0xB9C1 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B9C1: jnz     code_B9C6
+  B9C3: ljmp    code_BA79
+  B9C6: clr     A
+  B9C7: mov     DPTR, #0x550
+  B9CA: movx    @DPTR, A
+
+--- Candidate 370: code_B932 @ 0xB9D3 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B9D3: movx    A, @DPTR
+  B9D4: mov     R6, A
+  B9D5: clr     C
+  B9D6: subb    A, R7
+  B9D7: jc      code_B9DC
+
+--- Candidate 371: code_B932 @ 0xB9D5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B9D5: clr     C
+  B9D6: subb    A, R7
+  B9D7: jc      code_B9DC
+  B9D9: ljmp    code_BA5E
+  B9DC: movx    A, @DPTR
+
+--- Candidate 372: code_B932 @ 0xB9D6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B9D6: subb    A, R7
+  B9D7: jc      code_B9DC
+  B9D9: ljmp    code_BA5E
+  B9DC: movx    A, @DPTR
+  B9DD: mov     R7, A
+
+--- Candidate 373: code_B932 @ 0xB9D7 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  B9D7: jc      code_B9DC
+  B9D9: ljmp    code_BA5E
+  B9DC: movx    A, @DPTR
+  B9DD: mov     R7, A
+  B9DE: lcall   code_B27F
+
+--- Candidate 374: code_B932 @ 0xBA02 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA02: mov     A, R6
+  BA03: xrl     A, R4
+  BA04: jnz     code_BA55
+  BA06: mov     DPTR, #0x550
+  BA09: movx    A, @DPTR
+
+--- Candidate 375: code_B932 @ 0xBA03 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA03: xrl     A, R4
+  BA04: jnz     code_BA55
+  BA06: mov     DPTR, #0x550
+  BA09: movx    A, @DPTR
+  BA0A: mov     R7, A
+
+--- Candidate 376: code_B932 @ 0xBA04 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA04: jnz     code_BA55
+  BA06: mov     DPTR, #0x550
+  BA09: movx    A, @DPTR
+  BA0A: mov     R7, A
+  BA0B: lcall   code_B52C
+
+--- Candidate 377: code_B932 @ 0xBA41 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA41: setb    C
+  BA42: lcall   code_1169
+  BA45: jnc     code_BA55
+  BA47: mov     DPTR, #0x550
+  BA4A: movx    A, @DPTR
+
+--- Candidate 378: code_B932 @ 0xBA42 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA42: lcall   code_1169
+  BA45: jnc     code_BA55
+  BA47: mov     DPTR, #0x550
+  BA4A: movx    A, @DPTR
+  BA4B: lcall   code_B51B
+
+--- Candidate 379: code_B932 @ 0xBA45 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA45: jnc     code_BA55
+  BA47: mov     DPTR, #0x550
+  BA4A: movx    A, @DPTR
+  BA4B: lcall   code_B51B
+  BA4E: mov     DPH, A; Data Pointer, High Byte
+
+--- Candidate 380: code_B932 @ 0xBA5B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA5B: ljmp    code_B9CB
+  BA5E: mov     DPTR, #0x54F
+  BA61: movx    A, @DPTR
+  BA62: jnz     code_BA79
+  BA64: clr     C
+
+--- Candidate 381: code_B932 @ 0xBA5E ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA5E: mov     DPTR, #0x54F
+  BA61: movx    A, @DPTR
+  BA62: jnz     code_BA79
+  BA64: clr     C
+  BA65: mov     DPTR, #0x529
+
+--- Candidate 382: code_B932 @ 0xBA62 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA62: jnz     code_BA79
+  BA64: clr     C
+  BA65: mov     DPTR, #0x529
+  BA68: movx    A, @DPTR
+  BA69: subb    A, #2
+
+--- Candidate 383: code_B932 @ 0xBA69 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA69: subb    A, #2
+  BA6B: mov     DPTR, #0x528
+  BA6E: movx    A, @DPTR
+  BA6F: subb    A, #0
+  BA71: jc      code_BA79
+
+--- Candidate 384: code_B932 @ 0xBA6B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA6B: mov     DPTR, #0x528
+  BA6E: movx    A, @DPTR
+  BA6F: subb    A, #0
+  BA71: jc      code_BA79
+  BA73: mov     DPTR, #0x54F
+
+--- Candidate 385: code_B932 @ 0xBA6E ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA6E: movx    A, @DPTR
+  BA6F: subb    A, #0
+  BA71: jc      code_BA79
+  BA73: mov     DPTR, #0x54F
+  BA76: mov     A, #1
+
+--- Candidate 386: code_B932 @ 0xBA6F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA6F: subb    A, #0
+  BA71: jc      code_BA79
+  BA73: mov     DPTR, #0x54F
+  BA76: mov     A, #1
+  BA78: movx    @DPTR, A
+
+--- Candidate 387: code_B932 @ 0xBA71 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA71: jc      code_BA79
+  BA73: mov     DPTR, #0x54F
+  BA76: mov     A, #1
+  BA78: movx    @DPTR, A
+  BA79: mov     DPTR, #0x54F
+
+--- Candidate 388: code_B932 @ 0xBA8B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA8B: movx    A, @DPTR
+  BA8C: mov     R7, A
+  BA8D: clr     C
+  BA8E: subb    A, R6
+  BA8F: jnc     code_BA9C
+
+--- Candidate 389: code_B932 @ 0xBA8E ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA8E: subb    A, R6
+  BA8F: jnc     code_BA9C
+  BA91: lcall   code_A1C0
+  BA94: mov     DPTR, #0x550
+  BA97: movx    A, @DPTR
+
+--- Candidate 390: code_B932 @ 0xBA8F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BA8F: jnc     code_BA9C
+  BA91: lcall   code_A1C0
+  BA94: mov     DPTR, #0x550
+  BA97: movx    A, @DPTR
+  BA98: inc     A
+
+--- Candidate 391: code_BD78 @ 0xBD8C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BD8C: mov     DPTR, #0xAF2
+  BD8F: movx    @DPTR, A
+  BD90: mov     A, R3
+  BD91: xrl     A, R5
+  BD92: jz      code_BDE0
+
+--- Candidate 392: code_BD78 @ 0xBD8F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BD8F: movx    @DPTR, A
+  BD90: mov     A, R3
+  BD91: xrl     A, R5
+  BD92: jz      code_BDE0
+  BD94: mov     A, R3
+
+--- Candidate 393: code_BD78 @ 0xBDD1 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BDD1: div     AB
+  BDD2: mov     A, B; B-Register
+  BDD4: jz      code_BDDA
+  BDD6: inc     DPTR
+  BDD7: movx    A, @DPTR
+
+--- Candidate 394: code_BD78 @ 0xBDD2 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BDD2: mov     A, B; B-Register
+  BDD4: jz      code_BDDA
+  BDD6: inc     DPTR
+  BDD7: movx    A, @DPTR
+  BDD8: inc     A
+
+--- Candidate 395: sub_BE53 @ 0xBE53 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE53: jz      code_BE6C
+  BE55: add     A, #2
+  BE58: rl      A
+  BE59: mov     DPTR, #0xF15
+  BE5C: movx    A, @DPTR
+
+--- Candidate 396: code_BE58 @ 0xBE58 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE58: rl      A
+  BE59: mov     DPTR, #0xF15
+  BE5C: movx    A, @DPTR
+  BE5D: xrl     A, #1
+  BE5F: jnz     code_BE8D
+
+--- Candidate 397: code_BE58 @ 0xBE59 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE59: mov     DPTR, #0xF15
+  BE5C: movx    A, @DPTR
+  BE5D: xrl     A, #1
+  BE5F: jnz     code_BE8D
+  BE61: lcall   code_BC8B
+
+--- Candidate 398: code_BE58 @ 0xBE5C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE5C: movx    A, @DPTR
+  BE5D: xrl     A, #1
+  BE5F: jnz     code_BE8D
+  BE61: lcall   code_BC8B
+  BE64: mov     DPTR, #0xAB4
+
+--- Candidate 399: code_BE58 @ 0xBE5F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE5F: jnz     code_BE8D
+  BE61: lcall   code_BC8B
+  BE64: mov     DPTR, #0xAB4
+  BE67: mov     A, #2
+  BE69: movx    @DPTR, A
+
+--- Candidate 400: code_BE61 @ 0xBE6A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE6A: sjmp    code_BE8D
+  BE6C: mov     DPTR, #0xF15
+  BE6F: movx    A, @DPTR
+  BE70: jnz     code_BE8D
+  BE72: lcall   code_BE9E
+
+--- Candidate 401: code_BE61 @ 0xBE6C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE6C: mov     DPTR, #0xF15
+  BE6F: movx    A, @DPTR
+  BE70: jnz     code_BE8D
+  BE72: lcall   code_BE9E
+  BE75: clr     A
+
+--- Candidate 402: code_BE61 @ 0xBE6F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE6F: movx    A, @DPTR
+  BE70: jnz     code_BE8D
+  BE72: lcall   code_BE9E
+  BE75: clr     A
+  BE76: mov     DPTR, #0xAB4
+
+--- Candidate 403: code_BE61 @ 0xBE70 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE70: jnz     code_BE8D
+  BE72: lcall   code_BE9E
+  BE75: clr     A
+  BE76: mov     DPTR, #0xAB4
+  BE79: movx    @DPTR, A
+
+--- Candidate 404: code_BE61 @ 0xBE92 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE92: mov     DPTR, #0xAB4
+  BE95: movx    A, @DPTR
+  BE96: mov     R6, A
+  BE97: xrl     A, R7
+  BE98: jz      nullsub_3
+
+--- Candidate 405: code_BE61 @ 0xBE95 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE95: movx    A, @DPTR
+  BE96: mov     R6, A
+  BE97: xrl     A, R7
+  BE98: jz      nullsub_3
+  BE9A: inc     DPTR
+
+--- Candidate 406: code_BE96 @ 0xBE97 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE97: xrl     A, R7
+  BE98: jz      nullsub_3
+  BE9A: inc     DPTR
+  BE9B: mov     A, R6
+  BE9C: movx    @DPTR, A
+
+--- Candidate 407: code_BE96 @ 0xBE98 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BE98: jz      nullsub_3
+  BE9A: inc     DPTR
+  BE9B: mov     A, R6
+  BE9C: movx    @DPTR, A
+  BE9D: ret
+
+--- Candidate 408: code_BF63 @ 0xBF63 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BF63: mov     A, R7
+  BF64: anl     A, #0xF
+  BF66: mov     DPTR, #0xB08
+  BF69: movx    @DPTR, A
+  BF6A: jz      code_BF7E
+
+--- Candidate 409: code_BF63 @ 0xBF6A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  BF6A: jz      code_BF7E
+  BF6C: movx    A, @DPTR
+  BF6D: mov     R5, A
+  BF6E: clr     C
+  BF6F: mov     A, #0x10
+
+--- Candidate 410: code_C01C @ 0xC329 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C329: mov     A, R7
+  C32A: xrl     A, #2
+  C32C: jnz     code_C357
+  C32E: mov     DPTR, #0xC0E
+  C331: movx    A, @DPTR
+
+--- Candidate 411: code_C01C @ 0xC32A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C32A: xrl     A, #2
+  C32C: jnz     code_C357
+  C32E: mov     DPTR, #0xC0E
+  C331: movx    A, @DPTR
+  C332: sjmp    code_C34F
+
+--- Candidate 412: code_C01C @ 0xC32C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C32C: jnz     code_C357
+  C32E: mov     DPTR, #0xC0E
+  C331: movx    A, @DPTR
+  C332: sjmp    code_C34F
+  C34F: mov     DPTR, #0x5CD
+
+--- Candidate 413: crc32_combine64_0 @ 0xC377 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C377: lcall   code_B2D8
+  C37A: mov     DPTR, #0xBF2
+  C37D: movx    A, @DPTR
+  C37E: xrl     A, #1
+  C380: jnz     code_C3AF
+
+--- Candidate 414: crc32_combine64_0 @ 0xC37A ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C37A: mov     DPTR, #0xBF2
+  C37D: movx    A, @DPTR
+  C37E: xrl     A, #1
+  C380: jnz     code_C3AF
+  C382: mov     DPTR, #0xD2F
+
+--- Candidate 415: crc32_combine64_0 @ 0xC37D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C37D: movx    A, @DPTR
+  C37E: xrl     A, #1
+  C380: jnz     code_C3AF
+  C382: mov     DPTR, #0xD2F
+  C385: lcall   code_B250+1
+
+--- Candidate 416: code_C51F @ 0xC526 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C526: jz      code_C52B
+  C528: ljmp    code_A8EF+2
+  C52B: setb    TCON.6; Timer Control Register
+  C52D: ljmp    code_A8EF+2
+  C56A: movx    A, @DPTR
+
+--- Candidate 417: code_C655 @ 0xC6A0 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C6A0: mov     DPTR, #0xBFC
+  C6A3: movx    A, @DPTR
+  C6A4: jz      code_C6D6
+  C6A6: clr     A
+  C6A7: mov     DPTR, #0xBF3
+
+--- Candidate 418: code_C655 @ 0xC6A4 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C6A4: jz      code_C6D6
+  C6A6: clr     A
+  C6A7: mov     DPTR, #0xBF3
+  C6AA: movx    @DPTR, A
+  C6AB: lcall   code_B262
+
+--- Candidate 419: code_C655 @ 0xC6A6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C6A6: clr     A
+  C6A7: mov     DPTR, #0xBF3
+  C6AA: movx    @DPTR, A
+  C6AB: lcall   code_B262
+  C6AE: jnc     code_C6D6
+
+--- Candidate 420: code_C655 @ 0xC6A7 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C6A7: mov     DPTR, #0xBF3
+  C6AA: movx    @DPTR, A
+  C6AB: lcall   code_B262
+  C6AE: jnc     code_C6D6
+  C6B0: lcall   code_AFDA+2
+
+--- Candidate 421: code_C655 @ 0xC6AA ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  C6AA: movx    @DPTR, A
+  C6AB: lcall   code_B262
+  C6AE: jnc     code_C6D6
+  C6B0: lcall   code_AFDA+2
+  C6B3: jnz     code_C6D1
+
+--- Candidate 422: code_C655 @ 0xC6AE ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  C6AE: jnc     code_C6D6
+  C6B0: lcall   code_AFDA+2
+  C6B3: jnz     code_C6D1
+  C6B5: mov     DPTR, #0xBF3
+  C6B8: movx    A, @DPTR
+
+--- Candidate 423: code_C655 @ 0xC6B0 ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  C6B0: lcall   code_AFDA+2
+  C6B3: jnz     code_C6D1
+  C6B5: mov     DPTR, #0xBF3
+  C6B8: movx    A, @DPTR
+  C6B9: jnz     code_C6D1
+
+--- Candidate 424: code_C655 @ 0xC6B3 ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  C6B3: jnz     code_C6D1
+  C6B5: mov     DPTR, #0xBF3
+  C6B8: movx    A, @DPTR
+  C6B9: jnz     code_C6D1
+  C6BB: lcall   code_B319
+
+--- Candidate 425: code_C655 @ 0xC6B5 ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  C6B5: mov     DPTR, #0xBF3
+  C6B8: movx    A, @DPTR
+  C6B9: jnz     code_C6D1
+  C6BB: lcall   code_B319
+  C6BE: jz      code_C6CE
+
+--- Candidate 426: code_C655 @ 0xC6B9 ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  C6B9: jnz     code_C6D1
+  C6BB: lcall   code_B319
+  C6BE: jz      code_C6CE
+  C6C0: movx    A, @DPTR
+  C6C1: xrl     A, #0x83
+
+--- Candidate 427: code_C655 @ 0xC6BB ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  C6BB: lcall   code_B319
+  C6BE: jz      code_C6CE
+  C6C0: movx    A, @DPTR
+  C6C1: xrl     A, #0x83
+  C6C3: jz      code_C6CE
+
+--- Candidate 428: code_C655 @ 0xC6C1 ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  C6C1: xrl     A, #0x83
+  C6C3: jz      code_C6CE
+  C6C5: movx    A, @DPTR
+  C6C6: xrl     A, #0x82
+  C6C8: jz      code_C6CE
+
+--- Candidate 429: code_C655 @ 0xC6C6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C6C6: xrl     A, #0x82
+  C6C8: jz      code_C6CE
+  C6CA: movx    A, @DPTR
+  C6CB: cjne    A, #0x84, code_C6D1
+  C6CE: lcall   code_B2D0+1
+
+--- Candidate 430: code_C655 @ 0xC6C8 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  C6C8: jz      code_C6CE
+  C6CA: movx    A, @DPTR
+  C6CB: cjne    A, #0x84, code_C6D1
+  C6CE: lcall   code_B2D0+1
+  C6D1: lcall   code_B2D0+1
+
+--- Candidate 431: sub_D4F1 @ 0xD4F1 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  D4F1: movx    A, @DPTR
+  D4F2: mov     R7, A
+  D4F3: clr     C
+  D4F4: subb    A, #0xD
+  D4F6: jnc     code_D500
+
+--- Candidate 432: code_D570 @ 0xD58B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  D58B: clr     A
+  D58C: mov     DPTR, #0xBBC
+  D58F: movx    @DPTR, A
+  D590: lcall   code_B0B2+2
+  D593: jnc     code_D5AD
+
+--- Candidate 433: code_D570 @ 0xD58C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  D58C: mov     DPTR, #0xBBC
+  D58F: movx    @DPTR, A
+  D590: lcall   code_B0B2+2
+  D593: jnc     code_D5AD
+  D595: mov     R3, #0xB
+
+--- Candidate 434: code_D570 @ 0xD58F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  D58F: movx    @DPTR, A
+  D590: lcall   code_B0B2+2
+  D593: jnc     code_D5AD
+  D595: mov     R3, #0xB
+  D597: mov     R7, #1
+
+--- Candidate 435: code_D604 @ 0xD60C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  D60C: movx    A, @DPTR
+  D60D: mov     R7, A
+  D60E: clr     C
+  D60F: subb    A, #0xD
+  D611: jnc     code_D61B
+
+--- Candidate 436: code_D611 @ 0xD6A1 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  D6A1: clr     A
+  D6A2: mov     DPTR, #0xBBC
+  D6A5: movx    @DPTR, A
+  D6A6: lcall   code_B0B2+2
+  D6A9: jnc     code_D6C3
+
+--- Candidate 437: code_D611 @ 0xD6A2 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  D6A2: mov     DPTR, #0xBBC
+  D6A5: movx    @DPTR, A
+  D6A6: lcall   code_B0B2+2
+  D6A9: jnc     code_D6C3
+  D6AB: mov     R3, #0xB
+
+--- Candidate 438: code_D611 @ 0xD6A5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  D6A5: movx    @DPTR, A
+  D6A6: lcall   code_B0B2+2
+  D6A9: jnc     code_D6C3
+  D6AB: mov     R3, #0xB
+  D6AD: mov     R7, #1
+
+--- Candidate 439: code_E122 @ 0xE32E ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E32E: mov     DPTR, #0x9CC
+  E331: movx    A, @DPTR
+  E332: xrl     A, #1
+  E334: jnz     code_E39B
+  E336: mov     DPTR, #0x9C8
+
+--- Candidate 440: code_E122 @ 0xE331 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E331: movx    A, @DPTR
+  E332: xrl     A, #1
+  E334: jnz     code_E39B
+  E336: mov     DPTR, #0x9C8
+  E339: lcall   code_AA44+2
+
+--- Candidate 441: code_E122 @ 0xE36C ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E36C: setb    C
+  E36D: lcall   code_AA8C+2
+  E370: jc      code_E37A
+  E372: mov     DPTR, #0x998
+  E375: movx    A, @DPTR
+
+--- Candidate 442: code_E122 @ 0xE36D ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E36D: lcall   code_AA8C+2
+  E370: jc      code_E37A
+  E372: mov     DPTR, #0x998
+  E375: movx    A, @DPTR
+  E376: inc     A
+
+--- Candidate 443: code_E122 @ 0xE384 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E384: mov     DPTR, #0x998
+  E387: movx    A, @DPTR
+  E388: clr     C
+  E389: subb    A, R7
+  E38A: jnc     code_E38F
+
+--- Candidate 444: code_E122 @ 0xE387 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E387: movx    A, @DPTR
+  E388: clr     C
+  E389: subb    A, R7
+  E38A: jnc     code_E38F
+  E38C: ljmp    code_A4E9
+
+--- Candidate 445: code_E122 @ 0xE397 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E397: movx    @DPTR, A
+  E398: ljmp    code_A3FF
+  E39B: mov     DPTR, #0x9C7
+  E39E: lcall   code_AA44+2
+  E3A1: jc      code_E3E2
+
+--- Candidate 446: code_E122 @ 0xE3D4 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E3D4: setb    C
+  E3D5: lcall   code_AA8F
+  E3D8: jnc     code_E3E2
+  E3DA: mov     DPTR, #0x999
+  E3DD: movx    A, @DPTR
+
+--- Candidate 447: code_E122 @ 0xE3D5 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E3D5: lcall   code_AA8F
+  E3D8: jnc     code_E3E2
+  E3DA: mov     DPTR, #0x999
+  E3DD: movx    A, @DPTR
+  E3DE: inc     A
+
+--- Candidate 448: code_E122 @ 0xE3EC ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E3EC: mov     DPTR, #0x999
+  E3EF: movx    A, @DPTR
+  E3F0: clr     C
+  E3F1: subb    A, R7
+  E3F2: jc      code_E3FF
+
+--- Candidate 449: code_E122 @ 0xE3EF ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E3EF: movx    A, @DPTR
+  E3F0: clr     C
+  E3F1: subb    A, R7
+  E3F2: jc      code_E3FF
+  E3F4: mov     DPTR, #0x9CC
+
+--- Candidate 450: code_E122 @ 0xE3F1 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E3F1: subb    A, R7
+  E3F2: jc      code_E3FF
+  E3F4: mov     DPTR, #0x9CC
+  E3F7: mov     A, #1
+  E3F9: movx    @DPTR, A
+
+--- Candidate 451: code_E122 @ 0xE3F2 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E3F2: jc      code_E3FF
+  E3F4: mov     DPTR, #0x9CC
+  E3F7: mov     A, #1
+  E3F9: movx    @DPTR, A
+  E3FA: clr     A
+
+--- Candidate 452: code_E122 @ 0xE407 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E407: movx    A, @DPTR
+  E408: mov     B, R7; B-Register
+  E40A: div     AB
+  E40B: mov     A, B; B-Register
+  E40D: jz      code_E412
+
+--- Candidate 453: code_E122 @ 0xE40B ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E40B: mov     A, B; B-Register
+  E40D: jz      code_E412
+  E40F: ljmp    code_A4DF
+  E412: mov     DPTR, #0x9CD
+  E415: movx    A, @DPTR
+
+--- Candidate 454: code_E122 @ 0xE40D ---
+Memory operations: 1
+Conditional branches: 2
+
+Disassembly:
+  E40D: jz      code_E412
+  E40F: ljmp    code_A4DF
+  E412: mov     DPTR, #0x9CD
+  E415: movx    A, @DPTR
+  E416: jnz     code_E423
+
+--- Candidate 455: code_E122 @ 0xE40F ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E40F: ljmp    code_A4DF
+  E412: mov     DPTR, #0x9CD
+  E415: movx    A, @DPTR
+  E416: jnz     code_E423
+  E418: lcall   code_AA26
+
+--- Candidate 456: code_E122 @ 0xE412 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E412: mov     DPTR, #0x9CD
+  E415: movx    A, @DPTR
+  E416: jnz     code_E423
+  E418: lcall   code_AA26
+  E41B: lcall   code_A4E9+1
+
+--- Candidate 457: code_E122 @ 0xE415 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E415: movx    A, @DPTR
+  E416: jnz     code_E423
+  E418: lcall   code_AA26
+  E41B: lcall   code_A4E9+1
+  E41E: mov     DPTR, #0x9B5
+
+--- Candidate 458: code_E122 @ 0xE421 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E421: sjmp    code_E43A
+  E423: mov     DPTR, #0x9CD
+  E426: movx    A, @DPTR
+  E427: xrl     A, #1
+  E429: jnz     code_E466
+
+--- Candidate 459: code_E122 @ 0xE423 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E423: mov     DPTR, #0x9CD
+  E426: movx    A, @DPTR
+  E427: xrl     A, #1
+  E429: jnz     code_E466
+  E42B: lcall   code_AB1C+1
+
+--- Candidate 460: code_E122 @ 0xE426 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E426: movx    A, @DPTR
+  E427: xrl     A, #1
+  E429: jnz     code_E466
+  E42B: lcall   code_AB1C+1
+  E42E: mov     DPTR, #0x9BD
+
+--- Candidate 461: code_E122 @ 0xE464 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E464: sjmp    code_E48C
+  E466: mov     DPTR, #0x9CD
+  E469: movx    A, @DPTR
+  E46A: xrl     A, #2
+  E46C: jnz     code_E491
+
+--- Candidate 462: code_E122 @ 0xE466 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E466: mov     DPTR, #0x9CD
+  E469: movx    A, @DPTR
+  E46A: xrl     A, #2
+  E46C: jnz     code_E491
+  E46E: lcall   code_AB1C+1
+
+--- Candidate 463: code_E122 @ 0xE469 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E469: movx    A, @DPTR
+  E46A: xrl     A, #2
+  E46C: jnz     code_E491
+  E46E: lcall   code_AB1C+1
+  E471: mov     R3, A
+
+--- Candidate 464: code_E122 @ 0xE495 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  E495: jz      code_E4C6
+  E497: mov     DPTR, #0x9B1
+  E49A: movx    A, @DPTR
+  E49B: mov     R7, A
+  E49C: inc     DPTR
+
+--- Candidate 465: code_F7CA @ 0xF7D3 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  F7D3: mov     DPTR, #0xF0B
+  F7D6: movx    A, @DPTR
+  F7D7: mov     R6, A
+  F7D8: jnz     code_F7E0
+  F7DA: mov     DPTR, #0xF3F6
+
+--- Candidate 466: code_F7CA @ 0xF7D6 ---
+Memory operations: 1
+Conditional branches: 1
+
+Disassembly:
+  F7D6: movx    A, @DPTR
+  F7D7: mov     R6, A
+  F7D8: jnz     code_F7E0
+  F7DA: mov     DPTR, #0xF3F6
+  F7DD: movc    A, @A+DPTR

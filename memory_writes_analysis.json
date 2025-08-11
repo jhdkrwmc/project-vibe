@@ -1,0 +1,94 @@
+{
+  "0x0F09": [
+    {
+      "write_ea": "0x1C8",
+      "write_instruction": "movx    A, @DPTR",
+      "dptr_set_ea": "0x1C5",
+      "dptr_set_instruction": "mov     DPTR, #0xF09",
+      "function": "CTF",
+      "function_ea": "0x9B",
+      "context": [
+        {
+          "ea": "0x1BF",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1C4",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x1C8",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x1C9",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x1CC",
+          "disasm": "mov     DPTR, #0xBA5"
+        }
+      ]
+    },
+    {
+      "write_ea": "0x21B",
+      "write_instruction": "movx    A, @DPTR",
+      "dptr_set_ea": "0x218",
+      "dptr_set_instruction": "mov     DPTR, #0xF09",
+      "function": "CTF",
+      "function_ea": "0x9B",
+      "context": [
+        {
+          "ea": "0x212",
+          "disasm": "lcall   code_B932"
+        },
+        {
+          "ea": "0x21B",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x21C",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x21F",
+          "disasm": "ljmp    code_A32C"
+        }
+      ]
+    },
+    {
+      "write_ea": "0x232",
+      "write_instruction": "movx    A, @DPTR",
+      "dptr_set_ea": "0x22F",
+      "dptr_set_instruction": "mov     DPTR, #0xF09",
+      "function": "CTF",
+      "function_ea": "0x9B",
+      "context": [
+        {
+          "ea": "0x229",
+          "disasm": "lcall   code_B930"
+        },
+        {
+          "ea": "0x232",
+          "disasm": "movx    A, @DPTR"
+        }
+      ]
+    }
+  ],
+  "0x0BA5": [
+    {
+      "write_ea": "0x1CF",
+      "write_instruction": "movx    A, @DPTR",
+      "dptr_set_ea": "0x1CC",
+      "dptr_set_instruction": "mov     DPTR, #0xBA5",
+      "function": "CTF",
+      "function_ea": "0x9B",
+      "context": [
+        {
+          "ea": "0x1CF",
+          "disasm": "movx    A, @DPTR"
+        }
+      ]
+    }
+  ]
+}

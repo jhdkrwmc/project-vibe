@@ -1,0 +1,884 @@
+{
+  "0x0BA5": {
+    "stats": {
+      "total_accesses": 1,
+      "writes": 0,
+      "reads": 1,
+      "functions_accessing": 1
+    },
+    "accesses": [
+      {
+        "ea": "0x1CF",
+        "dptr_set_ea": "0x1CC",
+        "access_type": "read",
+        "value": null,
+        "function": "CTF",
+        "target": "0x0BA5",
+        "context_before": [
+          {
+            "ea": "0x1C4",
+            "disasm": "movx    @DPTR, A"
+          },
+          {
+            "ea": "0x1C5",
+            "disasm": "mov     DPTR, #0xF09"
+          },
+          {
+            "ea": "0x1C8",
+            "disasm": "movx    A, @DPTR"
+          },
+          {
+            "ea": "0x1C9",
+            "disasm": "mov     R7, A"
+          },
+          {
+            "ea": "0x1CA",
+            "disasm": "jnz     code_1D5"
+          },
+          {
+            "ea": "0x1CC",
+            "disasm": "mov     DPTR, #0xBA5"
+          }
+        ],
+        "context_after": [
+          {
+            "ea": "0x1D0",
+            "disasm": "jnz     code_1D5"
+          },
+          {
+            "ea": "0x1D2",
+            "disasm": "ljmp    code_A4BC+1"
+          },
+          {
+            "ea": "0x1D5",
+            "disasm": "mov     DPTR, #0xB77"
+          },
+          {
+            "ea": "0x1D8",
+            "disasm": "movx    A, @DPTR"
+          },
+          {
+            "ea": "0x1D9",
+            "disasm": "dec     A"
+          },
+          {
+            "ea": "0x1DA",
+            "disasm": "jz      code_218"
+          },
+          {
+            "ea": "0x1DC",
+            "disasm": "add     A, #0xF0"
+          },
+          {
+            "ea": "0x1DE",
+            "disasm": "jnz     code_1E3"
+          },
+          {
+            "ea": "0x1E0",
+            "disasm": "ljmp    code_A32F"
+          },
+          {
+            "ea": "0x1E3",
+            "disasm": "add     A, #0xFE"
+          }
+        ]
+      }
+    ],
+    "functions": {
+      "CTF": [
+        {
+          "ea": "0x1CF",
+          "dptr_set_ea": "0x1CC",
+          "access_type": "read",
+          "value": null,
+          "function": "CTF",
+          "target": "0x0BA5",
+          "context_before": [
+            {
+              "ea": "0x1C4",
+              "disasm": "movx    @DPTR, A"
+            },
+            {
+              "ea": "0x1C5",
+              "disasm": "mov     DPTR, #0xF09"
+            },
+            {
+              "ea": "0x1C8",
+              "disasm": "movx    A, @DPTR"
+            },
+            {
+              "ea": "0x1C9",
+              "disasm": "mov     R7, A"
+            },
+            {
+              "ea": "0x1CA",
+              "disasm": "jnz     code_1D5"
+            },
+            {
+              "ea": "0x1CC",
+              "disasm": "mov     DPTR, #0xBA5"
+            }
+          ],
+          "context_after": [
+            {
+              "ea": "0x1D0",
+              "disasm": "jnz     code_1D5"
+            },
+            {
+              "ea": "0x1D2",
+              "disasm": "ljmp    code_A4BC+1"
+            },
+            {
+              "ea": "0x1D5",
+              "disasm": "mov     DPTR, #0xB77"
+            },
+            {
+              "ea": "0x1D8",
+              "disasm": "movx    A, @DPTR"
+            },
+            {
+              "ea": "0x1D9",
+              "disasm": "dec     A"
+            },
+            {
+              "ea": "0x1DA",
+              "disasm": "jz      code_218"
+            },
+            {
+              "ea": "0x1DC",
+              "disasm": "add     A, #0xF0"
+            },
+            {
+              "ea": "0x1DE",
+              "disasm": "jnz     code_1E3"
+            },
+            {
+              "ea": "0x1E0",
+              "disasm": "ljmp    code_A32F"
+            },
+            {
+              "ea": "0x1E3",
+              "disasm": "add     A, #0xFE"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "0x0B76": {
+    "stats": {
+      "total_accesses": 3,
+      "writes": 0,
+      "reads": 3,
+      "functions_accessing": 1
+    },
+    "accesses": [
+      {
+        "ea": "0x241",
+        "dptr_set_ea": "0x23E",
+        "access_type": "read",
+        "value": null,
+        "function": "CTF",
+        "target": "0x0B76",
+        "context_before": [
+          {
+            "ea": "0x233",
+            "disasm": "xrl     A, #9"
+          },
+          {
+            "ea": "0x235",
+            "disasm": "jz      code_23A"
+          },
+          {
+            "ea": "0x237",
+            "disasm": "ljmp    code_A32C"
+          },
+          {
+            "ea": "0x23A",
+            "disasm": "mov     R7, A"
+          },
+          {
+            "ea": "0x23B",
+            "disasm": "lcall   code_C56A"
+          },
+          {
+            "ea": "0x23E",
+            "disasm": "mov     DPTR, #0xB76"
+          }
+        ],
+        "context_after": [
+          {
+            "ea": "0x242",
+            "disasm": "mov     R7, A"
+          },
+          {
+            "ea": "0x243",
+            "disasm": "cjne    A, #1, code_24E"
+          },
+          {
+            "ea": "0x246",
+            "disasm": "mov     DPTR, #0x1155"
+          },
+          {
+            "ea": "0x249",
+            "disasm": "movx    A, @DPTR"
+          },
+          {
+            "ea": "0x24A",
+            "disasm": "anl     A, #0xCF"
+          },
+          {
+            "ea": "0x24C",
+            "disasm": "sjmp    code_265"
+          },
+          {
+            "ea": "0x24E",
+            "disasm": "mov     A, R7"
+          },
+          {
+            "ea": "0x24F",
+            "disasm": "cjne    A, #0x81, code_25A"
+          },
+          {
+            "ea": "0x252",
+            "disasm": "lcall   code_AA04"
+          },
+          {
+            "ea": "0x255",
+            "disasm": "orl     A, #2"
+          }
+        ]
+      },
+      {
+        "ea": "0x25D",
+        "dptr_set_ea": "0x25A",
+        "access_type": "read",
+        "value": null,
+        "function": "CTF",
+        "target": "0x0B76",
+        "context_before": [
+          {
+            "ea": "0x24F",
+            "disasm": "cjne    A, #0x81, code_25A"
+          },
+          {
+            "ea": "0x252",
+            "disasm": "lcall   code_AA04"
+          },
+          {
+            "ea": "0x255",
+            "disasm": "orl     A, #2"
+          },
+          {
+            "ea": "0x257",
+            "disasm": "movx    @DPTR, A"
+          },
+          {
+            "ea": "0x258",
+            "disasm": "sjmp    code_280"
+          },
+          {
+            "ea": "0x25A",
+            "disasm": "mov     DPTR, #0xB76"
+          }
+        ],
+        "context_after": [
+          {
+            "ea": "0x25E",
+            "disasm": "mov     R7, A"
+          },
+          {
+            "ea": "0x25F",
+            "disasm": "cjne    A, #0x84, code_268"
+          },
+          {
+            "ea": "0x262",
+            "disasm": "lcall   code_AB29"
+          },
+          {
+            "ea": "0x265",
+            "disasm": "movx    @DPTR, A"
+          },
+          {
+            "ea": "0x266",
+            "disasm": "sjmp    code_27C"
+          },
+          {
+            "ea": "0x268",
+            "disasm": "mov     A, R7"
+          },
+          {
+            "ea": "0x269",
+            "disasm": "xrl     A, #0x85"
+          },
+          {
+            "ea": "0x26B",
+            "disasm": "jnz     code_280"
+          },
+          {
+            "ea": "0x26D",
+            "disasm": "lcall   code_AB1C+1"
+          },
+          {
+            "ea": "0x270",
+            "disasm": "jnb     ACC.0, code_278; Accumulator"
+          }
+        ]
+      },
+      {
+        "ea": "0x286",
+        "dptr_set_ea": "0x283",
+        "access_type": "read",
+        "value": null,
+        "function": "CTF",
+        "target": "0x0B76",
+        "context_before": [
+          {
+            "ea": "0x279",
+            "disasm": "anl     A, #0xCF"
+          },
+          {
+            "ea": "0x27B",
+            "disasm": "movx    @DPTR, A"
+          },
+          {
+            "ea": "0x27C",
+            "disasm": "lcall   code_AA0B"
+          },
+          {
+            "ea": "0x27F",
+            "disasm": "movx    @DPTR, A"
+          },
+          {
+            "ea": "0x280",
+            "disasm": "lcall   code_B889+1"
+          },
+          {
+            "ea": "0x283",
+            "disasm": "mov     DPTR, #0xB76"
+          }
+        ],
+        "context_after": [
+          {
+            "ea": "0x287",
+            "disasm": "xrl     A, #0x84"
+          },
+          {
+            "ea": "0x289",
+            "disasm": "jz      code_28E"
+          },
+          {
+            "ea": "0x28B",
+            "disasm": "lcall   code_AA9B"
+          },
+          {
+            "ea": "0x28E",
+            "disasm": "mov     DPTR, #0x100E"
+          },
+          {
+            "ea": "0x291",
+            "disasm": "movx    A, @DPTR"
+          },
+          {
+            "ea": "0x292",
+            "disasm": "anl     A, #0xF7"
+          },
+          {
+            "ea": "0x294",
+            "disasm": "movx    @DPTR, A"
+          },
+          {
+            "ea": "0x295",
+            "disasm": "mov     DPTR, #0x866"
+          },
+          {
+            "ea": "0x298",
+            "disasm": "movx    A, @DPTR"
+          },
+          {
+            "ea": "0x299",
+            "disasm": "mov     R7, A"
+          }
+        ]
+      }
+    ],
+    "functions": {
+      "CTF": [
+        {
+          "ea": "0x241",
+          "dptr_set_ea": "0x23E",
+          "access_type": "read",
+          "value": null,
+          "function": "CTF",
+          "target": "0x0B76",
+          "context_before": [
+            {
+              "ea": "0x233",
+              "disasm": "xrl     A, #9"
+            },
+            {
+              "ea": "0x235",
+              "disasm": "jz      code_23A"
+            },
+            {
+              "ea": "0x237",
+              "disasm": "ljmp    code_A32C"
+            },
+            {
+              "ea": "0x23A",
+              "disasm": "mov     R7, A"
+            },
+            {
+              "ea": "0x23B",
+              "disasm": "lcall   code_C56A"
+            },
+            {
+              "ea": "0x23E",
+              "disasm": "mov     DPTR, #0xB76"
+            }
+          ],
+          "context_after": [
+            {
+              "ea": "0x242",
+              "disasm": "mov     R7, A"
+            },
+            {
+              "ea": "0x243",
+              "disasm": "cjne    A, #1, code_24E"
+            },
+            {
+              "ea": "0x246",
+              "disasm": "mov     DPTR, #0x1155"
+            },
+            {
+              "ea": "0x249",
+              "disasm": "movx    A, @DPTR"
+            },
+            {
+              "ea": "0x24A",
+              "disasm": "anl     A, #0xCF"
+            },
+            {
+              "ea": "0x24C",
+              "disasm": "sjmp    code_265"
+            },
+            {
+              "ea": "0x24E",
+              "disasm": "mov     A, R7"
+            },
+            {
+              "ea": "0x24F",
+              "disasm": "cjne    A, #0x81, code_25A"
+            },
+            {
+              "ea": "0x252",
+              "disasm": "lcall   code_AA04"
+            },
+            {
+              "ea": "0x255",
+              "disasm": "orl     A, #2"
+            }
+          ]
+        },
+        {
+          "ea": "0x25D",
+          "dptr_set_ea": "0x25A",
+          "access_type": "read",
+          "value": null,
+          "function": "CTF",
+          "target": "0x0B76",
+          "context_before": [
+            {
+              "ea": "0x24F",
+              "disasm": "cjne    A, #0x81, code_25A"
+            },
+            {
+              "ea": "0x252",
+              "disasm": "lcall   code_AA04"
+            },
+            {
+              "ea": "0x255",
+              "disasm": "orl     A, #2"
+            },
+            {
+              "ea": "0x257",
+              "disasm": "movx    @DPTR, A"
+            },
+            {
+              "ea": "0x258",
+              "disasm": "sjmp    code_280"
+            },
+            {
+              "ea": "0x25A",
+              "disasm": "mov     DPTR, #0xB76"
+            }
+          ],
+          "context_after": [
+            {
+              "ea": "0x25E",
+              "disasm": "mov     R7, A"
+            },
+            {
+              "ea": "0x25F",
+              "disasm": "cjne    A, #0x84, code_268"
+            },
+            {
+              "ea": "0x262",
+              "disasm": "lcall   code_AB29"
+            },
+            {
+              "ea": "0x265",
+              "disasm": "movx    @DPTR, A"
+            },
+            {
+              "ea": "0x266",
+              "disasm": "sjmp    code_27C"
+            },
+            {
+              "ea": "0x268",
+              "disasm": "mov     A, R7"
+            },
+            {
+              "ea": "0x269",
+              "disasm": "xrl     A, #0x85"
+            },
+            {
+              "ea": "0x26B",
+              "disasm": "jnz     code_280"
+            },
+            {
+              "ea": "0x26D",
+              "disasm": "lcall   code_AB1C+1"
+            },
+            {
+              "ea": "0x270",
+              "disasm": "jnb     ACC.0, code_278; Accumulator"
+            }
+          ]
+        },
+        {
+          "ea": "0x286",
+          "dptr_set_ea": "0x283",
+          "access_type": "read",
+          "value": null,
+          "function": "CTF",
+          "target": "0x0B76",
+          "context_before": [
+            {
+              "ea": "0x279",
+              "disasm": "anl     A, #0xCF"
+            },
+            {
+              "ea": "0x27B",
+              "disasm": "movx    @DPTR, A"
+            },
+            {
+              "ea": "0x27C",
+              "disasm": "lcall   code_AA0B"
+            },
+            {
+              "ea": "0x27F",
+              "disasm": "movx    @DPTR, A"
+            },
+            {
+              "ea": "0x280",
+              "disasm": "lcall   code_B889+1"
+            },
+            {
+              "ea": "0x283",
+              "disasm": "mov     DPTR, #0xB76"
+            }
+          ],
+          "context_after": [
+            {
+              "ea": "0x287",
+              "disasm": "xrl     A, #0x84"
+            },
+            {
+              "ea": "0x289",
+              "disasm": "jz      code_28E"
+            },
+            {
+              "ea": "0x28B",
+              "disasm": "lcall   code_AA9B"
+            },
+            {
+              "ea": "0x28E",
+              "disasm": "mov     DPTR, #0x100E"
+            },
+            {
+              "ea": "0x291",
+              "disasm": "movx    A, @DPTR"
+            },
+            {
+              "ea": "0x292",
+              "disasm": "anl     A, #0xF7"
+            },
+            {
+              "ea": "0x294",
+              "disasm": "movx    @DPTR, A"
+            },
+            {
+              "ea": "0x295",
+              "disasm": "mov     DPTR, #0x866"
+            },
+            {
+              "ea": "0x298",
+              "disasm": "movx    A, @DPTR"
+            },
+            {
+              "ea": "0x299",
+              "disasm": "mov     R7, A"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "0x0B77": {
+    "stats": {
+      "total_accesses": 2,
+      "writes": 1,
+      "reads": 1,
+      "functions_accessing": 1
+    },
+    "accesses": [
+      {
+        "ea": "0x1D8",
+        "dptr_set_ea": "0x1D5",
+        "access_type": "read",
+        "value": null,
+        "function": "CTF",
+        "target": "0x0B77",
+        "context_before": [
+          {
+            "ea": "0x1CA",
+            "disasm": "jnz     code_1D5"
+          },
+          {
+            "ea": "0x1CC",
+            "disasm": "mov     DPTR, #0xBA5"
+          },
+          {
+            "ea": "0x1CF",
+            "disasm": "movx    A, @DPTR"
+          },
+          {
+            "ea": "0x1D0",
+            "disasm": "jnz     code_1D5"
+          },
+          {
+            "ea": "0x1D2",
+            "disasm": "ljmp    code_A4BC+1"
+          },
+          {
+            "ea": "0x1D5",
+            "disasm": "mov     DPTR, #0xB77"
+          }
+        ],
+        "context_after": [
+          {
+            "ea": "0x1D9",
+            "disasm": "dec     A"
+          },
+          {
+            "ea": "0x1DA",
+            "disasm": "jz      code_218"
+          },
+          {
+            "ea": "0x1DC",
+            "disasm": "add     A, #0xF0"
+          },
+          {
+            "ea": "0x1DE",
+            "disasm": "jnz     code_1E3"
+          },
+          {
+            "ea": "0x1E0",
+            "disasm": "ljmp    code_A32F"
+          },
+          {
+            "ea": "0x1E3",
+            "disasm": "add     A, #0xFE"
+          },
+          {
+            "ea": "0x1E5",
+            "disasm": "jnz     code_1EA"
+          },
+          {
+            "ea": "0x1E7",
+            "disasm": "ljmp    code_A3E0"
+          },
+          {
+            "ea": "0x1EA",
+            "disasm": "add     A, #0xFA"
+          },
+          {
+            "ea": "0x1EC",
+            "disasm": "jnz     code_1F1"
+          }
+        ]
+      },
+      {
+        "ea": "0x32B",
+        "dptr_set_ea": "0x326",
+        "access_type": "write",
+        "value": "0x86",
+        "function": "CTF",
+        "target": "0x0B77",
+        "context_before": [
+          {
+            "ea": "0x31B",
+            "disasm": "lcall   code_C641"
+          },
+          {
+            "ea": "0x31E",
+            "disasm": "mov     R7, #1"
+          },
+          {
+            "ea": "0x320",
+            "disasm": "lcall   code_C632"
+          },
+          {
+            "ea": "0x323",
+            "disasm": "lcall   code_AA2B"
+          },
+          {
+            "ea": "0x326",
+            "disasm": "mov     DPTR, #0xB77"
+          },
+          {
+            "ea": "0x329",
+            "disasm": "mov     A, #0x86"
+          }
+        ],
+        "context_after": [
+          {
+            "ea": "0x32C",
+            "disasm": "ljmp    code_A4A0"
+          }
+        ]
+      }
+    ],
+    "functions": {
+      "CTF": [
+        {
+          "ea": "0x1D8",
+          "dptr_set_ea": "0x1D5",
+          "access_type": "read",
+          "value": null,
+          "function": "CTF",
+          "target": "0x0B77",
+          "context_before": [
+            {
+              "ea": "0x1CA",
+              "disasm": "jnz     code_1D5"
+            },
+            {
+              "ea": "0x1CC",
+              "disasm": "mov     DPTR, #0xBA5"
+            },
+            {
+              "ea": "0x1CF",
+              "disasm": "movx    A, @DPTR"
+            },
+            {
+              "ea": "0x1D0",
+              "disasm": "jnz     code_1D5"
+            },
+            {
+              "ea": "0x1D2",
+              "disasm": "ljmp    code_A4BC+1"
+            },
+            {
+              "ea": "0x1D5",
+              "disasm": "mov     DPTR, #0xB77"
+            }
+          ],
+          "context_after": [
+            {
+              "ea": "0x1D9",
+              "disasm": "dec     A"
+            },
+            {
+              "ea": "0x1DA",
+              "disasm": "jz      code_218"
+            },
+            {
+              "ea": "0x1DC",
+              "disasm": "add     A, #0xF0"
+            },
+            {
+              "ea": "0x1DE",
+              "disasm": "jnz     code_1E3"
+            },
+            {
+              "ea": "0x1E0",
+              "disasm": "ljmp    code_A32F"
+            },
+            {
+              "ea": "0x1E3",
+              "disasm": "add     A, #0xFE"
+            },
+            {
+              "ea": "0x1E5",
+              "disasm": "jnz     code_1EA"
+            },
+            {
+              "ea": "0x1E7",
+              "disasm": "ljmp    code_A3E0"
+            },
+            {
+              "ea": "0x1EA",
+              "disasm": "add     A, #0xFA"
+            },
+            {
+              "ea": "0x1EC",
+              "disasm": "jnz     code_1F1"
+            }
+          ]
+        },
+        {
+          "ea": "0x32B",
+          "dptr_set_ea": "0x326",
+          "access_type": "write",
+          "value": "0x86",
+          "function": "CTF",
+          "target": "0x0B77",
+          "context_before": [
+            {
+              "ea": "0x31B",
+              "disasm": "lcall   code_C641"
+            },
+            {
+              "ea": "0x31E",
+              "disasm": "mov     R7, #1"
+            },
+            {
+              "ea": "0x320",
+              "disasm": "lcall   code_C632"
+            },
+            {
+              "ea": "0x323",
+              "disasm": "lcall   code_AA2B"
+            },
+            {
+              "ea": "0x326",
+              "disasm": "mov     DPTR, #0xB77"
+            },
+            {
+              "ea": "0x329",
+              "disasm": "mov     A, #0x86"
+            }
+          ],
+          "context_after": [
+            {
+              "ea": "0x32C",
+              "disasm": "ljmp    code_A4A0"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

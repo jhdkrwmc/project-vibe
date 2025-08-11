@@ -1,0 +1,2166 @@
+{
+  "memory_checks": {
+    "0x1C4": {
+      "function": "CTF",
+      "start_ea": "0x9B",
+      "end_ea": "0x32F",
+      "instructions": [
+        {
+          "ea": "0x9B",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x9D",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0x9F",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xA1",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xA3",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xA5",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xA7",
+          "disasm": "cpl     RAM_24.3"
+        },
+        {
+          "ea": "0xA9",
+          "disasm": "ajmp    TF1_0"
+        },
+        {
+          "ea": "0x18E",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x18F",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x190",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x191",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x192",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x193",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x194",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x195",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x196",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x197",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x198",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x199",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x19A",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x19B",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x19C",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x19D",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x19E",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x19F",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1A0",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1A1",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1A2",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1A3",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1A4",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1A5",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1A6",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1A7",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1A8",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1A9",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1AA",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1AB",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1AC",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1AD",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1AE",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1AF",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1B0",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1B1",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1B2",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1B3",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1B4",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1B5",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1B6",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1B7",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1B8",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1B9",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1BA",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1BB",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1BC",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1BD",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1BE",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1BF",
+          "disasm": "nop"
+        },
+        {
+          "ea": "0x1C0",
+          "disasm": "mov     DPTR, #0xF09"
+        },
+        {
+          "ea": "0x1C3",
+          "disasm": "mov     A, R7"
+        },
+        {
+          "ea": "0x1C4",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x1C5",
+          "disasm": "mov     DPTR, #0xF09"
+        },
+        {
+          "ea": "0x1C8",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x1C9",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x1CA",
+          "disasm": "jnz     code_1D5"
+        },
+        {
+          "ea": "0x1CC",
+          "disasm": "mov     DPTR, #0xBA5"
+        },
+        {
+          "ea": "0x1CF",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x1D0",
+          "disasm": "jnz     code_1D5"
+        },
+        {
+          "ea": "0x1D2",
+          "disasm": "ljmp    code_A4BC+1"
+        },
+        {
+          "ea": "0x1D5",
+          "disasm": "mov     DPTR, #0xB77"
+        },
+        {
+          "ea": "0x1D8",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x1D9",
+          "disasm": "dec     A"
+        },
+        {
+          "ea": "0x1DA",
+          "disasm": "jz      code_218"
+        },
+        {
+          "ea": "0x1DC",
+          "disasm": "add     A, #0xF0"
+        },
+        {
+          "ea": "0x1DE",
+          "disasm": "jnz     code_1E3"
+        },
+        {
+          "ea": "0x1E0",
+          "disasm": "ljmp    code_A32F"
+        },
+        {
+          "ea": "0x1E3",
+          "disasm": "add     A, #0xFE"
+        },
+        {
+          "ea": "0x1E5",
+          "disasm": "jnz     code_1EA"
+        },
+        {
+          "ea": "0x1E7",
+          "disasm": "ljmp    code_A3E0"
+        },
+        {
+          "ea": "0x1EA",
+          "disasm": "add     A, #0xFA"
+        },
+        {
+          "ea": "0x1EC",
+          "disasm": "jnz     code_1F1"
+        },
+        {
+          "ea": "0x1EE",
+          "disasm": "ljmp    code_A41F+2"
+        },
+        {
+          "ea": "0x1F1",
+          "disasm": "dec     A"
+        },
+        {
+          "ea": "0x1F2",
+          "disasm": "jnz     code_1F7"
+        },
+        {
+          "ea": "0x1F4",
+          "disasm": "ljmp    code_A443"
+        },
+        {
+          "ea": "0x1F7",
+          "disasm": "dec     A"
+        },
+        {
+          "ea": "0x1F8",
+          "disasm": "jnz     code_1FD"
+        },
+        {
+          "ea": "0x1FA",
+          "disasm": "ljmp    code_A46D"
+        },
+        {
+          "ea": "0x1FD",
+          "disasm": "add     A, #0x95"
+        },
+        {
+          "ea": "0x1FF",
+          "disasm": "jnz     code_204"
+        },
+        {
+          "ea": "0x201",
+          "disasm": "ljmp    code_A36C"
+        },
+        {
+          "ea": "0x204",
+          "disasm": "add     A, #0x86"
+        },
+        {
+          "ea": "0x206",
+          "disasm": "jz      code_20B"
+        },
+        {
+          "ea": "0x208",
+          "disasm": "ljmp    code_A4A0"
+        },
+        {
+          "ea": "0x20B",
+          "disasm": "mov     A, R7"
+        },
+        {
+          "ea": "0x20C",
+          "disasm": "cjne    A, #2, code_215"
+        },
+        {
+          "ea": "0x20F",
+          "disasm": "lcall   code_AAFD+1"
+        },
+        {
+          "ea": "0x212",
+          "disasm": "lcall   code_B932"
+        },
+        {
+          "ea": "0x215",
+          "disasm": "ljmp    code_A4A0"
+        },
+        {
+          "ea": "0x218",
+          "disasm": "mov     DPTR, #0xF09"
+        },
+        {
+          "ea": "0x21B",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x21C",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x21D",
+          "disasm": "jnz     code_222"
+        },
+        {
+          "ea": "0x21F",
+          "disasm": "ljmp    code_A32C"
+        },
+        {
+          "ea": "0x222",
+          "disasm": "mov     A, R7"
+        },
+        {
+          "ea": "0x223",
+          "disasm": "cjne    A, #1, code_22F"
+        },
+        {
+          "ea": "0x226",
+          "disasm": "lcall   code_AAFD+1"
+        },
+        {
+          "ea": "0x229",
+          "disasm": "lcall   code_B930"
+        },
+        {
+          "ea": "0x22C",
+          "disasm": "ljmp    code_A32C"
+        },
+        {
+          "ea": "0x22F",
+          "disasm": "mov     DPTR, #0xF09"
+        },
+        {
+          "ea": "0x232",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x233",
+          "disasm": "xrl     A, #9"
+        },
+        {
+          "ea": "0x235",
+          "disasm": "jz      code_23A"
+        },
+        {
+          "ea": "0x237",
+          "disasm": "ljmp    code_A32C"
+        },
+        {
+          "ea": "0x23A",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x23B",
+          "disasm": "lcall   code_C56A"
+        },
+        {
+          "ea": "0x23E",
+          "disasm": "mov     DPTR, #0xB76"
+        },
+        {
+          "ea": "0x241",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x242",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x243",
+          "disasm": "cjne    A, #1, code_24E"
+        },
+        {
+          "ea": "0x246",
+          "disasm": "mov     DPTR, #0x1155"
+        },
+        {
+          "ea": "0x249",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x24A",
+          "disasm": "anl     A, #0xCF"
+        },
+        {
+          "ea": "0x24C",
+          "disasm": "sjmp    code_265"
+        },
+        {
+          "ea": "0x24E",
+          "disasm": "mov     A, R7"
+        },
+        {
+          "ea": "0x24F",
+          "disasm": "cjne    A, #0x81, code_25A"
+        },
+        {
+          "ea": "0x252",
+          "disasm": "lcall   code_AA04"
+        },
+        {
+          "ea": "0x255",
+          "disasm": "orl     A, #2"
+        },
+        {
+          "ea": "0x257",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x258",
+          "disasm": "sjmp    code_280"
+        },
+        {
+          "ea": "0x25A",
+          "disasm": "mov     DPTR, #0xB76"
+        },
+        {
+          "ea": "0x25D",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x25E",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x25F",
+          "disasm": "cjne    A, #0x84, code_268"
+        },
+        {
+          "ea": "0x262",
+          "disasm": "lcall   code_AB29"
+        },
+        {
+          "ea": "0x265",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x266",
+          "disasm": "sjmp    code_27C"
+        },
+        {
+          "ea": "0x268",
+          "disasm": "mov     A, R7"
+        },
+        {
+          "ea": "0x269",
+          "disasm": "xrl     A, #0x85"
+        },
+        {
+          "ea": "0x26B",
+          "disasm": "jnz     code_280"
+        },
+        {
+          "ea": "0x26D",
+          "disasm": "lcall   code_AB1C+1"
+        },
+        {
+          "ea": "0x270",
+          "disasm": "jnb     ACC.0, code_278; Accumulator"
+        },
+        {
+          "ea": "0x273",
+          "disasm": "lcall   code_AB67+1"
+        },
+        {
+          "ea": "0x276",
+          "disasm": "sjmp    code_27C"
+        },
+        {
+          "ea": "0x278",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x279",
+          "disasm": "anl     A, #0xCF"
+        },
+        {
+          "ea": "0x27B",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x27C",
+          "disasm": "lcall   code_AA0B"
+        },
+        {
+          "ea": "0x27F",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x280",
+          "disasm": "lcall   code_B889+1"
+        },
+        {
+          "ea": "0x283",
+          "disasm": "mov     DPTR, #0xB76"
+        },
+        {
+          "ea": "0x286",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x287",
+          "disasm": "xrl     A, #0x84"
+        },
+        {
+          "ea": "0x289",
+          "disasm": "jz      code_28E"
+        },
+        {
+          "ea": "0x28B",
+          "disasm": "lcall   code_AA9B"
+        },
+        {
+          "ea": "0x28E",
+          "disasm": "mov     DPTR, #0x100E"
+        },
+        {
+          "ea": "0x291",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x292",
+          "disasm": "anl     A, #0xF7"
+        },
+        {
+          "ea": "0x294",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x295",
+          "disasm": "mov     DPTR, #0x866"
+        },
+        {
+          "ea": "0x298",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x299",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x29A",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x29B",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x29C",
+          "disasm": "mov     DPTR, #0xA9A"
+        },
+        {
+          "ea": "0x29F",
+          "disasm": "xch     A, R7"
+        },
+        {
+          "ea": "0x2A0",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x2A1",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x2A2",
+          "disasm": "mov     A, R7"
+        },
+        {
+          "ea": "0x2A3",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x2A4",
+          "disasm": "mov     DPTR, #0x868"
+        },
+        {
+          "ea": "0x2A7",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x2A8",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x2A9",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x2AA",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x2AB",
+          "disasm": "mov     DPTR, #0xA9C"
+        },
+        {
+          "ea": "0x2AE",
+          "disasm": "xch     A, R7"
+        },
+        {
+          "ea": "0x2AF",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x2B0",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x2B1",
+          "disasm": "mov     A, R7"
+        },
+        {
+          "ea": "0x2B2",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x2B3",
+          "disasm": "lcall   code_C636+1"
+        },
+        {
+          "ea": "0x2B6",
+          "disasm": "mov     DPTR, #0xA9F"
+        },
+        {
+          "ea": "0x2B9",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x2BA",
+          "disasm": "mov     R6, A"
+        },
+        {
+          "ea": "0x2BB",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x2BC",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x2BD",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x2BE",
+          "disasm": "clr     A"
+        },
+        {
+          "ea": "0x2BF",
+          "disasm": "mov     R5, A"
+        },
+        {
+          "ea": "0x2C0",
+          "disasm": "lcall   code_C51F"
+        },
+        {
+          "ea": "0x2C3",
+          "disasm": "mov     DPTR, #0xAB9"
+        },
+        {
+          "ea": "0x2C6",
+          "disasm": "mov     A, #1"
+        },
+        {
+          "ea": "0x2C8",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x2C9",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x2CA",
+          "disasm": "mov     A, #0xA"
+        },
+        {
+          "ea": "0x2CC",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x2CD",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x2CE",
+          "disasm": "mov     A, #0xA5"
+        },
+        {
+          "ea": "0x2D0",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x2D1",
+          "disasm": "clr     A"
+        },
+        {
+          "ea": "0x2D2",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x2D3",
+          "disasm": "lcall   code_F7CA"
+        },
+        {
+          "ea": "0x2D6",
+          "disasm": "mov     DPTR, #0xAA1"
+        },
+        {
+          "ea": "0x2D9",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x2DA",
+          "disasm": "mov     R6, A"
+        },
+        {
+          "ea": "0x2DB",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x2DC",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x2DD",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x2DE",
+          "disasm": "mov     R5, #1"
+        },
+        {
+          "ea": "0x2E0",
+          "disasm": "lcall   code_C51F"
+        },
+        {
+          "ea": "0x2E3",
+          "disasm": "mov     DPTR, #0xAA3"
+        },
+        {
+          "ea": "0x2E6",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x2E7",
+          "disasm": "mov     R6, A"
+        },
+        {
+          "ea": "0x2E8",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x2E9",
+          "disasm": "movx    A, @DPTR"
+        },
+        {
+          "ea": "0x2EA",
+          "disasm": "mov     R7, A"
+        },
+        {
+          "ea": "0x2EB",
+          "disasm": "mov     R5, #2"
+        },
+        {
+          "ea": "0x2ED",
+          "disasm": "lcall   code_C51F"
+        },
+        {
+          "ea": "0x2F0",
+          "disasm": "mov     DPTR, #0xAC9"
+        },
+        {
+          "ea": "0x2F3",
+          "disasm": "mov     A, #1"
+        },
+        {
+          "ea": "0x2F5",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x2F6",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x2F7",
+          "disasm": "mov     A, #0xA"
+        },
+        {
+          "ea": "0x2F9",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x2FA",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x2FB",
+          "disasm": "mov     A, #0xAA"
+        },
+        {
+          "ea": "0x2FD",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x2FE",
+          "disasm": "mov     R7, #1"
+        },
+        {
+          "ea": "0x300",
+          "disasm": "lcall   code_F7CA"
+        },
+        {
+          "ea": "0x303",
+          "disasm": "mov     DPTR, #0xAD9"
+        },
+        {
+          "ea": "0x306",
+          "disasm": "mov     A, #1"
+        },
+        {
+          "ea": "0x308",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x309",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x30A",
+          "disasm": "mov     A, #0xA"
+        },
+        {
+          "ea": "0x30C",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x30D",
+          "disasm": "inc     DPTR"
+        },
+        {
+          "ea": "0x30E",
+          "disasm": "mov     A, #0xAF"
+        },
+        {
+          "ea": "0x310",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x311",
+          "disasm": "mov     R7, #2"
+        },
+        {
+          "ea": "0x313",
+          "disasm": "lcall   code_F7CA"
+        },
+        {
+          "ea": "0x316",
+          "disasm": "lcall   code_C63B+1"
+        },
+        {
+          "ea": "0x319",
+          "disasm": "mov     R7, #1"
+        },
+        {
+          "ea": "0x31B",
+          "disasm": "lcall   code_C641"
+        },
+        {
+          "ea": "0x31E",
+          "disasm": "mov     R7, #1"
+        },
+        {
+          "ea": "0x320",
+          "disasm": "lcall   code_C632"
+        },
+        {
+          "ea": "0x323",
+          "disasm": "lcall   code_AA2B"
+        },
+        {
+          "ea": "0x326",
+          "disasm": "mov     DPTR, #0xB77"
+        },
+        {
+          "ea": "0x329",
+          "disasm": "mov     A, #0x86"
+        },
+        {
+          "ea": "0x32B",
+          "disasm": "movx    @DPTR, A"
+        },
+        {
+          "ea": "0x32C",
+          "disasm": "ljmp    code_A4A0"
+        }
+      ],
+      "callers": [
+        {
+          "from_ea": "0x99",
+          "type": "21",
+          "disasm": "cpl     RAM_24.3"
+        }
+      ]
+    }
+  },
+  "called_functions": {
+    "0xC641": {
+      "name": "code_C641",
+      "start_ea": "0xC641",
+      "end_ea": "0xC647",
+      "instruction_count": 2
+    },
+    "0xAA04": {
+      "name": "code_A4FA",
+      "start_ea": "0xA4FA",
+      "end_ea": "0xAA26",
+      "instruction_count": 733
+    },
+    "0xAB67": {
+      "name": "code_AB5A",
+      "start_ea": "0xAB5A",
+      "end_ea": "0xAB84",
+      "instruction_count": 25
+    },
+    "0xAB29": {
+      "name": "code_AB13",
+      "start_ea": "0xAB13",
+      "end_ea": "0xAB2C",
+      "instruction_count": 13
+    },
+    "0xC56A": {
+      "name": "code_C56A",
+      "start_ea": "0xC56A",
+      "end_ea": "0xC590",
+      "instruction_count": 16
+    },
+    "0xAA0B": {
+      "name": "code_A4FA",
+      "start_ea": "0xA4FA",
+      "end_ea": "0xAA26",
+      "instruction_count": 733
+    },
+    "0xB889": {
+      "name": "code_B7AE",
+      "start_ea": "0xB7AE",
+      "end_ea": "0xB7F6",
+      "instruction_count": 125
+    },
+    "0xF7CA": {
+      "name": "code_F7CA",
+      "start_ea": "0xF7CA",
+      "end_ea": "0xF800",
+      "instruction_count": 35
+    },
+    "0xAA2B": {
+      "name": "code_AA2B",
+      "start_ea": "0xAA2B",
+      "end_ea": "0xAA3A",
+      "instruction_count": 12
+    },
+    "0xB930": {
+      "name": "code_B930",
+      "start_ea": "0xB930",
+      "end_ea": "0xB932",
+      "instruction_count": 1
+    },
+    "0xB932": {
+      "name": "code_B932",
+      "start_ea": "0xB932",
+      "end_ea": "0xBAA4",
+      "instruction_count": 234
+    },
+    "0xC632": {
+      "name": "code_C632",
+      "start_ea": "0xC632",
+      "end_ea": "0xC638",
+      "instruction_count": 3
+    },
+    "0xC636": {
+      "name": "code_C632",
+      "start_ea": "0xC632",
+      "end_ea": "0xC638",
+      "instruction_count": 3
+    },
+    "0xAA9B": {
+      "name": "code_AA8F",
+      "start_ea": "0xAA8F",
+      "end_ea": "0xAAD3",
+      "instruction_count": 37
+    },
+    "0xAB1C": {
+      "name": "code_AB13",
+      "start_ea": "0xAB13",
+      "end_ea": "0xAB2C",
+      "instruction_count": 13
+    },
+    "0xAAFD": {
+      "name": "code_AA7E",
+      "start_ea": "0xAA7E",
+      "end_ea": "0xAA8F",
+      "instruction_count": 32
+    },
+    "0xC51F": {
+      "name": "code_C51F",
+      "start_ea": "0xC51F",
+      "end_ea": "0xC530",
+      "instruction_count": 8
+    }
+  },
+  "memory_locations": {
+    "0xF09": {
+      "address": "0xF09",
+      "reads": [],
+      "writes": []
+    },
+    "0xBA5": {
+      "address": "0xBA5",
+      "reads": [],
+      "writes": []
+    },
+    "0xB77": {
+      "address": "0xB77",
+      "reads": [],
+      "writes": []
+    },
+    "0xB76": {
+      "address": "0xB76",
+      "reads": [],
+      "writes": []
+    }
+  },
+  "analysis_summary": {
+    "memory_check_found": true,
+    "jump_target_analyzed": true,
+    "memory_locations_analyzed": 4,
+    "called_functions_analyzed": 17
+  },
+  "jump_target": {
+    "address": "0xA4BD",
+    "function": "CTF",
+    "start_ea": "0x9B",
+    "end_ea": "0x32F",
+    "instructions": [
+      {
+        "ea": "0x9B",
+        "disasm": "cpl     RAM_24.3"
+      },
+      {
+        "ea": "0x9D",
+        "disasm": "cpl     RAM_24.3"
+      },
+      {
+        "ea": "0x9F",
+        "disasm": "cpl     RAM_24.3"
+      },
+      {
+        "ea": "0xA1",
+        "disasm": "cpl     RAM_24.3"
+      },
+      {
+        "ea": "0xA3",
+        "disasm": "cpl     RAM_24.3"
+      },
+      {
+        "ea": "0xA5",
+        "disasm": "cpl     RAM_24.3"
+      },
+      {
+        "ea": "0xA7",
+        "disasm": "cpl     RAM_24.3"
+      },
+      {
+        "ea": "0xA9",
+        "disasm": "ajmp    TF1_0"
+      },
+      {
+        "ea": "0x18E",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x18F",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x190",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x191",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x192",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x193",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x194",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x195",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x196",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x197",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x198",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x199",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x19A",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x19B",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x19C",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x19D",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x19E",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x19F",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1A0",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1A1",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1A2",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1A3",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1A4",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1A5",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1A6",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1A7",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1A8",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1A9",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1AA",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1AB",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1AC",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1AD",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1AE",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1AF",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1B0",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1B1",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1B2",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1B3",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1B4",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1B5",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1B6",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1B7",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1B8",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1B9",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1BA",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1BB",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1BC",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1BD",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1BE",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1BF",
+        "disasm": "nop"
+      },
+      {
+        "ea": "0x1C0",
+        "disasm": "mov     DPTR, #0xF09"
+      },
+      {
+        "ea": "0x1C3",
+        "disasm": "mov     A, R7"
+      },
+      {
+        "ea": "0x1C4",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x1C5",
+        "disasm": "mov     DPTR, #0xF09"
+      },
+      {
+        "ea": "0x1C8",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x1C9",
+        "disasm": "mov     R7, A"
+      },
+      {
+        "ea": "0x1CA",
+        "disasm": "jnz     code_1D5"
+      },
+      {
+        "ea": "0x1CC",
+        "disasm": "mov     DPTR, #0xBA5"
+      },
+      {
+        "ea": "0x1CF",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x1D0",
+        "disasm": "jnz     code_1D5"
+      },
+      {
+        "ea": "0x1D2",
+        "disasm": "ljmp    code_A4BC+1"
+      },
+      {
+        "ea": "0x1D5",
+        "disasm": "mov     DPTR, #0xB77"
+      },
+      {
+        "ea": "0x1D8",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x1D9",
+        "disasm": "dec     A"
+      },
+      {
+        "ea": "0x1DA",
+        "disasm": "jz      code_218"
+      },
+      {
+        "ea": "0x1DC",
+        "disasm": "add     A, #0xF0"
+      },
+      {
+        "ea": "0x1DE",
+        "disasm": "jnz     code_1E3"
+      },
+      {
+        "ea": "0x1E0",
+        "disasm": "ljmp    code_A32F"
+      },
+      {
+        "ea": "0x1E3",
+        "disasm": "add     A, #0xFE"
+      },
+      {
+        "ea": "0x1E5",
+        "disasm": "jnz     code_1EA"
+      },
+      {
+        "ea": "0x1E7",
+        "disasm": "ljmp    code_A3E0"
+      },
+      {
+        "ea": "0x1EA",
+        "disasm": "add     A, #0xFA"
+      },
+      {
+        "ea": "0x1EC",
+        "disasm": "jnz     code_1F1"
+      },
+      {
+        "ea": "0x1EE",
+        "disasm": "ljmp    code_A41F+2"
+      },
+      {
+        "ea": "0x1F1",
+        "disasm": "dec     A"
+      },
+      {
+        "ea": "0x1F2",
+        "disasm": "jnz     code_1F7"
+      },
+      {
+        "ea": "0x1F4",
+        "disasm": "ljmp    code_A443"
+      },
+      {
+        "ea": "0x1F7",
+        "disasm": "dec     A"
+      },
+      {
+        "ea": "0x1F8",
+        "disasm": "jnz     code_1FD"
+      },
+      {
+        "ea": "0x1FA",
+        "disasm": "ljmp    code_A46D"
+      },
+      {
+        "ea": "0x1FD",
+        "disasm": "add     A, #0x95"
+      },
+      {
+        "ea": "0x1FF",
+        "disasm": "jnz     code_204"
+      },
+      {
+        "ea": "0x201",
+        "disasm": "ljmp    code_A36C"
+      },
+      {
+        "ea": "0x204",
+        "disasm": "add     A, #0x86"
+      },
+      {
+        "ea": "0x206",
+        "disasm": "jz      code_20B"
+      },
+      {
+        "ea": "0x208",
+        "disasm": "ljmp    code_A4A0"
+      },
+      {
+        "ea": "0x20B",
+        "disasm": "mov     A, R7"
+      },
+      {
+        "ea": "0x20C",
+        "disasm": "cjne    A, #2, code_215"
+      },
+      {
+        "ea": "0x20F",
+        "disasm": "lcall   code_AAFD+1"
+      },
+      {
+        "ea": "0x212",
+        "disasm": "lcall   code_B932"
+      },
+      {
+        "ea": "0x215",
+        "disasm": "ljmp    code_A4A0"
+      },
+      {
+        "ea": "0x218",
+        "disasm": "mov     DPTR, #0xF09"
+      },
+      {
+        "ea": "0x21B",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x21C",
+        "disasm": "mov     R7, A"
+      },
+      {
+        "ea": "0x21D",
+        "disasm": "jnz     code_222"
+      },
+      {
+        "ea": "0x21F",
+        "disasm": "ljmp    code_A32C"
+      },
+      {
+        "ea": "0x222",
+        "disasm": "mov     A, R7"
+      },
+      {
+        "ea": "0x223",
+        "disasm": "cjne    A, #1, code_22F"
+      },
+      {
+        "ea": "0x226",
+        "disasm": "lcall   code_AAFD+1"
+      },
+      {
+        "ea": "0x229",
+        "disasm": "lcall   code_B930"
+      },
+      {
+        "ea": "0x22C",
+        "disasm": "ljmp    code_A32C"
+      },
+      {
+        "ea": "0x22F",
+        "disasm": "mov     DPTR, #0xF09"
+      },
+      {
+        "ea": "0x232",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x233",
+        "disasm": "xrl     A, #9"
+      },
+      {
+        "ea": "0x235",
+        "disasm": "jz      code_23A"
+      },
+      {
+        "ea": "0x237",
+        "disasm": "ljmp    code_A32C"
+      },
+      {
+        "ea": "0x23A",
+        "disasm": "mov     R7, A"
+      },
+      {
+        "ea": "0x23B",
+        "disasm": "lcall   code_C56A"
+      },
+      {
+        "ea": "0x23E",
+        "disasm": "mov     DPTR, #0xB76"
+      },
+      {
+        "ea": "0x241",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x242",
+        "disasm": "mov     R7, A"
+      },
+      {
+        "ea": "0x243",
+        "disasm": "cjne    A, #1, code_24E"
+      },
+      {
+        "ea": "0x246",
+        "disasm": "mov     DPTR, #0x1155"
+      },
+      {
+        "ea": "0x249",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x24A",
+        "disasm": "anl     A, #0xCF"
+      },
+      {
+        "ea": "0x24C",
+        "disasm": "sjmp    code_265"
+      },
+      {
+        "ea": "0x24E",
+        "disasm": "mov     A, R7"
+      },
+      {
+        "ea": "0x24F",
+        "disasm": "cjne    A, #0x81, code_25A"
+      },
+      {
+        "ea": "0x252",
+        "disasm": "lcall   code_AA04"
+      },
+      {
+        "ea": "0x255",
+        "disasm": "orl     A, #2"
+      },
+      {
+        "ea": "0x257",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x258",
+        "disasm": "sjmp    code_280"
+      },
+      {
+        "ea": "0x25A",
+        "disasm": "mov     DPTR, #0xB76"
+      },
+      {
+        "ea": "0x25D",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x25E",
+        "disasm": "mov     R7, A"
+      },
+      {
+        "ea": "0x25F",
+        "disasm": "cjne    A, #0x84, code_268"
+      },
+      {
+        "ea": "0x262",
+        "disasm": "lcall   code_AB29"
+      },
+      {
+        "ea": "0x265",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x266",
+        "disasm": "sjmp    code_27C"
+      },
+      {
+        "ea": "0x268",
+        "disasm": "mov     A, R7"
+      },
+      {
+        "ea": "0x269",
+        "disasm": "xrl     A, #0x85"
+      },
+      {
+        "ea": "0x26B",
+        "disasm": "jnz     code_280"
+      },
+      {
+        "ea": "0x26D",
+        "disasm": "lcall   code_AB1C+1"
+      },
+      {
+        "ea": "0x270",
+        "disasm": "jnb     ACC.0, code_278; Accumulator"
+      },
+      {
+        "ea": "0x273",
+        "disasm": "lcall   code_AB67+1"
+      },
+      {
+        "ea": "0x276",
+        "disasm": "sjmp    code_27C"
+      },
+      {
+        "ea": "0x278",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x279",
+        "disasm": "anl     A, #0xCF"
+      },
+      {
+        "ea": "0x27B",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x27C",
+        "disasm": "lcall   code_AA0B"
+      },
+      {
+        "ea": "0x27F",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x280",
+        "disasm": "lcall   code_B889+1"
+      },
+      {
+        "ea": "0x283",
+        "disasm": "mov     DPTR, #0xB76"
+      },
+      {
+        "ea": "0x286",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x287",
+        "disasm": "xrl     A, #0x84"
+      },
+      {
+        "ea": "0x289",
+        "disasm": "jz      code_28E"
+      },
+      {
+        "ea": "0x28B",
+        "disasm": "lcall   code_AA9B"
+      },
+      {
+        "ea": "0x28E",
+        "disasm": "mov     DPTR, #0x100E"
+      },
+      {
+        "ea": "0x291",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x292",
+        "disasm": "anl     A, #0xF7"
+      },
+      {
+        "ea": "0x294",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x295",
+        "disasm": "mov     DPTR, #0x866"
+      },
+      {
+        "ea": "0x298",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x299",
+        "disasm": "mov     R7, A"
+      },
+      {
+        "ea": "0x29A",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x29B",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x29C",
+        "disasm": "mov     DPTR, #0xA9A"
+      },
+      {
+        "ea": "0x29F",
+        "disasm": "xch     A, R7"
+      },
+      {
+        "ea": "0x2A0",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x2A1",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x2A2",
+        "disasm": "mov     A, R7"
+      },
+      {
+        "ea": "0x2A3",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x2A4",
+        "disasm": "mov     DPTR, #0x868"
+      },
+      {
+        "ea": "0x2A7",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x2A8",
+        "disasm": "mov     R7, A"
+      },
+      {
+        "ea": "0x2A9",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x2AA",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x2AB",
+        "disasm": "mov     DPTR, #0xA9C"
+      },
+      {
+        "ea": "0x2AE",
+        "disasm": "xch     A, R7"
+      },
+      {
+        "ea": "0x2AF",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x2B0",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x2B1",
+        "disasm": "mov     A, R7"
+      },
+      {
+        "ea": "0x2B2",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x2B3",
+        "disasm": "lcall   code_C636+1"
+      },
+      {
+        "ea": "0x2B6",
+        "disasm": "mov     DPTR, #0xA9F"
+      },
+      {
+        "ea": "0x2B9",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x2BA",
+        "disasm": "mov     R6, A"
+      },
+      {
+        "ea": "0x2BB",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x2BC",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x2BD",
+        "disasm": "mov     R7, A"
+      },
+      {
+        "ea": "0x2BE",
+        "disasm": "clr     A"
+      },
+      {
+        "ea": "0x2BF",
+        "disasm": "mov     R5, A"
+      },
+      {
+        "ea": "0x2C0",
+        "disasm": "lcall   code_C51F"
+      },
+      {
+        "ea": "0x2C3",
+        "disasm": "mov     DPTR, #0xAB9"
+      },
+      {
+        "ea": "0x2C6",
+        "disasm": "mov     A, #1"
+      },
+      {
+        "ea": "0x2C8",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x2C9",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x2CA",
+        "disasm": "mov     A, #0xA"
+      },
+      {
+        "ea": "0x2CC",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x2CD",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x2CE",
+        "disasm": "mov     A, #0xA5"
+      },
+      {
+        "ea": "0x2D0",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x2D1",
+        "disasm": "clr     A"
+      },
+      {
+        "ea": "0x2D2",
+        "disasm": "mov     R7, A"
+      },
+      {
+        "ea": "0x2D3",
+        "disasm": "lcall   code_F7CA"
+      },
+      {
+        "ea": "0x2D6",
+        "disasm": "mov     DPTR, #0xAA1"
+      },
+      {
+        "ea": "0x2D9",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x2DA",
+        "disasm": "mov     R6, A"
+      },
+      {
+        "ea": "0x2DB",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x2DC",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x2DD",
+        "disasm": "mov     R7, A"
+      },
+      {
+        "ea": "0x2DE",
+        "disasm": "mov     R5, #1"
+      },
+      {
+        "ea": "0x2E0",
+        "disasm": "lcall   code_C51F"
+      },
+      {
+        "ea": "0x2E3",
+        "disasm": "mov     DPTR, #0xAA3"
+      },
+      {
+        "ea": "0x2E6",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x2E7",
+        "disasm": "mov     R6, A"
+      },
+      {
+        "ea": "0x2E8",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x2E9",
+        "disasm": "movx    A, @DPTR"
+      },
+      {
+        "ea": "0x2EA",
+        "disasm": "mov     R7, A"
+      },
+      {
+        "ea": "0x2EB",
+        "disasm": "mov     R5, #2"
+      },
+      {
+        "ea": "0x2ED",
+        "disasm": "lcall   code_C51F"
+      },
+      {
+        "ea": "0x2F0",
+        "disasm": "mov     DPTR, #0xAC9"
+      },
+      {
+        "ea": "0x2F3",
+        "disasm": "mov     A, #1"
+      },
+      {
+        "ea": "0x2F5",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x2F6",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x2F7",
+        "disasm": "mov     A, #0xA"
+      },
+      {
+        "ea": "0x2F9",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x2FA",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x2FB",
+        "disasm": "mov     A, #0xAA"
+      },
+      {
+        "ea": "0x2FD",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x2FE",
+        "disasm": "mov     R7, #1"
+      },
+      {
+        "ea": "0x300",
+        "disasm": "lcall   code_F7CA"
+      },
+      {
+        "ea": "0x303",
+        "disasm": "mov     DPTR, #0xAD9"
+      },
+      {
+        "ea": "0x306",
+        "disasm": "mov     A, #1"
+      },
+      {
+        "ea": "0x308",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x309",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x30A",
+        "disasm": "mov     A, #0xA"
+      },
+      {
+        "ea": "0x30C",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x30D",
+        "disasm": "inc     DPTR"
+      },
+      {
+        "ea": "0x30E",
+        "disasm": "mov     A, #0xAF"
+      },
+      {
+        "ea": "0x310",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x311",
+        "disasm": "mov     R7, #2"
+      },
+      {
+        "ea": "0x313",
+        "disasm": "lcall   code_F7CA"
+      },
+      {
+        "ea": "0x316",
+        "disasm": "lcall   code_C63B+1"
+      },
+      {
+        "ea": "0x319",
+        "disasm": "mov     R7, #1"
+      },
+      {
+        "ea": "0x31B",
+        "disasm": "lcall   code_C641"
+      },
+      {
+        "ea": "0x31E",
+        "disasm": "mov     R7, #1"
+      },
+      {
+        "ea": "0x320",
+        "disasm": "lcall   code_C632"
+      },
+      {
+        "ea": "0x323",
+        "disasm": "lcall   code_AA2B"
+      },
+      {
+        "ea": "0x326",
+        "disasm": "mov     DPTR, #0xB77"
+      },
+      {
+        "ea": "0x329",
+        "disasm": "mov     A, #0x86"
+      },
+      {
+        "ea": "0x32B",
+        "disasm": "movx    @DPTR, A"
+      },
+      {
+        "ea": "0x32C",
+        "disasm": "ljmp    code_A4A0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "target_ea": 9069,
+  "target_name": "code_236D",
+  "xrefs": [
+    {
+      "from": 45225,
+      "type": 17,
+      "from_func": "code_B027",
+      "disasm": "lcall   code_236D"
+    },
+    {
+      "from": 45404,
+      "type": 17,
+      "from_func": "code_B157",
+      "disasm": "lcall   code_236D"
+    },
+    {
+      "from": 56263,
+      "type": 19,
+      "from_func": "code_DBBC",
+      "disasm": "ljmp    code_236D"
+    }
+  ],
+  "reachable_from_reset": false,
+  "path_to_reset": []
+}

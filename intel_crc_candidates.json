@@ -1,0 +1,11 @@
+[
+  {
+    "ea": "0x236D",
+    "name": "code_236D",
+    "has_movc": true,
+    "has_loop": true,
+    "has_cmp": true,
+    "cmp_ea": "0x2374",
+    "loop_hdr": "0x2372"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "ea": 0,
+    "disasm": "anl     RAM_4E, #0x39",
+    "func": "RESET"
+  },
+  {
+    "ea": 3,
+    "disasm": "orl     RAM_32, #0x39",
+    "func": "IE0"
+  },
+  {
+    "ea": 6,
+    "disasm": "reti",
+    "func": "IE0"
+  }
+]

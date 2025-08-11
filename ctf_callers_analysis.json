@@ -1,0 +1,106 @@
+{
+  "target_function": {
+    "ea": "0x9B",
+    "name": "CTF",
+    "size": 660,
+    "callers": [
+      {
+        "caller_ea": "0x99",
+        "caller_func": {
+          "start_ea": "0x83",
+          "end_ea": "0x9B",
+          "name": "RI1_TI1",
+          "size": 24
+        },
+        "call_instruction": "cpl     RAM_24.3",
+        "context_blocks": [
+          {
+            "start_ea": "0x83",
+            "end_ea": "0x9B",
+            "instructions": [
+              {
+                "ea": "0x83",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": false
+              },
+              {
+                "ea": "0x85",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": false
+              },
+              {
+                "ea": "0x87",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": false
+              },
+              {
+                "ea": "0x89",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": false
+              },
+              {
+                "ea": "0x8B",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": false
+              },
+              {
+                "ea": "0x8D",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": false
+              },
+              {
+                "ea": "0x8F",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": false
+              },
+              {
+                "ea": "0x91",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": false
+              },
+              {
+                "ea": "0x93",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": false
+              },
+              {
+                "ea": "0x95",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": false
+              },
+              {
+                "ea": "0x97",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": false
+              },
+              {
+                "ea": "0x99",
+                "disasm": "cpl     RAM_24.3",
+                "is_call": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "caller_analysis": [
+    {
+      "caller_ea": "0x99",
+      "caller_func": {
+        "start_ea": "0x83",
+        "end_ea": "0x9B",
+        "name": "RI1_TI1",
+        "size": 24
+      },
+      "callers": [
+        {
+          "ea": "0x81",
+          "disasm": "cpl     RAM_24.3",
+          "func_name": "IEX6",
+          "func_ea": "0x6B"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1502 @@
+[
+  {
+    "name": "crc32_combine64",
+    "ea": "0x1941",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_0",
+    "ea": "0x1951",
+    "type": "func"
+  },
+  {
+    "name": "crc32_combine64_1",
+    "ea": "0x4937",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_2",
+    "ea": "0x573A",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_3",
+    "ea": "0x5D6C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_4",
+    "ea": "0x5D7C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_5",
+    "ea": "0x5D9C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_6",
+    "ea": "0x5DAC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_7",
+    "ea": "0x5DCC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_8",
+    "ea": "0x5DDC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_9",
+    "ea": "0x5DFC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_10",
+    "ea": "0x5E0C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_11",
+    "ea": "0x5E2C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_12",
+    "ea": "0x5E3C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_13",
+    "ea": "0x5E5C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_14",
+    "ea": "0x5E6C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_15",
+    "ea": "0x5E8C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_16",
+    "ea": "0x5E9C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_17",
+    "ea": "0x5EBC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_18",
+    "ea": "0x5ECC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_19",
+    "ea": "0x5EEC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_20",
+    "ea": "0x5EFC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_21",
+    "ea": "0x5F1C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_22",
+    "ea": "0x5F2C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_23",
+    "ea": "0x5F4C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_24",
+    "ea": "0x5F5C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_25",
+    "ea": "0x5F7C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_26",
+    "ea": "0x5F8C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_27",
+    "ea": "0x5FAC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_28",
+    "ea": "0x5FBC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_29",
+    "ea": "0x5FDC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_30",
+    "ea": "0x5FEC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_31",
+    "ea": "0x6196",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_32",
+    "ea": "0x61A6",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_33",
+    "ea": "0x7CEB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_34",
+    "ea": "0x7CFB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_35",
+    "ea": "0x7D1B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_36",
+    "ea": "0x7D2B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_37",
+    "ea": "0x7D4B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_38",
+    "ea": "0x7D5B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_39",
+    "ea": "0x7D7B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_40",
+    "ea": "0x7D8B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_41",
+    "ea": "0x7DAB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_42",
+    "ea": "0x7DBB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_43",
+    "ea": "0x7DDB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_44",
+    "ea": "0x7DEB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_45",
+    "ea": "0x7E0B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_46",
+    "ea": "0x7E1B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_47",
+    "ea": "0x7E3B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_48",
+    "ea": "0x7E4B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_49",
+    "ea": "0x7E6B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_50",
+    "ea": "0x7E7B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_51",
+    "ea": "0x7E9B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_52",
+    "ea": "0x7EAB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_53",
+    "ea": "0x7ECB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_54",
+    "ea": "0x7EDB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_55",
+    "ea": "0x7EFB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_56",
+    "ea": "0x7F0B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_57",
+    "ea": "0x7F2B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_58",
+    "ea": "0x7F3B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_59",
+    "ea": "0x7F5B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_60",
+    "ea": "0x7F6B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_61",
+    "ea": "0x7F8B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_62",
+    "ea": "0x7F9B",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_63",
+    "ea": "0x7FBB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_64",
+    "ea": "0x7FCB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_65",
+    "ea": "0x7FEB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_66",
+    "ea": "0x8196",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_67",
+    "ea": "0x81A6",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_68",
+    "ea": "0x9060",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_69",
+    "ea": "0x9070",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_70",
+    "ea": "0x9090",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_71",
+    "ea": "0x90A0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_72",
+    "ea": "0x90C0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_73",
+    "ea": "0x90D0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_74",
+    "ea": "0x90F0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_75",
+    "ea": "0x9100",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_76",
+    "ea": "0x9120",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_77",
+    "ea": "0x9130",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_78",
+    "ea": "0x9150",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_79",
+    "ea": "0x9160",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_80",
+    "ea": "0x9180",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_81",
+    "ea": "0x9190",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_82",
+    "ea": "0x91B0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_83",
+    "ea": "0x91C0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_84",
+    "ea": "0x91E0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_85",
+    "ea": "0x91F0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_86",
+    "ea": "0x9210",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_87",
+    "ea": "0x9220",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_88",
+    "ea": "0x9240",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_89",
+    "ea": "0x9250",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_90",
+    "ea": "0x9270",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_91",
+    "ea": "0x9280",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_92",
+    "ea": "0x92A0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_93",
+    "ea": "0x92B0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_94",
+    "ea": "0x92D0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_95",
+    "ea": "0x92E0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_96",
+    "ea": "0x9300",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_97",
+    "ea": "0x9310",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_98",
+    "ea": "0x9330",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_99",
+    "ea": "0x9340",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_100",
+    "ea": "0x9360",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_101",
+    "ea": "0x9370",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_102",
+    "ea": "0x9390",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_103",
+    "ea": "0x93A0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_104",
+    "ea": "0x93C0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_105",
+    "ea": "0x93D0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_106",
+    "ea": "0x93F0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_107",
+    "ea": "0x9400",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_108",
+    "ea": "0x9420",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_109",
+    "ea": "0x9430",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_110",
+    "ea": "0x9450",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_111",
+    "ea": "0x9460",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_112",
+    "ea": "0x9480",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_113",
+    "ea": "0x9490",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_114",
+    "ea": "0x94B0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_115",
+    "ea": "0x94C0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_116",
+    "ea": "0x94E0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_117",
+    "ea": "0x94F0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_118",
+    "ea": "0x9510",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_119",
+    "ea": "0x9520",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_120",
+    "ea": "0x9540",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_121",
+    "ea": "0x9550",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_122",
+    "ea": "0x9570",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_123",
+    "ea": "0x9580",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_124",
+    "ea": "0x95A0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_125",
+    "ea": "0x95B0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_126",
+    "ea": "0x95D0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_127",
+    "ea": "0x95E0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_128",
+    "ea": "0x9600",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_129",
+    "ea": "0x9610",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_130",
+    "ea": "0x9630",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_131",
+    "ea": "0x9640",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_132",
+    "ea": "0x9660",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_133",
+    "ea": "0x9670",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_134",
+    "ea": "0x9690",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_135",
+    "ea": "0x96A0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_136",
+    "ea": "0x96C0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_137",
+    "ea": "0x96D0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_138",
+    "ea": "0x96F0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_139",
+    "ea": "0x9700",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_140",
+    "ea": "0x9720",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_141",
+    "ea": "0x9730",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_142",
+    "ea": "0x9750",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_143",
+    "ea": "0x9760",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_144",
+    "ea": "0x9780",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_145",
+    "ea": "0x9790",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_146",
+    "ea": "0x97B0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_147",
+    "ea": "0x97C0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_148",
+    "ea": "0x97E0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_149",
+    "ea": "0x97F0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_150",
+    "ea": "0x9810",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_151",
+    "ea": "0x9820",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_152",
+    "ea": "0x9840",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_153",
+    "ea": "0x9850",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_154",
+    "ea": "0x9870",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_155",
+    "ea": "0x9880",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_156",
+    "ea": "0x98A0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_157",
+    "ea": "0x98B0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_158",
+    "ea": "0x98D0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_159",
+    "ea": "0x98E0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_160",
+    "ea": "0x9900",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_161",
+    "ea": "0x9910",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_162",
+    "ea": "0x9930",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_163",
+    "ea": "0x9940",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_164",
+    "ea": "0x9960",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_165",
+    "ea": "0x9970",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_166",
+    "ea": "0x9990",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_167",
+    "ea": "0x99A0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_168",
+    "ea": "0x99C0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_169",
+    "ea": "0x99D0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_170",
+    "ea": "0x99F0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_171",
+    "ea": "0x9A00",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_172",
+    "ea": "0x9A20",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_173",
+    "ea": "0x9A30",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_174",
+    "ea": "0x9A50",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_175",
+    "ea": "0x9A60",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_176",
+    "ea": "0x9A80",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_177",
+    "ea": "0x9A90",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_178",
+    "ea": "0x9AB0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_179",
+    "ea": "0x9AC0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_180",
+    "ea": "0x9AE0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_181",
+    "ea": "0x9AF0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_182",
+    "ea": "0x9B10",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_183",
+    "ea": "0x9B20",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_184",
+    "ea": "0x9B40",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_185",
+    "ea": "0x9B50",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_186",
+    "ea": "0x9B70",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_187",
+    "ea": "0x9B80",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_188",
+    "ea": "0x9BA0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_189",
+    "ea": "0x9BB0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_190",
+    "ea": "0x9BD0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_191",
+    "ea": "0x9BE0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_192",
+    "ea": "0x9C00",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_193",
+    "ea": "0x9C10",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_194",
+    "ea": "0x9C30",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_195",
+    "ea": "0x9C40",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_196",
+    "ea": "0x9C60",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_197",
+    "ea": "0x9C70",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_198",
+    "ea": "0x9C90",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_199",
+    "ea": "0x9CA0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_200",
+    "ea": "0x9CC0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_201",
+    "ea": "0x9CD0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_202",
+    "ea": "0x9CF0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_203",
+    "ea": "0x9D00",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_204",
+    "ea": "0x9D20",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_205",
+    "ea": "0x9D30",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_206",
+    "ea": "0x9D50",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_207",
+    "ea": "0x9D60",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_208",
+    "ea": "0x9D80",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_209",
+    "ea": "0x9D90",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_210",
+    "ea": "0x9DB0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_211",
+    "ea": "0x9DC0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_212",
+    "ea": "0x9DE0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_213",
+    "ea": "0x9DF0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_214",
+    "ea": "0x9E10",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_215",
+    "ea": "0x9E20",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_216",
+    "ea": "0x9E40",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_217",
+    "ea": "0x9E50",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_218",
+    "ea": "0x9E70",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_219",
+    "ea": "0x9E80",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_220",
+    "ea": "0x9EA0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_221",
+    "ea": "0x9EB0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_222",
+    "ea": "0x9ED0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_223",
+    "ea": "0x9EE0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_224",
+    "ea": "0x9F00",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_225",
+    "ea": "0x9F10",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_226",
+    "ea": "0x9F30",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_227",
+    "ea": "0x9F40",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_228",
+    "ea": "0x9F60",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_229",
+    "ea": "0x9F70",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_230",
+    "ea": "0x9F90",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_231",
+    "ea": "0x9FA0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_232",
+    "ea": "0x9FC0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_233",
+    "ea": "0x9FD0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_234",
+    "ea": "0x9FF0",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_235",
+    "ea": "0xA196",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_236",
+    "ea": "0xA1A6",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_237",
+    "ea": "0xBFB4",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_238",
+    "ea": "0xBFC4",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_239",
+    "ea": "0xDF5E",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_240",
+    "ea": "0xDF6E",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_241",
+    "ea": "0xDF8E",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_242",
+    "ea": "0xDF9E",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_243",
+    "ea": "0xDFBE",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_244",
+    "ea": "0xDFCE",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_245",
+    "ea": "0xDFEE",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_246",
+    "ea": "0xFFEC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_247",
+    "ea": "0x1018C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_248",
+    "ea": "0x1019C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_249",
+    "ea": "0x101BC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_250",
+    "ea": "0x101CC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_251",
+    "ea": "0x101EC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_252",
+    "ea": "0x1024A",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_253",
+    "ea": "0x1025A",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_254",
+    "ea": "0x1027A",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_255",
+    "ea": "0x1028A",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_256",
+    "ea": "0x102AA",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_257",
+    "ea": "0x102BA",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_258",
+    "ea": "0x1034C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_259",
+    "ea": "0x1035C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_260",
+    "ea": "0x103AF",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_261",
+    "ea": "0x103EB",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_262",
+    "ea": "0x1042C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_263",
+    "ea": "0x1043C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_264",
+    "ea": "0x1045C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_265",
+    "ea": "0x1046C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_266",
+    "ea": "0x1048C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_267",
+    "ea": "0x1049C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_268",
+    "ea": "0x104BC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_269",
+    "ea": "0x104CC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_270",
+    "ea": "0x104EC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_271",
+    "ea": "0x10535",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_272",
+    "ea": "0x10545",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_273",
+    "ea": "0x10565",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_274",
+    "ea": "0x10575",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_275",
+    "ea": "0x10595",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_276",
+    "ea": "0x105A5",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_277",
+    "ea": "0x105C5",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_278",
+    "ea": "0x105D5",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_279",
+    "ea": "0x10E75",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_280",
+    "ea": "0x10E85",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_281",
+    "ea": "0x10EA5",
+    "type": "code"
+  },
+  {
+    "name": "crc32_combine64_282",
+    "ea": "0x10EB5",
+    "type": "code"
+  },
+  {
+    "name": "crc32_combine64_283",
+    "ea": "0x10ED5",
+    "type": "code"
+  },
+  {
+    "name": "crc32_combine64_284",
+    "ea": "0x10EE5",
+    "type": "code"
+  },
+  {
+    "name": "crc32_combine64_285",
+    "ea": "0x11CA3",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_286",
+    "ea": "0x11CB3",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_287",
+    "ea": "0x11F65",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_288",
+    "ea": "0x11F8D",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_289",
+    "ea": "0x11F9D",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_290",
+    "ea": "0x11FBD",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_291",
+    "ea": "0x11FCD",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_292",
+    "ea": "0x1325C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_293",
+    "ea": "0x1326C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_294",
+    "ea": "0x1328C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_295",
+    "ea": "0x1329C",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_296",
+    "ea": "0x132BC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_297",
+    "ea": "0x132CC",
+    "type": "data"
+  },
+  {
+    "name": "crc32_combine64_298",
+    "ea": "0x132EC",
+    "type": "data"
+  }
+]
