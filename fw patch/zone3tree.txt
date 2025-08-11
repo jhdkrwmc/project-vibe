@@ -1,0 +1,21 @@
+
+    =========================== USB Port1 ===========================
+
+Connection Status        : 0x00 (No device is connected)
+Port Chain               : 2-5-1
+Properties               : 0x01
+ IsUserConnectable       : yes
+ PortIsDebugCapable      : no
+ PortHasMultiCompanions  : no
+ PortConnectorIsTypeC    : no
+ConnectionIndex          : 0x01 (Port 1)
+CompanionIndex           : 0
+ CompanionHubSymLnk      : USB#VID_05E3&PID_0616#5&521a615&0&21#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+ CompanionPortNumber     : 0x01 (Port 1)
+ -> CompanionPortChain   : 2-21-1
+
+SupportedUsbProtocols    : 0x03
+ Usb110                  : 1 (yes, port supports USB 1.1)
+ Usb200                  : 1 (yes, port supports USB 2.0)
+ Usb300                  : 0 (no, port not supports USB 3.0) -> but Companion Port 2-21-1 does
+ ReservedMBZ             : 0x00
