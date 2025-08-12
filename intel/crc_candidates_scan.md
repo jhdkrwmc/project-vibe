@@ -1,0 +1,1 @@
+{'ea': '0x236D', 'end': '0x2400', 'score': 4, 'has_movc': True, 'loop_hdr': None, 'compare_ea': '0x2374', 'first_bytes': '12 FD 50 7E 01 EE C3 9F 50 4D 75 F0 07 EE 90 EE'}

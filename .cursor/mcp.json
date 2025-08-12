@@ -1,0 +1,142 @@
+{
+  "mcpServers": {
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "env": {},
+      "disabled": false
+    },
+    "mrexodia/ida-pro-mcp": {
+      "command": "C:\\Users\\arnax\\.venv312\\Scripts\\python.exe",
+      "args": [
+        "C:\\Users\\arnax\\.venv312\\Lib\\site-packages\\ida_pro_mcp\\server.py"
+      ],
+      "timeout": 1800,
+      "disabled": false,
+      "autoApprove": [
+        "get_metadata",
+        "get_function_by_name",
+        "get_function_by_address",
+        "get_current_address",
+        "get_current_function",
+        "convert_number",
+        "list_functions",
+        "list_globals_filter",
+        "list_globals",
+        "list_imports",
+        "list_strings_filter",
+        "list_strings",
+        "list_local_types",
+        "decompile_function",
+        "disassemble_function",
+        "get_xrefs_to",
+        "get_xrefs_to_field",
+        "get_entry_points",
+        "set_comment",
+        "rename_local_variable",
+        "rename_global_variable",
+        "set_global_variable_type",
+        "get_global_variable_value_by_name",
+        "get_global_variable_value_at_address",
+        "rename_function",
+        "set_function_prototype",
+        "declare_c_type",
+        "set_local_variable_type",
+        "get_stack_frame_variables",
+        "get_defined_structures",
+        "rename_stack_frame_variable",
+        "create_stack_frame_variable",
+        "set_stack_frame_variable_type",
+        "delete_stack_frame_variable",
+        "read_memory_bytes",
+        "data_read_byte",
+        "data_read_word",
+        "data_read_dword",
+        "data_read_qword",
+        "data_read_string"
+      ],
+      "alwaysAllow": [
+        "get_metadata",
+        "get_function_by_name",
+        "get_function_by_address",
+        "get_current_address",
+        "get_current_function",
+        "convert_number",
+        "list_functions",
+        "list_globals_filter",
+        "list_globals",
+        "list_imports",
+        "list_strings_filter",
+        "list_strings",
+        "list_local_types",
+        "decompile_function",
+        "disassemble_function",
+        "get_xrefs_to",
+        "get_xrefs_to_field",
+        "get_entry_points",
+        "set_comment",
+        "rename_local_variable",
+        "rename_global_variable",
+        "set_global_variable_type",
+        "get_global_variable_value_by_name",
+        "get_global_variable_value_at_address",
+        "rename_function",
+        "set_function_prototype",
+        "declare_c_type",
+        "set_local_variable_type",
+        "get_stack_frame_variables",
+        "get_defined_structures",
+        "rename_stack_frame_variable",
+        "create_stack_frame_variable",
+        "set_stack_frame_variable_type",
+        "delete_stack_frame_variable",
+        "read_memory_bytes",
+        "data_read_byte",
+        "data_read_word",
+        "data_read_dword",
+        "data_read_qword",
+        "data_read_string"
+      ]
+    },
+    "ida_fdrechsler": {
+      "command": "node",
+      "args": ["D:\\mcp-server-idapro\\dist\\index.js"],
+      "disabled": false
+    },
+    "memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "env": {
+        "MEMORY_FILE_PATH": "C:\\Users\\arnax\\.codeium\\windsurf\\memory.json"
+      },
+      "disabled": false
+    },
+    "math-mcp": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@EthanHenrickson/math-mcp",
+        "--key",
+        "bdc4e8c1-8c90-4a22-a937-bc88a4b7f18a"
+      ],
+      "disabled": false
+    },
+    "github": {
+      "serverUrl": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "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"
+      },
+      "disabled": true
+    }
+  }
+}
