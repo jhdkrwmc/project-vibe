@@ -1,0 +1,2 @@
+Stage2 (no footer change) byte-sum: 0x8334
+Stage2 word-sum: 0xb4c5

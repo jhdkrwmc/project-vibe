@@ -1,0 +1,28 @@
+Integrity Check Bypass Strategy - No Checksum Fix
+Generated: 2025-08-13T00:21:24.114564
+
+Strategy:
+  Instead of just patching OSD writes, we now patch the integrity check logic
+  to expect 0x00 values instead of 0x01/0x84. This should allow the device
+  to pass validation and complete USB configuration.
+
+Key Insight:
+  Original firmware has invalid checksum (0xC3A4) - checksum validation is NOT used.
+  The device uses runtime integrity checks instead, which is what we're bypassing.
+
+OSD Patches Applied:
+OK   @ 0x04d4: 01 -> 00
+OK   @ 0x0ac8: 01 -> 00
+OK   @ 0x0b02: 01 -> 00
+OK   @ 0x4526: 01 -> 00
+
+Integrity Check Bypass Patches Applied:
+OK   @ 0x0244: 01 -> 00
+OK   @ 0x0260: 84 -> 00
+
+Total bytes changed: 6
+Checksum: Not modified (original firmware has invalid checksum anyway)
+
+Expected Result:
+  Device should now pass integrity validation and complete USB configuration
+  instead of stopping at Config=0 with Code 10 error.

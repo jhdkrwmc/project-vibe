@@ -1,0 +1,6 @@
+Partial byte-sum [0x0000..0x1FFD]: 0xc3a1
+Computed checksum (two's complement): 0x3c5f
+Checksum bytes @ 0x1FFE..0x1FFF (LE): 5F 3C
+Final 16-bit sum (byte-wise) of entire image: 0x8450
+Final 16-bit sum (word-wise LE) of entire image: 0xf1a5
+Verification (byte-wise): FAIL

@@ -1,0 +1,62 @@
+# integrity 0x01C0..0x0220
+
+000001C0: 90 0F 09 EF F0 90 0F 09    mov     DPTR, #0xF09
+000001C3: EF F0 90 0F 09 E0 FF 70    mov     A, R7
+000001C4: F0 90 0F 09 E0 FF 70 09    movx    @DPTR, A
+000001C5: 90 0F 09 E0 FF 70 09 90    mov     DPTR, #0xF09
+000001C8: E0 FF 70 09 90 0B A5 E0    movx    A, @DPTR
+000001C9: FF 70 09 90 0B A5 E0 70    mov     R7, A
+000001CA: 70 09 90 0B A5 E0 70 00    jnz     code_1D5
+000001CC: 90 0B A5 E0 70 00 02 A4    mov     DPTR, #0xBA5
+000001CF: E0 70 00 02 A4 BD 90 0B    movx    A, @DPTR
+000001D0: 70 00 02 A4 BD 90 0B 77    jnz     code_1D2
+000001D2: 02 A4 BD 90 0B 77 E0 14    ljmp    code_A4BC+1
+000001D5: 90 0B 77 E0 14 60 00 24    mov     DPTR, #0xB77
+000001D8: E0 14 60 00 24 F0 70 03    movx    A, @DPTR
+000001D9: 14 60 00 24 F0 70 03 02    dec     A
+000001DA: 60 00 24 F0 70 03 02 A3    jz      code_1DC
+000001DC: 24 F0 70 03 02 A3 2F 24    add     A, #0xF0
+000001DE: 70 03 02 A3 2F 24 FE 70    jnz     code_1E3
+000001E0: 02 A3 2F 24 FE 70 03 02    ljmp    code_A32F
+000001E3: 24 FE 70 03 02 A3 E0 24    add     A, #0xFE
+000001E5: 70 03 02 A3 E0 24 FA 70    jnz     code_1EA
+000001E7: 02 A3 E0 24 FA 70 03 02    ljmp    code_A3E0
+000001EA: 24 FA 70 03 02 A4 21 14    add     A, #0xFA
+000001EC: 70 03 02 A4 21 14 70 03    jnz     code_1F1
+000001EE: 02 A4 21 14 70 03 02 A4    ljmp    code_A41F+2
+000001F1: 14 70 03 02 A4 43 14 70    dec     A
+000001F2: 70 03 02 A4 43 14 70 03    jnz     code_1F7
+000001F4: 02 A4 43 14 70 03 02 A4    ljmp    code_A443
+000001F7: 14 70 03 02 A4 6D 24 95    dec     A
+000001F8: 70 03 02 A4 6D 24 95 70    jnz     code_1FD
+000001FA: 02 A4 6D 24 95 70 03 02    ljmp    code_A46D
+000001FD: 24 95 70 03 02 A3 6C 24    add     A, #0x95
+000001FF: 70 03 02 A3 6C 24 86 60    jnz     code_204
+00000201: 02 A3 6C 24 86 60 03 02    ljmp    code_A36C
+00000204: 24 86 60 03 02 A4 A0 EF    add     A, #0x86
+00000206: 60 03 02 A4 A0 EF B4 02    jz      code_20B
+00000208: 02 A4 A0 EF B4 02 06 12    ljmp    code_A4A0
+0000020B: EF B4 02 06 12 AA FE 12    mov     A, R7
+0000020C: B4 02 06 12 AA FE 12 B9    cjne    A, #2, code_215
+0000020F: 12 AA FE 12 B9 32 02 A4    lcall   code_AAFD+1
+00000212: 12 B9 32 02 A4 A0 90 0F    lcall   code_B932
+00000215: 02 A4 A0 90 0F 09 E0 FF    ljmp    code_A4A0
+00000218: 90 0F 09 E0 FF 70 03 02    mov     DPTR, #0xF09
+0000021B: E0 FF 70 03 02 A3 2C EF    movx    A, @DPTR
+0000021C: FF 70 03 02 A3 2C EF B4    mov     R7, A
+0000021D: 70 03 02 A3 2C EF B4 01    jnz     code_222
+0000021F: 02 A3 2C EF B4 01 09 12    ljmp    code_A32C
+
+## conditionals
+000001CA: 70 09 90 0B A5 E0 70 00    jnz     code_1D5
+000001D0: 70 00 02 A4 BD 90 0B 77    jnz     code_1D2
+000001DA: 60 00 24 F0 70 03 02 A3    jz      code_1DC
+000001DE: 70 03 02 A3 2F 24 FE 70    jnz     code_1E3
+000001E5: 70 03 02 A3 E0 24 FA 70    jnz     code_1EA
+000001EC: 70 03 02 A4 21 14 70 03    jnz     code_1F1
+000001F2: 70 03 02 A4 43 14 70 03    jnz     code_1F7
+000001F8: 70 03 02 A4 6D 24 95 70    jnz     code_1FD
+000001FF: 70 03 02 A3 6C 24 86 60    jnz     code_204
+00000206: 60 03 02 A4 A0 EF B4 02    jz      code_20B
+0000020C: B4 02 06 12 AA FE 12 B9    cjne    A, #2, code_215
+0000021D: 70 03 02 A3 2C EF B4 01    jnz     code_222

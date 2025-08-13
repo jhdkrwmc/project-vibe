@@ -1,0 +1,4 @@
+Footer unchanged (no checksum write).
+Final 16-bit sum (byte-wise) of entire image: 0x83b5
+Final 16-bit sum (word-wise LE) of entire image: 0xb546
+Tail @ 0x1FFE..0x1FFF: 00 00

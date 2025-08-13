@@ -1,0 +1,24 @@
+Integrity Check Bypass Strategy - Checksum Report
+Generated: 2025-08-13T00:17:00.778719
+
+OSD Patches Applied:
+OK   @ 0x04d4: 01 -> 00
+OK   @ 0x0ac8: 01 -> 00
+OK   @ 0x0b02: 01 -> 00
+OK   @ 0x4526: 01 -> 00
+
+Integrity Check Bypass Patches Applied:
+OK   @ 0x0244: 01 -> 00
+OK   @ 0x0260: 84 -> 00
+
+Checksum Calculation:
+  Partial sum [0x0000..0x1FFD]: 0xc31c
+  Computed checksum (two's complement): 0x3ce4
+  Checksum bytes @ 0x1FFE..0x1FFF (LE): E4 3C
+  Final 16-bit sum of entire image: 0x8450
+  Verification: FAIL
+
+Strategy:
+  Instead of just patching OSD writes, we now patch the integrity check logic
+  to expect 0x00 values instead of 0x01/0x84. This should allow the device
+  to pass validation and complete USB configuration.

@@ -1,43 +1,54 @@
 # SN9C292B Firmware OSD Patch Project - Plan
 
-## Mission Status: INTEGRITY BYPASS DISCOVERED - READY FOR FLASH TESTING
+## Mission Status: INTEGRITY CHECK BYPASS STRATEGY IDENTIFIED
 
-### Completed Steps
-Done: IDA MCP connection established and verified
-Done: Database metadata retrieved (128KB firmware, 8032 core)
-Done: Firmware tail analysis - confirmed FF-padding, no footer checksum
-Done: OSD sites reconfirmed - 4 sites at 0x04D0, 0x0AC4, 0x0AFE, 0x4522
-Done: CRC/compare hunt completed - high-scoring candidate at 0x236D
-Done: Multi-stage integrity check discovered at 0x01C0-0x01F0
-Done: V6_BYPASS_ONLY patch strategy prepared - 2-byte conditional bypass
+### Previous Status (INCORRECT)
+~~MISSION ACCOMPLISHED~~ - This was FALSE. All variants still fail with Code 10.
 
-### Current Status
-**STOP POINT REACHED**: V6_BYPASS_ONLY patch is ready for operator flash testing.
+### Current Reality
+**ALL firmware variants fail**: OSD-only, bypass, stage2, late-clear, early-bypass
+**Pattern**: Device enumerates (0C45:6366) but fails to configure (Config=0)
+**Root Cause**: Runtime integrity checks validate OSD register values before USB config
 
-**Patch Details**:
-- **Primary Target**: 0x01D0: `70 03` → `70 00` (JNZ no-op)
-- **Secondary Target**: 0x01D6: `60 3C` → `60 00` (JZ no-op)
-- **Total Changes**: 2 bytes
-- **Risk Level**: Low
-- **Expected Result**: USB enumeration with OSD control, integrity checks bypassed
+### Critical Discovery
+**Multi-Stage Integrity Check at 0x1C0-0x240**:
+- Checks 0x0F09 (USB status), 0x0BA5 (OSD data), 0x0B77 (OSD enable)
+- Multiple conditional branches to failure paths (0xA4BD, 0xA32F)
+- CTF function at 0x200+ validates 0x0B76 values (expects 0x01, 0x84)
 
-### Next Phase (After Flash Testing)
-1. Flash V6_BYPASS_ONLY firmware
-2. USB Device Tree analysis
-3. OSD functionality verification
-4. Results documentation
+**Checksum Analysis**:
+- **Original firmware has INVALID checksum**: 0xC3A4 (not 0x0000)
+- **Device doesn't use checksum validation** - uses runtime integrity checks instead
+- **Previous checksum-based patches were unnecessary** - root cause is elsewhere
 
-### Technical Findings
-- **OSD Pattern**: `90 0B ?? 74 01 F0` confirmed at all 4 sites
-- **Integrity Check**: Multi-stage validation at 0x01C0-0x01F0
-- **Bypass Strategy**: Conditional jump inversion (minimal risk)
-- **CRC Candidate**: Function 0x236D (score 4/4) - secondary target for future analysis
+**Why Previous Patches Failed**:
+1. OSD patches change 0x0B76/0x0B77 from 0x01 to 0x00
+2. Integrity checks expect specific values (0x01, 0x84)
+3. When values don't match, device branches to failure paths
+4. USB configuration never completes
+
+### New Strategy: Integrity Check Logic Patching
+**Target**: Patch the integrity check logic to accept our OSD values
+**Approach**: Change expected comparison values from 0x01 to 0x00
+**Patches**:
+- 0x244: `CJNE A,#01,+8` → `CJNE A,#00,+8`
+- 0x260: `CJNE A,#0x84,+6` → `CJNE A,#0x00,+6`
+
+### Next Steps
+1. ✅ **COMPLETED**: Deep analysis using IDA Pro MCP
+2. ✅ **COMPLETED**: Root cause identification (runtime integrity checks)
+3. ✅ **COMPLETED**: Checksum myth debunked (original firmware invalid)
+4. ✅ **COMPLETED**: New bypass strategy development
+5. → **NEXT**: Test integrity bypass firmware (no checksum fix needed)
+6. → **NEXT**: Verify USB configuration completes successfully
+
+### Technical Achievements
+- **OSD Pattern**: `90 0B ?? 74 01 F0` → `90 0B ?? 74 00 F0` at all 4 sites
+- **Integrity Check**: Multi-stage validation at 0x1C0-0x01F0 (MAPPED)
+- **CTF Function**: OSD validation logic at 0x200+ (DECODED)
+- **Failure Paths**: 0xA4BD, 0xA32F, 0xA4A0 (IDENTIFIED)
+- **Checksum Reality**: Original firmware has invalid checksum (0xC3A4) - not used for validation
 
 ### Files Generated
-- `logs/step01_sanity.md` - Connection and database status
-- `logs/step01_tail.txt` - Firmware tail bytes (all FF)
-- `intel/osd_sites.json` - OSD enable sequences
-- `intel/osd_sites.md` - OSD sites documentation
-- `intel/crc_candidates.json` - CRC analysis results
-- `intel/crc_proof.md` - Integrity check evidence
-- `intel/compare_sites.md` - Patch strategy and risk analysis
+- `logs/20250812-2200_step04_deep_analysis.md` - Deep analysis results
+- Previous analysis files remain valid for reference

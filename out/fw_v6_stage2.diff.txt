@@ -1,0 +1,2 @@
+Stage2_v6 (BASE=0x0) — V6=present
+Read hits: off=0x01D5, off=0x01CC
