@@ -1,0 +1,67 @@
+{
+  "file": "firmware\\builds\\bad\\fw_single_flip_04D4.bin",
+  "sha256": "3fbc27bb0dd08d4c142a7f2fcc1b9493d86c4f1b07711d646f92542674f6f1ad",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x04D4",
+      "base": "0x01",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_single_flip_04D4.bin",
+    "type": "single_flip",
+    "expected_offsets": [
+      1232,
+      1233,
+      1234,
+      1235,
+      1236,
+      1237,
+      1238,
+      1239,
+      1240
+    ],
+    "notes": [
+      "Expect exactly 1 change near 0x04D4 (±4)"
+    ]
+  },
+  "verdict": "MATCH",
+  "verdict_notes": [],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 50083,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 50083,
+    "recommended_checksum": 15453,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": "usb\\usbtree_fw_single_flip_04D4.txt",
+    "status": "Partial",
+    "excerpts": [
+      " CompanionHubSymLnk      : USB#VID_05E3&PID_0616#5&521a615&0&21#{f18a0e88-c30c-11d0-8815-00a0c906bed8}",
+      "Product ID               : 0x6366",
+      "Device Path              : \\\\?\\USB#VID_0C45&PID_6366#SN0001#{a5dcbf10-6530-11d2-901f-00c04fb951ed} (GUID_DEVINTERFACE_USB_DEVICE)",
+      "Device ID                : USB\\VID_0C45&PID_6366\\SN0001",
+      "Hardware IDs             : USB\\VID_0C45&PID_6366&REV_0100 USB\\VID_0C45&PID_6366",
+      "    ---------------------- Device Descriptor ----------------------",
+      "bDescriptorType          : 0x01 (Device Descriptor)",
+      "bDeviceProtocol          : 0x01 (IAD - Interface Association Descriptor)",
+      "idProduct                : 0x6366",
+      "iProduct                 : 0x01 (String Descriptor 1)"
+    ]
+  }
+}

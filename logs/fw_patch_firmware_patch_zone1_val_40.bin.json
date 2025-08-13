@@ -1,0 +1,46 @@
+{
+  "file": "fw patch\\firmware_patch_zone1_val_40.bin",
+  "sha256": "fdfc9a416cda9287b53b24dc1ecff3bccfe3c88afb79c23a9ba033b70106964d",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x032A",
+      "base": "0x86",
+      "new": "0x40"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "firmware_patch_zone1_val_40.bin",
+    "type": "unknown",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 50014,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 50014,
+    "recommended_checksum": 15522,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

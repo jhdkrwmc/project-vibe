@@ -1,0 +1,88 @@
+{
+  "file": "firmware\\builds\\bad\\fw_integrity_relaxed_plus.bin",
+  "sha256": "ea1f29ec1ed3dc8c2a5bcf3b463f394e2b4ed8381ebb4a6ebe13f4ba3026dd8b",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0224",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0235",
+      "base": "0x60",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0236",
+      "base": "0x03",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0244",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0250",
+      "base": "0x81",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0260",
+      "base": "0x84",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0289",
+      "base": "0x60",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x028A",
+      "base": "0x03",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x035F",
+      "base": "0x07",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_integrity_relaxed_plus.bin",
+    "type": "integrity",
+    "expected_offsets": [],
+    "notes": [
+      "Integrity-related edits expected (various locations)"
+    ]
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49616,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 49616,
+    "recommended_checksum": 15920,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

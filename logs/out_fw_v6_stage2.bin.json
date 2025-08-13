@@ -1,0 +1,54 @@
+{
+  "file": "out\\fw_v6_stage2.bin",
+  "sha256": "ba4a66dac448a7834d4789f377e3fc8f0ff818bdac027b74c32869048a0be676",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x01D1",
+      "base": "0x03",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x01DB",
+      "base": "0x3C",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": "out\\fw_v6_stage2.diff.txt",
+    "sum_txt": null,
+    "diff_lines": [
+      "Stage2_v6 (BASE=0x0) — V6=present",
+      "Read hits: off=0x01D5, off=0x01CC"
+    ],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_v6_stage2.bin",
+    "type": "generic_fw",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 50021,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 50021,
+    "recommended_checksum": 15515,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

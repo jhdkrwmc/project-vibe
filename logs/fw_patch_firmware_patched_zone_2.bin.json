@@ -1,0 +1,71 @@
+{
+  "file": "fw patch\\firmware_patched_zone_2.bin",
+  "sha256": "d301998eb4616fa6c1339e47f3adf221f7618a52a26eac94844b087d3979f4b5",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0E54",
+      "base": "0x90",
+      "new": "0x22"
+    },
+    {
+      "offset": "0x0E55",
+      "base": "0x0D",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0E56",
+      "base": "0x25",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0E57",
+      "base": "0x74",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0E58",
+      "base": "0x0F",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0E59",
+      "base": "0xF0",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "firmware_patched_zone_2.bin",
+    "type": "unknown",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49553,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 49553,
+    "recommended_checksum": 15983,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

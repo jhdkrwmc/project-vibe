@@ -1,0 +1,56 @@
+{
+  "file": "firmware\\builds\\bad\\firmware_patch_osd_text_null.bin",
+  "sha256": "80b1c03663a8be7306903a701758e197ea20182f2137cd28461abf7da89789ea",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0xAEFD",
+      "base": "0x29",
+      "new": "0x00"
+    },
+    {
+      "offset": "0xAF83",
+      "base": "0x2C",
+      "new": "0x00"
+    },
+    {
+      "offset": "0xB0F7",
+      "base": "0x25",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "firmware_patch_osd_text_null.bin",
+    "type": "unknown",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 50084,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 50084,
+    "recommended_checksum": 15452,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

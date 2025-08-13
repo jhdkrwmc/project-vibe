@@ -1,0 +1,98 @@
+{
+  "file": "out\\fw_v7_early_bypass_crc_fixed.bin",
+  "sha256": "dbb60f13dbd048417f039667a10d126e1054a71248d67f4b27cf717f64f6e976",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0245",
+      "base": "0x08",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x04D4",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0AC8",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0B02",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x1FFE",
+      "base": "0x00",
+      "new": "0x67"
+    },
+    {
+      "offset": "0x1FFF",
+      "base": "0x00",
+      "new": "0x3C"
+    },
+    {
+      "offset": "0x4526",
+      "base": "0x01",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": "out\\fw_v7_early_bypass_crc_fixed.diff.txt",
+    "sum_txt": null,
+    "diff_lines": [
+      "OK   @ 0x04d4: 01 -> 00",
+      "OK   @ 0x0ac8: 01 -> 00",
+      "OK   @ 0x0b02: 01 -> 00",
+      "OK   @ 0x4526: 01 -> 00",
+      "OK   @ 0x0245: 08 -> 00",
+      "SKIP @ 0x025f: expected 06 but found B4",
+      "SKIP @ 0x0289: expected 03 but found 60"
+    ],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_v7_early_bypass_crc_fixed.bin",
+    "type": "crc_fixed",
+    "expected_offsets": [
+      8190,
+      8191
+    ],
+    "notes": [
+      "Expect checksum footer 0x1FFE..0x1FFF updated"
+    ]
+  },
+  "verdict": "MATCH",
+  "verdict_notes": [],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 50073,
+    "stored_checksum": 15463,
+    "footer_le": [
+      103,
+      60
+    ],
+    "total_sum": 0,
+    "recommended_checksum": 15463,
+    "checksum_ok": true
+  },
+  "usb": {
+    "path": "out\\usbtree_fw_v7_early_bypass_crc_fixed.txt",
+    "status": "Partial",
+    "excerpts": [
+      " CompanionHubSymLnk      : USB#VID_05E3&PID_0616#5&521a615&0&21#{f18a0e88-c30c-11d0-8815-00a0c906bed8}",
+      "Product ID               : 0x6366",
+      "Device Path              : \\\\?\\USB#VID_0C45&PID_6366#SN0001#{a5dcbf10-6530-11d2-901f-00c04fb951ed} (GUID_DEVINTERFACE_USB_DEVICE)",
+      "Device ID                : USB\\VID_0C45&PID_6366\\SN0001",
+      "Hardware IDs             : USB\\VID_0C45&PID_6366&REV_0100 USB\\VID_0C45&PID_6366",
+      "    ---------------------- Device Descriptor ----------------------",
+      "bDescriptorType          : 0x01 (Device Descriptor)",
+      "bDeviceProtocol          : 0x01 (IAD - Interface Association Descriptor)",
+      "idProduct                : 0x6366",
+      "iProduct                 : 0x01 (String Descriptor 1)"
+    ]
+  }
+}

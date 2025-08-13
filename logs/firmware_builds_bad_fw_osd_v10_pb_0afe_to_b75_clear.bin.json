@@ -1,0 +1,51 @@
+{
+  "file": "firmware\\builds\\bad\\fw_osd_v10_pb_0afe_to_b75_clear.bin",
+  "sha256": "e2d4af0a8221268132c79bb57d50465d5a2910dc61ef15fab5688f5e9298a797",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0B00",
+      "base": "0x77",
+      "new": "0x75"
+    },
+    {
+      "offset": "0x0B02",
+      "base": "0x01",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_osd_v10_pb_0afe_to_b75_clear.bin",
+    "type": "generic_fw",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 50081,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 50081,
+    "recommended_checksum": 15455,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

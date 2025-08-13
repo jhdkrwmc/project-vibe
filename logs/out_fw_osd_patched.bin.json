@@ -1,0 +1,76 @@
+{
+  "file": "out\\fw_osd_patched.bin",
+  "sha256": "4cb2d806d431a9517e79b24f25ad054e4b81caf77001d29b3bd467d3c2d9da4f",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x04D4",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0AC8",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0B02",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x1FFE",
+      "base": "0x00",
+      "new": "0xB8"
+    },
+    {
+      "offset": "0x1FFF",
+      "base": "0x00",
+      "new": "0xE9"
+    },
+    {
+      "offset": "0x4526",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0xA4D5",
+      "base": "0x40",
+      "new": "0x80"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_osd_patched.bin",
+    "type": "generic_fw",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 50081,
+    "stored_checksum": 59832,
+    "footer_le": [
+      184,
+      233
+    ],
+    "total_sum": 44377,
+    "recommended_checksum": 15455,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

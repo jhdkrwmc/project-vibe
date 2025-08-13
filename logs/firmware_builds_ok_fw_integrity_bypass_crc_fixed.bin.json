@@ -1,0 +1,84 @@
+{
+  "file": "firmware\\builds\\ok\\fw_integrity_bypass_crc_fixed.bin",
+  "sha256": "d1436614ce40090bc038576b5d08029efdc4556462e5ea2f8d6b80d56b2c584c",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0244",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0260",
+      "base": "0x84",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x04D4",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0AC8",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0B02",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x1FFE",
+      "base": "0x00",
+      "new": "0xE4"
+    },
+    {
+      "offset": "0x1FFF",
+      "base": "0x00",
+      "new": "0x3C"
+    },
+    {
+      "offset": "0x4526",
+      "base": "0x01",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_integrity_bypass_crc_fixed.bin",
+    "type": "crc_fixed",
+    "expected_offsets": [
+      8190,
+      8191
+    ],
+    "notes": [
+      "Expect checksum footer 0x1FFE..0x1FFF updated"
+    ]
+  },
+  "verdict": "MATCH",
+  "verdict_notes": [],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49948,
+    "stored_checksum": 15588,
+    "footer_le": [
+      228,
+      60
+    ],
+    "total_sum": 0,
+    "recommended_checksum": 15588,
+    "checksum_ok": true
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

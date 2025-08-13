@@ -1,0 +1,86 @@
+{
+  "file": "firmware\\builds\\bad\\fw_comprehensive_multisection_bypass.bin",
+  "sha256": "ecac142146803ed61724807a4e19c740503806cd914b05f1a5f853db715bb030",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0244",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x032A",
+      "base": "0x86",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x04D4",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0AC8",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0B02",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x4526",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0xA526",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0xB0E9",
+      "base": "0x84",
+      "new": "0x00"
+    },
+    {
+      "offset": "0xC6CC",
+      "base": "0x84",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_comprehensive_multisection_bypass.bin",
+    "type": "generic_fw",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49946,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 49946,
+    "recommended_checksum": 15590,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

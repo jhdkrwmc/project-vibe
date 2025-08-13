@@ -1,0 +1,91 @@
+{
+  "file": "out\\fw_osd_off_crc_fixed.bin",
+  "sha256": "fad54ad16ba8ab3e41750e47e8d9cf00049ae7a5561268b10bfffeab51af98db",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x04D4",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0AC8",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0B02",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x1FFE",
+      "base": "0x00",
+      "new": "0x5F"
+    },
+    {
+      "offset": "0x1FFF",
+      "base": "0x00",
+      "new": "0x3C"
+    },
+    {
+      "offset": "0x4526",
+      "base": "0x01",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": "out\\fw_osd_off_crc_fixed.diff.txt",
+    "sum_txt": "out\\fw_osd_off_crc_fixed.sum.txt",
+    "diff_lines": [
+      "OK   @ 0x04d4: 01 -> 00",
+      "OK   @ 0x0ac8: 01 -> 00",
+      "OK   @ 0x0b02: 01 -> 00",
+      "OK   @ 0x4526: 01 -> 00"
+    ],
+    "sum_lines": [
+      "Partial byte-sum [0x0000..0x1FFD]: 0xc3a1",
+      "Computed checksum (two's complement): 0x3c5f",
+      "Checksum bytes @ 0x1FFE..0x1FFF (LE): 5F 3C",
+      "Final 16-bit sum (byte-wise) of entire image: 0x8450",
+      "Final 16-bit sum (word-wise LE) of entire image: 0xf1a5",
+      "Verification (byte-wise): FAIL"
+    ]
+  },
+  "claim": {
+    "raw": "fw_osd_off_crc_fixed.bin",
+    "type": "osd_off",
+    "expected_offsets": [
+      1232,
+      2756,
+      2814,
+      17698
+    ],
+    "notes": [
+      "Expect changes at OSD sites (04D4,0AC8,0B02,4526)"
+    ]
+  },
+  "verdict": "MISMATCH",
+  "verdict_notes": [
+    "Missing expected OSD site edits: 0x04D0, 0x4522, 0x0AC4, 0x0AFE",
+    "Unexpected edits: 0x04D4, 0x0AC8, 0x0B02, 0x4526"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 50081,
+    "stored_checksum": 15455,
+    "footer_le": [
+      95,
+      60
+    ],
+    "total_sum": 0,
+    "recommended_checksum": 15455,
+    "checksum_ok": true
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

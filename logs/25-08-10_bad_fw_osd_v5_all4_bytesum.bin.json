@@ -1,0 +1,85 @@
+{
+  "file": "25-08-10\\bad\\fw_osd_v5_all4_bytesum.bin",
+  "sha256": "d7b3e11c02c4c9bbb3fc9dc85335b40a6b301a4f76be91fbe967ec3ca340ad46",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x04D4",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0AC8",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0B02",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x1FFE",
+      "base": "0x00",
+      "new": "0x5F"
+    },
+    {
+      "offset": "0x1FFF",
+      "base": "0x00",
+      "new": "0x5F"
+    },
+    {
+      "offset": "0x4526",
+      "base": "0x01",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": "25-08-10\\bad\\fw_osd_v5_all4_bytesum.diff.txt",
+    "sum_txt": "25-08-10\\bad\\fw_osd_v5_all4_bytesum.sum.txt",
+    "diff_lines": [
+      "0004D4: 01 -> 00",
+      "000AC8: 01 -> 00",
+      "000B02: 01 -> 00",
+      "001FFE: 00 -> 5F",
+      "001FFF: 00 -> 5F",
+      "004526: 01 -> 00"
+    ],
+    "sum_lines": [
+      "file: fw_osd_v5_all4_bytesum.bin",
+      "size: 131072",
+      "sha256: d7b3e11c02c4c9bbb3fc9dc85335b40a6b301a4f76be91fbe967ec3ca340ad46",
+      "wordsum16_le(0..1FFE) = 0x1648",
+      "bytesum8(0..1FFE)     = 0xA1",
+      "bytesum8 dup footer written at 0x1FFE..0x1FFF: 0x005F"
+    ]
+  },
+  "claim": {
+    "raw": "fw_osd_v5_all4_bytesum.bin",
+    "type": "generic_fw",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 50081,
+    "stored_checksum": 24415,
+    "footer_le": [
+      95,
+      95
+    ],
+    "total_sum": 8960,
+    "recommended_checksum": 15455,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

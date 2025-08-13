@@ -1,0 +1,56 @@
+{
+  "file": "firmware\\builds\\bad\\fw_osd_v14_nop_all3.bin",
+  "sha256": "f0ee2d188691e80c1f918b7c1936cfb6a56773013f6530b53159bad623540f64",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x04D5",
+      "base": "0xF0",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0AC9",
+      "base": "0xF0",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0B03",
+      "base": "0xF0",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_osd_v14_nop_all3.bin",
+    "type": "generic_fw",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49364,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 49364,
+    "recommended_checksum": 16172,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "file": "firmware\\builds\\bad\\fw_osd_off.bin",
+  "sha256": "893111d481a289b5d9baa22ea9dfce99a4a66184cda260150b6fd41befbf02ce",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x04D4",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0AC8",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0B02",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x4526",
+      "base": "0x01",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_osd_off.bin",
+    "type": "osd_off",
+    "expected_offsets": [
+      1232,
+      2756,
+      2814,
+      17698
+    ],
+    "notes": [
+      "Expect changes at OSD sites (04D4,0AC8,0B02,4526)"
+    ]
+  },
+  "verdict": "MISMATCH",
+  "verdict_notes": [
+    "Missing expected OSD site edits: 0x04D0, 0x4522, 0x0AC4, 0x0AFE",
+    "Unexpected edits: 0x04D4, 0x0AC8, 0x0B02, 0x4526"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 50081,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 50081,
+    "recommended_checksum": 15455,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

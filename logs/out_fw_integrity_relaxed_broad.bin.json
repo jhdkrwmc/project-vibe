@@ -1,0 +1,90 @@
+{
+  "file": "out\\fw_integrity_relaxed_broad.bin",
+  "sha256": "15dde25a098c2964489d8542fd79034644a8843a7cc5d6a48a91265fbc145a8f",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0224",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0244",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0250",
+      "base": "0x81",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0260",
+      "base": "0x84",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x035F",
+      "base": "0x07",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": "out\\fw_integrity_relaxed_broad.diff.txt",
+    "sum_txt": "out\\fw_integrity_relaxed_broad.sum.txt",
+    "diff_lines": [
+      "OK   @ 0x0223: B4 01 -> B4 00 (rel 09)",
+      "OK   @ 0x0243: B4 01 -> B4 00 (rel 08)",
+      "OK   @ 0x024f: B4 81 -> B4 00 (rel 08)",
+      "OK   @ 0x025f: B4 84 -> B4 00 (rel 06)",
+      "OK   @ 0x035e: B4 07 -> B4 00 (rel 03)"
+    ],
+    "sum_lines": [
+      "Broad Integrity Relaxation Build",
+      "Generated: 2025-08-13T08:53:48.647338",
+      "",
+      "CHANGES:",
+      "  - OK   @ 0x0223: B4 01 -> B4 00 (rel 09)",
+      "  - OK   @ 0x0243: B4 01 -> B4 00 (rel 08)",
+      "  - OK   @ 0x024f: B4 81 -> B4 00 (rel 08)",
+      "  - OK   @ 0x025f: B4 84 -> B4 00 (rel 06)",
+      "  - OK   @ 0x035e: B4 07 -> B4 00 (rel 03)",
+      "",
+      "OSD SITES (unchanged):",
+      "  @ 0x04d0 BEFORE: 90 0B 77 74 01 F0 AFTER: 90 0B 77 74 01 F0",
+      "  @ 0x0ac4 BEFORE: 90 0B 76 74 01 F0 AFTER: 90 0B 76 74 01 F0",
+      "  @ 0x0afe BEFORE: 90 0B 77 74 01 F0 AFTER: 90 0B 77 74 01 F0",
+      "  @ 0x4522 BEFORE: 90 0B 75 74 01 F0 AFTER: 90 0B 75 74 01 F0"
+    ]
+  },
+  "claim": {
+    "raw": "fw_integrity_relaxed_broad.bin",
+    "type": "integrity",
+    "expected_offsets": [],
+    "notes": [
+      "Integrity-related edits expected (various locations)"
+    ]
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49814,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 49814,
+    "recommended_checksum": 15722,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

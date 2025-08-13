@@ -1,0 +1,53 @@
+{
+  "file": "2508110204\\out_v3\\bad\\fw_osd_v12_nop_0ac4.bin",
+  "sha256": "bd691d73acf2848edc88cfa827d9793c68c9366c6cc2d1bc00e7b420b5e200a2",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0AC9",
+      "base": "0xF0",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": "2508110204\\out_v3\\bad\\fw_osd_v12_nop_0ac4.diff.txt",
+    "sum_txt": "2508110204\\out_v3\\bad\\fw_osd_v12_nop_0ac4.sum.txt",
+    "diff_lines": [
+      "000AC9: F0 -> 00"
+    ],
+    "sum_lines": [
+      "file: fw_osd_v12_nop_0ac4.bin",
+      "size: 131072",
+      "sha256: bd691d73acf2848edc88cfa827d9793c68c9366c6cc2d1bc00e7b420b5e200a2",
+      "[OK] 000AC9: F0->00 (NOP MOVX)"
+    ]
+  },
+  "claim": {
+    "raw": "fw_osd_v12_nop_0ac4.bin",
+    "type": "generic_fw",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49844,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 49844,
+    "recommended_checksum": 15692,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "file": "out\\fw_integrity_bypass_crc_fixed.bin",
+  "sha256": "d1436614ce40090bc038576b5d08029efdc4556462e5ea2f8d6b80d56b2c584c",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0244",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0260",
+      "base": "0x84",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x04D4",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0AC8",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0B02",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x1FFE",
+      "base": "0x00",
+      "new": "0xE4"
+    },
+    {
+      "offset": "0x1FFF",
+      "base": "0x00",
+      "new": "0x3C"
+    },
+    {
+      "offset": "0x4526",
+      "base": "0x01",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": "out\\fw_integrity_bypass_crc_fixed.diff.txt",
+    "sum_txt": "out\\fw_integrity_bypass_crc_fixed.sum.txt",
+    "diff_lines": [
+      "OK   @ 0x04d4: 01 -> 00",
+      "OK   @ 0x0ac8: 01 -> 00",
+      "OK   @ 0x0b02: 01 -> 00",
+      "OK   @ 0x4526: 01 -> 00",
+      "OK   @ 0x0244: 01 -> 00",
+      "OK   @ 0x0260: 84 -> 00"
+    ],
+    "sum_lines": [
+      "Integrity Check Bypass Strategy - Checksum Report",
+      "Generated: 2025-08-13T00:17:00.778719",
+      "",
+      "OSD Patches Applied:",
+      "OK   @ 0x04d4: 01 -> 00",
+      "OK   @ 0x0ac8: 01 -> 00",
+      "OK   @ 0x0b02: 01 -> 00",
+      "OK   @ 0x4526: 01 -> 00",
+      "",
+      "Integrity Check Bypass Patches Applied:",
+      "OK   @ 0x0244: 01 -> 00",
+      "OK   @ 0x0260: 84 -> 00",
+      "",
+      "Checksum Calculation:",
+      "  Partial sum [0x0000..0x1FFD]: 0xc31c",
+      "  Computed checksum (two's complement): 0x3ce4",
+      "  Checksum bytes @ 0x1FFE..0x1FFF (LE): E4 3C",
+      "  Final 16-bit sum of entire image: 0x8450",
+      "  Verification: FAIL",
+      "",
+      "Strategy:",
+      "  Instead of just patching OSD writes, we now patch the integrity check logic",
+      "  to expect 0x00 values instead of 0x01/0x84. This should allow the device",
+      "  to pass validation and complete USB configuration."
+    ]
+  },
+  "claim": {
+    "raw": "fw_integrity_bypass_crc_fixed.bin",
+    "type": "crc_fixed",
+    "expected_offsets": [
+      8190,
+      8191
+    ],
+    "notes": [
+      "Expect checksum footer 0x1FFE..0x1FFF updated"
+    ]
+  },
+  "verdict": "MATCH",
+  "verdict_notes": [],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49948,
+    "stored_checksum": 15588,
+    "footer_le": [
+      228,
+      60
+    ],
+    "total_sum": 0,
+    "recommended_checksum": 15588,
+    "checksum_ok": true
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

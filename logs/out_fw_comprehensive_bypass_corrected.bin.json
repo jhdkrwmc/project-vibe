@@ -1,0 +1,145 @@
+{
+  "file": "out\\fw_comprehensive_bypass_corrected.bin",
+  "sha256": "50114cf1443cadfe7c1bfce6eb18687ccda0b2bdfca6bc30fc70deca3bf42165",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0244",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x032A",
+      "base": "0x86",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x04D4",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0AC8",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0B02",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x4526",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0xB0E9",
+      "base": "0x84",
+      "new": "0x00"
+    },
+    {
+      "offset": "0xC6CC",
+      "base": "0x84",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": "out\\fw_comprehensive_bypass_corrected.diff.txt",
+    "sum_txt": "out\\fw_comprehensive_bypass_corrected.sum.txt",
+    "diff_lines": [
+      "OK   @ 0x04d4: 01 -> 00",
+      "OK   @ 0x0ac8: 01 -> 00",
+      "OK   @ 0x0b02: 01 -> 00",
+      "OK   @ 0x4526: 01 -> 00",
+      "OK   @ 0x032a: 86 -> 00",
+      "OK   @ 0xb0e9: 84 -> 00",
+      "OK   @ 0xc6cc: 84 -> 00",
+      "OK   @ 0x0244: 01 -> 00"
+    ],
+    "sum_lines": [
+      "Comprehensive 4-Layer Integrity Bypass Strategy (CORRECTED)",
+      "Generated: 2025-08-13T03:42:40.320649",
+      "",
+      "Strategy:",
+      "  Address ALL 4 layers of integrity validation with CORRECTED byte offsets:",
+      "  - Layer 1: OSD initialization writes (0x01 -> 0x00)",
+      "  - Layer 2: Extended OSD configuration (0x86 -> 0x00) - CORRECTED OFFSET",
+      "  - Layer 3: Validation logic expectations (0x84 -> 0x00) - CORRECTED OFFSETS",
+      "  - Layer 4: Additional validation checks (0x01 -> 0x00)",
+      "",
+      "Key Insight from Clean IDA Pro Analysis:",
+      "  - Mixed FLIRTs were corrupting instruction decoding",
+      "  - Clean 8051 analysis revealed correct byte offsets",
+      "  - All 4 layers must be bypassed simultaneously for success",
+      "",
+      "Layer 1 - OSD Initialization Patches Applied:",
+      "OK   @ 0x04d4: 01 -> 00",
+      "OK   @ 0x0ac8: 01 -> 00",
+      "OK   @ 0x0b02: 01 -> 00",
+      "OK   @ 0x4526: 01 -> 00",
+      "",
+      "Layer 2 - Extended OSD Configuration Patches Applied:",
+      "OK   @ 0x032a: 86 -> 00",
+      "",
+      "Layer 3 - Validation Logic Bypass Patches Applied:",
+      "OK   @ 0xb0e9: 84 -> 00",
+      "OK   @ 0xc6cc: 84 -> 00",
+      "",
+      "Layer 4 - Additional Validation Check Patches Applied:",
+      "OK   @ 0x0244: 01 -> 00",
+      "",
+      "Total bytes changed: 8",
+      "Checksum: Not modified (original firmware has invalid checksum anyway)",
+      "",
+      "Expected Result:",
+      "  Device should now pass ALL layers of integrity validation and complete USB configuration",
+      "  instead of stopping at Config=0 with Code 10 error.",
+      "",
+      "Patch Strategy:",
+      "  - All OSD registers consistently set to 0x00",
+      "  - All validation logic expects 0x00 values",
+      "  - No inconsistent states that could trigger validation failures",
+      "  - Complete 4-layer bypass (not partial)"
+    ]
+  },
+  "claim": {
+    "raw": "fw_comprehensive_bypass_corrected.bin",
+    "type": "generic_fw",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49946,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 49946,
+    "recommended_checksum": 15590,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": "out\\usbtree_fw_comprehensive_bypass_corrected.txt",
+    "status": "Partial",
+    "excerpts": [
+      " CompanionHubSymLnk      : USB#VID_05E3&PID_0616#5&521a615&0&21#{f18a0e88-c30c-11d0-8815-00a0c906bed8}",
+      "Product ID               : 0x6366",
+      "Device Path              : \\\\?\\USB#VID_0C45&PID_6366#SN0001#{a5dcbf10-6530-11d2-901f-00c04fb951ed} (GUID_DEVINTERFACE_USB_DEVICE)",
+      "Device ID                : USB\\VID_0C45&PID_6366\\SN0001",
+      "Hardware IDs             : USB\\VID_0C45&PID_6366&REV_0100 USB\\VID_0C45&PID_6366",
+      "    ---------------------- Device Descriptor ----------------------",
+      "bDescriptorType          : 0x01 (Device Descriptor)",
+      "bDeviceProtocol          : 0x01 (IAD - Interface Association Descriptor)",
+      "idProduct                : 0x6366",
+      "iProduct                 : 0x01 (String Descriptor 1)"
+    ]
+  }
+}

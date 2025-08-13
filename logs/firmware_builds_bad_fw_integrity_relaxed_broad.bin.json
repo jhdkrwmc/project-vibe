@@ -1,0 +1,68 @@
+{
+  "file": "firmware\\builds\\bad\\fw_integrity_relaxed_broad.bin",
+  "sha256": "15dde25a098c2964489d8542fd79034644a8843a7cc5d6a48a91265fbc145a8f",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0224",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0244",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0250",
+      "base": "0x81",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0260",
+      "base": "0x84",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x035F",
+      "base": "0x07",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_integrity_relaxed_broad.bin",
+    "type": "integrity",
+    "expected_offsets": [],
+    "notes": [
+      "Integrity-related edits expected (various locations)"
+    ]
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49814,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 49814,
+    "recommended_checksum": 15722,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

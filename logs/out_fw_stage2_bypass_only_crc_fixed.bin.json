@@ -1,0 +1,64 @@
+{
+  "file": "out\\fw_stage2_bypass_only_crc_fixed.bin",
+  "sha256": "f80bd46b1b720060a9fd9576fcc4a6f8b96ea78aae2a5bd3234688f3de10a9e8",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0244",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0288",
+      "base": "0x84",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x1FFE",
+      "base": "0x00",
+      "new": "0xE1"
+    },
+    {
+      "offset": "0x1FFF",
+      "base": "0x00",
+      "new": "0x3C"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": null,
+    "sum_txt": null,
+    "diff_lines": [],
+    "sum_lines": []
+  },
+  "claim": {
+    "raw": "fw_stage2_bypass_only_crc_fixed.bin",
+    "type": "crc_fixed",
+    "expected_offsets": [
+      8190,
+      8191
+    ],
+    "notes": [
+      "Expect checksum footer 0x1FFE..0x1FFF updated"
+    ]
+  },
+  "verdict": "MATCH",
+  "verdict_notes": [],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49951,
+    "stored_checksum": 15585,
+    "footer_le": [
+      225,
+      60
+    ],
+    "total_sum": 0,
+    "recommended_checksum": 15585,
+    "checksum_ok": true
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

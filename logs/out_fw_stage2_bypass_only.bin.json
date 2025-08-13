@@ -1,0 +1,57 @@
+{
+  "file": "out\\fw_stage2_bypass_only.bin",
+  "sha256": "a7b3e97a98ae9490e76303c19905fd01cc2cd4e226d6c185584edb214229296d",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0244",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0288",
+      "base": "0x84",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": "out\\fw_stage2_bypass_only.diff.txt",
+    "sum_txt": "out\\fw_stage2_bypass_only.sum.txt",
+    "diff_lines": [
+      "OK   @ 0x0244: 01 -> 00",
+      "OK   @ 0x0288: 84 -> 00"
+    ],
+    "sum_lines": [
+      "Stage2 (no footer change) byte-sum: 0x8334",
+      "Stage2 word-sum: 0xb4c5"
+    ]
+  },
+  "claim": {
+    "raw": "fw_stage2_bypass_only.bin",
+    "type": "generic_fw",
+    "expected_offsets": [],
+    "notes": []
+  },
+  "verdict": "SUSPECT",
+  "verdict_notes": [
+    "Edits outside known sites; verify intent"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49951,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 49951,
+    "recommended_checksum": 15585,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": null,
+    "status": null,
+    "excerpts": []
+  }
+}

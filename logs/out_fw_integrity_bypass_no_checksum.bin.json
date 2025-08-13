@@ -1,0 +1,124 @@
+{
+  "file": "out\\fw_integrity_bypass_no_checksum.bin",
+  "sha256": "18b367cf17d9f6e9443cfaf17305e86e534651f649b01235bb0b954b5d715046",
+  "size": 131072,
+  "baseline": "firmware_backup - Copy (3).bin",
+  "diffs": [
+    {
+      "offset": "0x0244",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0260",
+      "base": "0x84",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x04D4",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0AC8",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x0B02",
+      "base": "0x01",
+      "new": "0x00"
+    },
+    {
+      "offset": "0x4526",
+      "base": "0x01",
+      "new": "0x00"
+    }
+  ],
+  "neighbor_files": {
+    "diff_txt": "out\\fw_integrity_bypass_no_checksum.diff.txt",
+    "sum_txt": "out\\fw_integrity_bypass_no_checksum.sum.txt",
+    "diff_lines": [
+      "OK   @ 0x04d4: 01 -> 00",
+      "OK   @ 0x0ac8: 01 -> 00",
+      "OK   @ 0x0b02: 01 -> 00",
+      "OK   @ 0x4526: 01 -> 00",
+      "OK   @ 0x0244: 01 -> 00",
+      "OK   @ 0x0260: 84 -> 00"
+    ],
+    "sum_lines": [
+      "Integrity Check Bypass Strategy - No Checksum Fix",
+      "Generated: 2025-08-13T00:21:24.114564",
+      "",
+      "Strategy:",
+      "  Instead of just patching OSD writes, we now patch the integrity check logic",
+      "  to expect 0x00 values instead of 0x01/0x84. This should allow the device",
+      "  to pass validation and complete USB configuration.",
+      "",
+      "Key Insight:",
+      "  Original firmware has invalid checksum (0xC3A4) - checksum validation is NOT used.",
+      "  The device uses runtime integrity checks instead, which is what we're bypassing.",
+      "",
+      "OSD Patches Applied:",
+      "OK   @ 0x04d4: 01 -> 00",
+      "OK   @ 0x0ac8: 01 -> 00",
+      "OK   @ 0x0b02: 01 -> 00",
+      "OK   @ 0x4526: 01 -> 00",
+      "",
+      "Integrity Check Bypass Patches Applied:",
+      "OK   @ 0x0244: 01 -> 00",
+      "OK   @ 0x0260: 84 -> 00",
+      "",
+      "Total bytes changed: 6",
+      "Checksum: Not modified (original firmware has invalid checksum anyway)",
+      "",
+      "Expected Result:",
+      "  Device should now pass integrity validation and complete USB configuration",
+      "  instead of stopping at Config=0 with Code 10 error."
+    ]
+  },
+  "claim": {
+    "raw": "fw_integrity_bypass_no_checksum.bin",
+    "type": "crc_fixed",
+    "expected_offsets": [
+      8190,
+      8191
+    ],
+    "notes": [
+      "Expect checksum footer 0x1FFE..0x1FFF updated"
+    ]
+  },
+  "verdict": "MISMATCH",
+  "verdict_notes": [
+    "Claims CRC/checksum fix but footer 0x1FFE..0x1FFF not modified",
+    "crc_fixed claim but checksum verification failed"
+  ],
+  "checksum": {
+    "size": 131072,
+    "partial_sum": 49948,
+    "stored_checksum": 0,
+    "footer_le": [
+      0,
+      0
+    ],
+    "total_sum": 49948,
+    "recommended_checksum": 15588,
+    "checksum_ok": false
+  },
+  "usb": {
+    "path": "out\\usbtree_fw_integrity_bypass_no_checksum.txt",
+    "status": "Partial",
+    "excerpts": [
+      " CompanionHubSymLnk      : USB#VID_05E3&PID_0616#5&521a615&0&21#{f18a0e88-c30c-11d0-8815-00a0c906bed8}",
+      "Product ID               : 0x6366",
+      "Device Path              : \\\\?\\USB#VID_0C45&PID_6366#SN0001#{a5dcbf10-6530-11d2-901f-00c04fb951ed} (GUID_DEVINTERFACE_USB_DEVICE)",
+      "Device ID                : USB\\VID_0C45&PID_6366\\SN0001",
+      "Hardware IDs             : USB\\VID_0C45&PID_6366&REV_0100 USB\\VID_0C45&PID_6366",
+      "    ---------------------- Device Descriptor ----------------------",
+      "bDescriptorType          : 0x01 (Device Descriptor)",
+      "bDeviceProtocol          : 0x01 (IAD - Interface Association Descriptor)",
+      "idProduct                : 0x6366",
+      "iProduct                 : 0x01 (String Descriptor 1)"
+    ]
+  }
+}
