@@ -5,3 +5,4 @@ firmware_backup - Copy (3).bin.nam
 .venv/
 audit/
 __pycache__/
+.cursor/mcp.json
