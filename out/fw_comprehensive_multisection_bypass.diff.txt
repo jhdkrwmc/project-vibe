@@ -1,0 +1,48 @@
+OK   @ 0x04d4 (Main): 01 -> 00
+OK   @ 0x0ac8 (Main): 01 -> 00
+OK   @ 0x0b02 (Main): 01 -> 00
+OK   @ 0x4526 (Main): 01 -> 00
+OK   @ 0x032a (Main): 86 -> 00
+OK   @ 0xb0e9 (Main): 84 -> 00
+OK   @ 0xc6cc (Main): 84 -> 00
+OK   @ 0x0244 (Main): 01 -> 00
+SKIP @ 0x64d4 (Section 1): expected 01 but found A3
+SKIP @ 0x6ac8 (Section 1): expected 01 but found A7
+SKIP @ 0x6b02 (Section 1): expected 01 but found 25
+OK   @ 0xa526 (Section 1): 01 -> 00
+SKIP @ 0x632a (Section 1): expected 86 but found 90
+SKIP @ 0x110e9 (Section 1): expected 84 but found 06
+SKIP @ 0x126cc (Section 1): expected 84 but found 26
+SKIP @ 0x6244 (Section 1): expected 01 but found F0
+SKIP @ 0x84d4 (Section 2): expected 01 but found 44
+SKIP @ 0x8ac8 (Section 2): expected 01 but found AE
+SKIP @ 0x8b02 (Section 2): expected 01 but found 80
+SKIP @ 0xc526 (Section 2): expected 01 but found 60
+SKIP @ 0x832a (Section 2): expected 86 but found E5
+SKIP @ 0x130e9 (Section 2): expected 84 but found 12
+SKIP @ 0x146cc (Section 2): expected 84 but found FF
+SKIP @ 0x8244 (Section 2): expected 01 but found 64
+SKIP @ 0xa4d4 (Section 3): expected 01 but found E0
+SKIP @ 0xaac8 (Section 3): expected 01 but found 72
+SKIP @ 0xab02 (Section 3): expected 01 but found 4B
+SKIP @ 0xe526 (Section 3): expected 01 but found 90
+SKIP @ 0xa32a (Section 3): expected 86 but found D0
+SKIP @ 0x150e9 (Section 3): expected 84 but found FF
+SKIP @ 0x166cc (Section 3): expected 84 but found FF
+SKIP @ 0xa244 (Section 3): expected 01 but found 64
+SKIP @ 0xc4d4 (Section 4): expected 01 but found F6
+SKIP @ 0xcac8 (Section 4): expected 01 but found E0
+SKIP @ 0xcb02 (Section 4): expected 01 but found 90
+SKIP @ 0x10526 (Section 4): expected 01 but found 26
+SKIP @ 0xc32a (Section 4): expected 86 but found 64
+SKIP @ 0x170e9 (Section 4): expected 84 but found FF
+SKIP @ 0x186cc (Section 4): expected 84 but found FF
+SKIP @ 0xc244 (Section 4): expected 01 but found B2
+SKIP @ 0xe4d4 (Section 5): expected 01 but found A3
+SKIP @ 0xeac8 (Section 5): expected 01 but found A3
+SKIP @ 0xeb02 (Section 5): expected 01 but found FC
+SKIP @ 0x12526 (Section 5): expected 01 but found 30
+SKIP @ 0xe32a (Section 5): expected 86 but found F0
+SKIP @ 0x190e9 (Section 5): expected 84 but found FF
+SKIP @ 0x1a6cc (Section 5): expected 84 but found FF
+SKIP @ 0xe244 (Section 5): expected 01 but found FF

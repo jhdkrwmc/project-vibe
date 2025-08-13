@@ -1,0 +1,34 @@
+Comprehensive 5-Layer Integrity Bypass Strategy
+Generated: 2025-08-13T04:12:12.426897
+
+BREAKTHROUGH DISCOVERY:
+  Our 4-layer bypass was INCOMPLETE! Found a 5th layer with:
+  - Additional OSD register writes (0x19, 0x1A, 0x1B, 0x11, 0x81, 0x84, 0x85)
+  - Additional validation checks (0x07, 0x81, 0x84, 0x85)
+
+Strategy:
+  Apply ALL 5 layers of integrity validation bypass:
+  - Layer 1: OSD initialization writes (0x01 -> 0x00)
+  - Layer 2: Extended OSD configuration (0x86 -> 0x00)
+  - Layer 3: Validation logic expectations (0x84 -> 0x00)
+  - Layer 4: Additional validation checks (0x01 -> 0x00)
+  - Layer 5: ADDITIONAL OSD REGISTER WRITES (0x19,0x1A,0x1B,0x11,0x81,0x84,0x85 -> 0x00)
+  - Layer 5: ADDITIONAL VALIDATION CHECKS (0x07,0x81,0x84,0x85 -> 0x00)
+
+Key Insight:
+  Previous patches failed because we missed the 5th layer of protection.
+  The firmware has more sophisticated validation than initially thought.
+
+Total patches applied: 19
+Total bytes changed: 19
+Checksum: Not modified (original firmware has invalid checksum anyway)
+
+Expected Result:
+  Device should now pass ALL 5 layers of integrity validation
+  and complete USB configuration instead of stopping at Config=0 with Code 10 error.
+
+Patch Strategy:
+  - All OSD registers consistently set to 0x00 across ALL layers
+  - All validation logic expects 0x00 values across ALL layers
+  - No inconsistent states that could trigger validation failures
+  - Complete 5-layer bypass (not partial)

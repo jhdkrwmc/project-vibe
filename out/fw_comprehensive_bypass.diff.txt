@@ -1,0 +1,8 @@
+OK   @ 0x04d4: 01 -> 00
+OK   @ 0x0ac8: 01 -> 00
+OK   @ 0x0b02: 01 -> 00
+OK   @ 0x4526: 01 -> 00
+SKIP @ 0x0329: expected 86 but found 74
+SKIP @ 0xb0e8: expected 84 but found B4
+SKIP @ 0xc6cb: expected 84 but found B4
+OK   @ 0x0244: 01 -> 00

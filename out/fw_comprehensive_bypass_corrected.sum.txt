@@ -1,0 +1,43 @@
+Comprehensive 4-Layer Integrity Bypass Strategy (CORRECTED)
+Generated: 2025-08-13T03:42:40.320649
+
+Strategy:
+  Address ALL 4 layers of integrity validation with CORRECTED byte offsets:
+  - Layer 1: OSD initialization writes (0x01 -> 0x00)
+  - Layer 2: Extended OSD configuration (0x86 -> 0x00) - CORRECTED OFFSET
+  - Layer 3: Validation logic expectations (0x84 -> 0x00) - CORRECTED OFFSETS
+  - Layer 4: Additional validation checks (0x01 -> 0x00)
+
+Key Insight from Clean IDA Pro Analysis:
+  - Mixed FLIRTs were corrupting instruction decoding
+  - Clean 8051 analysis revealed correct byte offsets
+  - All 4 layers must be bypassed simultaneously for success
+
+Layer 1 - OSD Initialization Patches Applied:
+OK   @ 0x04d4: 01 -> 00
+OK   @ 0x0ac8: 01 -> 00
+OK   @ 0x0b02: 01 -> 00
+OK   @ 0x4526: 01 -> 00
+
+Layer 2 - Extended OSD Configuration Patches Applied:
+OK   @ 0x032a: 86 -> 00
+
+Layer 3 - Validation Logic Bypass Patches Applied:
+OK   @ 0xb0e9: 84 -> 00
+OK   @ 0xc6cc: 84 -> 00
+
+Layer 4 - Additional Validation Check Patches Applied:
+OK   @ 0x0244: 01 -> 00
+
+Total bytes changed: 8
+Checksum: Not modified (original firmware has invalid checksum anyway)
+
+Expected Result:
+  Device should now pass ALL layers of integrity validation and complete USB configuration
+  instead of stopping at Config=0 with Code 10 error.
+
+Patch Strategy:
+  - All OSD registers consistently set to 0x00
+  - All validation logic expects 0x00 values
+  - No inconsistent states that could trigger validation failures
+  - Complete 4-layer bypass (not partial)

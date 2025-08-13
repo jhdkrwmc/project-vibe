@@ -1,0 +1,19 @@
+OK   @ 0x04d4: 01 -> 00
+OK   @ 0x0ac8: 01 -> 00
+OK   @ 0x0b02: 01 -> 00
+OK   @ 0x4526: 01 -> 00
+OK   @ 0x032a: 86 -> 00
+OK   @ 0xb0e9: 84 -> 00
+OK   @ 0xc6cc: 84 -> 00
+OK   @ 0x0244: 01 -> 00
+OK   @ 0x03b0: 19 -> 00
+OK   @ 0x03bc: 1A -> 00
+OK   @ 0x03c8: 1B -> 00
+OK   @ 0x03fc: 11 -> 00
+OK   @ 0x0559: 81 -> 00
+OK   @ 0x057b: 84 -> 00
+OK   @ 0x05b6: 85 -> 00
+SKIP @ 0x0360: expected 07 but found 03
+SKIP @ 0x03ab: expected 81 but found 08
+SKIP @ 0x03b7: expected 84 but found 08
+SKIP @ 0x03be: expected 85 but found 80

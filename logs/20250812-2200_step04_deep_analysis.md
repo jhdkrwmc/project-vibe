@@ -234,6 +234,189 @@ Patch the integrity check logic itself to always pass validation.
 3. **Examine failure paths** - Analyze where 0xA4BD, 0xA32F, 0xA4A0 lead
 4. **Find USB configuration gates** - Identify what prevents Config=1 from loading
 
+---
+
+# PHASE 2: EXPANDED ANALYSIS (0x0000-0x4000)
+
+## Analysis Strategy
+Since all our integrity check bypass attempts failed, we need to:
+1. **Trace failure paths** - Follow the LJMP targets (0xA4BD, 0xA32F, 0xA4A0)
+2. **Expand search range** - Examine 0x0000-0x4000 for additional validation
+3. **Find USB configuration gates** - Identify what prevents Config=1 from loading
+4. **Discover additional integrity checks** - Look for patterns we missed
+
+## Phase 2 Investigation Plan
+1. **Failure Path Analysis** - Trace 0xA4BD, 0xA32F, 0xA4A0 destinations
+2. **Extended Pattern Search** - Scan 0x0000-0x4000 for integrity check patterns
+3. **USB Configuration Analysis** - Find what gates the USB configuration process
+4. **Multi-Layer Protection Mapping** - Identify all validation layers
+
+---
+
+## EXPANDED ANALYSIS FINDINGS
+
+### 1. Failure Path Analysis
+**LJMP Target 0xA4BD**: Contains complex validation logic with multiple function calls
+- `12 B1 CF` - Call to function at 0xB1CF
+- `12 B2 23` - Call to function at 0xB223  
+- `12 B3 CA` - Call to function at 0xB3CA
+- Multiple conditional branches and validation paths
+
+**LJMP Target 0xA32F**: Contains stack frame setup and validation calls
+- `12 B2 56` - Call to function at 0xB256
+- `12 B2 27` - Call to function at 0xB227
+- `12 B1 F1` - Call to function at 0xB1F1
+
+**LJMP Target 0xA4A0**: Contains cleanup and additional validation
+- `12 B3 2B` - Call to function at 0xB32B
+- `12 B4 8E` - Call to function at 0xB48E
+- `12 B3 CA` - Call to function at 0xB3CA
+
+### 2. Additional Integrity Checks Discovered
+
+**NEW INTEGRITY CHECK PATTERN at 0x0258-0x0270**:
+```
+0x0258: 90 0B 76 E0 FF B4 84 06 12 AB 29 F0 80 14
+         MOV DPTR,#0B76  ; Load 0x0B76 address
+         MOVX A,@DPTR     ; Read value from 0x0B76
+         MOV R7,A         ; Store in R7
+         CJNE A,#0x84,+6 ; Compare with 0x84, skip 6 if equal
+         LCALL 0xAB29     ; Call validation function
+         MOV F0,R7        ; Store result
+         SJMP +0x14      ; Jump forward 20 bytes
+
+0x0270: 90 0B 76 E0 64 84 60 03 12 AA 9B 90 10
+         MOV DPTR,#0B76  ; Load 0x0B76 address  
+         MOVX A,@DPTR     ; Read value from 0x0B76
+         XRL A,#0x84      ; XOR with 0x84
+         JNZ +0x03        ; Jump if not zero (not equal to 0x84)
+         LCALL 0xAA9B     ; Call validation function
+```
+
+**ADDITIONAL CHECK at 0x0242**:
+```
+0x0242: B4 01 08 90 11 55 E0 54 CF 80 17
+         CJNE A,#0x01,+8 ; Compare A with 0x01, skip 8 if equal
+         MOV DPTR,#1155  ; Load different address
+         MOVX A,@DPTR     ; Read value
+         ANL A,#0xCF      ; Mask with 0xCF
+         SJMP +0x17      ; Jump forward 23 bytes
+```
+
+### 3. Multi-Layer Protection Architecture
+
+**Layer 1**: Early OSD validation (0x1C0-0x240) - Already identified
+**Layer 2**: Extended OSD validation (0x240-0x280) - NEWLY DISCOVERED
+**Layer 3**: Function call validation (0xB1xx, 0xB2xx, 0xB3xx, 0xB4xx) - NEWLY DISCOVERED
+
+**Critical Insight**: The device has at least 3 layers of integrity validation:
+1. **Register value checks** - Validate OSD register contents
+2. **Pattern validation** - Check for expected bit patterns
+3. **Function call validation** - Call external validation functions
+
+### 4. Why Previous Bypass Attempts Failed
+
+**Our patches only addressed Layer 1** (the early checks at 0x1C0-0x240)
+**We missed Layer 2** (the extended checks at 0x240-0x280)
+**We completely missed Layer 3** (the function call validation system)
+
+**The device has a sophisticated multi-stage validation system** that requires bypassing ALL layers, not just the first one we identified.
+
+---
+
+## COMPREHENSIVE OSD REGISTER PATTERN ANALYSIS
+
+### Complete OSD Register Access Map
+
+**0x0B75 (OSD Control Register 1)**:
+- **0x4522**: `90 0B 75 74 01 F0` - Write 0x01 to 0x0B75
+- **Pattern**: `MOV DPTR,#0B75` → `MOV A,#01` → `MOVX @DPTR,A`
+
+**0x0B76 (OSD Control Register 2)**:
+- **0x0AC4**: `90 0B 76 74 01 F0` - Write 0x01 to 0x0B76 (already known)
+- **0x0258**: `90 0B 76 E0 FF B4 84 06` - Read from 0x0B76, compare with 0x84
+- **0x0270**: `90 0B 76 E0 64 84 60 03` - Read from 0x0B76, XOR with 0x84, check if zero
+- **0x0282**: `90 0B 76 E0 64 84 60 03` - Another identical check of 0x0B76 vs 0x84
+
+**0x0B77 (OSD Control Register 3)**:
+- **0x04D0**: `90 0B 77 74 01 F0` - Write 0x01 to 0x0B77 (already known)
+- **0x0AFE**: `90 0B 77 74 01 F0` - Write 0x01 to 0x0B77 (already known)
+- **0x0318**: `90 0B 77 74 86 F0` - Write 0x86 to 0x0B77 (NEWLY DISCOVERED)
+
+### Multi-Stage Validation Architecture
+
+**Stage 1**: OSD Register Initialization (0x04D0, 0x0AC4, 0x0AFE, 0x4522)
+- Sets OSD registers to expected values (0x01, 0x01, 0x01, 0x01)
+
+**Stage 2**: OSD Register Validation (0x0258, 0x0270, 0x0282)
+- Reads from 0x0B76 and validates against expected value 0x84
+- Multiple redundant checks ensure validation
+
+**Stage 3**: Extended OSD Configuration (0x0318)
+- Writes additional value 0x86 to 0x0B77
+- This suggests the OSD system has multiple configuration phases
+
+**Stage 4**: Function Call Validation (0xB1xx, 0xB2xx, 0xB3xx, 0xB4xx)
+- External validation functions perform additional checks
+- These functions likely validate the entire OSD configuration state
+
+### Critical Discovery: OSD Register 0x0B77 Has Multiple Values
+
+**0x0B77 receives TWO different values during initialization**:
+1. **0x01** at 0x04D0 and 0x0AFE (early initialization)
+2. **0x86** at 0x0318 (extended configuration)
+
+**This explains why our integrity bypass failed**:
+- We only patched the early writes (0x01 → 0x00)
+- We missed the extended write (0x86)
+- The validation functions expect 0x0B77 to contain 0x86, not 0x00
+- Our patches created an inconsistent state that fails validation
+
+### Required Patch Strategy Update
+
+**To successfully bypass ALL integrity checks, we need**:
+1. **Patch OSD initialization writes** (0x01 → 0x00) - Already done
+2. **Patch extended OSD configuration** (0x86 → 0x00) - NEWLY REQUIRED
+3. **Patch validation logic** - Change expected values from 0x84 to 0x00
+4. **Ensure consistency** - All OSD registers must be consistently 0x00
+
+**This is a 4-layer bypass requirement**, not the 2-layer approach we attempted.
+
+---
+
+## PATCH APPLICATION CHALLENGES
+
+### Current Status
+**Successfully Applied Patches**:
+- **Layer 1**: OSD initialization writes (0x01 → 0x00) - 4 patches applied
+- **Layer 4**: Additional validation checks (0x01 → 0x00) - 1 patch applied
+
+**Failed to Apply Patches**:
+- **Layer 2**: Extended OSD configuration (0x86 → 0x00) - offset calculation error
+- **Layer 3**: Validation logic bypass (0x84 → 0x00) - offset calculation error
+
+**Total Patches Applied**: 5 out of 8 attempted (8 bytes changed)
+
+### Offset Calculation Issues
+**The Challenge**: Converting instruction addresses to firmware byte offsets
+- **Instruction Addresses**: 0x0325, 0xB0E8, 0xC6CB (from IDA analysis)
+- **Firmware Offsets**: Need to calculate exact byte positions
+- **Pattern Matching**: Complex instruction sequences vs. simple byte patterns
+
+**Root Cause**: 
+- IDA shows instruction addresses, not raw firmware offsets
+- Need to map instruction addresses to actual byte positions
+- Some patterns may be at different offsets than expected
+
+### Current Working Firmware
+**`fw_comprehensive_bypass.bin`** contains:
+- ✅ OSD initialization patches (0x01 → 0x00) at 4 locations
+- ✅ Additional validation check patch (0x01 → 0x00) at 1 location
+- ❌ Missing extended OSD configuration patch (0x86 → 0x00)
+- ❌ Missing validation logic bypass patches (0x84 → 0x00)
+
+**This firmware represents a partial bypass** that may provide some improvement over previous attempts but is unlikely to fully resolve the Code 10 error.
+
 ## Final Summary and Next Steps
 
 **What We Accomplished**:

@@ -1,0 +1,24 @@
+Hybrid Sweet Spot Strategy
+Generated: 2025-08-13T04:31:24.240069
+
+STRATEGY RATIONALE:
+  fw_comprehensive_bypass loaded more extensively than fw_comprehensive_5layer_bypass
+  This suggests there's a 'sweet spot' for validation bypass that maximizes loading extent
+
+APPROACH:
+  - Core patches: Proven OSD disable patterns (0x01 -> 0x00)
+  - Selective validation: Only bypass what we're confident about
+  - Minimal additional OSD: Avoid over-patching that might trigger new failures
+
+PATCHES APPLIED:
+  - Core OSD disable: 5 patches
+  - Selective validation: 1 patches
+  - Additional OSD: 3 patches
+  - Total: 9 patches
+
+EXPECTED RESULT:
+  Device should load more extensively (like fw_comprehensive_bypass)
+  while avoiding the over-patching issues of fw_comprehensive_5layer_bypass
+
+Key Insight:
+  More patches != better loading. There's a sweet spot for validation bypass.
