@@ -1,0 +1,4 @@
+Late Clear Hook at A51A (preserve regs)
+Generated: 2025-08-13T08:36:25.551825
+Patched LJMP @ 0xa4b9 -> LJMP cave 0xFFE8
+Stub clears 0x0B75/0x0B76 with ACC/DPTR saved, then LJMP 0xA51A

@@ -1,0 +1,2 @@
+Hook site @ 0x032C: 02A4A0 -> 02FFF4
+Stub placed @ 0xFFF4 (12 bytes)

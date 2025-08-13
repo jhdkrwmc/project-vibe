@@ -2,3 +2,6 @@ firmware_backup - Copy (3).bin.id0
 firmware_backup - Copy (3).bin.id1
 firmware_backup - Copy (3).bin.til
 firmware_backup - Copy (3).bin.nam
+.venv/
+audit/
+__pycache__/

@@ -1,0 +1,2 @@
+Hook @ 0xa4b9: 02A51A -> 02FFF4
+Stub @ 0xFFF4: 90 0B 75 E4 F0 90 0B 76 F0 02 A5 1A

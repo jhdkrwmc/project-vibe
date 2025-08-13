@@ -1,0 +1,16 @@
+Late Clear Hook Build
+Generated: 2025-08-13T07:37:26.402234
+
+HOOK:
+  Overwrote LJMP at 0x032C to LJMP 0xFFF0
+  Original target preserved via LJMP 0xA4A0 at end of stub
+
+STUB:
+  Clears XDATA 0x0B75, 0x0B76, 0x0B77 to 0x00
+  Bytes @ 0xFFF0: 90 0B 75 E4 F0 90 0B 76 F0 90 0B 77 F0 02 A4 A0
+
+SANITY:
+  OSD post-boot #1 @ 0x04D0: BEFORE=90 0B 77 74 01 F0 AFTER=90 0B 77 74 01 F0
+  OSD post-boot #2 @ 0x0AC4: BEFORE=90 0B 76 74 01 F0 AFTER=90 0B 76 74 01 F0
+  OSD post-boot #3 @ 0x0AFE: BEFORE=90 0B 77 74 01 F0 AFTER=90 0B 77 74 01 F0
+  OSD early init @ 0x4522: BEFORE=90 0B 75 74 01 F0 AFTER=90 0B 75 74 01 F0

@@ -1,0 +1,17 @@
+Integrity Relaxed PLUS Build
+Generated: 2025-08-13T09:03:03.753508
+
+CHANGES:
+  - CJNE @ 0x0223: B4 01 -> B4 00
+  - CJNE @ 0x0243: B4 01 -> B4 00
+  - CJNE @ 0x024f: B4 81 -> B4 00
+  - CJNE @ 0x025f: B4 84 -> B4 00
+  - CJNE @ 0x035e: B4 07 -> B4 00
+  - JZ nulled @ 0x0235 (after E0 64 xx)
+  - JZ nulled @ 0x0289 (after E0 64 xx)
+
+OSD SITES (unchanged):
+  @ 0x04d0 BEFORE: 90 0B 77 74 01 F0 AFTER: 90 0B 77 74 01 F0
+  @ 0x0ac4 BEFORE: 90 0B 76 74 01 F0 AFTER: 90 0B 76 74 01 F0
+  @ 0x0afe BEFORE: 90 0B 77 74 01 F0 AFTER: 90 0B 77 74 01 F0
+  @ 0x4522 BEFORE: 90 0B 75 74 01 F0 AFTER: 90 0B 75 74 01 F0

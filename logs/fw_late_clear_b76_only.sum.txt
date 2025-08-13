@@ -1,0 +1,3 @@
+Late Clear B76 Only Build
+Generated: 2025-08-13T08:45:09.330889
+Hooked 0x032C -> cave 0xFFEC; clears only 0x0B76; preserves 0x0B75/0x0B77

@@ -1,34 +1,44 @@
-[
-  {
-    "ea": "0x04D0",
-    "file_off": "0x04D0",
-    "target": "0x0B77",
-    "bytes32": "90 0B 77 74 01 F0 22 90 0F 08 EF F0 90 0F 08 E0",
-    "fn": "(no func)",
-    "init_path": "unknown"
-  },
-  {
-    "ea": "0x0AC4",
-    "file_off": "0x0AC4", 
-    "target": "0x0B76",
-    "bytes32": "90 0B 76 74 01 F0 22 F0 90 11 52 E0 75 F0 10 A4",
-    "fn": "(no func)",
-    "init_path": "unknown"
-  },
-  {
-    "ea": "0x0AFE",
-    "file_off": "0x0AFE",
-    "target": "0x0B77", 
-    "bytes32": "90 0B 77 74 01 F0 22 90 0B A5 E0 54 90 22 CE A2",
-    "fn": "(no func)",
-    "init_path": "unknown"
-  },
-  {
-    "ea": "0x4522",
-    "file_off": "0x4522",
-    "target": "0x0B75",
-    "bytes32": "90 0B 75 74 01 F0 7C FA 7D 22 7B FA 7A 00 7F 04",
-    "fn": "code_C01C",
-    "init_path": "unknown"
-  }
-]
+{
+  "osd_enable_sites": [
+    {
+      "file_offset": 0x04D0,
+      "effective_address": "0x04D0",
+      "target_register": "0x0B77",
+      "instruction_bytes": "90 0B 77 74 01 F0",
+      "function": "Unknown",
+      "init_path": false,
+      "a_01_intact": true,
+      "description": "OSD enable sequence 1 (0x0B77)"
+    },
+    {
+      "file_offset": 0x0AC4,
+      "effective_address": "0x0AC4",
+      "target_register": "0x0B76",
+      "instruction_bytes": "90 0B 76 74 01 F0",
+      "function": "Unknown",
+      "init_path": false,
+      "a_01_intact": true,
+      "description": "OSD enable sequence 2 (0x0B76)"
+    },
+    {
+      "file_offset": 0x0AFE,
+      "effective_address": "0x0AFE",
+      "target_register": "0x0B77",
+      "instruction_bytes": "90 0B 77 74 01 F0",
+      "function": "Unknown",
+      "init_path": false,
+      "a_01_intact": true,
+      "description": "OSD enable sequence 3 (0x0B77)"
+    },
+    {
+      "file_offset": 0x4522,
+      "effective_address": "0x4522",
+      "target_register": "0x0B75",
+      "instruction_bytes": "90 0B 75 74 01 F0",
+      "function": "Unknown",
+      "init_path": true,
+      "a_01_intact": true,
+      "description": "OSD enable sequence 4 (0x0B75)"
+    }
+  ]
+}

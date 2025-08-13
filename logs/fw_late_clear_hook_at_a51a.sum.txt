@@ -1,0 +1,5 @@
+Late Clear Hook at A51A Entry Build
+Generated: 2025-08-13T08:16:04.005585
+
+Patched LJMP 0xA51A at 0xa4b9 to LJMP cave 0xFFF4
+Stub clears 0x0B75/0x0B76, preserves 0x0B77, then LJMP 0xA51A

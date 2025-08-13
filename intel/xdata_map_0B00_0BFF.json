@@ -171,8 +171,12 @@
     }
   },
   "analysis_notes": [
-    "All post-boot OSD writes can be safely patched by changing 0x01 to 0x00",
-    "The reset block is only written during system initialization",
-    "The reset counter at 0x0BC5-0x0BC6 increments on each reset"
+    "The firmware uses a three-tier verification system:",
+    "1. CRC-32 for full firmware integrity (0x1FFC-0x1FFF)",
+    "2. 16-bit checksum for boot verification (0x1FFE-0x1FFF)",
+    "3. 8-bit XOR for configuration blocks (0x1FFF)",
+    "All checks must pass for normal operation",
+    "The bootloader verifies the 16-bit checksum before executing the main firmware",
+    "The main firmware verifies the CRC-32 during initialization"
   ]
 }
