@@ -1,0 +1,2 @@
+OK*  @ 0x0243 (shifted from 0x0244): B4 01 -> B4 00
+OK*  @ 0x025f (shifted from 0x0260): B4 84 -> B4 00

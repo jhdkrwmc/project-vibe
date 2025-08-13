@@ -1,0 +1,4 @@
+Found 7 OSD TLVs at: 0x10b5a, 0x11888, 0x118d1, 0x11928, 0x1197f, 0x119d6, 0x11a2d
+Detected 0 checksum candidates near TLVs.
+[line] wrote /mnt/data/fw_patch_osd_line.bin (checksum NOT fixed)
+[both] wrote /mnt/data/fw_patch_osd_both.bin (checksum NOT fixed)

@@ -1,0 +1,21 @@
+Single-Flip Diagnostic Variant: 0x4526
+Generated: 2025-08-13T06:33:12.803803
+
+STRATEGY:
+  Test each OSD site individually to identify the critical path
+  This variant changes ONLY 0x4526 to isolate its effect
+
+PATCH APPLIED:
+  0x4526: 0x01 -> 0x00
+  Only 0x4526 flipped - affects 0x0B75 (primary enable, reset path)
+
+INTEGRITY NOTE:
+  No checksum/footer fix applied in this diagnostic build.
+
+EXPECTED RESULT:
+  If this single flip can boot clean, the issue is elsewhere.
+  If it still gets Code 10, this site is on the critical path.
+
+DIAGNOSTIC VALUE:
+  Compare USB Tree Viewer results with other variants
+  Look for differences in loading extent, Config values, etc.

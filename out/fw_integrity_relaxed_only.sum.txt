@@ -1,0 +1,12 @@
+Integrity-Relaxed Only Build
+Generated: 2025-08-13T06:53:54.203926
+
+CHANGES:
+  - OK*  @ 0x0243 (shifted from 0x0244): B4 01 -> B4 00
+  - OK*  @ 0x025f (shifted from 0x0260): B4 84 -> B4 00
+
+OSD SITES (should remain enabled=01):
+  @ 0x04d0 BEFORE: 90 0B 77 74 01 F0  AFTER: 90 0B 77 74 01 F0
+  @ 0x0ac4 BEFORE: 90 0B 76 74 01 F0  AFTER: 90 0B 76 74 01 F0
+  @ 0x0afe BEFORE: 90 0B 77 74 01 F0  AFTER: 90 0B 77 74 01 F0
+  @ 0x4522 BEFORE: 90 0B 75 74 01 F0  AFTER: 90 0B 75 74 01 F0
