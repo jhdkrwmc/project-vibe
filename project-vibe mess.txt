@@ -1,0 +1,1891 @@
+PS C:\Users\arnax\Desktop\project-vibe> tree /F /A
+Folder PATH listing
+Volume serial number is B24C-15DE
+C:.
+|   .gitattributes
+|   .gitignore
+|
++---.venv
+|   |   .gitignore
+|   |   pyvenv.cfg
+|   |
+|   +---Include
+|   +---Lib
+|   |   \---site-packages
+|   |       +---pip
+|   |       |   |   py.typed
+|   |       |   |   __init__.py
+|   |       |   |   __main__.py
+|   |       |   |   __pip-runner__.py
+|   |       |   |
+|   |       |   +---_internal
+|   |       |   |   |   build_env.py
+|   |       |   |   |   cache.py
+|   |       |   |   |   configuration.py
+|   |       |   |   |   exceptions.py
+|   |       |   |   |   main.py
+|   |       |   |   |   pyproject.py
+|   |       |   |   |   self_outdated_check.py
+|   |       |   |   |   wheel_builder.py
+|   |       |   |   |   __init__.py
+|   |       |   |   |
+|   |       |   |   +---cli
+|   |       |   |   |   |   autocompletion.py
+|   |       |   |   |   |   base_command.py
+|   |       |   |   |   |   cmdoptions.py
+|   |       |   |   |   |   command_context.py
+|   |       |   |   |   |   index_command.py
+|   |       |   |   |   |   main.py
+|   |       |   |   |   |   main_parser.py
+|   |       |   |   |   |   parser.py
+|   |       |   |   |   |   progress_bars.py
+|   |       |   |   |   |   req_command.py
+|   |       |   |   |   |   spinners.py
+|   |       |   |   |   |   status_codes.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           autocompletion.cpython-313.pyc
+|   |       |   |   |           base_command.cpython-313.pyc
+|   |       |   |   |           cmdoptions.cpython-313.pyc
+|   |       |   |   |           command_context.cpython-313.pyc
+|   |       |   |   |           index_command.cpython-313.pyc
+|   |       |   |   |           main.cpython-313.pyc
+|   |       |   |   |           main_parser.cpython-313.pyc
+|   |       |   |   |           parser.cpython-313.pyc
+|   |       |   |   |           progress_bars.cpython-313.pyc
+|   |       |   |   |           req_command.cpython-313.pyc
+|   |       |   |   |           spinners.cpython-313.pyc
+|   |       |   |   |           status_codes.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---commands
+|   |       |   |   |   |   cache.py
+|   |       |   |   |   |   check.py
+|   |       |   |   |   |   completion.py
+|   |       |   |   |   |   configuration.py
+|   |       |   |   |   |   debug.py
+|   |       |   |   |   |   download.py
+|   |       |   |   |   |   freeze.py
+|   |       |   |   |   |   hash.py
+|   |       |   |   |   |   help.py
+|   |       |   |   |   |   index.py
+|   |       |   |   |   |   inspect.py
+|   |       |   |   |   |   install.py
+|   |       |   |   |   |   list.py
+|   |       |   |   |   |   lock.py
+|   |       |   |   |   |   search.py
+|   |       |   |   |   |   show.py
+|   |       |   |   |   |   uninstall.py
+|   |       |   |   |   |   wheel.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           cache.cpython-313.pyc
+|   |       |   |   |           check.cpython-313.pyc
+|   |       |   |   |           completion.cpython-313.pyc
+|   |       |   |   |           configuration.cpython-313.pyc
+|   |       |   |   |           debug.cpython-313.pyc
+|   |       |   |   |           download.cpython-313.pyc
+|   |       |   |   |           freeze.cpython-313.pyc
+|   |       |   |   |           hash.cpython-313.pyc
+|   |       |   |   |           help.cpython-313.pyc
+|   |       |   |   |           index.cpython-313.pyc
+|   |       |   |   |           inspect.cpython-313.pyc
+|   |       |   |   |           install.cpython-313.pyc
+|   |       |   |   |           list.cpython-313.pyc
+|   |       |   |   |           lock.cpython-313.pyc
+|   |       |   |   |           search.cpython-313.pyc
+|   |       |   |   |           show.cpython-313.pyc
+|   |       |   |   |           uninstall.cpython-313.pyc
+|   |       |   |   |           wheel.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---distributions
+|   |       |   |   |   |   base.py
+|   |       |   |   |   |   installed.py
+|   |       |   |   |   |   sdist.py
+|   |       |   |   |   |   wheel.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           base.cpython-313.pyc
+|   |       |   |   |           installed.cpython-313.pyc
+|   |       |   |   |           sdist.cpython-313.pyc
+|   |       |   |   |           wheel.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---index
+|   |       |   |   |   |   collector.py
+|   |       |   |   |   |   package_finder.py
+|   |       |   |   |   |   sources.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           collector.cpython-313.pyc
+|   |       |   |   |           package_finder.cpython-313.pyc
+|   |       |   |   |           sources.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---locations
+|   |       |   |   |   |   base.py
+|   |       |   |   |   |   _distutils.py
+|   |       |   |   |   |   _sysconfig.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           base.cpython-313.pyc
+|   |       |   |   |           _distutils.cpython-313.pyc
+|   |       |   |   |           _sysconfig.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---metadata
+|   |       |   |   |   |   base.py
+|   |       |   |   |   |   pkg_resources.py
+|   |       |   |   |   |   _json.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   +---importlib
+|   |       |   |   |   |   |   _compat.py
+|   |       |   |   |   |   |   _dists.py
+|   |       |   |   |   |   |   _envs.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           _compat.cpython-313.pyc
+|   |       |   |   |   |           _dists.cpython-313.pyc
+|   |       |   |   |   |           _envs.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           base.cpython-313.pyc
+|   |       |   |   |           pkg_resources.cpython-313.pyc
+|   |       |   |   |           _json.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---models
+|   |       |   |   |   |   candidate.py
+|   |       |   |   |   |   direct_url.py
+|   |       |   |   |   |   format_control.py
+|   |       |   |   |   |   index.py
+|   |       |   |   |   |   installation_report.py
+|   |       |   |   |   |   link.py
+|   |       |   |   |   |   pylock.py
+|   |       |   |   |   |   scheme.py
+|   |       |   |   |   |   search_scope.py
+|   |       |   |   |   |   selection_prefs.py
+|   |       |   |   |   |   target_python.py
+|   |       |   |   |   |   wheel.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           candidate.cpython-313.pyc
+|   |       |   |   |           direct_url.cpython-313.pyc
+|   |       |   |   |           format_control.cpython-313.pyc
+|   |       |   |   |           index.cpython-313.pyc
+|   |       |   |   |           installation_report.cpython-313.pyc
+|   |       |   |   |           link.cpython-313.pyc
+|   |       |   |   |           pylock.cpython-313.pyc
+|   |       |   |   |           scheme.cpython-313.pyc
+|   |       |   |   |           search_scope.cpython-313.pyc
+|   |       |   |   |           selection_prefs.cpython-313.pyc
+|   |       |   |   |           target_python.cpython-313.pyc
+|   |       |   |   |           wheel.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---network
+|   |       |   |   |   |   auth.py
+|   |       |   |   |   |   cache.py
+|   |       |   |   |   |   download.py
+|   |       |   |   |   |   lazy_wheel.py
+|   |       |   |   |   |   session.py
+|   |       |   |   |   |   utils.py
+|   |       |   |   |   |   xmlrpc.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           auth.cpython-313.pyc
+|   |       |   |   |           cache.cpython-313.pyc
+|   |       |   |   |           download.cpython-313.pyc
+|   |       |   |   |           lazy_wheel.cpython-313.pyc
+|   |       |   |   |           session.cpython-313.pyc
+|   |       |   |   |           utils.cpython-313.pyc
+|   |       |   |   |           xmlrpc.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---operations
+|   |       |   |   |   |   check.py
+|   |       |   |   |   |   freeze.py
+|   |       |   |   |   |   prepare.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   +---build
+|   |       |   |   |   |   |   build_tracker.py
+|   |       |   |   |   |   |   metadata.py
+|   |       |   |   |   |   |   metadata_editable.py
+|   |       |   |   |   |   |   metadata_legacy.py
+|   |       |   |   |   |   |   wheel.py
+|   |       |   |   |   |   |   wheel_editable.py
+|   |       |   |   |   |   |   wheel_legacy.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           build_tracker.cpython-313.pyc
+|   |       |   |   |   |           metadata.cpython-313.pyc
+|   |       |   |   |   |           metadata_editable.cpython-313.pyc
+|   |       |   |   |   |           metadata_legacy.cpython-313.pyc
+|   |       |   |   |   |           wheel.cpython-313.pyc
+|   |       |   |   |   |           wheel_editable.cpython-313.pyc
+|   |       |   |   |   |           wheel_legacy.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   +---install
+|   |       |   |   |   |   |   editable_legacy.py
+|   |       |   |   |   |   |   wheel.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           editable_legacy.cpython-313.pyc
+|   |       |   |   |   |           wheel.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           check.cpython-313.pyc
+|   |       |   |   |           freeze.cpython-313.pyc
+|   |       |   |   |           prepare.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---req
+|   |       |   |   |   |   constructors.py
+|   |       |   |   |   |   req_dependency_group.py
+|   |       |   |   |   |   req_file.py
+|   |       |   |   |   |   req_install.py
+|   |       |   |   |   |   req_set.py
+|   |       |   |   |   |   req_uninstall.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           constructors.cpython-313.pyc
+|   |       |   |   |           req_dependency_group.cpython-313.pyc
+|   |       |   |   |           req_file.cpython-313.pyc
+|   |       |   |   |           req_install.cpython-313.pyc
+|   |       |   |   |           req_set.cpython-313.pyc
+|   |       |   |   |           req_uninstall.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---resolution
+|   |       |   |   |   |   base.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   +---legacy
+|   |       |   |   |   |   |   resolver.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           resolver.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   +---resolvelib
+|   |       |   |   |   |   |   base.py
+|   |       |   |   |   |   |   candidates.py
+|   |       |   |   |   |   |   factory.py
+|   |       |   |   |   |   |   found_candidates.py
+|   |       |   |   |   |   |   provider.py
+|   |       |   |   |   |   |   reporter.py
+|   |       |   |   |   |   |   requirements.py
+|   |       |   |   |   |   |   resolver.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           base.cpython-313.pyc
+|   |       |   |   |   |           candidates.cpython-313.pyc
+|   |       |   |   |   |           factory.cpython-313.pyc
+|   |       |   |   |   |           found_candidates.cpython-313.pyc
+|   |       |   |   |   |           provider.cpython-313.pyc
+|   |       |   |   |   |           reporter.cpython-313.pyc
+|   |       |   |   |   |           requirements.cpython-313.pyc
+|   |       |   |   |   |           resolver.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           base.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---utils
+|   |       |   |   |   |   appdirs.py
+|   |       |   |   |   |   compat.py
+|   |       |   |   |   |   compatibility_tags.py
+|   |       |   |   |   |   datetime.py
+|   |       |   |   |   |   deprecation.py
+|   |       |   |   |   |   direct_url_helpers.py
+|   |       |   |   |   |   egg_link.py
+|   |       |   |   |   |   entrypoints.py
+|   |       |   |   |   |   filesystem.py
+|   |       |   |   |   |   filetypes.py
+|   |       |   |   |   |   glibc.py
+|   |       |   |   |   |   hashes.py
+|   |       |   |   |   |   logging.py
+|   |       |   |   |   |   misc.py
+|   |       |   |   |   |   packaging.py
+|   |       |   |   |   |   retry.py
+|   |       |   |   |   |   setuptools_build.py
+|   |       |   |   |   |   subprocess.py
+|   |       |   |   |   |   temp_dir.py
+|   |       |   |   |   |   unpacking.py
+|   |       |   |   |   |   urls.py
+|   |       |   |   |   |   virtualenv.py
+|   |       |   |   |   |   wheel.py
+|   |       |   |   |   |   _jaraco_text.py
+|   |       |   |   |   |   _log.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           appdirs.cpython-313.pyc
+|   |       |   |   |           compat.cpython-313.pyc
+|   |       |   |   |           compatibility_tags.cpython-313.pyc
+|   |       |   |   |           datetime.cpython-313.pyc
+|   |       |   |   |           deprecation.cpython-313.pyc
+|   |       |   |   |           direct_url_helpers.cpython-313.pyc
+|   |       |   |   |           egg_link.cpython-313.pyc
+|   |       |   |   |           entrypoints.cpython-313.pyc
+|   |       |   |   |           filesystem.cpython-313.pyc
+|   |       |   |   |           filetypes.cpython-313.pyc
+|   |       |   |   |           glibc.cpython-313.pyc
+|   |       |   |   |           hashes.cpython-313.pyc
+|   |       |   |   |           logging.cpython-313.pyc
+|   |       |   |   |           misc.cpython-313.pyc
+|   |       |   |   |           packaging.cpython-313.pyc
+|   |       |   |   |           retry.cpython-313.pyc
+|   |       |   |   |           setuptools_build.cpython-313.pyc
+|   |       |   |   |           subprocess.cpython-313.pyc
+|   |       |   |   |           temp_dir.cpython-313.pyc
+|   |       |   |   |           unpacking.cpython-313.pyc
+|   |       |   |   |           urls.cpython-313.pyc
+|   |       |   |   |           virtualenv.cpython-313.pyc
+|   |       |   |   |           wheel.cpython-313.pyc
+|   |       |   |   |           _jaraco_text.cpython-313.pyc
+|   |       |   |   |           _log.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---vcs
+|   |       |   |   |   |   bazaar.py
+|   |       |   |   |   |   git.py
+|   |       |   |   |   |   mercurial.py
+|   |       |   |   |   |   subversion.py
+|   |       |   |   |   |   versioncontrol.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           bazaar.cpython-313.pyc
+|   |       |   |   |           git.cpython-313.pyc
+|   |       |   |   |           mercurial.cpython-313.pyc
+|   |       |   |   |           subversion.cpython-313.pyc
+|   |       |   |   |           versioncontrol.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   \---__pycache__
+|   |       |   |           build_env.cpython-313.pyc
+|   |       |   |           cache.cpython-313.pyc
+|   |       |   |           configuration.cpython-313.pyc
+|   |       |   |           exceptions.cpython-313.pyc
+|   |       |   |           main.cpython-313.pyc
+|   |       |   |           pyproject.cpython-313.pyc
+|   |       |   |           self_outdated_check.cpython-313.pyc
+|   |       |   |           wheel_builder.cpython-313.pyc
+|   |       |   |           __init__.cpython-313.pyc
+|   |       |   |
+|   |       |   +---_vendor
+|   |       |   |   |   vendor.txt
+|   |       |   |   |   __init__.py
+|   |       |   |   |
+|   |       |   |   +---cachecontrol
+|   |       |   |   |   |   adapter.py
+|   |       |   |   |   |   cache.py
+|   |       |   |   |   |   controller.py
+|   |       |   |   |   |   filewrapper.py
+|   |       |   |   |   |   heuristics.py
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   serialize.py
+|   |       |   |   |   |   wrapper.py
+|   |       |   |   |   |   _cmd.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   +---caches
+|   |       |   |   |   |   |   file_cache.py
+|   |       |   |   |   |   |   redis_cache.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           file_cache.cpython-313.pyc
+|   |       |   |   |   |           redis_cache.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           adapter.cpython-313.pyc
+|   |       |   |   |           cache.cpython-313.pyc
+|   |       |   |   |           controller.cpython-313.pyc
+|   |       |   |   |           filewrapper.cpython-313.pyc
+|   |       |   |   |           heuristics.cpython-313.pyc
+|   |       |   |   |           serialize.cpython-313.pyc
+|   |       |   |   |           wrapper.cpython-313.pyc
+|   |       |   |   |           _cmd.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---certifi
+|   |       |   |   |   |   cacert.pem
+|   |       |   |   |   |   core.py
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |   __main__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           core.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |           __main__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---dependency_groups
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   _implementation.py
+|   |       |   |   |   |   _lint_dependency_groups.py
+|   |       |   |   |   |   _pip_wrapper.py
+|   |       |   |   |   |   _toml_compat.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |   __main__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           _implementation.cpython-313.pyc
+|   |       |   |   |           _lint_dependency_groups.cpython-313.pyc
+|   |       |   |   |           _pip_wrapper.cpython-313.pyc
+|   |       |   |   |           _toml_compat.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |           __main__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---distlib
+|   |       |   |   |   |   compat.py
+|   |       |   |   |   |   resources.py
+|   |       |   |   |   |   scripts.py
+|   |       |   |   |   |   t32.exe
+|   |       |   |   |   |   t64-arm.exe
+|   |       |   |   |   |   t64.exe
+|   |       |   |   |   |   util.py
+|   |       |   |   |   |   w32.exe
+|   |       |   |   |   |   w64-arm.exe
+|   |       |   |   |   |   w64.exe
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           compat.cpython-313.pyc
+|   |       |   |   |           resources.cpython-313.pyc
+|   |       |   |   |           scripts.cpython-313.pyc
+|   |       |   |   |           util.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---distro
+|   |       |   |   |   |   distro.py
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |   __main__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           distro.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |           __main__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---idna
+|   |       |   |   |   |   codec.py
+|   |       |   |   |   |   compat.py
+|   |       |   |   |   |   core.py
+|   |       |   |   |   |   idnadata.py
+|   |       |   |   |   |   intranges.py
+|   |       |   |   |   |   package_data.py
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   uts46data.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           codec.cpython-313.pyc
+|   |       |   |   |           compat.cpython-313.pyc
+|   |       |   |   |           core.cpython-313.pyc
+|   |       |   |   |           idnadata.cpython-313.pyc
+|   |       |   |   |           intranges.cpython-313.pyc
+|   |       |   |   |           package_data.cpython-313.pyc
+|   |       |   |   |           uts46data.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---msgpack
+|   |       |   |   |   |   exceptions.py
+|   |       |   |   |   |   ext.py
+|   |       |   |   |   |   fallback.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           exceptions.cpython-313.pyc
+|   |       |   |   |           ext.cpython-313.pyc
+|   |       |   |   |           fallback.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---packaging
+|   |       |   |   |   |   markers.py
+|   |       |   |   |   |   metadata.py
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   requirements.py
+|   |       |   |   |   |   specifiers.py
+|   |       |   |   |   |   tags.py
+|   |       |   |   |   |   utils.py
+|   |       |   |   |   |   version.py
+|   |       |   |   |   |   _elffile.py
+|   |       |   |   |   |   _manylinux.py
+|   |       |   |   |   |   _musllinux.py
+|   |       |   |   |   |   _parser.py
+|   |       |   |   |   |   _structures.py
+|   |       |   |   |   |   _tokenizer.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   +---licenses
+|   |       |   |   |   |   |   _spdx.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           _spdx.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           markers.cpython-313.pyc
+|   |       |   |   |           metadata.cpython-313.pyc
+|   |       |   |   |           requirements.cpython-313.pyc
+|   |       |   |   |           specifiers.cpython-313.pyc
+|   |       |   |   |           tags.cpython-313.pyc
+|   |       |   |   |           utils.cpython-313.pyc
+|   |       |   |   |           version.cpython-313.pyc
+|   |       |   |   |           _elffile.cpython-313.pyc
+|   |       |   |   |           _manylinux.cpython-313.pyc
+|   |       |   |   |           _musllinux.cpython-313.pyc
+|   |       |   |   |           _parser.cpython-313.pyc
+|   |       |   |   |           _structures.cpython-313.pyc
+|   |       |   |   |           _tokenizer.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---pkg_resources
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---platformdirs
+|   |       |   |   |   |   android.py
+|   |       |   |   |   |   api.py
+|   |       |   |   |   |   macos.py
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   unix.py
+|   |       |   |   |   |   version.py
+|   |       |   |   |   |   windows.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |   __main__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           android.cpython-313.pyc
+|   |       |   |   |           api.cpython-313.pyc
+|   |       |   |   |           macos.cpython-313.pyc
+|   |       |   |   |           unix.cpython-313.pyc
+|   |       |   |   |           version.cpython-313.pyc
+|   |       |   |   |           windows.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |           __main__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---pygments
+|   |       |   |   |   |   console.py
+|   |       |   |   |   |   filter.py
+|   |       |   |   |   |   formatter.py
+|   |       |   |   |   |   lexer.py
+|   |       |   |   |   |   modeline.py
+|   |       |   |   |   |   plugin.py
+|   |       |   |   |   |   regexopt.py
+|   |       |   |   |   |   scanner.py
+|   |       |   |   |   |   sphinxext.py
+|   |       |   |   |   |   style.py
+|   |       |   |   |   |   token.py
+|   |       |   |   |   |   unistring.py
+|   |       |   |   |   |   util.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |   __main__.py
+|   |       |   |   |   |
+|   |       |   |   |   +---filters
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   +---formatters
+|   |       |   |   |   |   |   _mapping.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           _mapping.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   +---lexers
+|   |       |   |   |   |   |   python.py
+|   |       |   |   |   |   |   _mapping.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           python.cpython-313.pyc
+|   |       |   |   |   |           _mapping.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   +---styles
+|   |       |   |   |   |   |   _mapping.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           _mapping.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           console.cpython-313.pyc
+|   |       |   |   |           filter.cpython-313.pyc
+|   |       |   |   |           formatter.cpython-313.pyc
+|   |       |   |   |           lexer.cpython-313.pyc
+|   |       |   |   |           modeline.cpython-313.pyc
+|   |       |   |   |           plugin.cpython-313.pyc
+|   |       |   |   |           regexopt.cpython-313.pyc
+|   |       |   |   |           scanner.cpython-313.pyc
+|   |       |   |   |           sphinxext.cpython-313.pyc
+|   |       |   |   |           style.cpython-313.pyc
+|   |       |   |   |           token.cpython-313.pyc
+|   |       |   |   |           unistring.cpython-313.pyc
+|   |       |   |   |           util.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |           __main__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---pyproject_hooks
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   _impl.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   +---_in_process
+|   |       |   |   |   |   |   _in_process.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           _in_process.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           _impl.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---requests
+|   |       |   |   |   |   adapters.py
+|   |       |   |   |   |   api.py
+|   |       |   |   |   |   auth.py
+|   |       |   |   |   |   certs.py
+|   |       |   |   |   |   compat.py
+|   |       |   |   |   |   cookies.py
+|   |       |   |   |   |   exceptions.py
+|   |       |   |   |   |   help.py
+|   |       |   |   |   |   hooks.py
+|   |       |   |   |   |   models.py
+|   |       |   |   |   |   packages.py
+|   |       |   |   |   |   sessions.py
+|   |       |   |   |   |   status_codes.py
+|   |       |   |   |   |   structures.py
+|   |       |   |   |   |   utils.py
+|   |       |   |   |   |   _internal_utils.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |   __version__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           adapters.cpython-313.pyc
+|   |       |   |   |           api.cpython-313.pyc
+|   |       |   |   |           auth.cpython-313.pyc
+|   |       |   |   |           certs.cpython-313.pyc
+|   |       |   |   |           compat.cpython-313.pyc
+|   |       |   |   |           cookies.cpython-313.pyc
+|   |       |   |   |           exceptions.cpython-313.pyc
+|   |       |   |   |           help.cpython-313.pyc
+|   |       |   |   |           hooks.cpython-313.pyc
+|   |       |   |   |           models.cpython-313.pyc
+|   |       |   |   |           packages.cpython-313.pyc
+|   |       |   |   |           sessions.cpython-313.pyc
+|   |       |   |   |           status_codes.cpython-313.pyc
+|   |       |   |   |           structures.cpython-313.pyc
+|   |       |   |   |           utils.cpython-313.pyc
+|   |       |   |   |           _internal_utils.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |           __version__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---resolvelib
+|   |       |   |   |   |   providers.py
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   reporters.py
+|   |       |   |   |   |   structs.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   +---resolvers
+|   |       |   |   |   |   |   abstract.py
+|   |       |   |   |   |   |   criterion.py
+|   |       |   |   |   |   |   exceptions.py
+|   |       |   |   |   |   |   resolution.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           abstract.cpython-313.pyc
+|   |       |   |   |   |           criterion.cpython-313.pyc
+|   |       |   |   |   |           exceptions.cpython-313.pyc
+|   |       |   |   |   |           resolution.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           providers.cpython-313.pyc
+|   |       |   |   |           reporters.cpython-313.pyc
+|   |       |   |   |           structs.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---rich
+|   |       |   |   |   |   abc.py
+|   |       |   |   |   |   align.py
+|   |       |   |   |   |   ansi.py
+|   |       |   |   |   |   bar.py
+|   |       |   |   |   |   box.py
+|   |       |   |   |   |   cells.py
+|   |       |   |   |   |   color.py
+|   |       |   |   |   |   color_triplet.py
+|   |       |   |   |   |   columns.py
+|   |       |   |   |   |   console.py
+|   |       |   |   |   |   constrain.py
+|   |       |   |   |   |   containers.py
+|   |       |   |   |   |   control.py
+|   |       |   |   |   |   default_styles.py
+|   |       |   |   |   |   diagnose.py
+|   |       |   |   |   |   emoji.py
+|   |       |   |   |   |   errors.py
+|   |       |   |   |   |   filesize.py
+|   |       |   |   |   |   file_proxy.py
+|   |       |   |   |   |   highlighter.py
+|   |       |   |   |   |   json.py
+|   |       |   |   |   |   jupyter.py
+|   |       |   |   |   |   layout.py
+|   |       |   |   |   |   live.py
+|   |       |   |   |   |   live_render.py
+|   |       |   |   |   |   logging.py
+|   |       |   |   |   |   markup.py
+|   |       |   |   |   |   measure.py
+|   |       |   |   |   |   padding.py
+|   |       |   |   |   |   pager.py
+|   |       |   |   |   |   palette.py
+|   |       |   |   |   |   panel.py
+|   |       |   |   |   |   pretty.py
+|   |       |   |   |   |   progress.py
+|   |       |   |   |   |   progress_bar.py
+|   |       |   |   |   |   prompt.py
+|   |       |   |   |   |   protocol.py
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   region.py
+|   |       |   |   |   |   repr.py
+|   |       |   |   |   |   rule.py
+|   |       |   |   |   |   scope.py
+|   |       |   |   |   |   screen.py
+|   |       |   |   |   |   segment.py
+|   |       |   |   |   |   spinner.py
+|   |       |   |   |   |   status.py
+|   |       |   |   |   |   style.py
+|   |       |   |   |   |   styled.py
+|   |       |   |   |   |   syntax.py
+|   |       |   |   |   |   table.py
+|   |       |   |   |   |   terminal_theme.py
+|   |       |   |   |   |   text.py
+|   |       |   |   |   |   theme.py
+|   |       |   |   |   |   themes.py
+|   |       |   |   |   |   traceback.py
+|   |       |   |   |   |   tree.py
+|   |       |   |   |   |   _cell_widths.py
+|   |       |   |   |   |   _emoji_codes.py
+|   |       |   |   |   |   _emoji_replace.py
+|   |       |   |   |   |   _export_format.py
+|   |       |   |   |   |   _extension.py
+|   |       |   |   |   |   _fileno.py
+|   |       |   |   |   |   _inspect.py
+|   |       |   |   |   |   _log_render.py
+|   |       |   |   |   |   _loop.py
+|   |       |   |   |   |   _null_file.py
+|   |       |   |   |   |   _palettes.py
+|   |       |   |   |   |   _pick.py
+|   |       |   |   |   |   _ratio.py
+|   |       |   |   |   |   _spinners.py
+|   |       |   |   |   |   _stack.py
+|   |       |   |   |   |   _timer.py
+|   |       |   |   |   |   _win32_console.py
+|   |       |   |   |   |   _windows.py
+|   |       |   |   |   |   _windows_renderer.py
+|   |       |   |   |   |   _wrap.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |   __main__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           abc.cpython-313.pyc
+|   |       |   |   |           align.cpython-313.pyc
+|   |       |   |   |           ansi.cpython-313.pyc
+|   |       |   |   |           bar.cpython-313.pyc
+|   |       |   |   |           box.cpython-313.pyc
+|   |       |   |   |           cells.cpython-313.pyc
+|   |       |   |   |           color.cpython-313.pyc
+|   |       |   |   |           color_triplet.cpython-313.pyc
+|   |       |   |   |           columns.cpython-313.pyc
+|   |       |   |   |           console.cpython-313.pyc
+|   |       |   |   |           constrain.cpython-313.pyc
+|   |       |   |   |           containers.cpython-313.pyc
+|   |       |   |   |           control.cpython-313.pyc
+|   |       |   |   |           default_styles.cpython-313.pyc
+|   |       |   |   |           diagnose.cpython-313.pyc
+|   |       |   |   |           emoji.cpython-313.pyc
+|   |       |   |   |           errors.cpython-313.pyc
+|   |       |   |   |           filesize.cpython-313.pyc
+|   |       |   |   |           file_proxy.cpython-313.pyc
+|   |       |   |   |           highlighter.cpython-313.pyc
+|   |       |   |   |           json.cpython-313.pyc
+|   |       |   |   |           jupyter.cpython-313.pyc
+|   |       |   |   |           layout.cpython-313.pyc
+|   |       |   |   |           live.cpython-313.pyc
+|   |       |   |   |           live_render.cpython-313.pyc
+|   |       |   |   |           logging.cpython-313.pyc
+|   |       |   |   |           markup.cpython-313.pyc
+|   |       |   |   |           measure.cpython-313.pyc
+|   |       |   |   |           padding.cpython-313.pyc
+|   |       |   |   |           pager.cpython-313.pyc
+|   |       |   |   |           palette.cpython-313.pyc
+|   |       |   |   |           panel.cpython-313.pyc
+|   |       |   |   |           pretty.cpython-313.pyc
+|   |       |   |   |           progress.cpython-313.pyc
+|   |       |   |   |           progress_bar.cpython-313.pyc
+|   |       |   |   |           prompt.cpython-313.pyc
+|   |       |   |   |           protocol.cpython-313.pyc
+|   |       |   |   |           region.cpython-313.pyc
+|   |       |   |   |           repr.cpython-313.pyc
+|   |       |   |   |           rule.cpython-313.pyc
+|   |       |   |   |           scope.cpython-313.pyc
+|   |       |   |   |           screen.cpython-313.pyc
+|   |       |   |   |           segment.cpython-313.pyc
+|   |       |   |   |           spinner.cpython-313.pyc
+|   |       |   |   |           status.cpython-313.pyc
+|   |       |   |   |           style.cpython-313.pyc
+|   |       |   |   |           styled.cpython-313.pyc
+|   |       |   |   |           syntax.cpython-313.pyc
+|   |       |   |   |           table.cpython-313.pyc
+|   |       |   |   |           terminal_theme.cpython-313.pyc
+|   |       |   |   |           text.cpython-313.pyc
+|   |       |   |   |           theme.cpython-313.pyc
+|   |       |   |   |           themes.cpython-313.pyc
+|   |       |   |   |           traceback.cpython-313.pyc
+|   |       |   |   |           tree.cpython-313.pyc
+|   |       |   |   |           _cell_widths.cpython-313.pyc
+|   |       |   |   |           _emoji_codes.cpython-313.pyc
+|   |       |   |   |           _emoji_replace.cpython-313.pyc
+|   |       |   |   |           _export_format.cpython-313.pyc
+|   |       |   |   |           _extension.cpython-313.pyc
+|   |       |   |   |           _fileno.cpython-313.pyc
+|   |       |   |   |           _inspect.cpython-313.pyc
+|   |       |   |   |           _log_render.cpython-313.pyc
+|   |       |   |   |           _loop.cpython-313.pyc
+|   |       |   |   |           _null_file.cpython-313.pyc
+|   |       |   |   |           _palettes.cpython-313.pyc
+|   |       |   |   |           _pick.cpython-313.pyc
+|   |       |   |   |           _ratio.cpython-313.pyc
+|   |       |   |   |           _spinners.cpython-313.pyc
+|   |       |   |   |           _stack.cpython-313.pyc
+|   |       |   |   |           _timer.cpython-313.pyc
+|   |       |   |   |           _win32_console.cpython-313.pyc
+|   |       |   |   |           _windows.cpython-313.pyc
+|   |       |   |   |           _windows_renderer.cpython-313.pyc
+|   |       |   |   |           _wrap.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |           __main__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---tomli
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   _parser.py
+|   |       |   |   |   |   _re.py
+|   |       |   |   |   |   _types.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           _parser.cpython-313.pyc
+|   |       |   |   |           _re.cpython-313.pyc
+|   |       |   |   |           _types.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---tomli_w
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   _writer.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           _writer.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---truststore
+|   |       |   |   |   |   py.typed
+|   |       |   |   |   |   _api.py
+|   |       |   |   |   |   _macos.py
+|   |       |   |   |   |   _openssl.py
+|   |       |   |   |   |   _ssl_constants.py
+|   |       |   |   |   |   _windows.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           _api.cpython-313.pyc
+|   |       |   |   |           _macos.cpython-313.pyc
+|   |       |   |   |           _openssl.cpython-313.pyc
+|   |       |   |   |           _ssl_constants.cpython-313.pyc
+|   |       |   |   |           _windows.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   +---urllib3
+|   |       |   |   |   |   connection.py
+|   |       |   |   |   |   connectionpool.py
+|   |       |   |   |   |   exceptions.py
+|   |       |   |   |   |   fields.py
+|   |       |   |   |   |   filepost.py
+|   |       |   |   |   |   poolmanager.py
+|   |       |   |   |   |   request.py
+|   |       |   |   |   |   response.py
+|   |       |   |   |   |   _collections.py
+|   |       |   |   |   |   _version.py
+|   |       |   |   |   |   __init__.py
+|   |       |   |   |   |
+|   |       |   |   |   +---contrib
+|   |       |   |   |   |   |   appengine.py
+|   |       |   |   |   |   |   ntlmpool.py
+|   |       |   |   |   |   |   pyopenssl.py
+|   |       |   |   |   |   |   securetransport.py
+|   |       |   |   |   |   |   socks.py
+|   |       |   |   |   |   |   _appengine_environ.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   +---_securetransport
+|   |       |   |   |   |   |   |   bindings.py
+|   |       |   |   |   |   |   |   low_level.py
+|   |       |   |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |   |
+|   |       |   |   |   |   |   \---__pycache__
+|   |       |   |   |   |   |           bindings.cpython-313.pyc
+|   |       |   |   |   |   |           low_level.cpython-313.pyc
+|   |       |   |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           appengine.cpython-313.pyc
+|   |       |   |   |   |           ntlmpool.cpython-313.pyc
+|   |       |   |   |   |           pyopenssl.cpython-313.pyc
+|   |       |   |   |   |           securetransport.cpython-313.pyc
+|   |       |   |   |   |           socks.cpython-313.pyc
+|   |       |   |   |   |           _appengine_environ.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   +---packages
+|   |       |   |   |   |   |   six.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   +---backports
+|   |       |   |   |   |   |   |   makefile.py
+|   |       |   |   |   |   |   |   weakref_finalize.py
+|   |       |   |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |   |
+|   |       |   |   |   |   |   \---__pycache__
+|   |       |   |   |   |   |           makefile.cpython-313.pyc
+|   |       |   |   |   |   |           weakref_finalize.cpython-313.pyc
+|   |       |   |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           six.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   +---util
+|   |       |   |   |   |   |   connection.py
+|   |       |   |   |   |   |   proxy.py
+|   |       |   |   |   |   |   queue.py
+|   |       |   |   |   |   |   request.py
+|   |       |   |   |   |   |   response.py
+|   |       |   |   |   |   |   retry.py
+|   |       |   |   |   |   |   ssltransport.py
+|   |       |   |   |   |   |   ssl_.py
+|   |       |   |   |   |   |   ssl_match_hostname.py
+|   |       |   |   |   |   |   timeout.py
+|   |       |   |   |   |   |   url.py
+|   |       |   |   |   |   |   wait.py
+|   |       |   |   |   |   |   __init__.py
+|   |       |   |   |   |   |
+|   |       |   |   |   |   \---__pycache__
+|   |       |   |   |   |           connection.cpython-313.pyc
+|   |       |   |   |   |           proxy.cpython-313.pyc
+|   |       |   |   |   |           queue.cpython-313.pyc
+|   |       |   |   |   |           request.cpython-313.pyc
+|   |       |   |   |   |           response.cpython-313.pyc
+|   |       |   |   |   |           retry.cpython-313.pyc
+|   |       |   |   |   |           ssltransport.cpython-313.pyc
+|   |       |   |   |   |           ssl_.cpython-313.pyc
+|   |       |   |   |   |           ssl_match_hostname.cpython-313.pyc
+|   |       |   |   |   |           timeout.cpython-313.pyc
+|   |       |   |   |   |           url.cpython-313.pyc
+|   |       |   |   |   |           wait.cpython-313.pyc
+|   |       |   |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |   |
+|   |       |   |   |   \---__pycache__
+|   |       |   |   |           connection.cpython-313.pyc
+|   |       |   |   |           connectionpool.cpython-313.pyc
+|   |       |   |   |           exceptions.cpython-313.pyc
+|   |       |   |   |           fields.cpython-313.pyc
+|   |       |   |   |           filepost.cpython-313.pyc
+|   |       |   |   |           poolmanager.cpython-313.pyc
+|   |       |   |   |           request.cpython-313.pyc
+|   |       |   |   |           response.cpython-313.pyc
+|   |       |   |   |           _collections.cpython-313.pyc
+|   |       |   |   |           _version.cpython-313.pyc
+|   |       |   |   |           __init__.cpython-313.pyc
+|   |       |   |   |
+|   |       |   |   \---__pycache__
+|   |       |   |           __init__.cpython-313.pyc
+|   |       |   |
+|   |       |   \---__pycache__
+|   |       |           __init__.cpython-313.pyc
+|   |       |           __main__.cpython-313.pyc
+|   |       |           __pip-runner__.cpython-313.pyc
+|   |       |
+|   |       \---pip-25.2.dist-info
+|   |           |   entry_points.txt
+|   |           |   INSTALLER
+|   |           |   METADATA
+|   |           |   RECORD
+|   |           |   REQUESTED
+|   |           |   top_level.txt
+|   |           |   WHEEL
+|   |           |
+|   |           \---licenses
+|   |               |   AUTHORS.txt
+|   |               |   LICENSE.txt
+|   |               |
+|   |               \---src
+|   |                   \---pip
+|   |                       \---_vendor
+|   |                           +---cachecontrol
+|   |                           |       LICENSE.txt
+|   |                           |
+|   |                           +---certifi
+|   |                           |       LICENSE
+|   |                           |
+|   |                           +---dependency_groups
+|   |                           |       LICENSE.txt
+|   |                           |
+|   |                           +---distlib
+|   |                           |       LICENSE.txt
+|   |                           |
+|   |                           +---distro
+|   |                           |       LICENSE
+|   |                           |
+|   |                           +---idna
+|   |                           |       LICENSE.md
+|   |                           |
+|   |                           +---msgpack
+|   |                           |       COPYING
+|   |                           |
+|   |                           +---packaging
+|   |                           |       LICENSE
+|   |                           |       LICENSE.APACHE
+|   |                           |       LICENSE.BSD
+|   |                           |
+|   |                           +---pkg_resources
+|   |                           |       LICENSE
+|   |                           |
+|   |                           +---platformdirs
+|   |                           |       LICENSE
+|   |                           |
+|   |                           +---pygments
+|   |                           |       LICENSE
+|   |                           |
+|   |                           +---pyproject_hooks
+|   |                           |       LICENSE
+|   |                           |
+|   |                           +---requests
+|   |                           |       LICENSE
+|   |                           |
+|   |                           +---resolvelib
+|   |                           |       LICENSE
+|   |                           |
+|   |                           +---rich
+|   |                           |       LICENSE
+|   |                           |
+|   |                           +---tomli
+|   |                           |       LICENSE
+|   |                           |       LICENSE-HEADER
+|   |                           |
+|   |                           +---tomli_w
+|   |                           |       LICENSE
+|   |                           |
+|   |                           +---truststore
+|   |                           |       LICENSE
+|   |                           |
+|   |                           \---urllib3
+|   |                                   LICENSE.txt
+|   |
+|   \---Scripts
+|           activate
+|           activate.bat
+|           activate.fish
+|           Activate.ps1
+|           deactivate.bat
+|           pip.exe
+|           pip3.13.exe
+|           pip3.exe
+|           python.exe
+|           pythonw.exe
+|
++---.vscode
+|       settings.json
+|
++---assembly
+|       firmware_backup - Copy (2).bin.asm
+|       firmware_backup - Copy (4).bin.asm
+|       firmware_backup.bin.lst
+|       firmware_backup.bin.map
+|       firmware_clean.asm
+|       sample_fw_from_other_camera_same_chip_.bin.asm
+|
++---audit
+|   |   ALL_LOGS.md
+|   |   apply_moves.ps1
+|   |   AUDIT_LOG.md
+|   |   BASELINE.bin
+|   |   inputs_snapshot.txt
+|   |   manifest.csv
+|   |   manifest_pass1.csv
+|   |   proposed_moves.ps1
+|   |   proposed_tree.md
+|   |   second_pass.md
+|   |
+|   +---errors
+|   \---per_bin
++---firmware
+|   |   dispatcher_islands.csv
+|   |   firmware_backup_base.bin
+|   |   firmware_backup_base_copy.bin
+|   |   firmware_backup_base_copy2.bin
+|   |   firmware_backup_base_copy2.bin.i64
+|   |   firmware_boot_osd_off.bin
+|   |   firmware_boot_osd_off_nofooter.bin
+|   |   firmware_boot_osd_stub.bin
+|   |   firmware_osd_block_disabled.bin
+|   |   firmware_osd_line_disabled.bin
+|   |   firmware_osd_line_disabled_crc_fixed.bin
+|   |   firmware_patchA.bin
+|   |   firmware_patchA_fix.bin
+|   |   firmware_patchB.bin
+|   |   firmware_patchB.bin.json
+|   |   firmware_patchBv2.bin
+|   |   firmware_patchBv2.bin.json
+|   |   firmware_patchBv4_fix.bin
+|   |   firmware_patchBv4_fix.bin.json
+|   |   fw_a_safe_data_patched.bin
+|   |   fw_a_safe_data_patched_final.bin
+|   |   fw_a_safe_data_patched_fixed.bin
+|   |   fw_a_safe_data_patch_report.txt
+|   |   fw_b_safe_data_patched.bin
+|   |   fw_b_safe_data_patched_final.bin
+|   |   fw_b_safe_data_patch_report.txt
+|   |   obf_findings.json
+|   |   patch_report.json
+|   |   README_OSD_SOLUTIONS.md
+|   |   recovery_firmware.bin
+|   |   SN9C292B_firmware_findings_consolidated.md
+|   |   twin_firmware_analysis_report.md
+|   |
+|   +---base
+|   |       firmware_backup - Copy (3) - Copy.bin
+|   |       firmware_backup - Copy (3).bin
+|   |       firmware_backup - Copy (3).bin.id0
+|   |       firmware_backup - Copy (3).bin.id1
+|   |       firmware_backup - Copy (3).bin.nam
+|   |       firmware_backup - Copy (3).bin.til
+|   |       firmware_backup - Copy (4) - Copy.bin
+|   |       firmware_backup - Copy (4).bin
+|   |       firmware_backup - Copy (5) - Copy.bin
+|   |       firmware_backup - Copy (6) - Copy.bin
+|   |       firmware_backup - Copy (7) - Copy.bin
+|   |       firmware_backup - Copy (8) - Copy.bin
+|   |       firmware_backup.bin
+|   |       firmware_backup_base_copy2.bin
+|   |       firmware_backup_patchA.bin
+|   |
+|   +---builds
+|   |   +---bad
+|   |   |       BASELINE.bin
+|   |   |       firmware_osd_code_SAFE.bin
+|   |   |       firmware_patched_disable_all_osd.bin
+|   |   |       firmware_patched_disable_line_osd.bin
+|   |   |       firmware_patched_zone_1.bin
+|   |   |       firmware_patched_zone_10.bin
+|   |   |       firmware_patched_zone_2.bin
+|   |   |       firmware_patched_zone_3.bin
+|   |   |       firmware_patched_zone_4.bin
+|   |   |       firmware_patched_zone_5.bin
+|   |   |       firmware_patched_zone_6.bin
+|   |   |       firmware_patched_zone_7.bin
+|   |   |       firmware_patched_zone_8.bin
+|   |   |       firmware_patched_zone_9.bin
+|   |   |       firmware_patch_osd_text_null.bin
+|   |   |       firmware_patch_zone1_val_00.bin
+|   |   |       firmware_patch_zone1_val_40.bin
+|   |   |       fw_comprehensive_5layer_bypass.bin
+|   |   |       fw_comprehensive_bypass.bin
+|   |   |       fw_comprehensive_bypass_corrected.bin
+|   |   |       fw_comprehensive_multisection_bypass.bin
+|   |   |       fw_exact_sweet_spot.bin
+|   |   |       fw_hybrid_sweet_spot.bin
+|   |   |       fw_integrity_bypass_crc_fixed.bin
+|   |   |       fw_integrity_bypass_no_checksum.bin
+|   |   |       fw_integrity_relaxed_broad.bin
+|   |   |       fw_integrity_relaxed_only.bin
+|   |   |       fw_integrity_relaxed_plus.bin
+|   |   |       fw_late_clear_b76_only.bin
+|   |   |       fw_late_clear_crc_fixed.bin
+|   |   |       fw_late_clear_enable_only.bin
+|   |   |       fw_late_clear_hook.bin
+|   |   |       fw_late_clear_hook_at_a51a.bin
+|   |   |       fw_late_clear_hook_at_a51a_v2.bin
+|   |   |       fw_osd_off.bin
+|   |   |       fw_osd_off_bypass.bin
+|   |   |       fw_osd_off_crc_fixed.bin
+|   |   |       fw_osd_patched.bin
+|   |   |       fw_osd_v0_min.bin
+|   |   |       fw_osd_v10_pb_0afe_to_b75_clear.bin
+|   |   |       fw_osd_v11_nop_04d0.bin
+|   |   |       fw_osd_v12_nop_0ac4.bin
+|   |   |       fw_osd_v13_nop_0afe.bin
+|   |   |       fw_osd_v14_nop_all3.bin
+|   |   |       fw_osd_v1_nop.bin
+|   |   |       fw_osd_v2_two.bin
+|   |   |       fw_osd_v3_all4_noftr.bin
+|   |   |       fw_osd_v4_all4_wordsum.bin
+|   |   |       fw_osd_v5_all4_bytesum.bin
+|   |   |       fw_osd_v6_pb_04d0_imm00.bin
+|   |   |       fw_osd_v7_pb_0ac4_imm00.bin
+|   |   |       fw_osd_v8_pb_0afe_imm00.bin
+|   |   |       fw_osd_v9_pb_0ac4_to_b75_clear.bin
+|   |   |       fw_single_flip_04D4.bin
+|   |   |       fw_single_flip_0AC8.bin
+|   |   |       fw_single_flip_0B02.bin
+|   |   |       fw_single_flip_4526.bin
+|   |   |       fw_stage2_bypass_only.bin
+|   |   |       fw_stage2_bypass_only_crc_fixed.bin
+|   |   |       fw_V6_BYPASS_ONLY.bin
+|   |   |       fw_v6_stage2.bin
+|   |   |       fw_v7_early_bypass_crc_fixed.bin
+|   |   |
+|   |   \---ok
+|   +---new path
+|   |       firmware5262-GC2053-(HD264-Webcam-USB)-2005200301-Black Screen issue.src
+|   |       firmware_backup_base.bin
+|   |       firmware_hybrid_sensor.bin
+|   |       firmware_osd_off_patched.bin
+|   |       firmware_patchC_minconst.bin
+|   |       SonixAllRomFile.src
+|   |
+|   +---reports_phase2_20250817_192113
+|   |       branch_island_0x1073_map.csv
+|   |       call_patch.txt
+|   |       call_site.txt
+|   |       checksum_fix.txt
+|   |       create_safe_data_patch.py
+|   |       final_fw_a_fix.py
+|   |       fix_fw_a_checksum.py
+|   |       fix_fw_b_checksum.py
+|   |       FW_A_diff.txt
+|   |       FW_A_hex_diff.txt
+|   |       FW_A_patched.bin
+|   |       FW_B_analysis.txt
+|   |       FW_B_call_patch.txt
+|   |       FW_B_checksum_fix.txt
+|   |       FW_B_diff.txt
+|   |       FW_B_hex_diff.txt
+|   |       FW_B_patched.bin
+|   |       FW_B_stub_original.bin
+|   |       FW_B_stub_patched.bin
+|   |       integrity_map.txt
+|   |       osd_writers.txt
+|   |       safe_data_patch_plan.txt
+|   |       stub_original.bin
+|   |       stub_patched.bin
+|   |       stub_site.txt
+|   |       twin_deltas.txt
+|   |       _README.txt
+|   |
+|   \---__pycache__
+|           osd_patch_script.cpython-313.pyc
+|
++---info
+|       agent prompt.json
+|       backstory 3rd day of missuriyyyyy.md
+|       backstory firmware patch plan the begining..md
+|       branch_island_0x1073_map.txt
+|       cursor_execute_mcp_batches_for_osd_hand.md
+|       cursor_patch_osd_behavior_in_camera_fir.md
+|       fcn_000128c2.png
+|       Final OSD Disable Patch and Checksum Fix Log.pdf
+|       Firmware Patch Plan for SN9C292B (Disable Boot OSD & Ensure Valid CRC).pdf
+|       IDA PRO mcp tips.txt
+|       QTP Approval Form_V1.1_TC.pdf
+|       SN8F5000 Family Instruction Mapping Table V1.0.pdf
+|       SN9C292B Firmware Analysis Consolidated Report[en].pdf
+|       SN9C292B Firmware OSD Patch Project – Technical Status Report.pdf
+|       SN9C292B_Datasheet_v1.61.pdf
+|       Software Obfuscation in 8032_8051 Firmware and Reverse-Engineering Techniques.pdf
+|       SONiX 8-Bit RollingCode.pdf
+|       sonixcam bootup XU GET.txt
+|       usbtreeview nospi boot.txt
+|       windsurf-diagnostics.txt
+|
++---intel
+|       bin_diff_fw_vs_failed.md
+|       compare_candidates.json
+|       compare_candidates.md
+|       compare_sites.md
+|       crc32_combine64_list.json
+|       crc_candidates.json
+|       crc_candidates.md
+|       crc_candidates_scan.md
+|       crc_proof.md
+|       ctf_callers_analysis.json
+|       ida_meta.json
+|       iex6_analysis.json
+|       init_callchain.md
+|       init_chain_4522.md
+|       integrity_analysis.json
+|       integrity_analysis.txt
+|       integrity_block_01C0.md
+|       integrity_checks.json
+|       intel_crc_candidates.json
+|       jump_target_analysis.json
+|       late_anchors.json
+|       late_clear_hook.md
+|       late_disable_sites.md
+|       memory_initialization_analysis.json
+|       memory_writes_analysis.json
+|       nop_safety.md
+|       osd_char_writes.json
+|       osd_sites.json
+|       osd_sites.md
+|       patch_report.md
+|       plan.md
+|       postboot_callchains.md
+|       postboot_side_effects.md
+|       ram_usage_analysis.json
+|       ram_usage_analysis_flow.json
+|       reset_block.md
+|       reset_handler.json
+|       tails.md
+|       test_integrity_bypass.py
+|       track_memory_initialization.py
+|       track_ram_flow.py
+|       Untitled-1.md
+|       usb_init.md
+|       usb_ready_marker.md
+|       verify_checksum.py
+|       verify_firmware.py
+|       xdata_0Bxx_writes.json
+|       xdata_map.json
+|       xdata_map.md
+|       xdata_map_0B00_0BFF.json
+|       xdata_map_0B00_0BFF.md
+|       xrefs_analize_0x236D.json
+|
++---logs
+|   |   20250812-2200_step04_deep_analysis.md
+|   |   20250813-122830_phase1_usbip.txt
+|   |   25-08-10_bad_fw_osd_v0_min.bin.json
+|   |   25-08-10_bad_fw_osd_v1_nop.bin.json
+|   |   25-08-10_bad_fw_osd_v2_two.bin.json
+|   |   25-08-10_bad_fw_osd_v3_all4_noftr.bin.json
+|   |   25-08-10_bad_fw_osd_v4_all4_wordsum.bin.json
+|   |   25-08-10_bad_fw_osd_v5_all4_bytesum.bin.json
+|   |   25-08-10_firmware_backup.bin.json
+|   |   25.08.11_firmware_backup_-_Copy__4_.bin.json
+|   |   25.08.11_out_v2_bad_fw_osd_v10_pb_0afe_to_b75_clear.bin.json
+|   |   25.08.11_out_v2_bad_fw_osd_v6_pb_04d0_imm00.bin.json
+|   |   25.08.11_out_v2_bad_fw_osd_v7_pb_0ac4_imm00.bin.json
+|   |   25.08.11_out_v2_bad_fw_osd_v8_pb_0afe_imm00.bin.json
+|   |   25.08.11_out_v2_bad_fw_osd_v9_pb_0ac4_to_b75_clear.bin.json
+|   |   2508110204_firmware_backup_-_Copy__4_.bin.json
+|   |   2508110204_out_v3_bad_fw_osd_v11_nop_04d0.bin.json
+|   |   2508110204_out_v3_bad_fw_osd_v12_nop_0ac4.bin.json
+|   |   2508110204_out_v3_bad_fw_osd_v13_nop_0afe.bin.json
+|   |   2508110204_out_v3_bad_fw_osd_v14_nop_all3.bin.json
+|   |   292A-IPC-OV2710 (Interface 3).txt
+|   |   crc_analysis_0x236D.md
+|   |   crc_proof.md
+|   |   ends-of-image.txt
+|   |   firmware_backup_-_Copy__3_.bin.json
+|   |   firmware_backup_-_Copy__4_.bin.json
+|   |   firmware_base_BASELINE.bin.json
+|   |   firmware_base_firmware_backup.bin.json
+|   |   firmware_base_firmware_backup_-_Copy__4_.bin.json
+|   |   firmware_builds_bad_firmware_backup.bin.json
+|   |   firmware_builds_bad_firmware_backup_-_Copy__4_.bin.json
+|   |   firmware_builds_bad_firmware_patched_zone_1.bin.json
+|   |   firmware_builds_bad_firmware_patched_zone_10.bin.json
+|   |   firmware_builds_bad_firmware_patched_zone_2.bin.json
+|   |   firmware_builds_bad_firmware_patched_zone_3.bin.json
+|   |   firmware_builds_bad_firmware_patched_zone_4.bin.json
+|   |   firmware_builds_bad_firmware_patched_zone_5.bin.json
+|   |   firmware_builds_bad_firmware_patched_zone_6.bin.json
+|   |   firmware_builds_bad_firmware_patched_zone_7.bin.json
+|   |   firmware_builds_bad_firmware_patched_zone_8.bin.json
+|   |   firmware_builds_bad_firmware_patched_zone_9.bin.json
+|   |   firmware_builds_bad_firmware_patch_osd_text_null.bin.json
+|   |   firmware_builds_bad_firmware_patch_zone1_val_00.bin.json
+|   |   firmware_builds_bad_firmware_patch_zone1_val_40.bin.json
+|   |   firmware_builds_bad_fw_comprehensive_5layer_bypass.bin.json
+|   |   firmware_builds_bad_fw_comprehensive_bypass.bin.json
+|   |   firmware_builds_bad_fw_comprehensive_bypass_corrected.bin.json
+|   |   firmware_builds_bad_fw_comprehensive_multisection_bypass.bin.json
+|   |   firmware_builds_bad_fw_exact_sweet_spot.bin.json
+|   |   firmware_builds_bad_fw_hybrid_sweet_spot.bin.json
+|   |   firmware_builds_bad_fw_integrity_bypass_no_checksum.bin.json
+|   |   firmware_builds_bad_fw_integrity_relaxed_broad.bin.json
+|   |   firmware_builds_bad_fw_integrity_relaxed_only.bin.json
+|   |   firmware_builds_bad_fw_integrity_relaxed_plus.bin.json
+|   |   firmware_builds_bad_fw_late_clear_b76_only.bin.json
+|   |   firmware_builds_bad_fw_late_clear_enable_only.bin.json
+|   |   firmware_builds_bad_fw_late_clear_hook.bin.json
+|   |   firmware_builds_bad_fw_late_clear_hook_at_a51a.bin.json
+|   |   firmware_builds_bad_fw_late_clear_hook_at_a51a_v2.bin.json
+|   |   firmware_builds_bad_fw_osd_off.bin.json
+|   |   firmware_builds_bad_fw_osd_off_bypass.bin.json
+|   |   firmware_builds_bad_fw_osd_off_crc_fixed.bin.json
+|   |   firmware_builds_bad_fw_osd_patched.bin.json
+|   |   firmware_builds_bad_fw_osd_v0_min.bin.json
+|   |   firmware_builds_bad_fw_osd_v10_pb_0afe_to_b75_clear.bin.json
+|   |   firmware_builds_bad_fw_osd_v11_nop_04d0.bin.json
+|   |   firmware_builds_bad_fw_osd_v12_nop_0ac4.bin.json
+|   |   firmware_builds_bad_fw_osd_v13_nop_0afe.bin.json
+|   |   firmware_builds_bad_fw_osd_v14_nop_all3.bin.json
+|   |   firmware_builds_bad_fw_osd_v1_nop.bin.json
+|   |   firmware_builds_bad_fw_osd_v2_two.bin.json
+|   |   firmware_builds_bad_fw_osd_v3_all4_noftr.bin.json
+|   |   firmware_builds_bad_fw_osd_v4_all4_wordsum.bin.json
+|   |   firmware_builds_bad_fw_osd_v5_all4_bytesum.bin.json
+|   |   firmware_builds_bad_fw_osd_v6_pb_04d0_imm00.bin.json
+|   |   firmware_builds_bad_fw_osd_v7_pb_0ac4_imm00.bin.json
+|   |   firmware_builds_bad_fw_osd_v8_pb_0afe_imm00.bin.json
+|   |   firmware_builds_bad_fw_osd_v9_pb_0ac4_to_b75_clear.bin.json
+|   |   firmware_builds_bad_fw_single_flip_04D4.bin.json
+|   |   firmware_builds_bad_fw_single_flip_0AC8.bin.json
+|   |   firmware_builds_bad_fw_single_flip_0B02.bin.json
+|   |   firmware_builds_bad_fw_stage2_bypass_only.bin.json
+|   |   firmware_builds_bad_fw_V6_BYPASS_ONLY.bin.json
+|   |   firmware_builds_bad_fw_v6_stage2.bin.json
+|   |   firmware_builds_ok_fw_integrity_bypass_crc_fixed.bin.json
+|   |   firmware_builds_ok_fw_late_clear_crc_fixed.bin.json
+|   |   firmware_builds_ok_fw_stage2_bypass_only_crc_fixed.bin.json
+|   |   firmware_builds_ok_fw_v7_early_bypass_crc_fixed.bin.json
+|   |   fw_comprehensive_5layer_bypass.diff.txt
+|   |   fw_comprehensive_5layer_bypass.sum.txt
+|   |   fw_comprehensive_bypass.diff.txt
+|   |   fw_comprehensive_bypass.sum.txt
+|   |   fw_comprehensive_bypass_corrected.diff.txt
+|   |   fw_comprehensive_bypass_corrected.sum.txt
+|   |   fw_comprehensive_multisection_bypass.diff.txt
+|   |   fw_comprehensive_multisection_bypass.sum.txt
+|   |   fw_exact_sweet_spot.diff.txt
+|   |   fw_exact_sweet_spot.sum.txt
+|   |   fw_hybrid_sweet_spot.diff.txt
+|   |   fw_hybrid_sweet_spot.sum.txt
+|   |   fw_integrity_bypass_crc_fixed.diff.txt
+|   |   fw_integrity_bypass_crc_fixed.sum.txt
+|   |   fw_integrity_bypass_no_checksum.diff.txt
+|   |   fw_integrity_bypass_no_checksum.sum.txt
+|   |   fw_integrity_relaxed_broad.diff.txt
+|   |   fw_integrity_relaxed_broad.sum.txt
+|   |   fw_integrity_relaxed_only.diff.txt
+|   |   fw_integrity_relaxed_only.sum.txt
+|   |   fw_integrity_relaxed_plus.diff.txt
+|   |   fw_integrity_relaxed_plus.sum.txt
+|   |   fw_late_clear_b76_only.diff.txt
+|   |   fw_late_clear_b76_only.sum.txt
+|   |   fw_late_clear_crc_fixed.diff.txt
+|   |   fw_late_clear_enable_only.diff.txt
+|   |   fw_late_clear_enable_only.sum.txt
+|   |   fw_late_clear_hook.diff.txt
+|   |   fw_late_clear_hook.sum.txt
+|   |   fw_late_clear_hook_at_a51a.diff.txt
+|   |   fw_late_clear_hook_at_a51a.sum.txt
+|   |   fw_late_clear_hook_at_a51a_v2.diff.txt
+|   |   fw_late_clear_hook_at_a51a_v2.sum.txt
+|   |   fw_osd_off.sum.txt
+|   |   fw_osd_off_bypass.diff.txt
+|   |   fw_osd_off_crc_fixed.diff.txt
+|   |   fw_osd_off_crc_fixed.sum.txt
+|   |   fw_osd_v0_min.diff.txt
+|   |   fw_osd_v0_min.patchlog.txt
+|   |   fw_osd_v0_min.sum.txt
+|   |   fw_osd_v10_pb_0afe_to_b75_clear.diff.txt
+|   |   fw_osd_v10_pb_0afe_to_b75_clear.sum.txt
+|   |   fw_osd_v11_nop_04d0.diff.txt
+|   |   fw_osd_v11_nop_04d0.sum.txt
+|   |   fw_osd_v12_nop_0ac4.diff.txt
+|   |   fw_osd_v12_nop_0ac4.sum.txt
+|   |   fw_osd_v13_nop_0afe.diff.txt
+|   |   fw_osd_v13_nop_0afe.sum.txt
+|   |   fw_osd_v14_nop_all3.diff.txt
+|   |   fw_osd_v14_nop_all3.sum.txt
+|   |   fw_osd_v1_nop.diff.txt
+|   |   fw_osd_v1_nop.patchlog.txt
+|   |   fw_osd_v1_nop.sum.txt
+|   |   fw_osd_v2_two.diff.txt
+|   |   fw_osd_v2_two.patchlog.txt
+|   |   fw_osd_v2_two.sum.txt
+|   |   fw_osd_v3_all4_noftr.diff.txt
+|   |   fw_osd_v3_all4_noftr.patchlog.txt
+|   |   fw_osd_v3_all4_noftr.sum.txt
+|   |   fw_osd_v4_all4_wordsum.diff.txt
+|   |   fw_osd_v4_all4_wordsum.patchlog.txt
+|   |   fw_osd_v4_all4_wordsum.sum.txt
+|   |   fw_osd_v5_all4_bytesum.diff.txt
+|   |   fw_osd_v5_all4_bytesum.patchlog.txt
+|   |   fw_osd_v5_all4_bytesum.sum.txt
+|   |   fw_osd_v6_pb_04d0_imm00.diff.txt
+|   |   fw_osd_v6_pb_04d0_imm00.sum.txt
+|   |   fw_osd_v7_pb_0ac4_imm00.diff.txt
+|   |   fw_osd_v7_pb_0ac4_imm00.sum.txt
+|   |   fw_osd_v8_pb_0afe_imm00.diff.txt
+|   |   fw_osd_v8_pb_0afe_imm00.sum.txt
+|   |   fw_osd_v9_pb_0ac4_to_b75_clear.diff.txt
+|   |   fw_osd_v9_pb_0ac4_to_b75_clear.sum.txt
+|   |   fw_patch_firmware_patched_zone_1.bin.json
+|   |   fw_patch_firmware_patched_zone_10.bin.json
+|   |   fw_patch_firmware_patched_zone_2.bin.json
+|   |   fw_patch_firmware_patched_zone_3.bin.json
+|   |   fw_patch_firmware_patched_zone_4.bin.json
+|   |   fw_patch_firmware_patched_zone_5.bin.json
+|   |   fw_patch_firmware_patched_zone_6.bin.json
+|   |   fw_patch_firmware_patched_zone_7.bin.json
+|   |   fw_patch_firmware_patched_zone_8.bin.json
+|   |   fw_patch_firmware_patched_zone_9.bin.json
+|   |   fw_patch_firmware_patch_osd_text_null.bin.json
+|   |   fw_patch_firmware_patch_zone1_val_00.bin.json
+|   |   fw_patch_firmware_patch_zone1_val_40.bin.json
+|   |   fw_patch_log.txt
+|   |   fw_single_flip_04D4.diff.txt
+|   |   fw_single_flip_04D4.sum.txt
+|   |   fw_single_flip_0AC8.diff.txt
+|   |   fw_single_flip_0AC8.sum.txt
+|   |   fw_single_flip_0B02.diff.txt
+|   |   fw_single_flip_0B02.sum.txt
+|   |   fw_single_flip_4526.diff.txt
+|   |   fw_single_flip_4526.sum.txt
+|   |   fw_stage2_bypass_only.diff.txt
+|   |   fw_stage2_bypass_only.sum.txt
+|   |   fw_v6_bypass_only.verify.txt
+|   |   fw_v6_stage2.diff.txt
+|   |   fw_v7_early_bypass_crc_fixed.diff.txt
+|   |   log.txt
+|   |   missing_validation_analysis.txt
+|   |   out_fw_comprehensive_5layer_bypass.bin.json
+|   |   out_fw_comprehensive_bypass.bin.json
+|   |   out_fw_comprehensive_bypass_corrected.bin.json
+|   |   out_fw_comprehensive_multisection_bypass.bin.json
+|   |   out_fw_exact_sweet_spot.bin.json
+|   |   out_fw_hybrid_sweet_spot.bin.json
+|   |   out_fw_integrity_bypass_crc_fixed.bin.json
+|   |   out_fw_integrity_bypass_no_checksum.bin.json
+|   |   out_fw_integrity_relaxed_broad.bin.json
+|   |   out_fw_integrity_relaxed_only.bin.json
+|   |   out_fw_integrity_relaxed_plus.bin.json
+|   |   out_fw_late_clear_b76_only.bin.json
+|   |   out_fw_late_clear_crc_fixed.bin.json
+|   |   out_fw_late_clear_enable_only.bin.json
+|   |   out_fw_late_clear_hook.bin.json
+|   |   out_fw_late_clear_hook_at_a51a.bin.json
+|   |   out_fw_late_clear_hook_at_a51a_v2.bin.json
+|   |   out_fw_osd_off.bin.json
+|   |   out_fw_osd_off_bypass.bin.json
+|   |   out_fw_osd_off_crc_fixed.bin.json
+|   |   out_fw_osd_patched.bin.json
+|   |   out_fw_single_flip_04D4.bin.json
+|   |   out_fw_single_flip_0AC8.bin.json
+|   |   out_fw_single_flip_0B02.bin.json
+|   |   out_fw_single_flip_4526.bin.json
+|   |   out_fw_stage2_bypass_only.bin.json
+|   |   out_fw_stage2_bypass_only_crc_fixed.bin.json
+|   |   out_fw_V6_BYPASS_ONLY.bin.json
+|   |   out_fw_v6_stage2.bin.json
+|   |   out_fw_v7_early_bypass_crc_fixed.bin.json
+|   |   Result.txt
+|   |   sonix_patch_attempts_summary.md
+|   |   step01_sanity.md
+|   |   step02_osd_crc_analysis.md
+|   |   step03_osd_patch_complete.md
+|   |   stepUSB_batch.md
+|   |   thats how camera looks like when its paritaly bricked.txt
+|   |   tree.txt
+|   |   USB camera  - USB Video Device.txt
+|   |   usbtreeview with stock fw.txt
+|   |   usbtreeview_with_stock_fw.txt
+|   |   usbtree_fw_comprehensive_5layer_bypass.txt
+|   |   usbtree_fw_comprehensive_bypass.txt
+|   |   usbtree_fw_comprehensive_bypass_corrected.txt
+|   |   usbtree_fw_exact_sweet_spot.txt
+|   |   usbtree_fw_hybrid_sweet_spot.txt
+|   |   usbtree_fw_integrity_bypass_no_checksum.txt
+|   |   usbtree_fw_integrity_relaxed_only.txt
+|   |   usbtree_fw_late_clear_crc_fixed.txt
+|   |   usbtree_fw_late_clear_enable_only_with_power_glitch.txt
+|   |   usbtree_fw_late_clear_hook.txt
+|   |   usbtree_fw_osd_off flash .txt
+|   |   usbtree_fw_osd_off_bypass.txt
+|   |   usbtree_fw_single_flip_04D4.txt
+|   |   usbtree_fw_single_flip_0AC8.txt
+|   |   usbtree_fw_single_flip_0B02.txt
+|   |   usbtree_fw_single_flip_4526.txt
+|   |   usbtree_fw_v7_early_bypass_crc_fixed.txt
+|   |   usbtree_recovery_mode_with_spi_flash_to_ground.txt
+|   |   usbtree_stage2_bypass_only_crc_fixed.txt
+|   |   usbtree_usbtree_fw_late_clear_enable_only.txt
+|   |   usbtree_V6_BYPASS_ONLY.txt
+|   |   validation_patterns.txt
+|   |   zone10tree.txt
+|   |   zone1tree.txt
+|   |   zone3tree.txt
+|   |   zone4tree.txt
+|   |   zone5tree.txt
+|   |   zone6tree.txt
+|   |   zone7tree.txt
+|   |   zone8tree.txt
+|   |   zone9tree.txt
+|   |
+|   \---fw patch
++---powershell
+|       gather_logs.ps1
+|       hash.ps1
+|       _find_osd_sites.ps1
+|
++---python
+|   |   1.py
+|   |   aga_planA_fix2.py
+|   |   analyze_ctf_callers.py
+|   |   analyze_iex6.py
+|   |   analyze_integrity_checks.py
+|   |   analyze_integrity_flow.py
+|   |   analyze_jump_target.py
+|   |   analyze_jump_target_detail.py
+|   |   analyze_memory_check.py
+|   |   analyze_ram_usage.py
+|   |   analyze_reset_handler.py
+|   |   analyze_sensor_config.py
+|   |   analyze_xrefs.py
+|   |   build_fw_comprehensive_5layer_bypass.py
+|   |   build_fw_comprehensive_bypass.py
+|   |   build_fw_comprehensive_bypass_corrected.py
+|   |   build_fw_comprehensive_multisection_bypass.py
+|   |   build_fw_exact_sweet_spot.py
+|   |   build_fw_hybrid_sweet_spot.py
+|   |   build_fw_integrity_bypass.py
+|   |   build_fw_integrity_bypass_no_checksum.py
+|   |   build_fw_integrity_relaxed_broad.py
+|   |   build_fw_integrity_relaxed_only.py
+|   |   build_fw_integrity_relaxed_plus.py
+|   |   build_fw_late_clear_b76_only.py
+|   |   build_fw_late_clear_enable_only.py
+|   |   build_fw_late_clear_hook.py
+|   |   build_fw_late_clear_hook_at_a51a.py
+|   |   build_fw_late_clear_hook_at_a51a_v2.py
+|   |   build_fw_osd_off_crc_fixed.py
+|   |   build_fw_single_flip_diagnostic.py
+|   |   checksum_probe.py
+|   |   check_uvc_controls.py
+|   |   compare_firmware.py
+|   |   compare_fw.py
+|   |   crc_analysis_script.py
+|   |   crc_repack_standalone.py
+|   |   create_hybrid_fw.py
+|   |   create_minimal_hybrid.py
+|   |   create_osd_off_patch.py
+|   |   cross_platform_osd_disable.py
+|   |   diff_fw_standalone.py
+|   |   dump_slice.py
+|   |   examine_candidates.py
+|   |   find_memory_writes.py
+|   |   find_missing_validation.py
+|   |   find_osd_storage.py
+|   |   ida_1_load_map.py
+|   |   ida_2_find_crc.py
+|   |   ida_3_locate_osd_patch.py
+|   |   ida_4_crc_calibrate_and_update.py
+|   |   ida_osd_hunter.py
+|   |   ida_remote_server.py
+|   |   ida_sonix_cowboy.py
+|   |   ida_sonix_osd_patcher_extended.py
+|   |   ida_sonix_osd_probe.py
+|   |   ida_sonix_osd_probe_v2.py
+|   |   ida_sonix_osd_toggle_late.py
+|   |   intel_crc_scan.py
+|   |   make_osd_variants.py
+|   |   make_osd_variants_v2.py
+|   |   make_osd_variants_v3.py
+|   |   names.py
+|   |   orchestrate_audit.py
+|   |   osd_flip_control.py
+|   |   osd_kill_now.py
+|   |   osd_kill_now_v2.py
+|   |   osd_patch_script.py
+|   |   osd_patch_with_crc.py
+|   |   patchoff.py
+|   |   patch_a4d5.py
+|   |   patch_boot_osd_off.py
+|   |   patch_boot_osd_off_nofooter.py
+|   |   patch_boot_osd_stub.py
+|   |   patch_boot_osd_stub_v2.py
+|   |   patch_osd_off.py
+|   |   patch_postboot_only.py
+|   |   planC_patch_minconst.py
+|   |   py.py
+|   |   recovery_mode_analysis.py
+|   |   runtime_osd_disable.py
+|   |   scan_fw_bytes.py
+|   |   search_integrity_checks.py
+|   |   simple_checksum.py
+|   |   sn9c292b_planA_patcher.py
+|   |   sn9c292b_planA_patcher_fix.py
+|   |   sn9c292b_planB_patch.py
+|   |   sn9c292b_planB_patch_v3.py
+|   |   sn9c292b_planB_patch_v4.py
+|   |   sn9c292b_planB_patch_v4_fix.py
+|   |   sonix_osd_off_auto.py
+|   |   sonix_osd_probe.py
+|   |   test_firmware5262_osd.py
+|   |   xrefs.py
+|   |   _helpers_osd_scan.py
+|   |   _helpers_snapshot_tail.py
+|   |
+|   \---scripts
+\---wsl
+    |   C1_SONIX_Test_AP-master.zip
+    |   cam_control_only.pcapng
+    |   cam_control_raw.csv
+    |   osd_flip_control.py
+    |   run_osd_off_capture.sh
+    |   sniff_uvc.sh
+    |   sonix_uvc_gui_v3.py
+    |   uvc_ctrl_extract.sh
+    |   uvc_pcap_reporter.py
+    |
+    +---C1_SONIX_Test_AP
+    |   |   .gitignore
+    |   |   cap_desc.c
+    |   |   cap_desc.h
+    |   |   cap_desc.o
+    |   |   cap_desc_parser.c
+    |   |   cap_desc_parser.h
+    |   |   cap_desc_parser.o
+    |   |   debug.h
+    |   |   Kurokesu_C1_PRO.jpg
+    |   |   LICENSE
+    |   |   Makefile
+    |   |   Makefile.mips
+    |   |   Makefile.x86
+    |   |   nalu.c
+    |   |   nalu.h
+    |   |   nalu.o
+    |   |   README.md
+    |   |   SONiX_UVC_TestAP
+    |   |   SONiX_UVC_TestAP.c
+    |   |   SONiX_UVC_TestAP.o
+    |   |   SONiX_UVC_TestAP.o.c
+    |   |   SONiX_UVC_TestAP.o.h
+    |   |   sonix_xu_ctrls.c
+    |   |   sonix_xu_ctrls.h
+    |   |   sonix_xu_ctrls.o
+    |   |   usbtree_try1.txt
+    |   |   v4l2uvc.c
+    |   |   v4l2uvc.h
+    |   |   v4l2uvc.o
+    |   |   v4l2uvc.o.c
+    |   |   v4l2uvc.o.h
+    |   |
+    |   +---.git
+    |   |   |   config
+    |   |   |   cursor_metadata.pb
+    |   |   |   description
+    |   |   |   FETCH_HEAD
+    |   |   |   HEAD
+    |   |   |   index
+    |   |   |   packed-refs
+    |   |   |
+    |   |   +---branches
+    |   |   +---hooks
+    |   |   |       applypatch-msg.sample
+    |   |   |       commit-msg.sample
+    |   |   |       fsmonitor-watchman.sample
+    |   |   |       post-update.sample
+    |   |   |       pre-applypatch.sample
+    |   |   |       pre-commit.sample
+    |   |   |       pre-merge-commit.sample
+    |   |   |       pre-push.sample
+    |   |   |       pre-rebase.sample
+    |   |   |       pre-receive.sample
+    |   |   |       prepare-commit-msg.sample
+    |   |   |       push-to-checkout.sample
+    |   |   |       sendemail-validate.sample
+    |   |   |       update.sample
+    |   |   |
+    |   |   +---info
+    |   |   |       exclude
+    |   |   |
+    |   |   +---logs
+    |   |   |   |   HEAD
+    |   |   |   |
+    |   |   |   \---refs
+    |   |   |       +---heads
+    |   |   |       |       master
+    |   |   |       |
+    |   |   |       \---remotes
+    |   |   |           \---origin
+    |   |   |                   HEAD
+    |   |   |
+    |   |   +---objects
+    |   |   |   +---info
+    |   |   |   \---pack
+    |   |   |           pack-cf780448da948ffe5a9b453919695e0509fccbe2.idx
+    |   |   |           pack-cf780448da948ffe5a9b453919695e0509fccbe2.pack
+    |   |   |           pack-cf780448da948ffe5a9b453919695e0509fccbe2.rev
+    |   |   |
+    |   |   \---refs
+    |   |       +---heads
+    |   |       |       master
+    |   |       |
+    |   |       +---remotes
+    |   |       |   \---origin
+    |   |       |           HEAD
+    |   |       |
+    |   |       \---tags
+    |   \---C1_SONIX_Test_AP
+    \---out
+            usb_0c45_6366_20250813_205351_01294_20250813205523.pcapng
+            usb_0c45_6366_20250813_205351_01295_20250813205523.pcapng
+            usb_0c45_6366_20250813_205351_01296_20250813205523.pcapng
+            usb_0c45_6366_20250813_205351_01297_20250813205523.pcapng
+            usb_0c45_6366_20250813_205351_01298_20250813205523.pcapng
+            usb_0c45_6366_20250813_205351_01299_20250813205523.pcapng
+            usb_0c45_6366_20250813_205351_01300_20250813205523.pcapng
+            usb_0c45_6366_20250813_205351_01301_20250813205523.pcapng
+            usb_0c45_6366_20250813_205351_01302_20250813205523.pcapng
+            usb_0c45_6366_20250813_205351_01303_20250813205523.pcapng
+            usb_0c45_6366_20250813_224425_00550_20250813224517.pcapng
+            usb_0c45_6366_20250813_224425_00551_20250813224518.pcapng
+            usb_0c45_6366_20250813_224425_00552_20250813224518.pcapng
+            usb_0c45_6366_20250813_224425_00553_20250813224518.pcapng
+            usb_0c45_6366_20250813_224425_00554_20250813224518.pcapng
+            usb_0c45_6366_20250813_224425_00555_20250813224518.pcapng
+            usb_0c45_6366_20250813_224425_00556_20250813224518.pcapng
+            usb_0c45_6366_20250813_224425_00557_20250813224518.pcapng
+            usb_0c45_6366_20250813_224425_00558_20250813224518.pcapng
+            usb_0c45_6366_20250813_224425_00559_20250813224518.pcapng
+            uvc_ctrl_extract.sh
+            uvc_pcap_reporter.py
