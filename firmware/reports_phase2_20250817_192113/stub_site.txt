@@ -1,0 +1,51 @@
+FW_A (firmware_backup_base.bin) Stub Site Selection
+==================================================
+
+CHOSEN STUB LOCATION
+--------------------
+Address: 0xFFE0
+Size Available: 32 bytes
+Type: 0x00 padding area
+
+RATIONALE
+---------
+1. Post-integrity execution (safe timing)
+2. Not in computed jump tables
+3. Not in misaligned jump targets
+4. Large padding area (32 bytes of 0x00)
+5. Easy to identify and verify
+
+CAVE EVIDENCE
+-------------
+Area 0xFFE0-0xFFFF analysis:
+0xFFE0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+0xFFF0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+STUB REQUIREMENTS
+----------------
+OSD-off stub needs approximately 20 bytes:
+- PUSH instructions (6 bytes)
+- MOV DPTR,#0x0E24 (3 bytes)
+- MOV A,#0x00 (2 bytes)
+- MOVX @DPTR,A (1 byte)
+- POP instructions (6 bytes)
+- RET (1 byte)
+- Total: ~19 bytes
+
+AVAILABILITY
+-----------
+✅ 0xFFE0-0xFFFF: 32 bytes of 0x00 padding
+✅ Total space: 32 bytes (more than sufficient)
+
+SAFETY ASSESSMENT
+-----------------
+✅ Not in computed jump island
+✅ Not in misaligned jump targets
+✅ Post-integrity execution
+✅ Large padding space
+✅ Easy to verify and restore
+
+RECOMMENDATION
+--------------
+Use 0xFFE0 as stub location with 20-byte allocation.
+This provides ample space for the OSD-off stub while maintaining safety.

@@ -1,0 +1,16 @@
+Safe Data-Only OSD Disable Patch Report
+=====================================
+
+Firmware Type: FW_A
+Input File: new path/firmware_backup_base.bin
+Output File: fw_a_safe_data_patched.bin
+
+Changes Made:
+  0xBB77: 0xFF -> 0x00
+
+Total Changes: 1 bytes
+Original Checksum: 0x81BB
+Final Checksum: 0x80BC
+
+Patch Strategy: Data-only modification, no code injection
+Risk Level: VERY LOW (minimal changes, no execution flow changes)

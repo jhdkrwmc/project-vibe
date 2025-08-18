@@ -1,0 +1,14 @@
+FW_B Hex Diff
+============
+
+0xFFA0-0xFFBE (Stub):
+  Original: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  Patched:  C0 E0 C0 82 C0 83 90 0E 20 74 00 F0 90 0E 23 74 00 F0 90 0E 28 74 00 F0 D0 83 D0 82 D0 E0 22
+
+0xF19F-0xF1A1 (Call site):
+  Original: 12 E0 B4
+  Patched:  12 FF A0
+
+0x1FFFE-0x1FFFF (Checksum):
+  Original: FF FF
+  Patched:  F0 E8

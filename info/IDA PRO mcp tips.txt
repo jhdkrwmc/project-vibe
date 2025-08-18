@@ -1,0 +1,132 @@
+core MCP/IDA hygiene (what made it work smoothly)
+
+Small, deterministic batches. Give every step its own id, keep windows 64–256 bytes, and always capture both disasm and raw bytes.
+
+Force code when IDA refuses. If a window looks blank or “data”, force-create code (then re-run disassemble_function / reads).
+
+Use opcodes as ground truth. Prefer find_binary on bytes (73 for JMP @A+DPTR, 93 for MOVC, B4 xx for CJNE #imm, 90 lo hi for MOV DPTR,#imm, E0/A3/F0 for XDATA walks).
+
+Map reachability from RESET. Don’t trust auto-functions; BFS over call xrefs from 0x0000 to see what really executes at boot.
+
+Index sinks first. Mark all SJMP $ (“hold loops”) and find who can land there (direct or via computed jumps).
+
+Always record evidence. For each claim: address → 64–128B disasm + 16–32B hexdump. No hand-waving.
+
+Checksum discipline. Any future patch must pair with a checksum/sum fix; script the 16-bit sum before flashing.
+
+bread-and-butter MCP snippets
+1) Disassemble + xrefs + window (template)
+[
+  {"id":"fn","command":"get_function_by_address","params":{"address":"0xADDR"}},
+  {"id":"dis","command":"disassemble_function","params":{"address":"0xADDR"}},
+  {"id":"xrefs_to_fn","command":"get_xrefs_to","params":{"address":"0xADDR"}},
+  {"id":"win","command":"read_memory_bytes","params":{"address":"0xADDR","size":128}}
+]
+
+2) Pattern scans (opcodes you’ll use constantly)
+[
+  {"id":"scan_jmp_ind","command":"find_binary","params":{"start":"0x0000","end":"0x1FFFF","bytes":"73"}},           // JMP @A+DPTR
+  {"id":"scan_movc","command":"find_binary","params":{"start":"0x0000","end":"0x1FFFF","bytes":"93"}},            // MOVC A,@A+DPTR
+  {"id":"scan_cjne_9a","command":"find_binary","params":{"start":"0x0000","end":"0x1FFFF","bytes":"B4 9A"}},      // CJNE A,#0x9A
+  {"id":"scan_cjne_04","command":"find_binary","params":{"start":"0x0000","end":"0x1FFFF","bytes":"B4 04"}},      // CJNE A,#0x04
+  {"id":"scan_mov_dptr_e0xx","command":"find_binary","params":{"start":"0x0000","end":"0x1FFFF","bytes":"90 0E"}},// MOV DPTR,#0x0E??
+  {"id":"scan_xread_walk","command":"find_binary","params":{"start":"0x0000","end":"0x1FFFF","bytes":"E0 A3 E0 A3"}}, // MOVX,INC
+  {"id":"scan_xwrite_walk","command":"find_binary","params":{"start":"0x0000","end":"0x1FFFF","bytes":"F0 A3 F0 A3"}}, // MOVX @DPTR,A; INC
+  {"id":"scan_sjmp_hold","command":"find_binary","params":{"start":"0x0000","end":"0x1FFFF","bytes":"80 FE"}}      // SJMP $
+]
+
+3) OSD writers (quick checks)
+[
+  {"id":"osd_e24_hits","command":"find_binary","params":{"start":"0x0000","end":"0x1FFFF","bytes":"90 0E 24"}},
+  {"id":"osd_e27_hits","command":"find_binary","params":{"start":"0x0000","end":"0x1FFFF","bytes":"90 0E 27"}}
+]
+
+the three “power” Python helpers (run inside IDA via MCP)
+A) XDATA write atlas (who writes 0xE00–0xEFF, how much)
+[
+  {
+    "id":"xdata_atlas",
+    "command":"run_python",
+    "params":{
+      "code":"import ida_bytes, idaapi\\nfrom collections import defaultdict\\nRES=defaultdict(list)\\nSIZE=idaapi.get_image_size()\\nea=0\\nwhile ea<SIZE:\\n  if ida_bytes.get_byte(ea)==0x90 and ea+2<SIZE:\\n    lo=ida_bytes.get_byte(ea+1); hi=ida_bytes.get_byte(ea+2); base=(hi<<8)|lo\\n    x=ea+3; lim=min(SIZE,ea+3+96); writes=0\\n    while x<lim:\\n      b=ida_bytes.get_byte(x)\\n      if b==0xF0: writes+=1\\n      elif b==0xA3 or b in (0x74,0x75,0xE4,0x90): pass\\n      else: break\\n      x+=1\\n    if writes: RES[base].append((ea,writes))\\n  ea+=1\\nprint('base -> writers(count)')\\nfor k in sorted(RES.keys()):\\n  if 0x0E00<=k<=0x0EFF or any(n>=3 for _,n in RES[k]):\\n    print('0x%04X:'%k, ', '.join('(0x%04X,%d)'%(ea,n) for ea,n in RES[k]))"
+    }
+  }
+]
+
+B) Jump-target index for sink loops (who branches into 0x29D8/0x3362/0xF018/0xF57B)
+[
+  {
+    "id":"jump_index",
+    "command":"run_python",
+    "params":{
+      "code":"import idautils, ida_xref, ida_bytes, ida_ua, idaapi\\nSINKS={0x29D8,0x3362,0xF018,0xF57B}\\nres={s:[] for s in SINKS}\\nfor ea in idautils.Heads():\\n  ins=ida_ua.insn_t();\\n  if ida_ua.decode_insn(ins,ea):\\n    for i in range(2):\\n      t=idaapi.calc_branch_target(ea,i)\\n      if t in SINKS: res[t].append(ea)\\nfor t,srcs in res.items():\\n  print('sink 0x%04X <- '%t + ', '.join('0x%04X'%s for s in srcs))"
+    }
+  }
+]
+
+C) Decode the 0x1073 branch-island (each entry → action/target)
+[
+  {
+    "id":"decode_1073",
+    "command":"run_python",
+    "params":{
+      "code":"import ida_ua, ida_bytes\\nbase=0x1073; span=0x100\\nprint('idx,ea,b0 b1 b2,dec')\\nfor off in range(span):\\n  ea=base+off\\n  b0=ida_bytes.get_byte(ea); b1=ida_bytes.get_byte(ea+1); b2=ida_bytes.get_byte(ea+2)\\n  dec='.'\\n  if b0==0x02: dec='LJMP 0x%04X'%((b1<<8)|b2)\\n  elif b0==0x80: rel=b1-256 if b1&0x80 else b1; dec='SJMP 0x%04X'%(ea+2+rel)\\n  elif b0 in (0x12,0x01): dec='CALL/JMP 0x%04X'%((b1<<8)|b2)\\n  print('%02X,0x%04X,%02X %02X %02X,%s'%(off,ea,b0,b1,b2,dec))"
+    }
+  }
+]
+
+reachability & reset fan-out (quick pack)
+[
+  {"id":"reset_dis","command":"disassemble_function","params":{"address":"0x0000"}},
+  {"id":"scan_lcalls_0_400","command":"find_binary","params":{"start":"0x0000","end":"0x03FF","bytes":"12 ?? ??"}},
+
+  {"id":"aa04","command":"disassemble_function","params":{"address":"0xAA04"}},
+  {"id":"aa0b","command":"disassemble_function","params":{"address":"0xAA0B"}},
+  {"id":"aa2b","command":"disassemble_function","params":{"address":"0xAA2B"}},
+  {"id":"aa3a","command":"disassemble_function","params":{"address":"0xAA3A"}},
+  {"id":"b88a","command":"disassemble_function","params":{"address":"0xB88A"}},
+  {"id":"b930","command":"disassemble_function","params":{"address":"0xB930"}},
+  {"id":"b932","command":"disassemble_function","params":{"address":"0xB932"}},
+  {"id":"c56a","command":"disassemble_function","params":{"address":"0xC56A"}},
+  {"id":"c632","command":"disassemble_function","params":{"address":"0xC632"}},
+  {"id":"c63c","command":"disassemble_function","params":{"address":"0xC63C"}},
+  {"id":"c641","command":"disassemble_function","params":{"address":"0xC641"}},
+  {"id":"c646","command":"disassemble_function","params":{"address":"0xC646"}}
+]
+
+integrity / checksum helpers
+Compute full 16-bit sum (to plan a compensating edit)
+[
+  {
+    "id":"sum16_all",
+    "command":"run_python",
+    "params":{
+      "code":"import idaapi, ida_bytes\\nSIZE=idaapi.get_image_size(); s=0\\nfor ea in range(SIZE): s=(s+ida_bytes.get_byte(ea))&0xFFFF\\nprint('SUM16(all)=0x%04X'%s)"
+    }
+  }
+]
+
+
+Tip: for a two’s-complement zero-sum, after your edits compute Δ and adjust a safe 2-byte pad so the new total == 0x0000.
+
+what to ask the agent to always return
+
+For every hit: addresses + 64–128B disasm and 16–32B hexdump.
+
+For OSD: list all MOV DPTR,#0xE24..0xE27 and their xrefs (callers).
+
+For sinks: the caller list into each SJMP $ (from the jump index).
+
+For 0x1073: the CSV of index → decoded action → target, mark entries hitting 0x29D8/0x3362/0xF018/0xF57B.
+
+For integrity: the exact compare/branch around 0xF01A and any table bytes used (dump 0x09CE±64).
+
+quick goals recap for Cursor runs
+
+Prove no boot-time writes to OSD (0xE24–0xE27).
+
+Map computed jumps and identify any entries that trap.
+
+Document integrity gate and plan checksum update for any patch.
+
+If you must patch: minimal byte change + local compensator inside the same summed range.

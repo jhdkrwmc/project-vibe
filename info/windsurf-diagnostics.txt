@@ -1,0 +1,185 @@
+Project: SN9C292B / “project-vibe”
+Working dir: C:\Users\arnax\Desktop\project-vibe
+Hard stop rule: only stop if a requested datum truly can’t be pulled from IDA MCP + the IDAPython helpers below. In that case write logs\blocked.md with the exact failing call + args.
+
+0) Ground truth (pin to Memory MCP immediately)
+Chip: Sonix SN9C292B, 8032 core; firmware is 128 KiB raw BIN.
+
+Boot-time OSD enable writes (exact sequences) exist at file offsets: 0x04D0 (0x0B77), 0x0AC4 (0x0B76), 0x0AFE (0x0B77), 0x4522 (0x0B75) — sequence 90 0B 7x 74 01 F0.
+
+The last 64 bytes of the factory image may be FF-padded; don’t assume a footer checksum exists.
+
+Treat the previous “integrity-bypass” patch as failed (Code 10) and unproven; do evidence-first CRC/compare hunting.
+
+1) Output discipline
+Keep updating plan.md with one-line “Done:” items.
+
+Also write per-step logs in .\logs\ as YYYYMMDD-HHMM_stepNN_<name>.md.
+
+Keep all artifacts in the project root (or subfolders listed below). Do not write anywhere else.
+
+
+
+get_metadata → record processor, min/max EA, function count; append to the same log.
+
+get_database_path ⇒ confirm we opened my analyzed .i64/.idb if available. If not, open firmware_backup - Copy (4).bin as 8051/8032 @ 0x0000 and wait for analysis.
+
+Snapshot the last 64B of the input image via IDA bytes → logs\step01_tail.txt (hex rows).
+
+If these bytes are all FF, do not fabricate any “footer checksum”.
+
+3) Reconfirm OSD sites (authoritative table)
+Goal: intel\osd_sites.md + intel\osd_sites.json (replaces/duplicates Untitled-1.md if missing).
+
+Scan for 90 0B ?? 74 01 F0, filter ?? ∈ {75,76,77}. For each hit: file_off, EA, target, 32B context, function (if any), reachable_from_reset? (shallow xref walk).
+
+Use MCP methods: read_memory_bytes, disassemble_range, get_function_by_address, get_xrefs_to.
+
+If pattern scan via MCP is clumsy, run the helper below inside IDA (execute via MCP if supported; otherwise paste to IDA Python console):
+
+python
+Copy
+Edit
+# _helpers_osd_scan.py (writes to project dir)
+import idaapi, ida_bytes, ida_funcs, ida_kernwin, idautils, idc, os, json
+OUTDIR = r"C:\Users\arnax\Desktop\project-vibe\intel"
+os.makedirs(OUTDIR, exist_ok=True)
+rows=[]
+def ctx(ea,n=32):
+    b=ida_bytes.get_bytes(ea,n) or b""; return " ".join(f"{x:02X}" for x in b)
+def file_off(ea):
+    off = ida_bytes.get_fileregion_offset(ea); return f"0x{off:X}" if (off is not None and off>=0) else "n/a"
+def reachable_from_reset(tgt, maxd=6):
+    seen=set([tgt]); cur=[tgt]; d=0
+    while cur and d<maxd:
+        nxt=[]
+        for ea in cur:
+            for caller in idautils.CodeRefsTo(ea, True):
+                if caller not in seen:
+                    seen.add(caller); nxt.append(caller)
+        d+=1; cur=nxt
+    return any(ea==0x0 for ea in seen)
+def scan():
+    inf = idaapi.get_inf_structure(); start,end=inf.min_ea,inf.max_ea
+    ea=start
+    while True:
+        ea = ida_bytes.find_binary(ea,end,"90 0B ?? 74 01 F0",16,ida_bytes.SEARCH_DOWN)
+        if ea==idaapi.BADADDR: break
+        bb = ida_bytes.get_bytes(ea,6) or b""
+        if len(bb)==6 and bb[2] in (0x75,0x76,0x77):
+            rows.append({
+              "ea":f"0x{ea:X}","file_off":file_off(ea),
+              "target":f"0x0B{bb[2]:02X}","bytes32":ctx(ea,32),
+              "fn": ida_funcs.get_func_name(ea) or "(no func)",
+              "init_path": reachable_from_reset(ea)
+            })
+        ea += 1
+scan()
+open(os.path.join(OUTDIR,"osd_sites.json"),"w").write(json.dumps(rows,indent=2))
+open(os.path.join(OUTDIR,"osd_sites.md"),"w",encoding="utf-8").write(
+  "\n".join(f"{r['file_off']} | {r['ea']} | {r['target']} | {r['bytes32']} | {r['fn']} | {'yes' if r['init_path'] else 'unknown'}" for r in rows))
+ida_kernwin.msg(f"[+] OSD sites: {len(rows)}\n")
+4) Integrity/CRC hunt (evidence-first)
+Produce intel\crc_candidates.json, intel\crc_proof.md, and intel\compare_sites.md.
+
+Heuristic per function (use MCP disasm text or helper):
+movc a,@a+dptr present (+2), bit-twiddle ops (xrl/anl/rrc/rlc) (+1), small back-edge loop (sjmp/ajmp/jnz/djnz) (+1), compare+branch (cjne/subb then jz/jnz/jc/jnc) (+1). Keep score ≥3.
+
+For top candidates, dump: function EA, first 32B hex, loop header EA, compare site EA + 16B before/after, any table EA (if mov dptr,#tbl before movc).
+
+If a compare is found, capture original opcode/bytes and propose a 1–2-byte bypass (e.g., invert jnz/jz or short-jump over the fail). Do not patch yet—only record bytes and displacement.
+
+Helper (run inside IDA if MCP searching is awkward):
+
+python
+Copy
+Edit
+# _helpers_crc_hunt.py → intel\crc_candidates.json + crc_candidates_scan.md
+import idaapi,idautils,idc,os,json
+OUT=r"C:\Users\arnax\Desktop\project-vibe\intel"; os.makedirs(OUT,exist_ok=True)
+def dis(ea,n=16): b=idaapi.get_bytes(ea,n) or b""; return " ".join(f"{x:02X}" for x in b)
+cands=[]
+for fva in idautils.Functions():
+    f=idaapi.get_func(fva); 
+    if not f: continue
+    has_movc=has_bit=has_loop=False; cmp_ea=None; loop_hdr=None
+    ea=f.start_ea
+    while ea<f.end_ea:
+        m=idc.print_insn_mnem(ea).lower()
+        if m=="movc" and idc.GetOpnd(ea,0).lower()=="a" and "@a+dptr" in idc.GetOpnd(ea,1).lower(): has_movc=True
+        if m in ("xrl","anl","orl","rrc","rlc","rr","rl"): has_bit=True
+        if m in ("cjne","subb"):
+            for w in idautils.Heads(ea,min(ea+12,f.end_ea)):
+                if idc.print_insn_mnem(w).lower() in ("jz","jnz","jc","jnc","sjmp"): cmp_ea=ea; break
+        if m in ("sjmp","ajmp","ljmp","jz","jnz","jc","jnc","djnz"):
+            dst=idc.get_operand_value(ea,0)
+            if isinstance(dst,int) and f.start_ea<=dst<f.end_ea and (ea-dst)<=0x800 and dst<ea:
+                has_loop=True; loop_hdr=dst
+        ea=idc.next_head(ea,f.end_ea)
+    score=(2 if has_movc else 0)+(1 if has_bit else 0)+(1 if has_loop else 0)+(1 if cmp_ea else 0)
+    if score>=3:
+        cands.append({"ea":f"0x{f.start_ea:X}","end":f"0x{f.end_ea:X}","score":score,"has_movc":has_movc,
+                      "loop_hdr":(f"0x{loop_hdr:X}" if loop_hdr else None),
+                      "compare_ea":(f"0x{cmp_ea:X}" if cmp_ea else None),"first_bytes":dis(f.start_ea)})
+open(os.path.join(OUT,"crc_candidates.json"),"w").write(json.dumps(cands,indent=2))
+open(os.path.join(OUT,"crc_candidates_scan.md"),"w",encoding="utf-8").write("\n".join(str(c) for c in cands))
+print(f"[+] candidates: {len(cands)}")
+Special check (from your last SWE analysis): examine early code near 0x0190–0x0320 for a multi-stage check touching 0x0BA5 / 0x0B76 / 0x0B77 and a conditional around 0x01D0. Dump 96 B disasm + hex window; record the exact bytes of that branch and its fail/ok targets. Do not patch yet—we need proof it guards USB bring-up. swe latest chat
+
+5) Decide patch track (plan only, no write yet)
+If a stored value (in code or XDATA) and a compare are proven, prepare two options in intel\compare_sites.md:
+
+Bypass: minimal flip of the conditional/jump (1–2 bytes) with original bytes + new bytes.
+
+Recalc (only if we can prove a checksum/CRC range): algorithm guess, byte-range, endianness, and where the value is stored.
+
+Update plan.md with the chosen next experiment set.
+
+6) Variant builder (for your hardware A/B runs)
+When asked to produce test files, generate to .\out\ and write per-variant diffs and hashes to .\out\logs\. Keep size exactly 0x20000.
+
+V0_MIN: single-site OSD edit at 0x4522 (01→00).
+
+V1_NOP: NOP only the MOVX at 0x4522 (F0→00).
+
+V2_TWO: 0x4522 + 0x0AC4 (both 01→00).
+
+V3_ALL4_NOFTR: all four 01→00 without touching 0x1FFE..0x1FFF.
+
+V4_ALL4_WORDSUM/V5_ALL4_BYTESUM: only if tail isn’t all FF and you’ve proven a footer regime; otherwise skip.
+
+V6_BYPASS_ONLY: (if we have a proven compare site) write only the 1–2 byte branch flip, nothing else.
+
+Always: verify preimage bytes match expected pattern before editing; if not, log mismatch @EA and skip.
+
+7) USB result intake
+For each flashed variant, drop the USB Device Tree Viewer dump into results\usbtree_<variant>.txt. After each batch, append an interpretation table to logs\stepUSB_batch.md:
+
+Enumerates as bootloader (different VID/PID) ⇒ ROM check rejected image.
+
+Enumerates as 0C45:6366 but Code 10 ⇒ runtime integrity/logic trip.
+
+Clean start + OSD off ⇒ success.
+
+8) Fail-safe logging
+Any MCP failure: write logs\mcp_failures.md with the call name, args, and raw error. Then switch to the matching helper script above to continue.
+
+What to paste to SWE-1 (verbatim)
+Mission: Finish the integrity/CRC evidence run and prep safe patch points for SN9C292B. Use IDA-MCP only; no debugger. Work strictly in C:\Users\arnax\Desktop\project-vibe. Update plan.md minimally and log every step to a new file under .\logs\.
+Cancel: project-wide “find .bin”, list_imports, or any PE-style queries. If an MCP call is missing, run the provided IDAPython helpers inside IDA instead.
+Do now (in order): 2) Sanity & setup → 3) OSD reconfirm → 4) CRC/compare hunt (+ 0x0190–0x0320 window) → 5) Decide patch track (plan only). If a compare site is proven, prepare V6_BYPASS_ONLY and stop for operator flash.
+Artifacts to produce:
+
+logs\step01_sanity.md, logs\step01_tail.txt
+
+intel\osd_sites.{md,json}
+
+intel\crc_candidates.json, intel\crc_candidates_scan.md, intel\crc_proof.md
+
+intel\compare_sites.md (original bytes, proposed 1–2 byte flip, disasm window, and risk notes)
+
+If asked to build: out\fw_osd_v*.bin + out\*.diff.txt + out\*.sum.txt + out\logs\ends-of-image.txt
+Stop only if blocked and write logs\blocked.md with the failing call + inputs.
+
+
+

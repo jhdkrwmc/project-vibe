@@ -1,0 +1,15 @@
+FW_A Call Site Patch
+===================
+
+LOCATION: 0xF0A6-0xF0A8
+ORIGINAL: 12 14 D9 (LCALL 0x14D9)
+PATCHED:  12 FF E0 (LCALL 0xFFE0 to our stub)
+
+CONTEXT:
+0xF0A2: RET (integrity routine return)
+0xF0A3-0xF0A5: MOV DPTR,#0x0A17
+0xF0A6-0xF0A8: LCALL 0xFFE0 <- OUR PATCH
+0xF0A9-0xF0AC: 00 00 00 00 (padding)
+
+STUB LOCATION: 0xFFE0
+STUB SIZE: 19 bytes

@@ -1,0 +1,32 @@
+{
+  "input": "firmware_backup_base.bin",
+  "output": "firmware_patchB.bin",
+  "size_bytes": 131072,
+  "plan": "Plan B (late-clear stub; LJMP from padding \u2192 cave; dynamic SUM16 footer fix)",
+  "parameters": {
+    "inject_addr": "0x0a516",
+    "inject_run_len": 4,
+    "inject_pad_byte": "0x00",
+    "cave_addr": "0x0bfa8",
+    "clear_count": 2,
+    "return_addr": "0x0a51a",
+    "checksum_fix_at": "0x1fffe (last 2 bytes)"
+  },
+  "bytes_written": {
+    "inject_ljmp": "02bfa8",
+    "inj_before": "00 00 00 00",
+    "inj_after": "02 bf a8 00",
+    "stub_len": 22,
+    "cave_before": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "stub_after": "c0 e0 c0 82 c0 83 90 0e 24 e4 f0 a3 f0 d0 83 d0 82 d0 e0 02 a5 1a"
+  },
+  "checksum": {
+    "pre_sum16_all": 33721,
+    "fix_value_le": 28536,
+    "post_sum16_all": 37231
+  },
+  "hashes": {
+    "sha256_before": "316fcae1f07a17e8542a1ff43c5465a01392cecba28be36e8652b862be069f8a",
+    "sha256_after": "4c2159ebb31a51e45bec2baddbe96b3d3c19227ddfe3ad1351d775e256b8cb7f"
+  }
+}

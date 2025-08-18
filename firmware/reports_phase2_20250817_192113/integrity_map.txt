@@ -1,0 +1,50 @@
+FW_A (firmware_backup_base.bin) Integrity Analysis
+==================================================
+
+BASELINE
+--------
+Size: 0x20000 (131072 bytes)
+SUM16: 0x83B9
+
+SINK LOOPS (SJMP $ = 80 FE)
+---------------------------
+0x29D8: 0 callers
+0x3362: 0 callers  
+0xF018: 0 callers
+0xF57B: 0 callers
+
+INTEGRITY ROUTINE
+-----------------
+Location: 0xF010 - 0xF0A2
+End: 0xF0A2 (RET instruction)
+Pattern: Complex loop with table comparisons, conditional jumps to sinks
+
+POST-INTEGRITY FLOW
+-------------------
+0xF0A2: RET (integrity routine return)
+0xF0A3-0xF0A5: MOV DPTR,#0x0A17
+0xF0A6-0xF0A8: LCALL 0x14D9
+0xF0A9-0xF0AC: 00 00 00 00 (padding)
+0xF0AD-0xF0B0: MOV DPTR,#0x0E07
+0xF0B1-0xF0B3: LCALL 0x14D9
+0xF0B4-0xF0B7: 00 00 00 00 (padding)
+0xF0B8-0xF0BA: MOV DPTR,#0x0E0B
+0xF0BB-0xF0BD: LCALL 0x14D9
+0xF0BE-0xF0C0: 00 00 00 00 (padding)
+
+SAFE INJECTION POINTS
+---------------------
+1. 0xF0A9-0xF0AC: 4 bytes of 0x00 padding
+2. 0xF0B4-0xF0B7: 4 bytes of 0x00 padding  
+3. 0xF0BE-0xF0C0: 3 bytes of 0x00 padding
+
+RECOMMENDED CALL SITE
+---------------------
+0xF0A6: Replace LCALL 0x14D9 with LCALL to our stub
+Rationale: Immediately after integrity success, before any other operations
+Size: 3 bytes (perfect for LCALL replacement)
+
+STUB LOCATION
+-------------
+0xF0C0: 20+ bytes of 0x00 padding available
+Rationale: Safe padding area, not in computed jump tables, post-integrity

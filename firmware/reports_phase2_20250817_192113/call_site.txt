@@ -1,0 +1,48 @@
+FW_A (firmware_backup_base.bin) Call Site Selection
+==================================================
+
+CHOSEN CALL SITE
+----------------
+Address: 0xF0A6
+Current Instruction: LCALL 0x14D9 (12 14 D9)
+Size: 3 bytes (perfect for LCALL replacement)
+
+RATIONALE
+---------
+1. Immediately after integrity routine success (0xF0A2 RET)
+2. Before any other critical operations
+3. Not inside computed jump tables or misaligned regions
+4. 3-byte instruction perfect for LCALL replacement
+5. Post-integrity execution ensures safety
+
+CONTEXT ANALYSIS
+----------------
+Pre-call sequence:
+0xF0A2: RET (integrity routine return)
+0xF0A3-0xF0A5: MOV DPTR,#0x0A17
+0xF0A6-0xF0A8: LCALL 0x14D9 ← OUR TARGET
+
+Post-call sequence:
+0xF0A9-0xF0AC: 00 00 00 00 (padding)
+0xF0AD-0xF0B0: MOV DPTR,#0x0E07
+0xF0B1-0xF0B3: LCALL 0x14D9
+0xF0B4-0xF0B7: 00 00 00 00 (padding)
+
+SAFETY ASSESSMENT
+-----------------
+✅ Not in computed jump island (0x1073-0x1172)
+✅ Not in misaligned jump targets
+✅ Post-integrity execution
+✅ 3-byte instruction perfect for replacement
+✅ No critical data flow dependencies
+
+PATCH STRATEGY
+--------------
+Replace: 12 14 D9 (LCALL 0x14D9)
+With: 12 FF E0 (LCALL 0xFFE0 to our stub)
+
+This ensures:
+1. Minimal code modification
+2. Safe execution timing
+3. Preserved control flow
+4. Easy rollback if needed

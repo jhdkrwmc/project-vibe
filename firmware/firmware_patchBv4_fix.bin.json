@@ -1,0 +1,19 @@
+{
+  "input": "firmware_patchBv2.bin",
+  "output": "firmware_patchBv4_fix.bin",
+  "size_bytes": 131072,
+  "plan": "Plan B (late-clear stub; LJMP from padding \u2192 cave; dynamic SUM16 footer fix)",
+  "parameters": {
+    "checksum_fix_at": "0x1fffe (last 2 bytes)"
+  },
+  "bytes_written": {},
+  "checksum": {
+    "pre_sum16_all": 61899,
+    "fix_value_le": 32173,
+    "post_sum16_all": 0
+  },
+  "hashes": {
+    "sha256_before": "4c2159ebb31a51e45bec2baddbe96b3d3c19227ddfe3ad1351d775e256b8cb7f",
+    "sha256_after": "3cca8107d77907a10c59a8f73d4d074634591c3ca79bd520433ce49a55c6f748"
+  }
+}

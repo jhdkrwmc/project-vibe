@@ -1,0 +1,40 @@
+FW_B Patch Diff Summary
+=======================
+
+PATCHED AREAS:
+1. Stub injection: 0xFFA0-0xFFBE (31 bytes)
+   - Original: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   - Patched:  C0 E0 C0 82 C0 83 90 0E 20 74 00 F0 90 0E 23 74 00 F0 90 0E 28 74 00 F0 D0 83 D0 82 D0 E0 22
+
+2. Call site patch: 0xF19F-0xF1A1 (3 bytes)
+   - Original: 12 E0 B4 (LCALL 0xE0B4)
+   - Patched:  12 FF A0 (LCALL 0xFFA0)
+
+3. Checksum compensation: 0x1FFFE-0x1FFFF (2 bytes)
+   - Original: FF FF
+   - Patched:  F0 E8
+
+TOTAL CHANGES: 36 bytes modified
+- Stub: 31 bytes
+- Call site: 3 bytes  
+- Checksum: 2 bytes
+
+STUB FUNCTIONALITY:
+- Pushes ACC, DPL, DPH
+- Writes 0x00 to 0x0E20 (potential OSD control)
+- Writes 0x00 to 0x0E23 (potential OSD control)
+- Writes 0x00 to 0x0E28 (potential OSD control)
+- Pops DPH, DPL, ACC
+- Returns to original flow
+
+EXECUTION FLOW:
+1. Integrity check passes (0xF182)
+2. Our stub is called (0xF19F)
+3. Multiple potential OSD registers are disabled
+4. Execution continues normally
+
+DIFFERENCES FROM FW_A:
+1. Different stub location (0xFFA0 vs 0xFFE0)
+2. Different call site (0xF19F vs 0xF0A6)
+3. Multiple OSD register targets (0x0E20, 0x0E23, 0x0E28)
+4. Different checksum algorithm/values

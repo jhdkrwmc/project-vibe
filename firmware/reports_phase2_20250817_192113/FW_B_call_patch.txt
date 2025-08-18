@@ -1,0 +1,16 @@
+FW_B Call Site Patch
+===================
+
+LOCATION: 0xF19F-0xF1A1
+ORIGINAL: 12 E0 B4 (LCALL 0xE0B4)
+PATCHED:  12 FF A0 (LCALL 0xFFA0 to our stub)
+
+CONTEXT:
+0xF182: RET (integrity routine return)
+0xF183: MOV DPTR,#0x0ECD
+0xF19F: LCALL 0xFFA0 <- OUR PATCH
+0xF1A2: 01 06 12 BC 09 (post-call flow)
+
+STUB LOCATION: 0xFFA0
+STUB SIZE: 31 bytes
+STUB FUNCTIONALITY: Disables OSD by writing 0x00 to 0x0E20, 0x0E23, 0x0E28

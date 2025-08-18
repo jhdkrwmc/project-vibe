@@ -31,10 +31,10 @@ def list_cameras() -> List[Tuple[str,str]]:
     """Return [(path, label), ...] for /dev/video*; label tries to include card name via v4l2-ctl."""
     devs = sorted(glob.glob("/dev/video*"))
     out = []
-    # Try to get names with v4l2-ctl --list-devices
     names = {}
     try:
-        q = subprocess.run(["v4l2-ctl","--list-devices"], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True, check=False)
+        q = subprocess.run(["v4l2-ctl","--list-devices"], stdout=subprocess.PIPE,
+                           stderr=subprocess.DEVNULL, text=True, check=False)
         block = None
         for line in q.stdout.splitlines():
             if line.strip() and not line.startswith("\t"):
@@ -65,9 +65,10 @@ class App(tk.Tk):
         self.title("Sonix UVC Control GUI v3")
         self.geometry("1400x900")
         self.tool = tk.StringVar(value=DEFAULT_TOOL)
-        self.cap = None
+        self.cap: Optional[cv2.VideoCapture] = None
         self.preview_on = False
         self.preview_box = (640, 360)
+        self._label_to_path = {}
 
         # resolution/fps
         self.req_w = tk.IntVar(value=1280)
@@ -143,10 +144,8 @@ class App(tk.Tk):
     def _refresh_cameras(self):
         cams = list_cameras()
         items = [label for _,label in cams] or ["/dev/video0"]
-        # Map label->path
         self._label_to_path = {label:path for path,label in cams}
         self.dev_combo["values"] = items
-        # Keep selection stable
         cur = self.dev_combo.get()
         if cur and cur in self._label_to_path:
             self.dev_var.set(cur)
@@ -174,19 +173,33 @@ class App(tk.Tk):
         self.preview_box = (max(64, e.width), max(64, e.height))
 
     def _start_preview(self):
-        # restart
+        # stop old preview if running
+        self.preview_on = False
+        if self.cap is not None:
+            try: self.cap.release()
+            except Exception: pass
+            self.cap = None
+        time.sleep(0.05)
+
+        # resolve selected device index
+        path = self._current_device()
+        idx = self._dev_index(path)
+
+        # open with V4L2 backend and force MJPG (bulk transfer = stable over usbip)
+        self.cap = cv2.VideoCapture(idx, cv2.CAP_V4L2)
+        if not self.cap or not self.cap.isOpened():
+            self._log(f"[preview] failed to open {path}")
+            return
         try:
-            if self.cap:
-                try: self.cap.release()
-                except: pass
-            idx = self._dev_index(self._current_device())
-            self.cap = cv2.VideoCapture(idx, cv2.CAP_V4L2)
-            self._apply_resolution()
-            self.preview_on = True
-            threading.Thread(target=self._loop, daemon=True).start()
-            self._log(f"[preview] opened {self._current_device()}")
-        except Exception as e:
-            self._log(f"[preview] failed: {e}")
+            self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
+        except Exception:
+            pass
+
+        # apply requested size/fps and kick the read loop
+        self._apply_resolution()
+        self.preview_on = True
+        threading.Thread(target=self._loop, daemon=True).start()
+        self._log(f"[preview] opened {path} (idx={idx})")
 
     def _dev_index(self, path: str) -> int:
         m = re.search(r'/dev/video(\d+)', path)
@@ -210,10 +223,18 @@ class App(tk.Tk):
         return cv2.resize(frame, (int(w*scale), int(h*scale)))
 
     def _loop(self):
+        consecutive_fail = 0
         while self.preview_on:
             ok, frame = (self.cap.read() if self.cap else (False, None))
             if not ok:
-                time.sleep(0.05); continue
+                consecutive_fail += 1
+                if consecutive_fail > 100:
+                    self._log("[preview] too many timeouts; restarting capture")
+                    self._start_preview()
+                    return
+                time.sleep(0.05)
+                continue
+            consecutive_fail = 0
             disp = self._fit(frame, *self.preview_box)
             rgb = cv2.cvtColor(disp, cv2.COLOR_BGR2RGB)
             imgtk = ImageTk.PhotoImage(Image.fromarray(rgb))
@@ -520,4 +541,3 @@ class App(tk.Tk):
 
 if __name__ == "__main__":
     App().mainloop()
-

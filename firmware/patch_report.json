@@ -1,0 +1,26 @@
+{
+  "input": "C:\\Users\\arnax\\Desktop\\project-vibe\\wsl\\C1_SONIX_Test_AP\\firmware\\firmware_backup_base.bin",
+  "output": "C:\\Users\\arnax\\Desktop\\project-vibe\\wsl\\C1_SONIX_Test_AP\\firmware_patchB.bin",
+  "size_bytes": 131072,
+  "plan": "Plan B (late-clear stub; LJMP from padding \u2192 cave; dynamic SUM16 footer fix)",
+  "parameters": {
+    "inject_addr": "0x0A516",
+    "inject_run_len": 4,
+    "inject_pad_byte": "0x00",
+    "cave_addr": "0x0BFA8",
+    "clear_count": 2,
+    "return_addr": "0x0A51A",
+    "checksum_fix_at": "0x1FFFE (last 2 bytes of file)"
+  },
+  "bytes_written": {
+    "inject_ljmp": "02bfa8",
+    "stub_len": 22,
+    "stub_prefix": "c0e0c082c083900e24e4f0a3f0d083d0",
+    "stub_suffix": "83d082d0e002a51a"
+  },
+  "checksum": {
+    "pre_fix_sum16": 33362,
+    "fix_value_le": 32173,
+    "post_fix_sum16": 0
+  }
+}

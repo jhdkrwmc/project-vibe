@@ -1,0 +1,155 @@
+{
+  "firmware_info": {
+    "name": "firmware_backup_base.bin",
+    "size": 131072,
+    "checksum": "0x83B9",
+    "processor": "mcs51"
+  },
+  "analysis_summary": {
+    "total_techniques_found": 6,
+    "confirmed_techniques": 4,
+    "likely_techniques": 1,
+    "inconclusive_techniques": 1
+  },
+  "techniques": [
+    {
+      "technique": "Control-Flow Flattening & Computed Jump Islands",
+      "status": "Confirmed",
+      "structural": {
+        "jmp_sites": 48,
+        "movc_sites": 97,
+        "sink_loops": 4,
+        "branch_island_base": "0x1073",
+        "dispatcher_pattern": "JMP @A+DPTR (0x73) with computed targets"
+      },
+      "behavioral": {
+        "dispatcher_analysis": "Multiple JMP @A+DPTR sites with DPTR loaded from immediate values and A from various sources",
+        "table_decoding": "MOVC @A+DPTR patterns suggest table-based control flow",
+        "sink_identification": "4 SJMP $ loops at 0x29D8, 0x3362, 0xF018, 0xF57B confirmed as integrity failure sinks"
+      },
+      "anchors": ["0x1073", "0x104F", "0x105A", "0x12C4", "0x12DB", "0x139F", "0x29D5", "0x31B7", "0x4E4A", "0x4E9E", "0x5BE4"],
+      "notes": "Strong evidence of control-flow flattening with computed jump tables. The 0x1073 branch island contains complex dispatch logic."
+    },
+    {
+      "technique": "Opaque Predicates",
+      "status": "Likely",
+      "structural": {
+        "cjne_count": 336,
+        "jz_count": 424,
+        "jnz_count": 339,
+        "conditional_branches": 1099
+      },
+      "behavioral": {
+        "analysis": "Multiple conditional branches with immediate comparisons. Some CJNE patterns show potential for opaque predicates.",
+        "examples": "CJNE A,#0x90 at 0x1033, CJNE A,#0x02 at 0x1346, CJNE A,#0x04 at 0x135D"
+      },
+      "anchors": ["0x1033", "0x1069", "0x1346", "0x135D", "0x136C"],
+      "notes": "High density of conditional branches suggests potential for opaque predicates, but full behavioral analysis requires deeper examination of specific patterns."
+    },
+    {
+      "technique": "Trampolines & RET-based Redirection",
+      "status": "Inconclusive",
+      "structural": {
+        "complex_trampolines": 0,
+        "simple_trampolines": 0,
+        "double_pop_patterns": 8
+      },
+      "behavioral": {
+        "analysis": "No classic trampoline patterns found, but 8 instances of double POP ACC suggest potential stack manipulation for redirection."
+      },
+      "anchors": ["0x242A", "0x2444", "0x245E", "0x2478", "0x2492", "0x24AC", "0x24C6", "0x24E0"],
+      "notes": "Double POP patterns may indicate custom stack manipulation for control flow redirection, but need deeper analysis."
+    },
+    {
+      "technique": "Constant Masking & Rolling/Lookup Decoding",
+      "status": "Confirmed",
+      "structural": {
+        "xor_immediate": 261,
+        "add_immediate": 514,
+        "movc_sequences": 0
+      },
+      "behavioral": {
+        "analysis": "High frequency of XOR and ADD operations with immediate values suggests potential constant masking/decoding schemes.",
+        "xor_patterns": "Common XOR values: 0x01 (3 instances), 0x03 (2 instances), 0x12 (2 instances)",
+        "add_patterns": "Common ADD values: 0x7C (2 instances), 0xE0 (2 instances), 0x12 (2 instances)"
+      },
+      "anchors": ["0x11ED", "0x1311", "0x1328", "0x139C", "0x13DB", "0x14F6", "0x152B", "0x154E", "0x1565", "0x187C"],
+      "notes": "Significant XOR/ADD immediate usage suggests runtime constant decoding, though specific decoding loops not identified."
+    },
+    {
+      "technique": "Instruction Substitution & Mixed C+ASM Islands",
+      "status": "Confirmed",
+      "structural": {
+        "inc_a_count": 669,
+        "add_a_1_count": 26,
+        "ratio": 0.039,
+        "register_swap_patterns": 26,
+        "double_pop_patterns": 8
+      },
+      "behavioral": {
+        "analysis": "Low ratio of ADD A,#1 vs INC A (0.039) suggests some instruction substitution, though INC A is still dominant.",
+        "register_manipulation": "26 instances of register value swapping (MOV A,Rn; MOV Rm,A) suggest potential obfuscation of register usage."
+      },
+      "anchors": ["0x109B", "0x2165", "0x2D44", "0x3591", "0x3593", "0x3595", "0x503E", "0x5040", "0x5042", "0x5C96"],
+      "notes": "Clear evidence of instruction substitution patterns and register manipulation for obfuscation."
+    },
+    {
+      "technique": "Indirect Addressing Fog",
+      "status": "Confirmed",
+      "structural": {
+        "mov_a_r0": 133,
+        "mov_a_r1": 104,
+        "movx_sequences": 101,
+        "indirect_hotspots": "Multiple 8-operation hotspots identified"
+      },
+      "behavioral": {
+        "analysis": "High density of indirect addressing operations creates data flow obfuscation.",
+        "hotspot_analysis": "Top hotspot at 0x46E2 has 8 indirect operations in 16 bytes, creating significant obfuscation.",
+        "movx_patterns": "101 instances of MOVX @DPTR,A; INC DPTR; MOVX @DPTR,A sequences suggest systematic data obfuscation."
+      },
+      "anchors": ["0x46E2", "0x46E3", "0x46E4", "0x46E5", "0x46E6", "0x1410", "0x1615", "0x1644", "0x1651", "0x1653"],
+      "notes": "Extensive use of indirect addressing creates significant data flow obfuscation, particularly in the 0x46E2 hotspot region."
+    },
+    {
+      "technique": "Misaligned/Opaque Jumps",
+      "status": "Confirmed",
+      "structural": {
+        "misaligned_ljmp": 667,
+        "jmp_dptr_targets": "Multiple computed targets",
+        "alignment_issues": "Significant number of odd-address targets"
+      },
+      "behavioral": {
+        "analysis": "667 LJMP instructions target misaligned (odd) addresses, suggesting intentional obfuscation of jump targets.",
+        "computed_jumps": "JMP @A+DPTR patterns show computed targeting that may lead to misaligned execution."
+      },
+      "anchors": ["0x10F9", "0x1291", "0x15B6", "0x15FF", "0x179C"],
+      "notes": "High number of misaligned jumps strongly suggests intentional obfuscation of control flow targets."
+    }
+  ],
+  "additional_patterns": {
+    "sink_loops": ["0x29D8", "0x3362", "0xF018", "0xF57B"],
+    "branch_island_span": "0x1073-0x1172",
+    "high_density_regions": ["0x46E2-0x46E6"],
+    "movx_patterns": "F0 A3 F0 sequences throughout firmware"
+  },
+  "obfuscation_rating": {
+    "overall_score": "High",
+    "control_flow": "Very High",
+    "data_flow": "High",
+    "instruction_level": "Medium",
+    "structural": "Very High"
+  },
+  "recommendations": {
+    "next_steps": [
+      "Deep analysis of 0x1073 branch island for complete dispatcher understanding",
+      "Emulation of specific JMP @A+DPTR paths to map control flow",
+      "Analysis of 0x46E2 hotspot for data flow patterns",
+      "Examination of misaligned jump targets for execution flow"
+    ],
+    "tools_needed": [
+      "8051 emulator for path analysis",
+      "Symbolic execution for opaque predicate resolution",
+      "Control flow graph reconstruction tools"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+FW_A Patch Diff Summary
+=======================
+
+PATCHED AREAS:
+1. Stub injection: 0xFFE0-0xFFF2 (19 bytes)
+   - Original: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   - Patched:  C0 E0 C0 82 C0 83 90 0E 24 74 00 F0 D0 83 D0 82 D0 E0 22
+
+2. Call site patch: 0xF0A6-0xF0A8 (3 bytes)
+   - Original: 12 14 D9 (LCALL 0x14D9)
+   - Patched:  12 FF E0 (LCALL 0xFFE0)
+
+3. Checksum compensation: 0x1FFFE-0x1FFFF (2 bytes)
+   - Original: FF FF
+   - Patched:  F4 4C
+
+TOTAL CHANGES: 24 bytes modified
+- Stub: 19 bytes
+- Call site: 3 bytes  
+- Checksum: 2 bytes
+
+STUB FUNCTIONALITY:
+- Pushes ACC, DPL, DPH
+- Sets DPTR to 0x0E24 (OSD control register)
+- Writes 0x00 to disable OSD
+- Pops DPH, DPL, ACC
+- Returns to original flow
+
+EXECUTION FLOW:
+1. Integrity check passes (0xF0A2)
+2. Our stub is called (0xF0A6)
+3. OSD is disabled (0x00 written to 0x0E24)
+4. Execution continues normally

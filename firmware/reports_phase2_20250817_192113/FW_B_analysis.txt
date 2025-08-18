@@ -1,0 +1,63 @@
+FW_B (firmware5262) Analysis Summary
+====================================
+
+BASELINE
+--------
+Size: 0x20000 (131072 bytes)
+SUM16: 0xD2B1 (current), Expected: 0xE349 (from compare_fw.py)
+Sink loops: 3 found at 0x29C6, 0x331C, 0xF3BC
+
+INTEGRITY ROUTINE
+-----------------
+Location: Ends at 0xF182 (RET instruction)
+Pattern: Different structure from FW_A, more complex initialization sequence
+
+POST-INTEGRITY FLOW
+-------------------
+0xF182: RET (integrity routine return)
+0xF183: MOV DPTR,#0x0ECD
+0xF19F: LCALL 0xE0B4 ← POTENTIAL INJECTION POINT 1
+0xF1A4: LCALL 0xBC09 ← POTENTIAL INJECTION POINT 2
+0xF1A7: LCALL 0xAB46 ← POTENTIAL INJECTION POINT 3
+0xF1AA: LCALL 0xBC9C ← POTENTIAL INJECTION POINT 4
+
+OSD CONTROL ANALYSIS
+-------------------
+Key finding: FW_B has NO references to 0x0E24 (primary OSD control)
+0x0E26: 3 references found (different control register)
+- 0x5A95: Writes 0xFF to 0x0E26
+- 0xC484: Writes to 0x0E26
+- 0xC7AA: Reads from 0x0E26
+
+Alternative OSD patterns found:
+- 0x0E20, 0x0E23, 0x0E28, 0x0E29, 0x0E2B
+- These may be the actual OSD control registers in FW_B
+
+STUB LOCATION
+-------------
+Selected: 0xFFA0
+Size Available: 16 bytes of 0x00 padding
+Rationale: Safe, large padding area, easy to identify
+
+RECOMMENDED INJECTION POINT
+---------------------------
+0xF19F: LCALL 0xE0B4
+Rationale: 
+1. First LCALL after integrity success
+2. Sufficient space for replacement
+3. Clean execution flow
+
+PATCH STRATEGY
+--------------
+1. Inject OSD-off stub at 0xFFA0
+2. Replace LCALL at 0xF19F with LCALL to our stub
+3. Determine correct OSD control register for FW_B
+4. Apply checksum compensation
+
+DIFFERENCES FROM FW_A
+--------------------
+1. Different integrity routine structure
+2. No 0x0E24 references (different OSD control)
+3. Different post-integrity flow pattern
+4. Different padding locations
+5. Different checksum algorithm/values

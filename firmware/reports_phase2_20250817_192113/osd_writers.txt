@@ -1,0 +1,60 @@
+FW_A (firmware_backup_base.bin) OSD Control Register Analysis
+============================================================
+
+OSD CONTROL ADDRESSES
+--------------------
+0x0E24: Primary OSD enable control (5 writers)
+0x0E25: No references found
+0x0E26: No references found  
+0x0E27: Secondary OSD control (1 writer)
+
+DETAILED ANALYSIS
+----------------
+
+=== 0x0E24 (Primary OSD Control) ===
+5 writers found:
+
+1. 0xADBE: MOV DPTR,#0x0E24
+   - Context: Part of conditional logic
+   - Post-DPTR: No direct write found in context
+
+2. 0xADCD: MOV DPTR,#0x0E24  
+   - Context: Part of conditional logic
+   - Post-DPTR: No direct write found in context
+
+3. 0xADD7: MOV DPTR,#0x0E24
+   - Context: Part of conditional logic
+   - Post-DPTR: No direct write found in context
+
+4. 0xADFD: MOV DPTR,#0x0E24
+   - Context: Part of conditional logic
+   - Post-DPTR: No direct write found in context
+
+5. 0xBB73: MOV DPTR,#0x0E24
+   - Context: Main OSD control routine
+   - Post-DPTR: MOV A,#0xFF; MOVX @DPTR,A (WRITE 0xFF)
+   - This is the PRIMARY OSD ENABLE WRITER
+
+=== 0x0E27 (Secondary OSD Control) ===
+1 writer found:
+
+1. 0xAE74: MOV DPTR,#0x0E27
+   - Context: OSD configuration routine
+   - Post-DPTR: MOVX @DPTR,A (WRITE from accumulator)
+
+LEGACY PATTERNS (0x0B7x)
+------------------------
+15 hits found, but these appear to be different control registers
+not directly related to OSD enable/disable functionality.
+
+KEY FINDINGS
+-----------
+1. 0x0E24 is the PRIMARY OSD control register
+2. 0xBB73 is the main writer that sets 0x0E24 to 0xFF (enabled)
+3. To disable OSD, we need to write 0x00 to 0x0E24
+4. 0x0E27 may be a secondary control but less critical
+
+RECOMMENDED PATCH
+-----------------
+Write 0x00 to 0x0E24 at 0xBB73 location to disable OSD.
+This is the minimal effective change needed.

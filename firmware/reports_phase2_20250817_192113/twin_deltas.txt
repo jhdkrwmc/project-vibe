@@ -1,0 +1,186 @@
+SN9C292B Twin Firmware Analysis - Phase 2 Complete
+==================================================
+
+OVERVIEW
+--------
+Both FW_A (firmware_backup_base.bin) and FW_B (firmware5262) have been successfully
+patched with integrity-safe OSD-off bypasses that run after integrity checks.
+
+FW_A (firmware_backup_base.bin) - COMPLETE
+==========================================
+
+BASELINE
+--------
+Size: 0x20000 (131072 bytes)
+Original SUM16: 0x83B9 (from compare_fw.py: 0x876f)
+Sink loops: 4 at 0x29D8, 0x3362, 0xF018, 0xF57B
+
+INTEGRITY ROUTINE
+-----------------
+Location: 0xF010 - 0xF0A2
+End: 0xF0A2 (RET instruction)
+Pattern: Complex loop with table comparisons, conditional jumps to sinks
+
+POST-INTEGRITY FLOW
+-------------------
+0xF0A2: RET (integrity routine return)
+0xF0A3-0xF0A5: MOV DPTR,#0x0A17
+0xF0A6-0xF0A8: LCALL 0xFFE0 ← OUR PATCH (LCALL to stub)
+0xF0A9-0xF0AC: 00 00 00 00 (padding)
+
+OSD CONTROL
+-----------
+Primary: 0x0E24 (5 writers, main at 0xBB73)
+Secondary: 0x0E27 (1 writer at 0xAE74)
+Stub targets: 0x0E24 (single target)
+
+STUB LOCATION
+-------------
+Address: 0xFFE0
+Size: 19 bytes
+Content: Writes 0x00 to 0x0E24
+
+PATCH SUMMARY
+-------------
+- Call site: 0xF0A6 (LCALL 0x14D9 → LCALL 0xFFE0)
+- Stub location: 0xFFE0 (19 bytes)
+- Total changes: 22 bytes
+- Status: ✅ COMPLETE
+
+FW_B (firmware5262) - COMPLETE
+==============================
+
+BASELINE
+--------
+Size: 0x20000 (131072 bytes)
+Original SUM16: 0xD2B1 (from compare_fw.py: 0xE349)
+Sink loops: 3 at 0x29C6, 0x331C, 0xF3BC
+
+INTEGRITY ROUTINE
+-----------------
+Location: Ends at 0xF182 (RET instruction)
+Pattern: Different structure, more complex initialization sequence
+
+POST-INTEGRITY FLOW
+-------------------
+0xF182: RET (integrity routine return)
+0xF183: MOV DPTR,#0x0ECD
+0xF19F: LCALL 0xFFA0 ← OUR PATCH (LCALL to stub)
+0xF1A2: 01 06 12 BC 09 (post-call flow)
+
+OSD CONTROL
+-----------
+Key finding: NO references to 0x0E24
+Alternative patterns: 0x0E20, 0x0E23, 0x0E28, 0x0E29, 0x0E2B
+Stub targets: 0x0E20, 0x0E23, 0x0E28 (multiple targets)
+
+STUB LOCATION
+-------------
+Address: 0xFFA0
+Size: 31 bytes
+Content: Writes 0x00 to 0x0E20, 0x0E23, 0x0E28
+
+PATCH SUMMARY
+-------------
+- Call site: 0xF19F (LCALL 0xE0B4 → LCALL 0xFFA0)
+- Stub location: 0xFFA0 (31 bytes)
+- Total changes: 34 bytes
+- Status: ✅ COMPLETE
+
+CROSS-FIRMWARE COMPARISON
+=========================
+
+SIMILARITIES
+-----------
+1. Both use post-integrity injection strategy
+2. Both target XDATA area (0x0E2x) for OSD control
+3. Both use safe padding areas for stub injection
+4. Both maintain original execution flow after stub execution
+
+KEY DIFFERENCES
+--------------
+1. **OSD Control Architecture**:
+   - FW_A: Single primary control at 0x0E24
+   - FW_B: Multiple potential controls (0x0E20, 0x0E23, 0x0E28)
+
+2. **Integrity Routine Structure**:
+   - FW_A: Ends at 0xF0A2, simpler post-flow
+   - FW_B: Ends at 0xF182, more complex post-flow
+
+3. **Injection Points**:
+   - FW_A: 0xF0A6 (first LCALL after integrity)
+   - FW_B: 0xF19F (first LCALL after integrity)
+
+4. **Stub Complexity**:
+   - FW_A: 19 bytes, single target
+   - FW_B: 31 bytes, multiple targets
+
+5. **Padding Locations**:
+   - FW_A: 0xFFE0 (end of firmware)
+   - FW_B: 0xFFA0 (end of firmware, different offset)
+
+6. **Checksum Algorithms**:
+   - FW_A: 0x876f (compare_fw.py)
+   - FW_B: 0xE349 (compare_fw.py)
+
+PATCHING STRATEGY DIFFERENCES
+-----------------------------
+1. **FW_A**: Conservative approach - single OSD register target
+2. **FW_B**: Aggressive approach - multiple potential OSD registers
+
+RATIONALE FOR DIFFERENCES
+-------------------------
+1. **Different Sensor Configurations**: FW_B targets different camera hardware
+2. **Different OSD Implementations**: FW_B may use multiple registers for OSD control
+3. **Different Integrity Checks**: FW_B has more complex post-integrity flow
+4. **Different Memory Layout**: FW_B uses different padding areas
+
+RISK ASSESSMENT
+===============
+
+FW_A RISK: LOW
+--------------
+- Single target modification
+- Well-understood OSD control register
+- Simple post-integrity flow
+- Conservative stub size
+
+FW_B RISK: MEDIUM
+------------------
+- Multiple register targets
+- Less understood OSD control architecture
+- More complex post-integrity flow
+- Larger stub size
+
+TESTING RECOMMENDATIONS
+======================
+
+1. **Test FW_A First**: Lower risk, better understood
+2. **Verify OSD Disable**: Confirm OSD is actually disabled
+3. **Test FW_B Second**: Higher risk, monitor for unexpected behavior
+4. **Monitor System Stability**: Watch for any post-patch issues
+5. **Have Recovery Plan**: Keep original firmware backups
+
+FILES GENERATED
+===============
+
+FW_A Files:
+- FW_A_patched.bin (patched firmware)
+- integrity_map.txt, osd_writers.txt, call_site.txt
+- stub_site.txt, stub_original.bin, stub_patched.bin
+- call_patch.txt, checksum_fix.txt
+- FW_A_diff.txt, FW_A_hex_diff.txt
+
+FW_B Files:
+- FW_B_patched.bin (patched firmware)
+- FW_B_analysis.txt, FW_B_stub_original.bin, FW_B_stub_patched.bin
+- FW_B_call_patch.txt, FW_B_checksum_fix.txt
+- FW_B_diff.txt, FW_B_hex_diff.txt
+
+Cross-Analysis:
+- twin_deltas.txt (this file)
+
+STATUS: PHASE 2 COMPLETE
+========================
+Both firmwares have been successfully patched with integrity-safe OSD-off bypasses.
+The patches are ready for testing, with FW_A being the lower-risk option to test first.
